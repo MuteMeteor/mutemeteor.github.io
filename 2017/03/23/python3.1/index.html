@@ -117,7 +117,7 @@ Python tutorial：http://www.pythondoc.com/pythontutorial3/index.html">
 相关链接地址如下：
 
 Python tutorial：http://www.pythondoc.com/pythontutorial3/index.html">
-<meta property="og:updated_time" content="2017-04-13T08:05:18.616Z">
+<meta property="og:updated_time" content="2017-04-13T08:34:21.935Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python3学习笔记之一">
 <meta name="twitter:description" content="开始 Python 之旅实验内容本课程基于 Python for you and me 教程翻译制作，其中参考了 Python tutorial 和 The Python Standard Library，并对原教程的内容进行了改进与补充。
@@ -465,7 +465,121 @@ help&gt; keywords
 &apos;China&apos;
 &gt;&gt;&gt; language
 &apos;Python&apos;
-</code></pre>
+</code></pre><h1 id="运算符和表达式"><a href="#运算符和表达式" class="headerlink" title="运算符和表达式"></a>运算符和表达式</h1><h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><p>运算符是一些符号，它告诉 Python 解释器去做一些数学或逻辑操作。只要有任意一个操作数是浮点数，结果就会是浮点数。</p>
+<p>进行除法运算时若是除不尽，结果将会是小数，这很自然，如果要进行整除，使用 // 运算符，它将返回商的整数部分。</p>
+<h2 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h2><table>
+<thead>
+<tr>
+<th>Operator</th>
+<th style="text-align:center">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;</td>
+<td style="text-align:center">Is less than</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td style="text-align:center">Is less than or equal to</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td style="text-align:center">Is greater than</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td style="text-align:center">Is greater than or equal to</td>
+</tr>
+<tr>
+<td>==</td>
+<td style="text-align:center">Is equal to</td>
+</tr>
+<tr>
+<td>!=</td>
+<td style="text-align:center">Is not equal to</td>
+</tr>
+</tbody>
+</table>
+<p>举一些例子：</p>
+<pre><code>&gt;&gt;&gt; 1 &lt; 2
+True
+&gt;&gt;&gt; 3 &gt; 34
+False
+&gt;&gt;&gt; 23 == 45
+False
+&gt;&gt;&gt; 34 != 323
+True
+</code></pre><h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><p>对于逻辑 与，或，非，使用 and，or，not 这几个关键字。</p>
+<p>逻辑运算符 and 和 or 也称作短路运算符：它们的参数从左向右解析，一旦结果可以确定就停止。例如，如果 A 和 C 为真而 B 为假，A and B and C 不会解析 C 。作用于一个普通的非逻辑值时，短路运算符的返回值通常是能够最先确定结果的那个操作数。</p>
+<p>关系运算可以通过逻辑运算符 and 和 or 组合，比较的结果可以用 not 来取反意。逻辑运算符的优先级又低于关系运算符，在它们之中，not 具有最高的优先级，or 优先级最低，所以 A and not B or C 等于 (A and (notB)) or C。当然，括号也可以用于比较表达式。</p>
+<p>举一些例子：</p>
+<pre><code>&gt;&gt;&gt; 5 and 4
+4
+&gt;&gt;&gt; 0 and 4
+0
+&gt;&gt;&gt; False or 3 or 0
+3
+&gt;&gt;&gt; 2 &gt; 1 and not 3 &gt; 5 or 4
+True
+</code></pre><h2 id="简写运算符"><a href="#简写运算符" class="headerlink" title="简写运算符"></a>简写运算符</h2><p>x op= expression 为简写运算的语法形式。其等价于 x = x op expression ，举例如下：</p>
+<pre><code>&gt;&gt;&gt; a = 12
+&gt;&gt;&gt; a += 13
+&gt;&gt;&gt; a
+25
+&gt;&gt;&gt; a /= 3
+&gt;&gt;&gt; a
+8.333333333333334
+&gt;&gt;&gt; a += (26 * 32)
+&gt;&gt;&gt; a
+840.3333333333334
+</code></pre><h2 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h2><pre><code>#!/usr/bin/env python3
+a = 9
+b = 12
+c = 3
+x = a - b / 3 + c * 2 - 1
+y = a - b / (3 + c) * (2 - 1)
+z = a - (b / (3 + c) * 2) - 1
+print(&quot;X = &quot;, x)
+print(&quot;Y = &quot;, y)
+print(&quot;Z = &quot;, z)
+
+$ ./evaluationexp.py
+X =  10
+Y =  7
+Z =  4
+</code></pre><h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><table>
+<thead>
+<tr>
+<th>类型转换函数</th>
+<th style="text-align:center">转换路径</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>float(string)</td>
+<td style="text-align:center">字符串 -&gt; 浮点值</td>
+</tr>
+<tr>
+<td>int(string)</td>
+<td style="text-align:center">字符串 -&gt; 整数值</td>
+</tr>
+<tr>
+<td>str(integer)</td>
+<td style="text-align:center">整数值 -&gt; 字符串</td>
+</tr>
+<tr>
+<td>str(float)</td>
+<td style="text-align:center">浮点值 -&gt; 字符串</td>
+</tr>
+</tbody>
+</table>
+<pre><code>&gt;&gt;&gt; a = 8.126768
+&gt;&gt;&gt; str(a)
+&apos;8.126768&apos;
+总结
+</code></pre><p>除了数值运算，关系和逻辑运算也是程序的重要组成部分。另外 Python 是强类型语言，所以必要的时候需要手动进行类型转换。</p>
+
       
     </div>
 
@@ -670,7 +784,7 @@ help&gt; keywords
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#开始-Python-之旅"><span class="nav-number">1.</span> <span class="nav-text">开始 Python 之旅</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#实验内容"><span class="nav-number">1.1.</span> <span class="nav-text">实验内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解释器-amp-脚本文件"><span class="nav-number">1.2.</span> <span class="nav-text">解释器&脚本文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码风格建议"><span class="nav-number">1.3.</span> <span class="nav-text">代码风格建议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注释"><span class="nav-number">1.4.</span> <span class="nav-text">注释</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#变量和数据类型"><span class="nav-number">2.</span> <span class="nav-text">变量和数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关键字和标识符"><span class="nav-number">2.1.</span> <span class="nav-text">关键字和标识符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从键盘读取输入"><span class="nav-number">2.2.</span> <span class="nav-text">从键盘读取输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单行定义多个变量或赋值"><span class="nav-number">2.3.</span> <span class="nav-text">单行定义多个变量或赋值</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#开始-Python-之旅"><span class="nav-number">1.</span> <span class="nav-text">开始 Python 之旅</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#实验内容"><span class="nav-number">1.1.</span> <span class="nav-text">实验内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解释器-amp-脚本文件"><span class="nav-number">1.2.</span> <span class="nav-text">解释器&脚本文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码风格建议"><span class="nav-number">1.3.</span> <span class="nav-text">代码风格建议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注释"><span class="nav-number">1.4.</span> <span class="nav-text">注释</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#变量和数据类型"><span class="nav-number">2.</span> <span class="nav-text">变量和数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关键字和标识符"><span class="nav-number">2.1.</span> <span class="nav-text">关键字和标识符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从键盘读取输入"><span class="nav-number">2.2.</span> <span class="nav-text">从键盘读取输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单行定义多个变量或赋值"><span class="nav-number">2.3.</span> <span class="nav-text">单行定义多个变量或赋值</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运算符和表达式"><span class="nav-number">3.</span> <span class="nav-text">运算符和表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#运算符"><span class="nav-number">3.1.</span> <span class="nav-text">运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关系运算符"><span class="nav-number">3.2.</span> <span class="nav-text">关系运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑运算符"><span class="nav-number">3.3.</span> <span class="nav-text">逻辑运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简写运算符"><span class="nav-number">3.4.</span> <span class="nav-text">简写运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表达式"><span class="nav-number">3.5.</span> <span class="nav-text">表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类型转换"><span class="nav-number">3.6.</span> <span class="nav-text">类型转换</span></a></li></ol></li></ol></div>
             
 
           </div>
