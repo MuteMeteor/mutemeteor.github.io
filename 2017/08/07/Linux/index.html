@@ -105,21 +105,18 @@
 
 
 
-<meta name="description" content="文件和目录Windows和Linux文件系统区别在 windows 平台下，打开“计算机”，看到的是一个个的驱动器盘符,每个驱动器都有自己的根目录结构，形成了多个树并列的情形。在 Linux 下，我们是看不到这些驱动器盘符，我们看到的是文件夹（目录）。
-类Unix系统目录结构ubuntu没有盘符这个概念，只有一个根目录/，所有文件都在它下面：">
+<meta name="description" content="shell 终端通常在图形界面中对实际体验带来差异的不是上述的不同发行版的各种终端模拟器，而是这个 Shell（壳）。有壳就有核，这里的核就是指 UNIX/Linux 内核，Shell 是指“提供给使用者使用界面”的软件（命令解析器），类似于 DOS 下的 command（命令行）和后来的 cmd.exe 。普通意义上的 Shell 就是可以接受用户输入命令的程序。它之所以被称作 Shell 是因">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux 学习笔记">
 <meta property="og:url" content="http://mutemeteor.com/2017/08/07/Linux/index.html">
 <meta property="og:site_name" content="Mute Meteor">
-<meta property="og:description" content="文件和目录Windows和Linux文件系统区别在 windows 平台下，打开“计算机”，看到的是一个个的驱动器盘符,每个驱动器都有自己的根目录结构，形成了多个树并列的情形。在 Linux 下，我们是看不到这些驱动器盘符，我们看到的是文件夹（目录）。
-类Unix系统目录结构ubuntu没有盘符这个概念，只有一个根目录/，所有文件都在它下面：">
+<meta property="og:description" content="shell 终端通常在图形界面中对实际体验带来差异的不是上述的不同发行版的各种终端模拟器，而是这个 Shell（壳）。有壳就有核，这里的核就是指 UNIX/Linux 内核，Shell 是指“提供给使用者使用界面”的软件（命令解析器），类似于 DOS 下的 command（命令行）和后来的 cmd.exe 。普通意义上的 Shell 就是可以接受用户输入命令的程序。它之所以被称作 Shell 是因">
 <meta property="og:image" content="http://on7kyvg9n.bkt.clouddn.com/01-linux%E5%9F%BA%E7%A1%80-19.png">
 <meta property="og:image" content="http://on7kyvg9n.bkt.clouddn.com/Snip20161218_23.png">
-<meta property="og:updated_time" content="2017-08-15T12:07:14.000Z">
+<meta property="og:updated_time" content="2017-08-15T12:23:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux 学习笔记">
-<meta name="twitter:description" content="文件和目录Windows和Linux文件系统区别在 windows 平台下，打开“计算机”，看到的是一个个的驱动器盘符,每个驱动器都有自己的根目录结构，形成了多个树并列的情形。在 Linux 下，我们是看不到这些驱动器盘符，我们看到的是文件夹（目录）。
-类Unix系统目录结构ubuntu没有盘符这个概念，只有一个根目录/，所有文件都在它下面：">
+<meta name="twitter:description" content="shell 终端通常在图形界面中对实际体验带来差异的不是上述的不同发行版的各种终端模拟器，而是这个 Shell（壳）。有壳就有核，这里的核就是指 UNIX/Linux 内核，Shell 是指“提供给使用者使用界面”的软件（命令解析器），类似于 DOS 下的 command（命令行）和后来的 cmd.exe 。普通意义上的 Shell 就是可以接受用户输入命令的程序。它之所以被称作 Shell 是因">
 <meta name="twitter:image" content="http://on7kyvg9n.bkt.clouddn.com/01-linux%E5%9F%BA%E7%A1%80-19.png">
 
 
@@ -397,7 +394,10 @@
       
 
       
-        <h1 id="文件和目录"><a href="#文件和目录" class="headerlink" title="文件和目录"></a>文件和目录</h1><h2 id="Windows和Linux文件系统区别"><a href="#Windows和Linux文件系统区别" class="headerlink" title="Windows和Linux文件系统区别"></a>Windows和Linux文件系统区别</h2><p>在 windows 平台下，打开“计算机”，看到的是一个个的驱动器盘符,每个驱动器都有自己的根目录结构，形成了多个树并列的情形。在 Linux 下，我们是看不到这些驱动器盘符，我们看到的是文件夹（目录）。</p>
+        <h1 id="shell-终端"><a href="#shell-终端" class="headerlink" title="shell 终端"></a>shell 终端</h1><p>通常在图形界面中对实际体验带来差异的不是上述的不同发行版的各种终端模拟器，而是这个 Shell（壳）。有壳就有核，这里的核就是指 UNIX/Linux 内核，Shell 是指“提供给使用者使用界面”的软件（命令解析器），类似于 DOS 下的 command（命令行）和后来的 cmd.exe 。普通意义上的 Shell 就是可以接受用户输入命令的程序。它之所以被称作 Shell 是因为它隐藏了操作系统底层的细节。同样的 UNIX/Linux 下的图形用户界面 GNOME 和 KDE，有时也被叫做“虚拟 shell”或“图形 shell”。</p>
+<p>UNIX/Linux 操作系统下的 Shell 既是用户交互的界面，也是控制系统的脚本语言。当然这一点也有别于 Windows 下的命令行，虽然该命令行也提供了很简单的控制语句。在 Windows 操作系统下，有些用户从来都不会直接使用 Shell，然而在 UNIX 系列操作系统下，Shell 仍然是控制系统启动、X11 启动和很多其它实用工具的脚本解释程序。</p>
+<p>在 UNIX/Linux 中比较流行的常见的 Shell 有 bash、zsh、ksh、csh 等等，Ubuntu 终端默认使用的是 bash，默认的桌面环境是 GNOME 或者 Unity。</p>
+<h1 id="文件和目录"><a href="#文件和目录" class="headerlink" title="文件和目录"></a>文件和目录</h1><h2 id="Windows和Linux文件系统区别"><a href="#Windows和Linux文件系统区别" class="headerlink" title="Windows和Linux文件系统区别"></a>Windows和Linux文件系统区别</h2><p>在 windows 平台下，打开“计算机”，看到的是一个个的驱动器盘符,每个驱动器都有自己的根目录结构，形成了多个树并列的情形。在 Linux 下，我们是看不到这些驱动器盘符，我们看到的是文件夹（目录）。</p>
 <h2 id="类Unix系统目录结构"><a href="#类Unix系统目录结构" class="headerlink" title="类Unix系统目录结构"></a>类Unix系统目录结构</h2><p>ubuntu没有盘符这个概念，只有一个根目录/，所有文件都在它下面：<br><a href="http://on7kyvg9n.bkt.clouddn.com/01-linux%E5%9F%BA%E7%A1%80-19.png" target="_blank" rel="external"><img src="http://on7kyvg9n.bkt.clouddn.com/01-linux%E5%9F%BA%E7%A1%80-19.png" alt="ubuntu根目录">
 </a></p>
 <a id="more"></a>
@@ -502,7 +502,7 @@ ls abc/def
 </tbody>
 </table>
 <h2 id="历史命令"><a href="#历史命令" class="headerlink" title="历史命令"></a>历史命令</h2><p>当系统执行过一些命令后，可按<strong>上下键</strong>翻看以前的命令，history将执行过的命令列举出来。</p>
-<h1 id="文件、磁盘管理"><a href="#文件、磁盘管理" class="headerlink" title="文件、磁盘管理"></a>文件、磁盘管理</h1><h2 id="文件管理"><a href="#文件管理" class="headerlink" title="文件管理"></a>文件管理</h2><h3 id="查看文件信息：ls"><a href="#查看文件信息：ls" class="headerlink" title="查看文件信息：ls"></a>查看文件信息：ls</h3><p>ls是英文单词list的简写，其功能为列出目录的内容，是用户最常用的命令之一，它类似于DOS下的dir命令。</p>
+<h1 id="文件管理"><a href="#文件管理" class="headerlink" title="文件管理"></a>文件管理</h1><h2 id="查看文件信息：ls"><a href="#查看文件信息：ls" class="headerlink" title="查看文件信息：ls"></a>查看文件信息：ls</h2><p>ls是英文单词list的简写，其功能为列出目录的内容，是用户最常用的命令之一，它类似于DOS下的dir命令。</p>
 <p>Linux文件或者目录名称最长可以有265个字符，“.”代表当前目录，“..”代表上一级目录，以“.”开头的文件为隐藏文件，需要用 -a 参数才能显示。</p>
 <p>ls常用参数：</p>
 <table>
@@ -527,7 +527,7 @@ ls abc/def
 </tr>
 </tbody>
 </table>
-<h3 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h3><p>与DOS下的文件操作类似，在Unix/Linux系统中，也同样允许使用特殊字符来同时引用多个文件名，这些特殊字符被称为通配符。</p>
+<h2 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h2><p>与DOS下的文件操作类似，在Unix/Linux系统中，也同样允许使用特殊字符来同时引用多个文件名，这些特殊字符被称为通配符。</p>
 <table>
 <thead>
 <tr>
@@ -566,13 +566,13 @@ ls abc/def
 </tr>
 </tbody>
 </table>
-<h3 id="输出重定向命令：-gt"><a href="#输出重定向命令：-gt" class="headerlink" title="输出重定向命令：&gt;"></a>输出重定向命令：&gt;</h3><p>Linux允许将命令执行结果重定向到一个文件，本应显示在终端上的内容保存到指定文件中。<br>如：ls &gt; test.txt ( test.txt 如果不存在，则创建，存在则覆盖其内容)</p>
+<h2 id="输出重定向命令：-gt"><a href="#输出重定向命令：-gt" class="headerlink" title="输出重定向命令：&gt;"></a>输出重定向命令：&gt;</h2><p>Linux允许将命令执行结果重定向到一个文件，本应显示在终端上的内容保存到指定文件中。<br>如：ls &gt; test.txt ( test.txt 如果不存在，则创建，存在则覆盖其内容)</p>
 <p>注意： &gt;输出重定向会覆盖原来的内容，&gt;&gt;输出重定向则会追加到文件的尾部。</p>
-<h3 id="分屏显示：more"><a href="#分屏显示：more" class="headerlink" title="分屏显示：more"></a>分屏显示：more</h3><p>查看内容时，在信息过长无法在一屏上显示时，会出现快速滚屏，使得用户无法看清文件的内容，此时可以使用more命令，每次只显示一页，按下空格键可以显示下一页，按下q键退出显示，按下h键可以获取帮助。</p>
-<h3 id="管道："><a href="#管道：" class="headerlink" title="管道：|"></a>管道：|</h3><p>管道：一个命令的输出可以通过管道做为另一个命令的输入。</p>
+<h2 id="分屏显示：more"><a href="#分屏显示：more" class="headerlink" title="分屏显示：more"></a>分屏显示：more</h2><p>查看内容时，在信息过长无法在一屏上显示时，会出现快速滚屏，使得用户无法看清文件的内容，此时可以使用more命令，每次只显示一页，按下空格键可以显示下一页，按下q键退出显示，按下h键可以获取帮助。</p>
+<h2 id="管道："><a href="#管道：" class="headerlink" title="管道：|"></a>管道：|</h2><p>管道：一个命令的输出可以通过管道做为另一个命令的输入。</p>
 <p>管道我们可以理解现实生活中的管子，管子的一头塞东西进去，另一头取出来，这里“ | ”的左右分为两端，左端塞东西(写)，右端取东西(读)。</p>
-<h3 id="清屏：clear"><a href="#清屏：clear" class="headerlink" title="清屏：clear"></a>清屏：clear</h3><p>clear作用为清除终端上的显示(类似于DOS的cls清屏功能)，也可使用快捷键：Ctrl + l ( “l” 为字母 )。</p>
-<h3 id="切换工作目录：-cd"><a href="#切换工作目录：-cd" class="headerlink" title="切换工作目录： cd"></a>切换工作目录： cd</h3><p>在使用Unix/Linux的时候，经常需要更换工作目录。cd命令可以帮助用户切换工作目录。Linux所有的目录和文件名大小写敏感</p>
+<h2 id="清屏：clear"><a href="#清屏：clear" class="headerlink" title="清屏：clear"></a>清屏：clear</h2><p>clear作用为清除终端上的显示(类似于DOS的cls清屏功能)，也可使用快捷键：Ctrl + l ( “l” 为字母 )。</p>
+<h2 id="切换工作目录：-cd"><a href="#切换工作目录：-cd" class="headerlink" title="切换工作目录： cd"></a>切换工作目录： cd</h2><p>在使用Unix/Linux的时候，经常需要更换工作目录。cd命令可以帮助用户切换工作目录。Linux所有的目录和文件名大小写敏感</p>
 <p>cd后面可跟绝对路径，也可以跟相对路径。如果省略目录，则默认切换到当前用户的主目录。</p>
 <table>
 <thead>
@@ -604,11 +604,11 @@ ls abc/def
 </tr>
 </tbody>
 </table>
-<h3 id="显示当前路径：pwd"><a href="#显示当前路径：pwd" class="headerlink" title="显示当前路径：pwd"></a>显示当前路径：pwd</h3><p>使用pwd命令可以显示当前的工作目录，该命令很简单，直接输入pwd即可，后面不带参数。</p>
-<h3 id="创建目录：mkdir"><a href="#创建目录：mkdir" class="headerlink" title="创建目录：mkdir"></a>创建目录：mkdir</h3><p>通过mkdir命令可以创建一个新的目录。参数-p可递归创建目录。</p>
+<h2 id="显示当前路径：pwd"><a href="#显示当前路径：pwd" class="headerlink" title="显示当前路径：pwd"></a>显示当前路径：pwd</h2><p>使用pwd命令可以显示当前的工作目录，该命令很简单，直接输入pwd即可，后面不带参数。</p>
+<h2 id="创建目录：mkdir"><a href="#创建目录：mkdir" class="headerlink" title="创建目录：mkdir"></a>创建目录：mkdir</h2><p>通过mkdir命令可以创建一个新的目录。参数-p可递归创建目录。</p>
 <p>需要注意的是新建目录的名称不能与当前目录中已有的目录或文件同名，并且目录创建者必须对当前目录具有写权限。</p>
-<h3 id="删除目录：rmdir"><a href="#删除目录：rmdir" class="headerlink" title="删除目录：rmdir"></a>删除目录：rmdir</h3><p>可使用rmdir命令删除一个目录。必须离开目录，并且目录必须为空目录，不然提示删除失败。</p>
-<h3 id="删除文件：rm"><a href="#删除文件：rm" class="headerlink" title="删除文件：rm"></a>删除文件：rm</h3><p>可通过rm删除文件或目录。使用rm命令要小心，因为文件删除后不能恢复。为了防止文件误删，可以在rm后使用-i参数以逐个确认要删除的文件。</p>
+<h2 id="删除目录：rmdir"><a href="#删除目录：rmdir" class="headerlink" title="删除目录：rmdir"></a>删除目录：rmdir</h2><p>可使用rmdir命令删除一个目录。必须离开目录，并且目录必须为空目录，不然提示删除失败。</p>
+<h2 id="删除文件：rm"><a href="#删除文件：rm" class="headerlink" title="删除文件：rm"></a>删除文件：rm</h2><p>可通过rm删除文件或目录。使用rm命令要小心，因为文件删除后不能恢复。为了防止文件误删，可以在rm后使用-i参数以逐个确认要删除的文件。</p>
 <p>常用参数及含义如下表所示：</p>
 <table>
 <thead>
@@ -632,7 +632,7 @@ ls abc/def
 </tr>
 </tbody>
 </table>
-<h3 id="建立链接文件：ln"><a href="#建立链接文件：ln" class="headerlink" title="建立链接文件：ln"></a>建立链接文件：ln</h3><p>Linux链接文件类似于Windows下的快捷方式。</p>
+<h2 id="建立链接文件：ln"><a href="#建立链接文件：ln" class="headerlink" title="建立链接文件：ln"></a>建立链接文件：ln</h2><p>Linux链接文件类似于Windows下的快捷方式。</p>
 <p>链接文件分为软链接和硬链接。</p>
 <ul>
 <li><p>软链接：软链接不占用磁盘空间，源文件删除则软链接失效。</p>
@@ -647,7 +647,7 @@ ls abc/def
 </ul>
 <p>如果没有-s选项代表建立一个硬链接文件，两个文件占用相同大小的硬盘空间，即使删除了源文件，链接文件还是存在，所以-s选项是更常见的形式。</p>
 <p>注意：如果软链接文件和源文件不在同一个目录，源文件要使用绝对路径，不能使用相对路径。</p>
-<h3 id="查看或者合并文件内容：cat"><a href="#查看或者合并文件内容：cat" class="headerlink" title="查看或者合并文件内容：cat"></a>查看或者合并文件内容：cat</h3><p>文本搜索：grep<br>Linux系统中grep命令是一种强大的文本搜索工具，grep允许对文本文件进行模式查找。如果找到匹配模式， grep打印包含模式的所有行。</p>
+<h2 id="查看或者合并文件内容：cat"><a href="#查看或者合并文件内容：cat" class="headerlink" title="查看或者合并文件内容：cat"></a>查看或者合并文件内容：cat</h2><p>文本搜索：grep<br>Linux系统中grep命令是一种强大的文本搜索工具，grep允许对文本文件进行模式查找。如果找到匹配模式， grep打印包含模式的所有行。</p>
 <p>grep一般格式为：</p>
 <pre><code>grep [-选项] ‘搜索内容串’文件名
 </code></pre><p>在grep命令中输入字符串参数时，最好引号或双引号括起来。例如：grep‘a ’1.txt。</p>
@@ -703,7 +703,7 @@ ls abc/def
 </tr>
 </tbody>
 </table>
-<h3 id="查找文件：find"><a href="#查找文件：find" class="headerlink" title="查找文件：find"></a>查找文件：find</h3><p>find命令功能非常强大，通常用来在特定的目录下搜索符合条件的文件，也可以用来搜索特定用户属主的文件。</p>
+<h2 id="查找文件：find"><a href="#查找文件：find" class="headerlink" title="查找文件：find"></a>查找文件：find</h2><p>find命令功能非常强大，通常用来在特定的目录下搜索符合条件的文件，也可以用来搜索特定用户属主的文件。</p>
 <p>常用用法：</p>
 <table>
 <thead>
@@ -747,7 +747,7 @@ ls abc/def
 </tr>
 </tbody>
 </table>
-<h3 id="拷贝文件：cp"><a href="#拷贝文件：cp" class="headerlink" title="拷贝文件：cp"></a>拷贝文件：cp</h3><p>cp命令的功能是将给出的文件或目录复制到另一个文件或目录中，相当于DOS下的copy命令。</p>
+<h2 id="拷贝文件：cp"><a href="#拷贝文件：cp" class="headerlink" title="拷贝文件：cp"></a>拷贝文件：cp</h2><p>cp命令的功能是将给出的文件或目录复制到另一个文件或目录中，相当于DOS下的copy命令。</p>
 <p>常用选项说明：</p>
 <table>
 <thead>
@@ -779,7 +779,7 @@ ls abc/def
 </tr>
 </tbody>
 </table>
-<h3 id="移动文件：mv"><a href="#移动文件：mv" class="headerlink" title="移动文件：mv"></a>移动文件：mv</h3><p>用户可以使用mv命令来移动文件或目录，也可以给文件或目录重命名。</p>
+<h2 id="移动文件：mv"><a href="#移动文件：mv" class="headerlink" title="移动文件：mv"></a>移动文件：mv</h2><p>用户可以使用mv命令来移动文件或目录，也可以给文件或目录重命名。</p>
 <p>常用选项说明：</p>
 <table>
 <thead>
@@ -803,7 +803,7 @@ ls abc/def
 </tr>
 </tbody>
 </table>
-<h3 id="归档管理：tar"><a href="#归档管理：tar" class="headerlink" title="归档管理：tar"></a>归档管理：tar</h3><p>计算机中的数据经常需要备份，tar是Unix/Linux中最常用的备份工具，此命令可以把一系列文件归档到一个大文件中，也可以把档案文件解开以恢复数据。</p>
+<h2 id="归档管理：tar"><a href="#归档管理：tar" class="headerlink" title="归档管理：tar"></a>归档管理：tar</h2><p>计算机中的数据经常需要备份，tar是Unix/Linux中最常用的备份工具，此命令可以把一系列文件归档到一个大文件中，也可以把档案文件解开以恢复数据。</p>
 <p>tar使用格式 tar [参数] 打包文件名 文件</p>
 <p>tar命令很特殊，其参数前面可以使用“-”，也可以不使用。</p>
 <p>常用参数：</p>
@@ -838,7 +838,7 @@ ls abc/def
 </tbody>
 </table>
 <p>注意：除了f需要放在参数的最后，其它参数的顺序任意。</p>
-<h3 id="文件压缩解压：gzip"><a href="#文件压缩解压：gzip" class="headerlink" title="文件压缩解压：gzip"></a>文件压缩解压：gzip</h3><p>tar与gzip命令结合使用实现文件打包、压缩。 tar只负责打包文件，但不压缩，用gzip压缩tar打包后的文件，其扩展名一般用xxxx.tar.gz。</p>
+<h2 id="文件压缩解压：gzip"><a href="#文件压缩解压：gzip" class="headerlink" title="文件压缩解压：gzip"></a>文件压缩解压：gzip</h2><p>tar与gzip命令结合使用实现文件打包、压缩。 tar只负责打包文件，但不压缩，用gzip压缩tar打包后的文件，其扩展名一般用xxxx.tar.gz。</p>
 <p>gzip使用格式如下：</p>
 <pre><code>gzip  [选项]  被压缩文件
 </code></pre><p>常用选项：</p>
@@ -865,15 +865,63 @@ ls abc/def
 <pre><code>-z ：指定压缩包的格式为：file.tar.gz
 </code></pre><p>解压用法： tar zxvf 压缩包包名</p>
 <pre><code>-z:指定压缩包的格式为：file.tar.gz
-</code></pre><h3 id="文件压缩解压：bzip2"><a href="#文件压缩解压：bzip2" class="headerlink" title="文件压缩解压：bzip2"></a>文件压缩解压：bzip2</h3><p>tar与bzip2命令结合使用实现文件打包、压缩(用法和gzip一样)。</p>
+</code></pre><h2 id="文件压缩解压：bzip2"><a href="#文件压缩解压：bzip2" class="headerlink" title="文件压缩解压：bzip2"></a>文件压缩解压：bzip2</h2><p>tar与bzip2命令结合使用实现文件打包、压缩(用法和gzip一样)。</p>
 <p>tar只负责打包文件，但不压缩，用bzip2压缩tar打包后的文件，其扩展名一般用xxxx.tar.gz2。</p>
 <p>在tar命令中增加一个选项(-j)可以调用bzip2实现了一个压缩的功能，实行一个先打包后压缩的过程。</p>
 <p>压缩用法：<code>tar -jcvf 压缩包包名 文件...(tar jcvf bk.tar.bz2 \*.c)</code></p>
 <p>解压用法：<code>tar -jxvf 压缩包包名 (tar jxvf bk.tar.bz2)</code></p>
-<h3 id="文件压缩解压：zip、unzip"><a href="#文件压缩解压：zip、unzip" class="headerlink" title="文件压缩解压：zip、unzip"></a>文件压缩解压：zip、unzip</h3><p>通过zip压缩文件的目标文件不需要指定扩展名，默认扩展名为zip。</p>
+<h2 id="文件压缩解压：zip、unzip"><a href="#文件压缩解压：zip、unzip" class="headerlink" title="文件压缩解压：zip、unzip"></a>文件压缩解压：zip、unzip</h2><p>通过zip压缩文件的目标文件不需要指定扩展名，默认扩展名为zip。</p>
 <p>压缩文件：<code>zip [-r] 目标文件(没有扩展名) 源文件</code></p>
 <p>解压文件：<code>unzip -d 解压后目录文件 压缩文件</code></p>
-<h3 id="查看命令位置：which"><a href="#查看命令位置：which" class="headerlink" title="查看命令位置：which"></a>查看命令位置：which</h3>
+<h2 id="查看命令位置：which"><a href="#查看命令位置：which" class="headerlink" title="查看命令位置：which"></a>查看命令位置：which</h2><h1 id="系统管理"><a href="#系统管理" class="headerlink" title="系统管理"></a>系统管理</h1><h2 id="动态显示进程：top"><a href="#动态显示进程：top" class="headerlink" title="动态显示进程：top"></a>动态显示进程：top</h2><p>top命令用来动态显示运行中的进程。top命令能够在运行后，在指定的时间间隔更新显示信息。可以在使用top命令时加上-d 来指定显示信息更新的时间间隔。</p>
+<h2 id="终止进程：kill"><a href="#终止进程：kill" class="headerlink" title="终止进程：kill"></a>终止进程：kill</h2><p>kill命令指定进程号的进程，需要配合 ps 使用。</p>
+<p>使用格式：</p>
+<pre><code>kill [-signal] pid
+</code></pre><p>信号值从0到15，其中9为绝对终止，可以处理一般信号无法终止的进程。</p>
+<h2 id="关机重启：reboot、shutdown、init"><a href="#关机重启：reboot、shutdown、init" class="headerlink" title="关机重启：reboot、shutdown、init"></a>关机重启：reboot、shutdown、init</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>reboot</td>
+<td style="text-align:center">重新启动操作系统</td>
+</tr>
+<tr>
+<td>shutdown –r now</td>
+<td style="text-align:center">重新启动操作系统，shutdown会给别的用户提示</td>
+</tr>
+<tr>
+<td>shutdown -h now</td>
+<td style="text-align:center">立刻关机，其中now相当于时间为0的状态</td>
+</tr>
+<tr>
+<td>shutdown -h 20:25</td>
+<td style="text-align:center">系统在今天的20:25 会关机</td>
+</tr>
+<tr>
+<td>shutdown -h +10</td>
+<td style="text-align:center">系统再过十分钟后自动关机</td>
+</tr>
+<tr>
+<td>init 0</td>
+<td style="text-align:center">关机</td>
+</tr>
+<tr>
+<td>init 6</td>
+<td style="text-align:center">重启</td>
+</tr>
+</tbody>
+</table>
+<h2 id="查看或配置网卡信息：ifconfig"><a href="#查看或配置网卡信息：ifconfig" class="headerlink" title="查看或配置网卡信息：ifconfig"></a>查看或配置网卡信息：ifconfig</h2><h2 id="测试远程主机连通性：ping"><a href="#测试远程主机连通性：ping" class="headerlink" title="测试远程主机连通性：ping"></a>测试远程主机连通性：ping</h2><h1 id="用户、权限管理"><a href="#用户、权限管理" class="headerlink" title="用户、权限管理"></a>用户、权限管理</h1><h2 id="查看当前用户：whoami"><a href="#查看当前用户：whoami" class="headerlink" title="查看当前用户：whoami"></a>查看当前用户：whoami</h2><h2 id="查看登录用户：who"><a href="#查看登录用户：who" class="headerlink" title="查看登录用户：who"></a>查看登录用户：who</h2><h2 id="退出登录账户：-exit"><a href="#退出登录账户：-exit" class="headerlink" title="退出登录账户： exit"></a>退出登录账户： exit</h2><p>如果是图形界面，退出当前终端；</p>
+<p>如果是使用ssh远程登录，退出登陆账户；</p>
+<p>如果是切换后的登陆用户，退出则返回上一个登陆账号。</p>
+<h2 id="设置用户密码：passwd"><a href="#设置用户密码：passwd" class="headerlink" title="设置用户密码：passwd"></a>设置用户密码：passwd</h2><h2 id="修改文件权限：chmod"><a href="#修改文件权限：chmod" class="headerlink" title="修改文件权限：chmod"></a>修改文件权限：chmod</h2><p>chmod 修改文件权限有两种使用格式：字母法与数字法。</p>
+<p>字母法：chmod u/g/o/a +/-/= rwx 文件</p>
+
       
     </div>
 
@@ -1078,7 +1126,7 @@ ls abc/def
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#文件和目录"><span class="nav-number">1.</span> <span class="nav-text">文件和目录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows和Linux文件系统区别"><span class="nav-number">1.1.</span> <span class="nav-text">Windows和Linux文件系统区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类Unix系统目录结构"><span class="nav-number">1.2.</span> <span class="nav-text">类Unix系统目录结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相对路径和绝对路径"><span class="nav-number">1.3.</span> <span class="nav-text">相对路径和绝对路径</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#绝对路径"><span class="nav-number">1.3.1.</span> <span class="nav-text">绝对路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相对路径"><span class="nav-number">1.3.2.</span> <span class="nav-text">相对路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#和"><span class="nav-number">1.3.3.</span> <span class="nav-text">.和..</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件权限"><span class="nav-number">1.4.</span> <span class="nav-text">文件权限</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#访问用户"><span class="nav-number">1.5.</span> <span class="nav-text">访问用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#访问权限"><span class="nav-number">1.6.</span> <span class="nav-text">访问权限</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用基本命令"><span class="nav-number">2.</span> <span class="nav-text">常用基本命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#命令使用方法"><span class="nav-number">2.1.</span> <span class="nav-text">命令使用方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看帮助文档"><span class="nav-number">2.2.</span> <span class="nav-text">查看帮助文档</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#–help"><span class="nav-number">2.2.1.</span> <span class="nav-text">–help</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#man-manual"><span class="nav-number">2.2.2.</span> <span class="nav-text">man(manual)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自动补全-Tab"><span class="nav-number">2.3.</span> <span class="nav-text">自动补全-Tab</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ctrl-c-及常用快捷键"><span class="nav-number">2.4.</span> <span class="nav-text">[Ctrl+c]及常用快捷键</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#历史命令"><span class="nav-number">2.5.</span> <span class="nav-text">历史命令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文件、磁盘管理"><span class="nav-number">3.</span> <span class="nav-text">文件、磁盘管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#文件管理"><span class="nav-number">3.1.</span> <span class="nav-text">文件管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看文件信息：ls"><span class="nav-number">3.1.1.</span> <span class="nav-text">查看文件信息：ls</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通配符"><span class="nav-number">3.1.2.</span> <span class="nav-text">通配符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出重定向命令：-gt"><span class="nav-number">3.1.3.</span> <span class="nav-text">输出重定向命令：></span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分屏显示：more"><span class="nav-number">3.1.4.</span> <span class="nav-text">分屏显示：more</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#管道："><span class="nav-number">3.1.5.</span> <span class="nav-text">管道：|</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#清屏：clear"><span class="nav-number">3.1.6.</span> <span class="nav-text">清屏：clear</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#切换工作目录：-cd"><span class="nav-number">3.1.7.</span> <span class="nav-text">切换工作目录： cd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#显示当前路径：pwd"><span class="nav-number">3.1.8.</span> <span class="nav-text">显示当前路径：pwd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建目录：mkdir"><span class="nav-number">3.1.9.</span> <span class="nav-text">创建目录：mkdir</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除目录：rmdir"><span class="nav-number">3.1.10.</span> <span class="nav-text">删除目录：rmdir</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除文件：rm"><span class="nav-number">3.1.11.</span> <span class="nav-text">删除文件：rm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#建立链接文件：ln"><span class="nav-number">3.1.12.</span> <span class="nav-text">建立链接文件：ln</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看或者合并文件内容：cat"><span class="nav-number">3.1.13.</span> <span class="nav-text">查看或者合并文件内容：cat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查找文件：find"><span class="nav-number">3.1.14.</span> <span class="nav-text">查找文件：find</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拷贝文件：cp"><span class="nav-number">3.1.15.</span> <span class="nav-text">拷贝文件：cp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#移动文件：mv"><span class="nav-number">3.1.16.</span> <span class="nav-text">移动文件：mv</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#归档管理：tar"><span class="nav-number">3.1.17.</span> <span class="nav-text">归档管理：tar</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件压缩解压：gzip"><span class="nav-number">3.1.18.</span> <span class="nav-text">文件压缩解压：gzip</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件压缩解压：bzip2"><span class="nav-number">3.1.19.</span> <span class="nav-text">文件压缩解压：bzip2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件压缩解压：zip、unzip"><span class="nav-number">3.1.20.</span> <span class="nav-text">文件压缩解压：zip、unzip</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看命令位置：which"><span class="nav-number">3.1.21.</span> <span class="nav-text">查看命令位置：which</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#shell-终端"><span class="nav-number">1.</span> <span class="nav-text">shell 终端</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文件和目录"><span class="nav-number">2.</span> <span class="nav-text">文件和目录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows和Linux文件系统区别"><span class="nav-number">2.1.</span> <span class="nav-text">Windows和Linux文件系统区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类Unix系统目录结构"><span class="nav-number">2.2.</span> <span class="nav-text">类Unix系统目录结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相对路径和绝对路径"><span class="nav-number">2.3.</span> <span class="nav-text">相对路径和绝对路径</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#绝对路径"><span class="nav-number">2.3.1.</span> <span class="nav-text">绝对路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相对路径"><span class="nav-number">2.3.2.</span> <span class="nav-text">相对路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#和"><span class="nav-number">2.3.3.</span> <span class="nav-text">.和..</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件权限"><span class="nav-number">2.4.</span> <span class="nav-text">文件权限</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#访问用户"><span class="nav-number">2.5.</span> <span class="nav-text">访问用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#访问权限"><span class="nav-number">2.6.</span> <span class="nav-text">访问权限</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用基本命令"><span class="nav-number">3.</span> <span class="nav-text">常用基本命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#命令使用方法"><span class="nav-number">3.1.</span> <span class="nav-text">命令使用方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看帮助文档"><span class="nav-number">3.2.</span> <span class="nav-text">查看帮助文档</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#–help"><span class="nav-number">3.2.1.</span> <span class="nav-text">–help</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#man-manual"><span class="nav-number">3.2.2.</span> <span class="nav-text">man(manual)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自动补全-Tab"><span class="nav-number">3.3.</span> <span class="nav-text">自动补全-Tab</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ctrl-c-及常用快捷键"><span class="nav-number">3.4.</span> <span class="nav-text">[Ctrl+c]及常用快捷键</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#历史命令"><span class="nav-number">3.5.</span> <span class="nav-text">历史命令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文件管理"><span class="nav-number">4.</span> <span class="nav-text">文件管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#查看文件信息：ls"><span class="nav-number">4.1.</span> <span class="nav-text">查看文件信息：ls</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通配符"><span class="nav-number">4.2.</span> <span class="nav-text">通配符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出重定向命令：-gt"><span class="nav-number">4.3.</span> <span class="nav-text">输出重定向命令：></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分屏显示：more"><span class="nav-number">4.4.</span> <span class="nav-text">分屏显示：more</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#管道："><span class="nav-number">4.5.</span> <span class="nav-text">管道：|</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#清屏：clear"><span class="nav-number">4.6.</span> <span class="nav-text">清屏：clear</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#切换工作目录：-cd"><span class="nav-number">4.7.</span> <span class="nav-text">切换工作目录： cd</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#显示当前路径：pwd"><span class="nav-number">4.8.</span> <span class="nav-text">显示当前路径：pwd</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建目录：mkdir"><span class="nav-number">4.9.</span> <span class="nav-text">创建目录：mkdir</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除目录：rmdir"><span class="nav-number">4.10.</span> <span class="nav-text">删除目录：rmdir</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除文件：rm"><span class="nav-number">4.11.</span> <span class="nav-text">删除文件：rm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#建立链接文件：ln"><span class="nav-number">4.12.</span> <span class="nav-text">建立链接文件：ln</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看或者合并文件内容：cat"><span class="nav-number">4.13.</span> <span class="nav-text">查看或者合并文件内容：cat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查找文件：find"><span class="nav-number">4.14.</span> <span class="nav-text">查找文件：find</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拷贝文件：cp"><span class="nav-number">4.15.</span> <span class="nav-text">拷贝文件：cp</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#移动文件：mv"><span class="nav-number">4.16.</span> <span class="nav-text">移动文件：mv</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#归档管理：tar"><span class="nav-number">4.17.</span> <span class="nav-text">归档管理：tar</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件压缩解压：gzip"><span class="nav-number">4.18.</span> <span class="nav-text">文件压缩解压：gzip</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件压缩解压：bzip2"><span class="nav-number">4.19.</span> <span class="nav-text">文件压缩解压：bzip2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件压缩解压：zip、unzip"><span class="nav-number">4.20.</span> <span class="nav-text">文件压缩解压：zip、unzip</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看命令位置：which"><span class="nav-number">4.21.</span> <span class="nav-text">查看命令位置：which</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#系统管理"><span class="nav-number">5.</span> <span class="nav-text">系统管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#动态显示进程：top"><span class="nav-number">5.1.</span> <span class="nav-text">动态显示进程：top</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#终止进程：kill"><span class="nav-number">5.2.</span> <span class="nav-text">终止进程：kill</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关机重启：reboot、shutdown、init"><span class="nav-number">5.3.</span> <span class="nav-text">关机重启：reboot、shutdown、init</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看或配置网卡信息：ifconfig"><span class="nav-number">5.4.</span> <span class="nav-text">查看或配置网卡信息：ifconfig</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试远程主机连通性：ping"><span class="nav-number">5.5.</span> <span class="nav-text">测试远程主机连通性：ping</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用户、权限管理"><span class="nav-number">6.</span> <span class="nav-text">用户、权限管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#查看当前用户：whoami"><span class="nav-number">6.1.</span> <span class="nav-text">查看当前用户：whoami</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看登录用户：who"><span class="nav-number">6.2.</span> <span class="nav-text">查看登录用户：who</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#退出登录账户：-exit"><span class="nav-number">6.3.</span> <span class="nav-text">退出登录账户： exit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置用户密码：passwd"><span class="nav-number">6.4.</span> <span class="nav-text">设置用户密码：passwd</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改文件权限：chmod"><span class="nav-number">6.5.</span> <span class="nav-text">修改文件权限：chmod</span></a></li></ol></li></ol></div>
             
 
           </div>
