@@ -105,16 +105,28 @@
 
 
 
-<meta name="description" content="the coutrage to speak softly">
+<meta name="description" content="认识Java利用文本文件编辑 Java 程序开发一个Java程序，主要有三步。
+第一步，使用文本文件去编写Java的源代码文件，Java的源代码文件以.java结尾，源代码文件默认是不能被机器执行的。
+
+第二步，要使用编译器（也就是javac命令），对源代码文件进行编译的操作。把它编译成字节码文件，字节码文件是以.class结尾。它与平台无关，也就是说无论是windows还是linux，字节码文件">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java 学习笔记">
 <meta property="og:url" content="http://mutemeteor.com/2017/09/10/java-note/index.html">
 <meta property="og:site_name" content="Mute Meteor">
-<meta property="og:description" content="the coutrage to speak softly">
-<meta property="og:updated_time" content="2017-09-10T10:35:29.026Z">
+<meta property="og:description" content="认识Java利用文本文件编辑 Java 程序开发一个Java程序，主要有三步。
+第一步，使用文本文件去编写Java的源代码文件，Java的源代码文件以.java结尾，源代码文件默认是不能被机器执行的。
+
+第二步，要使用编译器（也就是javac命令），对源代码文件进行编译的操作。把它编译成字节码文件，字节码文件是以.class结尾。它与平台无关，也就是说无论是windows还是linux，字节码文件">
+<meta property="og:image" content="http://ow2f9s8zh.bkt.clouddn.com/2017-09-10%20java2.png">
+<meta property="og:image" content="http://ow2f9s8zh.bkt.clouddn.com/2017-09-10%20java1.png">
+<meta property="og:updated_time" content="2017-09-10T13:21:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 学习笔记">
-<meta name="twitter:description" content="the coutrage to speak softly">
+<meta name="twitter:description" content="认识Java利用文本文件编辑 Java 程序开发一个Java程序，主要有三步。
+第一步，使用文本文件去编写Java的源代码文件，Java的源代码文件以.java结尾，源代码文件默认是不能被机器执行的。
+
+第二步，要使用编译器（也就是javac命令），对源代码文件进行编译的操作。把它编译成字节码文件，字节码文件是以.class结尾。它与平台无关，也就是说无论是windows还是linux，字节码文件">
+<meta name="twitter:image" content="http://ow2f9s8zh.bkt.clouddn.com/2017-09-10%20java2.png">
 
 
 
@@ -391,7 +403,24 @@
       
 
       
-        
+        <h1 id="认识Java"><a href="#认识Java" class="headerlink" title="认识Java"></a>认识Java</h1><h2 id="利用文本文件编辑-Java-程序"><a href="#利用文本文件编辑-Java-程序" class="headerlink" title="利用文本文件编辑 Java 程序"></a>利用文本文件编辑 Java 程序</h2><p>开发一个Java程序，主要有三步。</p>
+<p>第一步，使用文本文件去编写Java的源代码文件，Java的源代码文件以<code>.java</code>结尾，源代码文件默认是不能被机器执行的。</p>
+<p><img src="http://ow2f9s8zh.bkt.clouddn.com/2017-09-10%20java2.png" alt="java1"></p>
+<p>第二步，要使用编译器（也就是javac命令），对源代码文件进行编译的操作。把它编译成字节码文件，字节码文件是以<code>.class</code>结尾。它与平台无关，也就是说无论是windows还是linux，字节码文件都是这样的一个文件，这跟系统没有关系。实际上Java的跨平台就是因为字节码文件的存在。</p>
+<p>第三步，就是解释器。针对不同的平台，根据相应的解释器，去解释运行字节码文件（这里使用java命令），最终我们可以看到程序运行出的结果。</p>
+<p><img src="http://ow2f9s8zh.bkt.clouddn.com/2017-09-10%20java1.png" alt="java2"></p>
+<a id="more"></a>
+<p>具体实现：</p>
+<ol>
+<li><p>输入<code>javac helloworld.java</code>,对源文件进行编译</p>
+</li>
+<li><p>桌面上多出了一个<code>helloworld.class</code>的文件</p>
+</li>
+<li><p>接着我们继续输入<code>java helloworld</code>（java 命令不能跟上文件的后缀名）, 对<code>HelloWorld.class</code>字节码文件利用解释器去执行它，即会打印结果。</p>
+</li>
+</ol>
+<p><strong>※ 实验注：类名和文件名必须相同！</strong></p>
+
       
     </div>
 
@@ -490,8 +519,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://ogzkwweuh.bkt.clouddn.com/miao.png"
@@ -573,6 +611,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#认识Java"><span class="nav-number">1.</span> <span class="nav-text">认识Java</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#利用文本文件编辑-Java-程序"><span class="nav-number">1.1.</span> <span class="nav-text">利用文本文件编辑 Java 程序</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
