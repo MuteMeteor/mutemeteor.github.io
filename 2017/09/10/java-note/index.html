@@ -123,7 +123,7 @@
 <meta property="og:image" content="http://ow2f9s8zh.bkt.clouddn.com/2017-09-10%2022-18-27.png">
 <meta property="og:image" content="http://ow2f9s8zh.bkt.clouddn.com/2017-09-10%2022-18-55.png">
 <meta property="og:image" content="http://ow2f9s8zh.bkt.clouddn.com/2017-09-10%2022-19-12.png">
-<meta property="og:updated_time" content="2017-09-10T14:23:00.000Z">
+<meta property="og:updated_time" content="2017-09-11T01:34:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 学习笔记（一）">
 <meta name="twitter:description" content="HelloWorld 认识Java利用文本文件编辑 Java 程序开发一个Java程序，主要有三步。
@@ -505,7 +505,62 @@
 <h2 id="条件运算符"><a href="#条件运算符" class="headerlink" title="条件运算符"></a>条件运算符</h2><p>条件运算符<code>?:</code>是唯一的一个三目运算符。</p>
 <p><strong>语法形式：布尔表达式？表达式1 : 表达式2</strong></p>
 <p>运算过程：如果布尔表达式的值为<code>true</code> ，则返回 表达式1 的值，否则返回 表达式2 的值。</p>
-
+<h1 id="Java-控制语句"><a href="#Java-控制语句" class="headerlink" title="Java 控制语句"></a>Java 控制语句</h1><h2 id="条件控制语句"><a href="#条件控制语句" class="headerlink" title="条件控制语句"></a>条件控制语句</h2><h3 id="if-语句"><a href="#if-语句" class="headerlink" title="if 语句"></a>if 语句</h3><ol>
+<li>if 语句</li>
+</ol>
+<pre><code>if(条件){
+  条件成立时执行的代码
+}
+</code></pre><ol>
+<li>if - else 语句</li>
+</ol>
+<pre><code>if(条件){
+  代码块1
+}
+else{
+  代码块2
+}
+</code></pre><ol>
+<li>if - else if - else 语句</li>
+</ol>
+<pre><code>if(条件1){
+  代码块1
+}
+else if(条件2){
+  代码块2
+}
+...
+else {
+  代码块n
+}
+</code></pre><h3 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a>switch语句</h3><pre><code>switch(表达式){
+    case 值1:
+        代码块1
+        break;
+    case 值2:
+        代码块2
+        break;
+    ...
+    default:
+        默认执行的代码块
+}
+</code></pre><p>当 switch 后表达式的值和 case 语句后的值相同时，从该位置开始向下执行，直到遇到 break 语句或者 switch 语句块结束；如果没有匹配的 case 语句则执行 default 块的代码。</p>
+<h2 id="循环控制语句"><a href="#循环控制语句" class="headerlink" title="循环控制语句"></a>循环控制语句</h2><h3 id="while和do-while语句"><a href="#while和do-while语句" class="headerlink" title="while和do-while语句"></a>while和do-while语句</h3><ol>
+<li>while语法</li>
+</ol>
+<pre><code>while(条件){
+    代码块
+}
+</code></pre><ol>
+<li>do-while</li>
+</ol>
+<pre><code>do{
+    代码块
+}while(条件);    
+</code></pre><h3 id="for语句"><a href="#for语句" class="headerlink" title="for语句"></a>for语句</h3><pre><code>for(循环变量初始化; 循环条件; 循环变量变化){
+    循环操作
+}
+</code></pre><h2 id="跳转语句"><a href="#跳转语句" class="headerlink" title="跳转语句"></a>跳转语句</h2><h3 id="break和continue"><a href="#break和continue" class="headerlink" title="break和continue"></a>break和continue</h3>
       
     </div>
 
@@ -558,6 +613,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/10/java-note2/" rel="prev" title="Java 学习笔记（二）">
+                Java 学习笔记（二） <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -629,7 +688,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -706,7 +765,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HelloWorld-认识Java"><span class="nav-number">1.</span> <span class="nav-text">HelloWorld 认识Java</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#利用文本文件编辑-Java-程序"><span class="nav-number">1.1.</span> <span class="nav-text">利用文本文件编辑 Java 程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java代码详解"><span class="nav-number">1.2.</span> <span class="nav-text">Java代码详解</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-基本语法"><span class="nav-number">2.</span> <span class="nav-text">Java 基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-程序的构成"><span class="nav-number">2.1.</span> <span class="nav-text">Java 程序的构成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-标识符"><span class="nav-number">2.2.</span> <span class="nav-text">Java 标识符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量和常量"><span class="nav-number">2.3.</span> <span class="nav-text">变量和常量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#变量"><span class="nav-number">2.3.1.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常量"><span class="nav-number">2.3.2.</span> <span class="nav-text">常量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注释"><span class="nav-number">2.4.</span> <span class="nav-text">注释</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-运算符"><span class="nav-number">3.</span> <span class="nav-text">Java 运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1算术运算符"><span class="nav-number">3.1.</span> <span class="nav-text">2.1算术运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#位运算符"><span class="nav-number">3.2.</span> <span class="nav-text">位运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑运算符"><span class="nav-number">3.3.</span> <span class="nav-text">逻辑运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#赋值运算符"><span class="nav-number">3.4.</span> <span class="nav-text">赋值运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关系运算符"><span class="nav-number">3.5.</span> <span class="nav-text">关系运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件运算符"><span class="nav-number">3.6.</span> <span class="nav-text">条件运算符</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HelloWorld-认识Java"><span class="nav-number">1.</span> <span class="nav-text">HelloWorld 认识Java</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#利用文本文件编辑-Java-程序"><span class="nav-number">1.1.</span> <span class="nav-text">利用文本文件编辑 Java 程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java代码详解"><span class="nav-number">1.2.</span> <span class="nav-text">Java代码详解</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-基本语法"><span class="nav-number">2.</span> <span class="nav-text">Java 基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-程序的构成"><span class="nav-number">2.1.</span> <span class="nav-text">Java 程序的构成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-标识符"><span class="nav-number">2.2.</span> <span class="nav-text">Java 标识符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量和常量"><span class="nav-number">2.3.</span> <span class="nav-text">变量和常量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#变量"><span class="nav-number">2.3.1.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常量"><span class="nav-number">2.3.2.</span> <span class="nav-text">常量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注释"><span class="nav-number">2.4.</span> <span class="nav-text">注释</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-运算符"><span class="nav-number">3.</span> <span class="nav-text">Java 运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1算术运算符"><span class="nav-number">3.1.</span> <span class="nav-text">2.1算术运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#位运算符"><span class="nav-number">3.2.</span> <span class="nav-text">位运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑运算符"><span class="nav-number">3.3.</span> <span class="nav-text">逻辑运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#赋值运算符"><span class="nav-number">3.4.</span> <span class="nav-text">赋值运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关系运算符"><span class="nav-number">3.5.</span> <span class="nav-text">关系运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件运算符"><span class="nav-number">3.6.</span> <span class="nav-text">条件运算符</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-控制语句"><span class="nav-number">4.</span> <span class="nav-text">Java 控制语句</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#条件控制语句"><span class="nav-number">4.1.</span> <span class="nav-text">条件控制语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#if-语句"><span class="nav-number">4.1.1.</span> <span class="nav-text">if 语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#switch语句"><span class="nav-number">4.1.2.</span> <span class="nav-text">switch语句</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#循环控制语句"><span class="nav-number">4.2.</span> <span class="nav-text">循环控制语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#while和do-while语句"><span class="nav-number">4.2.1.</span> <span class="nav-text">while和do-while语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for语句"><span class="nav-number">4.2.2.</span> <span class="nav-text">for语句</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跳转语句"><span class="nav-number">4.3.</span> <span class="nav-text">跳转语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#break和continue"><span class="nav-number">4.3.1.</span> <span class="nav-text">break和continue</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
