@@ -1,0 +1,798 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Notes,软件工程," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="软件工程概论软件工程基础软件1.1.1 软件独立于硬件1.1.2 软件是一种工具1.1.3 软件的核心是程序1.1.4 软件开发远比编程要复杂1.1.5 应用软件基于现实又高于现实
+软件工程1.2.1 定义1.2.2 软件工程是一种工程活动1.2.3 软件工程的动机1.2.4 软件工程是科学性、实践性和工艺性并重的1.2.5 软件工程追求足够好，不是最好1.2.6 软件工程的产品是基于虚拟计算机">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件工程开发的技术基础 学习笔记">
+<meta property="og:url" content="http://mutemeteor.com/2017/09/16/SE-note/index.html">
+<meta property="og:site_name" content="Mute Meteor">
+<meta property="og:description" content="软件工程概论软件工程基础软件1.1.1 软件独立于硬件1.1.2 软件是一种工具1.1.3 软件的核心是程序1.1.4 软件开发远比编程要复杂1.1.5 应用软件基于现实又高于现实
+软件工程1.2.1 定义1.2.2 软件工程是一种工程活动1.2.3 软件工程的动机1.2.4 软件工程是科学性、实践性和工艺性并重的1.2.5 软件工程追求足够好，不是最好1.2.6 软件工程的产品是基于虚拟计算机">
+<meta property="og:updated_time" content="2017-09-16T01:16:35.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="软件工程开发的技术基础 学习笔记">
+<meta name="twitter:description" content="软件工程概论软件工程基础软件1.1.1 软件独立于硬件1.1.2 软件是一种工具1.1.3 软件的核心是程序1.1.4 软件开发远比编程要复杂1.1.5 应用软件基于现实又高于现实
+软件工程1.2.1 定义1.2.2 软件工程是一种工程活动1.2.3 软件工程的动机1.2.4 软件工程是科学性、实践性和工艺性并重的1.2.5 软件工程追求足够好，不是最好1.2.6 软件工程的产品是基于虚拟计算机">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://mutemeteor.com/2017/09/16/SE-note/"/>
+
+
+
+
+
+  <title> 软件工程开发的技术基础 学习笔记 | Mute Meteor </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?063129ce0f11ae9e4a1036a9220b94be";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Mute Meteor</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://mutemeteor.com/2017/09/16/SE-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mute">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ogzkwweuh.bkt.clouddn.com/miao.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mute Meteor">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                软件工程开发的技术基础 学习笔记
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-16T09:01:49+08:00">
+                2017-09-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/" itemprop="url" rel="index">
+                    <span itemprop="name">Tech</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <a id="more"></a>
+<h1 id="软件工程概论"><a href="#软件工程概论" class="headerlink" title="软件工程概论"></a>软件工程概论</h1><h2 id="软件工程基础"><a href="#软件工程基础" class="headerlink" title="软件工程基础"></a>软件工程基础</h2><h3 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h3><p>1.1.1 软件独立于硬件<br>1.1.2 软件是一种工具<br>1.1.3 软件的核心是程序<br>1.1.4 软件开发远比编程要复杂<br>1.1.5 应用软件基于现实又高于现实</p>
+<h3 id="软件工程"><a href="#软件工程" class="headerlink" title="软件工程"></a>软件工程</h3><p>1.2.1 定义<br>1.2.2 软件工程是一种工程活动<br>1.2.3 软件工程的动机<br>1.2.4 软件工程是科学性、实践性和工艺性并重的<br>1.2.5 软件工程追求足够好，不是最好<br>1.2.6 软件工程的产品是基于虚拟计算机的软件方案<br>1.2.7 软件工程的最终目的</p>
+<h3 id="软件工程概览"><a href="#软件工程概览" class="headerlink" title="软件工程概览"></a>软件工程概览</h3><p>1.3.1 软件工程知识域<br>1.3.2 软件开发活动<br>1.3.3 软件工程的角色分工<br>1.4 习题</p>
+<h2 id="软件工程的发展"><a href="#软件工程的发展" class="headerlink" title="软件工程的发展"></a>软件工程的发展</h2><h3 id="软件工程的发展脉络"><a href="#软件工程的发展脉络" class="headerlink" title="软件工程的发展脉络"></a>软件工程的发展脉络</h3><h3 id="20世纪50年代的软件工程"><a href="#20世纪50年代的软件工程" class="headerlink" title="20世纪50年代的软件工程"></a>20世纪50年代的软件工程</h3><h3 id="20世纪60年代的软件工程"><a href="#20世纪60年代的软件工程" class="headerlink" title="20世纪60年代的软件工程"></a>20世纪60年代的软件工程</h3><h3 id="20世纪70年代的软件工程"><a href="#20世纪70年代的软件工程" class="headerlink" title="20世纪70年代的软件工程"></a>20世纪70年代的软件工程</h3><h3 id="20世纪80年代的软件工程"><a href="#20世纪80年代的软件工程" class="headerlink" title="20世纪80年代的软件工程"></a>20世纪80年代的软件工程</h3><h3 id="20世纪90年代的软件工程"><a href="#20世纪90年代的软件工程" class="headerlink" title="20世纪90年代的软件工程"></a>20世纪90年代的软件工程</h3><h3 id="21世纪00年代的软件工程"><a href="#21世纪00年代的软件工程" class="headerlink" title="21世纪00年代的软件工程"></a>21世纪00年代的软件工程</h3><h1 id="项目启动"><a href="#项目启动" class="headerlink" title="项目启动"></a>项目启动</h1><h2 id="示例项目描述"><a href="#示例项目描述" class="headerlink" title="示例项目描述"></a>示例项目描述</h2><p>3.1 背景<br>3.2 目标<br>3.3 系统用户<br>3.4 用户访谈要点<br>3.5 项目实践过程</p>
+<h2 id="项目管理基础"><a href="#项目管理基础" class="headerlink" title="项目管理基础"></a>项目管理基础</h2><p>4.1 项目和项目管理<br>4.2 团队组织与管理<br>4.2.1 团队的特征<br>4.2.2 团队结构<br>4.2.3 团队建设<br>4.3 软件质量保障<br>4.3.1 软件质量<br>4.3.2 质量保障<br>4.3.3 评审<br>4.3.4 质量度量<br>4.4 软件配置管理<br>4.4.1 配置管理动机<br>4.4.2 配置项<br>4.4.3 基线<br>4.4.4 配置管理活动<br>4.4.5 变更控制<br>4.5 项目实践<br>4.6 习题</p>
+<h1 id="需求开发阶段"><a href="#需求开发阶段" class="headerlink" title="需求开发阶段"></a>需求开发阶段</h1><h2 id="软件需求基础"><a href="#软件需求基础" class="headerlink" title="软件需求基础"></a>软件需求基础</h2><p>5.1 引言<br>5.2 需求工程基础<br>5.2.1 需求工程简介<br>5.2.2 需求工程活动<br>5.2.3 需求获取<br>5.2.4 需求分析<br>5.2.5 需求规格说明<br>5.2.6 需求验证<br>5.2.7 需求管理<br>5.3 需求基础<br>5.3.1 需求<br>5.3.2 需求的层次性<br>5.3.3 结合层次性的需求开发<br>5.3.4 区分需求、问题域与规格说明<br>5.4 需求分类<br>5.4.1 需求谱系<br>5.4.2 软件需求的分类<br>5.5 项目实践<br>5.6 习题</p>
+<h2 id="需求分析方法"><a href="#需求分析方法" class="headerlink" title="需求分析方法"></a>需求分析方法</h2><p>6.1 需求分析基础<br>6.1.1 需求分析的原因<br>6.1.2 需求分析模型<br>6.2 结构化分析<br>6.2.1 结构化分析方法<br>6.2.2 数据流图<br>6.2.3 实体关系图<br>6.3 面向对象分析<br>6.3.1 面向对象分析方法<br>6.3.2 用例<br>6.3.3 用例图<br>6.3.4 用例描述<br>6.3.5 概念类图（领域模型）<br>6.3.6 交互图（顺序图）<br>6.3.7 状态图<br>6.4 使用需求分析方法细化和明确需求<br>6.4.1 细化和明确需求内容<br>6.4.2 建立系统级需求<br>6.5 项目实践<br>6.6 习题</p>
+<h2 id="需求文档化与验证"><a href="#需求文档化与验证" class="headerlink" title="需求文档化与验证"></a>需求文档化与验证</h2><p>7.1 文档化的原因<br>7.2 需求文档基础<br>7.2.1 需求文档的交流对象<br>7.2.2 用例文档<br>7.2.3 软件需求规格说明文档<br>7.3 需求文档化要点<br>7.3.1 技术文档写作要点<br>7.3.2 需求书写要点<br>7.3.3 软件需求规格说明文档书写要点<br>7.4 评审软件需求规格说明文档<br>7.4.1 需求验证与确认<br>7.4.2 评审需求的注意事项<br>7.5 以需求为基础开发系统测试用例<br>7.5.1 开发测试用例套件<br>7.5.2 开发测试用例<br>7.6 度量需求<br>7.7 将需求制品纳入配置管理<br>7.8 项目实践<br>7.9 习题</p>
+<h1 id="软件设计"><a href="#软件设计" class="headerlink" title="软件设计"></a>软件设计</h1><h2 id="软件设计基础"><a href="#软件设计基础" class="headerlink" title="软件设计基础"></a>软件设计基础</h2><p>8.1 软件设计思想的发展<br>8.2 软件设计的核心思想<br>8.3 理解软件设计<br>8.3.1 设计与软件设计<br>8.3.2 工程设计与艺术设计<br>8.3.3 理性主义和经验主义<br>8.3.4 软件设计的演化性<br>8.3.5 软件设计的决策性<br>8.3.6 软件设计的约束满足和多样性<br>8.4 软件设计的分层<br>8.5 软件设计过程的主要活动<br>8.6 软件设计的方法和模型<br>8.6.1 软件设计的方法<br>8.6.2 软件设计的模型<br>8.7 软件设计描述<br>8.7.1 设计视图和设计图<br>8.7.2 设计视角和设计关注<br>8.7.3 需求和涉众<br>8.7.4 设计理由<br>8.7.5 设计描述的模板<br>8.7.6 软件设计文档书写要点<br>8.8 项目实践<br>8.9 习题</p>
+<h2 id="软件体系结构基础"><a href="#软件体系结构基础" class="headerlink" title="软件体系结构基础"></a>软件体系结构基础</h2><p>9.1 软件体系结构的发展<br>9.2 理解软件体系结构<br>9.2.1 定义<br>9.2.2 区分软件体系结构的抽象与实现<br>9.2.3 部件<br>9.2.4 连接件<br>9.2.5 配置<br>9.3 体系结构风格初步<br>9.3.1 主程序/子程序<br>9.3.2 面向对象式<br>9.3.3 分层<br>9.3.4 MVC<br>9.4 项目实践<br>9.5 习题</p>
+<h2 id="软件体系结构设计与构建"><a href="#软件体系结构设计与构建" class="headerlink" title="软件体系结构设计与构建"></a>软件体系结构设计与构建</h2><p>10.1 体系结构设计过程<br>10.1.1 分析关键需求和项目约束<br>10.1.2 选择体系结构风格<br>10.1.3 软件体系结构逻辑设计<br>10.1.4 软件体系结构实现<br>10.1.5 完善软件体系结构设计<br>10.1.6 定义构件接口<br>10.2 体系结构的原型构建<br>10.2.1 包的创建<br>10.2.2 重要文件的创建<br>10.2.3 定义构件之间的接口<br>10.2.4 关键需求的实现<br>10.3 体系结构集成与测试<br>10.3.1 集成的策略<br>10.3.2 桩、驱动与集成测试用例<br>10.4 软件体系结构设计文档描述<br>10.5 体系结构评审<br>10.6 项目实践<br>10.7 习题</p>
+<h2 id="人机交互设计"><a href="#人机交互设计" class="headerlink" title="人机交互设计"></a>人机交互设计</h2><p>11.1 引言<br>11.2 人机交互设计的目标<br>11.3 人机交互设计的人类因素<br>11.3.1 精神模型<br>11.3.2 差异性<br>11.4 人机交互设计的计算机因素<br>11.4.1 可视化设计<br>11.4.2 常见界面类型<br>11.5 人机交互设计的交互性<br>11.5.1 导航<br>11.5.2 反馈<br>11.5.3 一些人机交互设计原则<br>11.6 人机交互设计过程<br>11.6.1 基本过程<br>11.6.2 示例<br>11.7 项目实践<br>11.8 习题</p>
+<h2 id="详细设计的基础"><a href="#详细设计的基础" class="headerlink" title="详细设计的基础"></a>详细设计的基础</h2><p>12.1 详细设计概述<br>12.1.1 详细设计出发点<br>12.1.2 详细设计的上下文<br>12.2 结构化设计<br>12.2.1 结构化设计的思想<br>12.2.2 结构化设计的过程<br>12.3 面向对象设计<br>12.3.1 面向对象设计的思想<br>12.3.2 面向对象设计的过程<br>12.3.3 通过职责建立静态模型<br>12.3.4 通过协作建立动态模型<br>12.4 为类间协作开发集成测试用例<br>12.5 详细设计文档描述<br>12.6 详细设计的评审<br>12.7 项目实践<br>12.8 习题</p>
+<h2 id="详细设计中的模块化与信息隐藏"><a href="#详细设计中的模块化与信息隐藏" class="headerlink" title="详细设计中的模块化与信息隐藏"></a>详细设计中的模块化与信息隐藏</h2><p>13.1 模块化与信息隐藏思想<br>13.1.1 设计质量<br>13.1.2 模块化与信息隐藏思想的动机<br>13.1.3 模块化与信息隐藏思想的发展<br>13.2 模块化<br>13.2.1 分解与模块化<br>13.2.2 结构化设计中的耦合<br>13.2.3 结构化设计中的内聚<br>13.2.4 回顾：MSCS系统设计中的模块化思想<br>13.3 信息隐藏<br>13.3.1 抽象与信息隐藏<br>13.3.2 信息与隐藏<br>13.3.3 模块说明<br>13.3.4 回顾：MSCS系统设计中的信息思想<br>13.4 习题</p>
+<h2 id="详细设计中面向对象方法下的模块化"><a href="#详细设计中面向对象方法下的模块化" class="headerlink" title="详细设计中面向对象方法下的模块化"></a>详细设计中面向对象方法下的模块化</h2><p>14.1 面向对象中的模块<br>14.1.1 类<br>14.1.2 类之间的联系<br>14.2 访问耦合<br>14.2.1 访问耦合的分析<br>14.2.2 降低访问耦合的方法<br>14.3 继承耦合<br>14.3.1 继承耦合的分析<br>14.3.2 降低继承耦合的方法<br>14.4 内聚<br>14.4.1 面向对象中的内聚<br>14.4.2 提高内聚的方法<br>14.5 耦合与内聚的度量<br>14.5.1 耦合的度量<br>14.5.2 内聚的度量<br>14.6 项目实践<br>14.7 习题</p>
+<h2 id="详细设计中面向对象方法下的信息隐藏"><a href="#详细设计中面向对象方法下的信息隐藏" class="headerlink" title="详细设计中面向对象方法下的信息隐藏"></a>详细设计中面向对象方法下的信息隐藏</h2><p>15.1 封装类的职责<br>15.1.1 类的职责<br>15.1.2 封装——分离接口与实现<br>15.1.3 封装实现细节<br>15.2 为变更而设计<br>15.2.1 封装变更/开闭原则<br>15.2.2 多态<br>15.2.3 依赖倒置原则<br>15.2.4 总结<br>15.3 项目实践<br>15.4 习题</p>
+<h2 id="详细设计的设计模式"><a href="#详细设计的设计模式" class="headerlink" title="详细设计的设计模式"></a>详细设计的设计模式</h2><p>16.1 设计模式基础<br>16.2 可修改性及其基本实现机制<br>16.3 策略模式<br>16.3.1 典型问题<br>16.3.2 设计分析<br>16.3.3 解决方案<br>16.3.4 模式实例<br>16.4 抽象工厂模式<br>16.4.1 典型问题<br>16.4.2 设计分析<br>16.4.3 解决方案<br>16.4.4 模式实例<br>16.5 单件模式<br>16.5.1 典型问题<br>16.5.2 设计分析<br>16.5.3 解决方案<br>16.5.4 模式实例<br>16.6 迭代器模式<br>16.6.1 典型问题<br>16.6.2 设计分析<br>16.6.3 解决方案<br>16.6.4 模式实例<br>16.7 项目实践<br>16.8 习题</p>
+<h1 id="软件构造、测试、交付与维护"><a href="#软件构造、测试、交付与维护" class="headerlink" title="软件构造、测试、交付与维护"></a>软件构造、测试、交付与维护</h1><h2 id="软件构造"><a href="#软件构造" class="headerlink" title="软件构造"></a>软件构造</h2><p>17.1 概述<br>17.1.1 软件构造的定义<br>17.1.2 软件构造是设计的延续<br>17.2 软件构造活动<br>17.2.1 详细设计<br>17.2.2 编程<br>17.2.3 测试<br>17.2.4 调试<br>17.2.5 代码评审<br>17.2.6 集成与构建<br>17.2.7 构造管理<br>17.3 软件构造实践方法<br>17.3.1 重构<br>17.3.2 测试驱动开发<br>17.3.3 结对编程<br>17.4 项目实践<br>17.5 习题</p>
+<h2 id="代码设计"><a href="#代码设计" class="headerlink" title="代码设计"></a>代码设计</h2><p>18.1 设计易读的代码<br>18.1.1 格式<br>18.1.2 命名<br>18.1.3 注释<br>18.2 设计易维护的代码<br>18.2.1 小型任务<br>18.2.2 复杂决策<br>18.2.3 数据使用<br>18.2.4 明确依赖关系<br>18.3 设计可靠的代码<br>18.3.1 契约式设计<br>18.3.2 防御式编程<br>18.4 使用模型辅助设计复杂代码<br>18.4.1 决策表<br>18.4.2 伪代码<br>18.4.3 程序流程图<br>18.5 为代码开发单元测试用例<br>18.5.1 为方法开发测试用例<br>18.5.2 使用Mock Object测试类方法<br>18.5.3 为类开发测试用例<br>18.6 代码复杂度度量<br>18.7 问题代码<br>18.8 项目实践<br>18.9 习题</p>
+<h2 id="软件测试"><a href="#软件测试" class="headerlink" title="软件测试"></a>软件测试</h2><p>19.1 引言<br>19.1.1 验证与确认<br>19.1.2 软件测试的目标<br>19.1.3 测试用例<br>19.1.4 桩与驱动<br>19.1.5 缺陷、错误与失败<br>19.2 测试层次<br>19.2.1 测试层次的划分<br>19.2.2 单元测试<br>19.2.3 集成测试<br>19.2.4 系统测试<br>19.3 测试技术<br>19.3.1 测试用例的选择<br>19.3.2 随机测试<br>19.3.3 基于规格的技术——黑盒测试方法<br>19.3.4 基于代码的技术——白盒测试方法<br>19.3.5 特定测试技术<br>19.4 测试活动<br>19.5 测试度量<br>19.6 项目实践<br>19.7 习题</p>
+<h2 id="软件交付"><a href="#软件交付" class="headerlink" title="软件交付"></a>软件交付</h2><p>20.1 安装与部署<br>20.1.1 安装<br>20.1.2 部署<br>20.2 培训与文档支持<br>20.2.1 培训<br>20.2.2 文档支持<br>20.3 项目评价<br>20.3.1 项目评价的原因<br>20.3.2 项目评价的内容<br>20.3.3 项目评价的方法<br>20.3.4 注意事项<br>20.4 项目实践<br>20.5 习题</p>
+<h2 id="软件维护与演化"><a href="#软件维护与演化" class="headerlink" title="软件维护与演化"></a>软件维护与演化</h2><p>21.1 软件维护<br>21.1.1 软件可修改性与软件维护<br>21.1.2 软件维护的类型<br>21.1.3 软件维护的高代价性<br>21.1.4 开发可维护的软件<br>21.1.5 软件维护过程与活动<br>21.2 软件演化<br>21.2.1 演化与维护<br>21.2.2 软件演化定律<br>21.2.3 软件演化生命周期模型与演化活动<br>21.3 软件维护与演化的常见技术<br>21.3.1 遗留软件<br>21.3.2 逆向工程<br>21.3.3 再工程<br>21.4 项目实践<br>21.5 习题</p>
+<h1 id="软件过程模型与职业基础"><a href="#软件过程模型与职业基础" class="headerlink" title="软件过程模型与职业基础"></a>软件过程模型与职业基础</h1><h2 id="软件开发过程模型"><a href="#软件开发过程模型" class="headerlink" title="软件开发过程模型"></a>软件开发过程模型</h2><p>22.1 软件开发的典型阶段<br>22.1.1 软件需求工程<br>22.1.2 软件设计<br>22.1.3 软件构造<br>22.1.4 软件测试<br>22.1.5 软件交付<br>22.1.6 软件维护<br>22.2 软件生命周期模型<br>22.3 软件过程模型<br>22.4 构建-修复模型<br>22.5 瀑布模型<br>22.6 增量迭代模型<br>22.7 演化模型<br>22.8 原型模型<br>22.9 螺旋模型<br>22.10 Rational统一过程<br>22.11 敏捷过程<br>22.12 习题</p>
+<h2 id="软件工程职业基础"><a href="#软件工程职业基础" class="headerlink" title="软件工程职业基础"></a>软件工程职业基础</h2><p>23.1 软件工程职业<br>23.1.1 软件行业的发展<br>23.1.2 软件工程职业的出现<br>23.1.3 软件工程师职业素质<br>23.2 软件工程职业概况<br>23.2.1 知识体系<br>23.2.2 教育体系<br>23.2.3 职业道德规范<br>23.2.4 认证体系<br>23.2.5 行业协会<br>23.3 软件工程的行业标准<br>23.4 习题</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Notes/" rel="tag"># Notes</a>
+          
+            <a href="/tags/软件工程/" rel="tag"># 软件工程</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/10/java-note3/" rel="next" title="Java 学习笔记（三）">
+                <i class="fa fa-chevron-left"></i> Java 学习笔记（三）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ogzkwweuh.bkt.clouddn.com/miao.png"
+               alt="Mute" />
+          <p class="site-author-name" itemprop="name">Mute</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/mutemeteor" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/mutemeteor/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Instagram
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#软件工程概论"><span class="nav-number">1.</span> <span class="nav-text">软件工程概论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#软件工程基础"><span class="nav-number">1.1.</span> <span class="nav-text">软件工程基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#软件"><span class="nav-number">1.1.1.</span> <span class="nav-text">软件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#软件工程"><span class="nav-number">1.1.2.</span> <span class="nav-text">软件工程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#软件工程概览"><span class="nav-number">1.1.3.</span> <span class="nav-text">软件工程概览</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件工程的发展"><span class="nav-number">1.2.</span> <span class="nav-text">软件工程的发展</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#软件工程的发展脉络"><span class="nav-number">1.2.1.</span> <span class="nav-text">软件工程的发展脉络</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#20世纪50年代的软件工程"><span class="nav-number">1.2.2.</span> <span class="nav-text">20世纪50年代的软件工程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#20世纪60年代的软件工程"><span class="nav-number">1.2.3.</span> <span class="nav-text">20世纪60年代的软件工程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#20世纪70年代的软件工程"><span class="nav-number">1.2.4.</span> <span class="nav-text">20世纪70年代的软件工程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#20世纪80年代的软件工程"><span class="nav-number">1.2.5.</span> <span class="nav-text">20世纪80年代的软件工程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#20世纪90年代的软件工程"><span class="nav-number">1.2.6.</span> <span class="nav-text">20世纪90年代的软件工程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#21世纪00年代的软件工程"><span class="nav-number">1.2.7.</span> <span class="nav-text">21世纪00年代的软件工程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#项目启动"><span class="nav-number">2.</span> <span class="nav-text">项目启动</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#示例项目描述"><span class="nav-number">2.1.</span> <span class="nav-text">示例项目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目管理基础"><span class="nav-number">2.2.</span> <span class="nav-text">项目管理基础</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#需求开发阶段"><span class="nav-number">3.</span> <span class="nav-text">需求开发阶段</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#软件需求基础"><span class="nav-number">3.1.</span> <span class="nav-text">软件需求基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#需求分析方法"><span class="nav-number">3.2.</span> <span class="nav-text">需求分析方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#需求文档化与验证"><span class="nav-number">3.3.</span> <span class="nav-text">需求文档化与验证</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#软件设计"><span class="nav-number">4.</span> <span class="nav-text">软件设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#软件设计基础"><span class="nav-number">4.1.</span> <span class="nav-text">软件设计基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件体系结构基础"><span class="nav-number">4.2.</span> <span class="nav-text">软件体系结构基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件体系结构设计与构建"><span class="nav-number">4.3.</span> <span class="nav-text">软件体系结构设计与构建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#人机交互设计"><span class="nav-number">4.4.</span> <span class="nav-text">人机交互设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#详细设计的基础"><span class="nav-number">4.5.</span> <span class="nav-text">详细设计的基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#详细设计中的模块化与信息隐藏"><span class="nav-number">4.6.</span> <span class="nav-text">详细设计中的模块化与信息隐藏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#详细设计中面向对象方法下的模块化"><span class="nav-number">4.7.</span> <span class="nav-text">详细设计中面向对象方法下的模块化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#详细设计中面向对象方法下的信息隐藏"><span class="nav-number">4.8.</span> <span class="nav-text">详细设计中面向对象方法下的信息隐藏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#详细设计的设计模式"><span class="nav-number">4.9.</span> <span class="nav-text">详细设计的设计模式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#软件构造、测试、交付与维护"><span class="nav-number">5.</span> <span class="nav-text">软件构造、测试、交付与维护</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#软件构造"><span class="nav-number">5.1.</span> <span class="nav-text">软件构造</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码设计"><span class="nav-number">5.2.</span> <span class="nav-text">代码设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件测试"><span class="nav-number">5.3.</span> <span class="nav-text">软件测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件交付"><span class="nav-number">5.4.</span> <span class="nav-text">软件交付</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件维护与演化"><span class="nav-number">5.5.</span> <span class="nav-text">软件维护与演化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#软件过程模型与职业基础"><span class="nav-number">6.</span> <span class="nav-text">软件过程模型与职业基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#软件开发过程模型"><span class="nav-number">6.1.</span> <span class="nav-text">软件开发过程模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件工程职业基础"><span class="nav-number">6.2.</span> <span class="nav-text">软件工程职业基础</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+<div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mute</span>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+</body>
+</html>
