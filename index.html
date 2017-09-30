@@ -356,7 +356,8 @@
           <p>【数据结构与算法】笔记相关链接：</p>
 <p>作者主页：<a href="http://www.yuanbin.me/">http://www.yuanbin.me/</a><br>项目Github地址：<a href="https://github.com/billryan/algorithm-exercise">https://github.com/billryan/algorithm-exercise</a></p>
 <hr>
-<p>链表是线性表的一种。线性表是最基本、最简单、也是最常用的一种数据结构。线性表中数据元素之间的关系是一对一的关系，即除了第一个和最后一个数据元素之外，其它数据元素都是首尾相接的。线性表有两种存储方式，一种是顺序存储结构，另一种是链式存储结构。我们常用的数组就是一种典型的顺序存储结构。<br>相反，链式存储结构就是两个相邻的元素在内存中可能不是相邻的，每一个元素都有一个指针域，指针域一般是存储着到下一个元素的指针。这种存储方式的优点是定点插入和定点删除的时间复杂度为 O(1)，不会浪费太多内存，添加元素的时候才会申请内存，删除元素会释放内存。缺点是访问的时间复杂度最坏为 O(n)。</p>
+<p>链表是线性表的一种。线性表是最基本、最简单、也是最常用的一种数据结构。线性表中数据元素之间的关系是一对一的关系，即除了第一个和最后一个数据元素之外，其它数据元素都是首尾相接的。线性表有两种存储方式，一种是顺序存储结构，另一种是链式存储结构。我们常用的数组就是一种典型的顺序存储结构。</p>
+<p>相反，链式存储结构就是两个相邻的元素在内存中可能不是相邻的，每一个元素都有一个指针域，指针域一般是存储着到下一个元素的指针。这种存储方式的优点是定点插入和定点删除的时间复杂度为 O(1)，不会浪费太多内存，添加元素的时候才会申请内存，删除元素会释放内存。缺点是访问的时间复杂度最坏为 O(n)。</p>
 <p>顺序表的特性是随机读取，也就是访问一个元素的时间复杂度是O(1)，链式表的特性是插入和删除的时间复杂度为O(1)。</p>
 <p>链表就是链式存储的线性表。根据指针域的不同，链表分为单向链表、双向链表、循环链表等等。</p>
 <h1 id="Part-I-Basics"><a href="#Part-I-Basics" class="headerlink" title="Part I - Basics"></a>Part I - Basics</h1><h2 id="Java编程实现"><a href="#Java编程实现" class="headerlink" title="Java编程实现"></a>Java编程实现</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ListNode</span> </span>&#123;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">int</span> val;</div><div class="line">    <span class="keyword">public</span> ListNode next;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ListNode</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.val = val;</div><div class="line">        <span class="keyword">this</span>.next = <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -657,7 +658,7 @@
       
         
           <p>该学习笔记整理于南大软工教材《软件开发的技术基础-软件工程与计算（卷二）》。</p>
-<pre><code>最后更新时间：2017年9月27
+<pre><code>最后更新时间：2017年9月27日
 </code></pre><hr>
 <h1 id="软件工程概论"><a href="#软件工程概论" class="headerlink" title="软件工程概论"></a>软件工程概论</h1><h2 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h2><p>1.1.1 软件独立于硬件</p>
 <p>1.1.2 软件是一种工具</p>
@@ -673,9 +674,8 @@
 <h3 id="软件工程"><a href="#软件工程" class="headerlink" title="软件工程"></a>软件工程</h3><p><strong>1.2.1 定义（重点）</strong></p>
 <ol>
 <li><strong>应用系统的、规范的、可量化的方法来开发、运行和维护软件，即将工程应用到软件。</strong></li>
-<li><strong>对 1 中各种方法的研究。</strong></li>
+<li><strong>对 1 中各种方法的研究。</strong><br>1.2.2 软件工程是一种工程活动</li>
 </ol>
-<p>1.2.2 软件工程是一种工程活动</p>
 <p>具备所有工程学科共有的特性：</p>
 <ul>
 <li>具有解决实际问题的动机</li>
