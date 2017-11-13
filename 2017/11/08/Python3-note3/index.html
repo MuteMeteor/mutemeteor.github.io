@@ -53,7 +53,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Algorithm,DataStructure,Java,Sort," />
+  <meta name="keywords" content="Notes,Python," />
 
 
 
@@ -69,52 +69,37 @@
 
 
 
-<meta name="description" content="算法分析
+<meta name="description" content="python3 学习笔记（一）
 
-时间复杂度-执行时间(比较和交换次数)
-空间复杂度-所消耗的额外内存空间
+python3 学习笔记（二）
 
 
-使用小堆栈或表
-使用链表或指针、数组索引来代表数据
-排序数据的副本
+面向对象进阶元类
 
-对具有重键的数据(同一组数按不同键多次排序)进行排序时，需要考虑排序方法的稳定性，在非稳定性排序算法中需要稳定性时可考虑加入小索引。
-稳定性：如果排序后文件中拥有相同键的项的相对位置不变，这种排序方式是稳定的。
-常见的排序算法根据是否需要比">
+类也是对象在大多数编程语言中，类就是一组用来描述如何生成一个对象的代码段。在Python中这一点仍然成立：123456&amp;gt;&amp;gt;&amp;gt; class ObjectCreator(object):…       pass…&amp;gt;&amp;gt;&amp;gt; my_object = ObjectCreator()&amp;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【数据结构与算法】排序专题">
-<meta property="og:url" content="http://mutemeteor.com/2017/10/02/algorithm-sort/index.html">
+<meta property="og:title" content="python3 学习笔记（三）">
+<meta property="og:url" content="http://mutemeteor.com/2017/11/08/Python3-note3/index.html">
 <meta property="og:site_name" content="Mute Meteor">
-<meta property="og:description" content="算法分析
+<meta property="og:description" content="python3 学习笔记（一）
 
-时间复杂度-执行时间(比较和交换次数)
-空间复杂度-所消耗的额外内存空间
+python3 学习笔记（二）
 
 
-使用小堆栈或表
-使用链表或指针、数组索引来代表数据
-排序数据的副本
+面向对象进阶元类
 
-对具有重键的数据(同一组数按不同键多次排序)进行排序时，需要考虑排序方法的稳定性，在非稳定性排序算法中需要稳定性时可考虑加入小索引。
-稳定性：如果排序后文件中拥有相同键的项的相对位置不变，这种排序方式是稳定的。
-常见的排序算法根据是否需要比">
-<meta property="og:updated_time" content="2017-10-02T07:58:14.159Z">
+类也是对象在大多数编程语言中，类就是一组用来描述如何生成一个对象的代码段。在Python中这一点仍然成立：123456&amp;gt;&amp;gt;&amp;gt; class ObjectCreator(object):…       pass…&amp;gt;&amp;gt;&amp;gt; my_object = ObjectCreator()&amp;">
+<meta property="og:updated_time" content="2017-11-13T10:47:10.934Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【数据结构与算法】排序专题">
-<meta name="twitter:description" content="算法分析
+<meta name="twitter:title" content="python3 学习笔记（三）">
+<meta name="twitter:description" content="python3 学习笔记（一）
 
-时间复杂度-执行时间(比较和交换次数)
-空间复杂度-所消耗的额外内存空间
+python3 学习笔记（二）
 
 
-使用小堆栈或表
-使用链表或指针、数组索引来代表数据
-排序数据的副本
+面向对象进阶元类
 
-对具有重键的数据(同一组数按不同键多次排序)进行排序时，需要考虑排序方法的稳定性，在非稳定性排序算法中需要稳定性时可考虑加入小索引。
-稳定性：如果排序后文件中拥有相同键的项的相对位置不变，这种排序方式是稳定的。
-常见的排序算法根据是否需要比">
+类也是对象在大多数编程语言中，类就是一组用来描述如何生成一个对象的代码段。在Python中这一点仍然成立：123456&amp;gt;&amp;gt;&amp;gt; class ObjectCreator(object):…       pass…&amp;gt;&amp;gt;&amp;gt; my_object = ObjectCreator()&amp;">
 
 
 
@@ -144,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://mutemeteor.com/2017/10/02/algorithm-sort/"/>
+  <link rel="canonical" href="http://mutemeteor.com/2017/11/08/Python3-note3/"/>
 
 
 
 
 
-  <title>【数据结构与算法】排序专题 | Mute Meteor</title>
+  <title>python3 学习笔记（三） | Mute Meteor</title>
   
 
 
@@ -297,7 +282,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mutemeteor.com/2017/10/02/algorithm-sort/">
+    <link itemprop="mainEntityOfPage" href="http://mutemeteor.com/2017/11/08/Python3-note3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kyrene Wang">
@@ -314,7 +299,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">【数据结构与算法】排序专题</h2>
+          <h2 class="post-title" itemprop="name headline">python3 学习笔记（三）</h2>
         
 
         <div class="post-meta">
@@ -326,8 +311,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-02T15:33:33+08:00">
-                2017-10-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-08T14:02:58+08:00">
+                2017-11-08
               </time>
             
 
@@ -386,46 +371,23 @@
       
 
       
-        <p>算法分析</p>
-<ol>
-<li>时间复杂度-执行时间(比较和交换次数)</li>
-<li>空间复杂度-所消耗的额外内存空间</li>
-</ol>
-<ul>
-<li>使用小堆栈或表</li>
-<li>使用链表或指针、数组索引来代表数据</li>
-<li>排序数据的副本</li>
-</ul>
-<p>对具有重键的数据(同一组数按不同键多次排序)进行排序时，需要考虑排序方法的稳定性，在非稳定性排序算法中需要稳定性时可考虑加入小索引。</p>
-<p>稳定性：如果排序后文件中拥有相同键的项的相对位置不变，这种排序方式是稳定的。</p>
-<p>常见的排序算法根据是否需要比较可以分为如下几类：</p>
-<ol>
-<li>Comparison Sorting</li>
-</ol>
-<ul>
-<li>Bubble Sort</li>
-<li>Selection Sort</li>
-<li>Insertion Sort</li>
-<li>Shell Sort</li>
-<li>Merge Sort</li>
-<li>Quck Sort</li>
-<li>Heap Sort</li>
-</ul>
-<ol>
-<li>Bucket Sort</li>
-<li>Counting Sort</li>
-<li>Radix Sort</li>
-</ol>
-<p>从稳定性角度考虑可分为如下两类：</p>
-<ul>
-<li>稳定</li>
-<li>非稳定<a id="more"></a>
+        <ul>
+<li><p><a href="http://mutemeteor.com/2017/03/23/Python3-note/">python3 学习笔记（一）</a></p>
+</li>
+<li><p><a href="http://mutemeteor.com/2017/03/23/Python3-note2/">python3 学习笔记（二）</a></p>
 </li>
 </ul>
-<hr>
-<p>【数据结构与算法】笔记相关链接：</p>
-<p>作者主页：<a href="http://www.yuanbin.me/" target="_blank" rel="external">http://www.yuanbin.me/</a></p>
-<h2 id="项目Github地址：https-github-com-billryan-algorithm-exercise"><a href="#项目Github地址：https-github-com-billryan-algorithm-exercise" class="headerlink" title="项目Github地址：https://github.com/billryan/algorithm-exercise"></a>项目Github地址：<a href="https://github.com/billryan/algorithm-exercise" target="_blank" rel="external">https://github.com/billryan/algorithm-exercise</a></h2>
+<h1 id="面向对象进阶"><a href="#面向对象进阶" class="headerlink" title="面向对象进阶"></a>面向对象进阶</h1><p>元类</p>
+<ol>
+<li>类也是对象<br>在大多数编程语言中，类就是一组用来描述如何生成一个对象的代码段。在Python中这一点仍然成立：<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="class"><span class="keyword">class</span> <span class="title">ObjectCreator</span><span class="params">(object)</span>:</span></div><div class="line">…       <span class="keyword">pass</span></div><div class="line">…</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>my_object = ObjectCreator()</div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> my_object</div><div class="line">&lt;__main__.ObjectCreator object at <span class="number">0x8974f2c</span>&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>但是，Python中的类还远不止如此。类同样也是一种对象。是的，没错，就是对象。只要你使用关键字class，Python解释器在执行的时候就会创建一个对象。</p>
+<p>下面的代码段：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="class"><span class="keyword">class</span> <span class="title">ObjectCreator</span><span class="params">(object)</span>:</span></div><div class="line">…       <span class="keyword">pass</span></div><div class="line">…</div></pre></td></tr></table></figure></p>
+<p>将在内存中创建一个对象，名字就是ObjectCreator。这个对象（类对象ObjectCreator）拥有创建对象（实例对象）的能力。但是，它的本质仍然是一个对象，于是乎你可以对它做如下的操作：</p>
+<p>你可以将它赋值给一个变量<br>你可以拷贝它<br>你可以为它增加属性<br>你可以将它作为函数参数进行传递</p>
+<a id="more"></a>
+<h1 id="import导入模块"><a href="#import导入模块" class="headerlink" title="import导入模块"></a>import导入模块</h1><h1 id="垃圾回收"><a href="#垃圾回收" class="headerlink" title="垃圾回收"></a>垃圾回收</h1><h1 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h1>
       
     </div>
     
@@ -445,7 +407,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://mutemeteor.com/2017/10/02/algorithm-sort/" title="【数据结构与算法】排序专题">http://mutemeteor.com/2017/10/02/algorithm-sort/</a>
+    <a href="http://mutemeteor.com/2017/11/08/Python3-note3/" title="python3 学习笔记（三）">http://mutemeteor.com/2017/11/08/Python3-note3/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -460,13 +422,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
+            <a href="/tags/Notes/" rel="tag"># Notes</a>
           
-            <a href="/tags/DataStructure/" rel="tag"># DataStructure</a>
-          
-            <a href="/tags/Java/" rel="tag"># Java</a>
-          
-            <a href="/tags/Sort/" rel="tag"># Sort</a>
+            <a href="/tags/Python/" rel="tag"># Python</a>
           
         </div>
       
@@ -479,8 +437,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/30/algorithm-binarytree/" rel="next" title="【数据结构与算法】二叉树专题">
-                <i class="fa fa-chevron-left"></i> 【数据结构与算法】二叉树专题
+              <a href="/2017/10/28/Python3-note2/" rel="next" title="python3 学习笔记（二）">
+                <i class="fa fa-chevron-left"></i> python3 学习笔记（二）
               </a>
             
           </div>
@@ -489,8 +447,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/05/Universe/" rel="prev" title="《极简宇宙史》">
-                《极简宇宙史》 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/11/14/PythonPattern/" rel="prev" title="Python 设计模式">
+                Python 设计模式 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -642,7 +600,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#项目Github地址：https-github-com-billryan-algorithm-exercise"><span class="nav-number">1.</span> <span class="nav-text">项目Github地址：https://github.com/billryan/algorithm-exercise</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#面向对象进阶"><span class="nav-number">1.</span> <span class="nav-text">面向对象进阶</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#import导入模块"><span class="nav-number">2.</span> <span class="nav-text">import导入模块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#垃圾回收"><span class="nav-number">3.</span> <span class="nav-text">垃圾回收</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#调试"><span class="nav-number">4.</span> <span class="nav-text">调试</span></a></li></ol></div>
             
 
           </div>
