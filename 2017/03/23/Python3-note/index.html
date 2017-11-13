@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Notes,Python," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="The Zen of PythonBeautiful is better than ugly.Explicit is better than implicit.Simple is better than complex.Complex is better than complicated.Flat is better than nested.Sparse is better than dense.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python3 学习笔记">
+<meta property="og:url" content="http://mutemeteor.com/2017/03/23/Python3-note/index.html">
+<meta property="og:site_name" content="Mute Meteor">
+<meta property="og:description" content="The Zen of PythonBeautiful is better than ugly.Explicit is better than implicit.Simple is better than complex.Complex is better than complicated.Flat is better than nested.Sparse is better than dense.">
+<meta property="og:updated_time" content="2017-11-13T15:30:55.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python3 学习笔记">
+<meta name="twitter:description" content="The Zen of PythonBeautiful is better than ugly.Explicit is better than implicit.Simple is better than complex.Complex is better than complicated.Flat is better than nested.Sparse is better than dense.">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: 'mutemeteor',
+      author: 'Wang'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://mutemeteor.com/2017/03/23/Python3-note/"/>
+
+
+
+
+
+  <title>python3 学习笔记 | Mute Meteor</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?063129ce0f11ae9e4a1036a9220b94be";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Mute Meteor</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-index">
+          <a href="/index/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-paper-plane"></i> <br />
+            
+            索引
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://mutemeteor.com/2017/03/23/Python3-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kyrene Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://on7kyvg9n.bkt.clouddn.com/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mute Meteor">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">python3 学习笔记</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-23T18:09:53+08:00">
+                2017-03-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/" itemprop="url" rel="index">
+                    <span itemprop="name">Tech</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="The-Zen-of-Python"><a href="#The-Zen-of-Python" class="headerlink" title="The Zen of Python"></a>The Zen of Python</h1><p>Beautiful is better than ugly.<br>Explicit is better than implicit.<br>Simple is better than complex.<br>Complex is better than complicated.<br>Flat is better than nested.<br>Sparse is better than dense.<br>Readability counts.<br>Special cases aren’t special enough to break the rules.<br>Although practicality beats purity.<br>Errors should never pass silently.<br>Unless explicitly silenced.<br>In the face of ambiguity, refuse the temptation to guess.<br>There should be one– and preferably only one –obvious way to do it.<br>Although that way may not be obvious at first unless you’re Dutch.<br>Now is better than never.<br>Although never is often better than <em>right</em> now.<br>If the implementation is hard to explain, it’s a bad idea.<br>If the implementation is easy to explain, it may be a good idea.<br>Namespaces are one honking great idea – let’s do more of those!<br><a id="more"></a></p>
+<h1 id="认识-Python"><a href="#认识-Python" class="headerlink" title="认识 Python"></a>认识 Python</h1><ul>
+<li>Python的发音与拼写 [ˈpaɪθən]</li>
+<li>Python的意思是蟒蛇，源于作者喜欢的一部电视剧 (C呢？)</li>
+<li>Python的作者是Guido van Rossum（龟叔）</li>
+<li>Python是龟叔在1989年圣诞节期间，为了打发无聊的圣诞节而用C编写的一个编程语言</li>
+<li>Python正式诞生于1991年</li>
+<li>Python的解释器如今有多个语言实现，我们常用的是CPython（官方版本的C语言实现），其他还有Jython（可以运行在Java平台）、IronPython（可以运行在.NET和Mono平台）、PyPy（Python实现的，支持JIT即时编译）<br>-Python目前有两个版本，Python2和Python3，最新版分别为2.7.12和3.5.2，现阶段大部分公司用的是Python2</li>
+</ul>
+<h2 id="解释器-amp-脚本文件"><a href="#解释器-amp-脚本文件" class="headerlink" title="解释器&amp;脚本文件"></a>解释器&amp;脚本文件</h2><p>Python 是一个脚本语言，可以在 Python 解释器中直接写代码或者将代码写到一个文件里，然后执行这个文件（即脚本文件）。</p>
+<pre><code>$ python3
+&gt;&gt;&gt; print(&quot;Hello World!&quot;)
+Hello World!
+exit()  
+
+vim helloworld.py                       #按i进入插入模式
+#!/usr/bin/env python3              
+print(&quot;Hello World!&quot;)                   #输完文本按esc退出，并敲：wq
+
+$ chmod +x helloworld.py                #给文件添加可执行权限
+$ ./helloworld.py
+</code></pre><h2 id="代码风格建议"><a href="#代码风格建议" class="headerlink" title="代码风格建议"></a>代码风格建议</h2><p>在 Python 中，空格很重要，使用空格将标识符区分开，行开始处的空格我们称之为缩进，如果缩进是错误的，Python 解释器会抛出错误。</p>
+<p>所以建议遵守以下约定：</p>
+<ul>
+<li>使用 4 个空格来缩进</li>
+<li>永远不要混用空格和制表符</li>
+<li>在函数之间空一行</li>
+<li>在类之间空两行</li>
+<li>字典，列表，元组以及参数列表中，在 , 后添加一个空格。对于字典，: 后面也添加一个空格</li>
+<li>在赋值运算符和比较运算符周围要有空格（参数列表中除外），但是括号里侧不加空格：a = f(1, 2) + g(3, 4)</li>
+</ul>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>Python 的注释以 # 字符开始的，在 # 字符到行尾之间的所有东西都被程序忽略为注释，也就说对程序没有任何影响。</p>
+<p>注释的话，尽量使用英文。</p>
+<h1 id="变量和数据类型"><a href="#变量和数据类型" class="headerlink" title="变量和数据类型"></a>变量和数据类型</h1><h2 id="关键字和标识符"><a href="#关键字和标识符" class="headerlink" title="关键字和标识符"></a>关键字和标识符</h2><p>Python3 的关键字，不能用于通常的标识符。关键字可以通过 Python3 解释器中得到：</p>
+<pre><code>$ python3
+&gt;&gt;&gt; help（）
+help&gt; keywords
+</code></pre><p>在 Python 中不需要为变量指定数据类型。所以可以直接写出 abc = 1 ，这样变量 abc 就是整数类型。如果写出 abc = 1.0 ，那么变量 abc 就是浮点类型。</p>
+<p>Python 也能操作字符串，它们用单引号或双引号括起来，就像下面这样。</p>
+<pre><code>$ python3
+&gt;&gt;&gt; &quot;Hello World!&quot;
+&gt;&gt;&gt; &apos;Hello World!&apos;
+</code></pre><h2 id="从键盘读取输入"><a href="#从键盘读取输入" class="headerlink" title="从键盘读取输入"></a>从键盘读取输入</h2><p>通常情况下，Python 的代码中是不需要从键盘读取输入的。不过我们还是可以在 Python 中使用函数 input() 来做到这一点，input() 有一个用于打印在屏幕上的可选字符串参数，返回用户输入的字符串。</p>
+<h2 id="单行定义多个变量或赋值"><a href="#单行定义多个变量或赋值" class="headerlink" title="单行定义多个变量或赋值"></a>单行定义多个变量或赋值</h2><pre><code>&gt;&gt;&gt; a , b = 45, 54
+&gt;&gt;&gt; a
+45
+&gt;&gt;&gt; b
+54
+</code></pre><p>这个技巧用来交换两个数的值非常方便:</p>
+<pre><code>&gt;&gt;&gt; a, b = b , a
+&gt;&gt;&gt; a
+54
+&gt;&gt;&gt; b
+45
+</code></pre><p>要明白这是怎么工作的，需要学习元组（tuple）这个数据类型。python3用逗号创建元组。在赋值语句的右边创建了一个元组，称这为元组封装（tuple packing），赋值语句的左边则做的是元组拆封 （tuple unpacking）。<br>下面是另一个元组拆封的例子：</p>
+<pre><code>&gt;&gt;&gt; data = (&quot;mute&quot;, &quot;China&quot;, &quot;Python&quot;)
+&gt;&gt;&gt; name, country, language = data
+&gt;&gt;&gt; name
+&apos;mute&apos;
+&gt;&gt;&gt; country
+&apos;China&apos;
+&gt;&gt;&gt; language
+&apos;Python&apos;
+</code></pre><h1 id="运算符和表达式"><a href="#运算符和表达式" class="headerlink" title="运算符和表达式"></a>运算符和表达式</h1><h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><p>运算符是一些符号，它告诉 Python 解释器去做一些数学或逻辑操作。只要有任意一个操作数是浮点数，结果就会是浮点数。</p>
+<p>进行除法运算时若是除不尽，结果将会是小数，这很自然，如果要进行整除，使用 // 运算符，它将返回商的整数部分。</p>
+<h2 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h2><table>
+<thead>
+<tr>
+<th>Operator</th>
+<th style="text-align:center">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;</td>
+<td style="text-align:center">Is less than</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td style="text-align:center">Is less than or equal to</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td style="text-align:center">Is greater than</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td style="text-align:center">Is greater than or equal to</td>
+</tr>
+<tr>
+<td>==</td>
+<td style="text-align:center">Is equal to</td>
+</tr>
+<tr>
+<td>!=</td>
+<td style="text-align:center">Is not equal to</td>
+</tr>
+</tbody>
+</table>
+<p>举一些例子：</p>
+<pre><code>&gt;&gt;&gt; 1 &lt; 2
+True
+&gt;&gt;&gt; 3 &gt; 34
+False
+&gt;&gt;&gt; 23 == 45
+False
+&gt;&gt;&gt; 34 != 323
+True
+</code></pre><h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><p>对于逻辑 与，或，非，使用 and，or，not 这几个关键字。</p>
+<p>逻辑运算符 and 和 or 也称作短路运算符：它们的参数从左向右解析，一旦结果可以确定就停止。例如，如果 A 和 C 为真而 B 为假，A and B and C 不会解析 C 。作用于一个普通的非逻辑值时，短路运算符的返回值通常是能够最先确定结果的那个操作数。</p>
+<p>关系运算可以通过逻辑运算符 and 和 or 组合，比较的结果可以用 not 来取反意。逻辑运算符的优先级又低于关系运算符，在它们之中，not 具有最高的优先级，or 优先级最低，所以 A and not B or C 等于 (A and (notB)) or C。当然，括号也可以用于比较表达式。</p>
+<p>举一些例子：</p>
+<pre><code>&gt;&gt;&gt; 5 and 4
+4
+&gt;&gt;&gt; 0 and 4
+0
+&gt;&gt;&gt; False or 3 or 0
+3
+&gt;&gt;&gt; 2 &gt; 1 and not 3 &gt; 5 or 4
+True
+</code></pre><h2 id="简写运算符"><a href="#简写运算符" class="headerlink" title="简写运算符"></a>简写运算符</h2><p>x op= expression 为简写运算的语法形式。其等价于 x = x op expression ，举例如下：</p>
+<pre><code>&gt;&gt;&gt; a = 12
+&gt;&gt;&gt; a += 13
+&gt;&gt;&gt; a
+25
+&gt;&gt;&gt; a /= 3
+&gt;&gt;&gt; a
+8.333333333333334
+&gt;&gt;&gt; a += (26 * 32)
+&gt;&gt;&gt; a
+840.3333333333334
+</code></pre><h2 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h2><pre><code>#!/usr/bin/env python3
+a = 9
+b = 12
+c = 3
+x = a - b / 3 + c * 2 - 1
+y = a - b / (3 + c) * (2 - 1)
+z = a - (b / (3 + c) * 2) - 1
+print(&quot;X = &quot;, x)
+print(&quot;Y = &quot;, y)
+print(&quot;Z = &quot;, z)
+
+$ ./evaluationexp.py
+X =  10
+Y =  7
+Z =  4
+</code></pre><h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><table>
+<thead>
+<tr>
+<th>类型转换函数</th>
+<th style="text-align:center">转换路径</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>float(string)</td>
+<td style="text-align:center">字符串 -&gt; 浮点值</td>
+</tr>
+<tr>
+<td>int(string)</td>
+<td style="text-align:center">字符串 -&gt; 整数值</td>
+</tr>
+<tr>
+<td>str(integer)</td>
+<td style="text-align:center">整数值 -&gt; 字符串</td>
+</tr>
+<tr>
+<td>str(float)</td>
+<td style="text-align:center">浮点值 -&gt; 字符串</td>
+</tr>
+</tbody>
+</table>
+<pre><code>&gt;&gt;&gt; a = 8.126768
+&gt;&gt;&gt; str(a)
+&apos;8.126768&apos;
+总结
+</code></pre><p>除了数值运算，关系和逻辑运算也是程序的重要组成部分。另外 Python 是强类型语言，所以必要的时候需要手动进行类型转换。</p>
+<h1 id="控制流-If-else"><a href="#控制流-If-else" class="headerlink" title="控制流 If-else"></a>控制流 If-else</h1>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Kyrene Wang
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://mutemeteor.com/2017/03/23/Python3-note/" title="python3 学习笔记">http://mutemeteor.com/2017/03/23/Python3-note/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Notes/" rel="tag"># Notes</a>
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/03/思维导图使用手册/" rel="next" title="《思维导图使用手册》">
+                <i class="fa fa-chevron-left"></i> 《思维导图使用手册》
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/31/MySQL1/" rel="prev" title="MySQL 学习笔记之基础篇">
+                MySQL 学习笔记之基础篇 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="http://on7kyvg9n.bkt.clouddn.com/avatar.jpg"
+              alt="Kyrene Wang" />
+          
+            <p class="site-author-name" itemprop="name">Kyrene Wang</p>
+            <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/mutemeteor" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>GitHub</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.douban.com/people/Formalhaut/" target="_blank" title="Douban">
+                  
+                    <i class="fa fa-fw fa-diamond"></i>Douban</a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#The-Zen-of-Python"><span class="nav-number">1.</span> <span class="nav-text">The Zen of Python</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#认识-Python"><span class="nav-number">2.</span> <span class="nav-text">认识 Python</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解释器-amp-脚本文件"><span class="nav-number">2.1.</span> <span class="nav-text">解释器&脚本文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码风格建议"><span class="nav-number">2.2.</span> <span class="nav-text">代码风格建议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注释"><span class="nav-number">2.3.</span> <span class="nav-text">注释</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#变量和数据类型"><span class="nav-number">3.</span> <span class="nav-text">变量和数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关键字和标识符"><span class="nav-number">3.1.</span> <span class="nav-text">关键字和标识符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从键盘读取输入"><span class="nav-number">3.2.</span> <span class="nav-text">从键盘读取输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单行定义多个变量或赋值"><span class="nav-number">3.3.</span> <span class="nav-text">单行定义多个变量或赋值</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运算符和表达式"><span class="nav-number">4.</span> <span class="nav-text">运算符和表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#运算符"><span class="nav-number">4.1.</span> <span class="nav-text">运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关系运算符"><span class="nav-number">4.2.</span> <span class="nav-text">关系运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑运算符"><span class="nav-number">4.3.</span> <span class="nav-text">逻辑运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简写运算符"><span class="nav-number">4.4.</span> <span class="nav-text">简写运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表达式"><span class="nav-number">4.5.</span> <span class="nav-text">表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类型转换"><span class="nav-number">4.6.</span> <span class="nav-text">类型转换</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#控制流-If-else"><span class="nav-number">5.</span> <span class="nav-text">控制流 If-else</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 &mdash; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kyrene Wang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
