@@ -53,7 +53,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Python,Patterns," />
+  <meta name="keywords" content="Notes,Python," />
 
 
 
@@ -91,7 +91,7 @@ python3 学习笔记（二）
 函数如果在开发程序时，需要某块代码多次，但是为了提高编写的效率以及代码的重用，所以把具有独立功能的代码块组织为一个小模块，这就是函数。
 定义函数定义函数的格式如下：12def 函数名():    代码
 Demo:12345# 定义一个函数，能够完成打印信息的功能   def printInfo():       print">
-<meta property="og:updated_time" content="2017-11-14T02:37:04.883Z">
+<meta property="og:updated_time" content="2017-11-14T02:49:03.461Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python3 学习笔记（三）">
 <meta name="twitter:description" content="python3 学习笔记（一）
@@ -481,21 +481,7 @@ Age  9
 </li>
 </ul>
 <p>面向过程编程最易被初学者接受，其往往用一长段代码来实现指定功能，开发过程的思路是将数据与函数按照执行的逻辑顺序组织在一起，数据与函数分开考虑。</p>
-<h1 id="面向对象进阶"><a href="#面向对象进阶" class="headerlink" title="面向对象进阶"></a>面向对象进阶</h1><p>元类</p>
-<ol>
-<li>类也是对象<br>在大多数编程语言中，类就是一组用来描述如何生成一个对象的代码段。在Python中这一点仍然成立：<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="class"><span class="keyword">class</span> <span class="title">ObjectCreator</span><span class="params">(object)</span>:</span></div><div class="line">…       <span class="keyword">pass</span></div><div class="line">…</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>my_object = ObjectCreator()</div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> my_object</div><div class="line">&lt;__main__.ObjectCreator object at <span class="number">0x8974f2c</span>&gt;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>但是，Python中的类还远不止如此。类同样也是一种对象。是的，没错，就是对象。只要你使用关键字class，Python解释器在执行的时候就会创建一个对象。</p>
-<p>下面的代码段：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="class"><span class="keyword">class</span> <span class="title">ObjectCreator</span><span class="params">(object)</span>:</span></div><div class="line">…       <span class="keyword">pass</span></div><div class="line">…</div></pre></td></tr></table></figure></p>
-<p>将在内存中创建一个对象，名字就是ObjectCreator。这个对象（类对象ObjectCreator）拥有创建对象（实例对象）的能力。但是，它的本质仍然是一个对象，于是乎你可以对它做如下的操作：</p>
-<ul>
-<li>可以将它赋值给一个变量</li>
-<li>可以拷贝它</li>
-<li>可以为它增加属性</li>
-<li>可以将它作为函数参数进行传递</li>
-</ul>
-<h1 id="import导入模块"><a href="#import导入模块" class="headerlink" title="import导入模块"></a>import导入模块</h1><h1 id="垃圾回收"><a href="#垃圾回收" class="headerlink" title="垃圾回收"></a>垃圾回收</h1><h1 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h1>
+
       
     </div>
     
@@ -530,9 +516,9 @@ Age  9
       
         <div class="post-tags">
           
-            <a href="/tags/Python/" rel="tag"># Python</a>
+            <a href="/tags/Notes/" rel="tag"># Notes</a>
           
-            <a href="/tags/Patterns/" rel="tag"># Patterns</a>
+            <a href="/tags/Python/" rel="tag"># Python</a>
           
         </div>
       
@@ -554,6 +540,10 @@ Age  9
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/14/python3-note4/" rel="prev" title="Python3 学习笔记（三）">
+                Python3 学习笔记（三） <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -633,7 +623,7 @@ Age  9
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-count">26</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -655,7 +645,7 @@ Age  9
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -704,7 +694,7 @@ Age  9
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#函数"><span class="nav-number">1.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义函数"><span class="nav-number">1.1.</span> <span class="nav-text">定义函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调用函数"><span class="nav-number">1.2.</span> <span class="nav-text">调用函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数的文档说明"><span class="nav-number">1.3.</span> <span class="nav-text">函数的文档说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数参数-一"><span class="nav-number">1.4.</span> <span class="nav-text">函数参数(一)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义带有参数的函数"><span class="nav-number">1.4.1.</span> <span class="nav-text">定义带有参数的函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调用带有参数的函数"><span class="nav-number">1.4.2.</span> <span class="nav-text">调用带有参数的函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调用函数时参数的顺序"><span class="nav-number">1.4.3.</span> <span class="nav-text">调用函数时参数的顺序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数参数-二"><span class="nav-number">1.5.</span> <span class="nav-text">函数参数(二)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#缺省参数"><span class="nav-number">1.5.1.</span> <span class="nav-text">缺省参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不定长参数"><span class="nav-number">1.5.2.</span> <span class="nav-text">不定长参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用传参"><span class="nav-number">1.5.3.</span> <span class="nav-text">引用传参</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数返回值-一"><span class="nav-number">1.6.</span> <span class="nav-text">函数返回值(一)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#带有返回值的函数"><span class="nav-number">1.6.1.</span> <span class="nav-text">带有返回值的函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#保存函数的返回值"><span class="nav-number">1.6.2.</span> <span class="nav-text">保存函数的返回值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数返回值-二"><span class="nav-number">1.7.</span> <span class="nav-text">函数返回值(二)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4种函数的类型"><span class="nav-number">2.</span> <span class="nav-text">4种函数的类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#无参数，无返回值的函数"><span class="nav-number">2.1.</span> <span class="nav-text">无参数，无返回值的函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#无参数，有返回值的函数"><span class="nav-number">2.2.</span> <span class="nav-text">无参数，有返回值的函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有参数，无返回值的函数"><span class="nav-number">2.3.</span> <span class="nav-text">有参数，无返回值的函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有参数，有返回值的函数"><span class="nav-number">2.4.</span> <span class="nav-text">有参数，有返回值的函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数的嵌套调用"><span class="nav-number">2.5.</span> <span class="nav-text">函数的嵌套调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数应用"><span class="nav-number">2.6.</span> <span class="nav-text">函数应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#打印图形"><span class="nav-number">2.6.1.</span> <span class="nav-text">打印图形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数学计算"><span class="nav-number">2.6.2.</span> <span class="nav-text">数学计算</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#局部变量"><span class="nav-number">2.7.</span> <span class="nav-text">局部变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#全局变量"><span class="nav-number">2.8.</span> <span class="nav-text">全局变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可变类型的全局变量"><span class="nav-number">2.9.</span> <span class="nav-text">可变类型的全局变量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文件操作"><span class="nav-number">3.</span> <span class="nav-text">文件操作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#面向对象"><span class="nav-number">4.</span> <span class="nav-text">面向对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#面向对象进阶"><span class="nav-number">5.</span> <span class="nav-text">面向对象进阶</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#import导入模块"><span class="nav-number">6.</span> <span class="nav-text">import导入模块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#垃圾回收"><span class="nav-number">7.</span> <span class="nav-text">垃圾回收</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#调试"><span class="nav-number">8.</span> <span class="nav-text">调试</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#函数"><span class="nav-number">1.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义函数"><span class="nav-number">1.1.</span> <span class="nav-text">定义函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调用函数"><span class="nav-number">1.2.</span> <span class="nav-text">调用函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数的文档说明"><span class="nav-number">1.3.</span> <span class="nav-text">函数的文档说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数参数-一"><span class="nav-number">1.4.</span> <span class="nav-text">函数参数(一)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义带有参数的函数"><span class="nav-number">1.4.1.</span> <span class="nav-text">定义带有参数的函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调用带有参数的函数"><span class="nav-number">1.4.2.</span> <span class="nav-text">调用带有参数的函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调用函数时参数的顺序"><span class="nav-number">1.4.3.</span> <span class="nav-text">调用函数时参数的顺序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数参数-二"><span class="nav-number">1.5.</span> <span class="nav-text">函数参数(二)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#缺省参数"><span class="nav-number">1.5.1.</span> <span class="nav-text">缺省参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不定长参数"><span class="nav-number">1.5.2.</span> <span class="nav-text">不定长参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用传参"><span class="nav-number">1.5.3.</span> <span class="nav-text">引用传参</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数返回值-一"><span class="nav-number">1.6.</span> <span class="nav-text">函数返回值(一)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#带有返回值的函数"><span class="nav-number">1.6.1.</span> <span class="nav-text">带有返回值的函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#保存函数的返回值"><span class="nav-number">1.6.2.</span> <span class="nav-text">保存函数的返回值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数返回值-二"><span class="nav-number">1.7.</span> <span class="nav-text">函数返回值(二)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4种函数的类型"><span class="nav-number">2.</span> <span class="nav-text">4种函数的类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#无参数，无返回值的函数"><span class="nav-number">2.1.</span> <span class="nav-text">无参数，无返回值的函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#无参数，有返回值的函数"><span class="nav-number">2.2.</span> <span class="nav-text">无参数，有返回值的函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有参数，无返回值的函数"><span class="nav-number">2.3.</span> <span class="nav-text">有参数，无返回值的函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有参数，有返回值的函数"><span class="nav-number">2.4.</span> <span class="nav-text">有参数，有返回值的函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数的嵌套调用"><span class="nav-number">2.5.</span> <span class="nav-text">函数的嵌套调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数应用"><span class="nav-number">2.6.</span> <span class="nav-text">函数应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#打印图形"><span class="nav-number">2.6.1.</span> <span class="nav-text">打印图形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数学计算"><span class="nav-number">2.6.2.</span> <span class="nav-text">数学计算</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#局部变量"><span class="nav-number">2.7.</span> <span class="nav-text">局部变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#全局变量"><span class="nav-number">2.8.</span> <span class="nav-text">全局变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可变类型的全局变量"><span class="nav-number">2.9.</span> <span class="nav-text">可变类型的全局变量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文件操作"><span class="nav-number">3.</span> <span class="nav-text">文件操作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#面向对象"><span class="nav-number">4.</span> <span class="nav-text">面向对象</span></a></li></ol></div>
             
 
           </div>
