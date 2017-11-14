@@ -83,7 +83,7 @@
 
 字符串双引号或者单引号中的数据，就是字符串。
 字符串输出123456name = &apos;KyreneWang&apos;position = &apos;Beijing&apos;print(&apos;--------------------------------------------------&apos;)print(&quot;Name：%s&quot;%name)print(&quot;position：%s&quot;%position">
-<meta property="og:updated_time" content="2017-11-14T00:57:09.386Z">
+<meta property="og:updated_time" content="2017-11-14T01:10:04.980Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python3 学习笔记（二）">
 <meta name="twitter:description" content="python3 学习笔记（一）
@@ -373,7 +373,8 @@
 <h2 id="下标"><a href="#下标" class="headerlink" title="下标"></a>下标</h2><p>如果想取出部分字符，那么可以通过 <strong>下标</strong> 的方法（python中下标从 0 开始）。</p>
 <h2 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h2><p>切片是指对操作的对象截取其中一部分的操作。字符串、列表、元组都支持切片操作。</p>
 <p>切片的语法：<code>[起始:结束:步长]</code></p>
-<p>选取的区间属于 <strong>左闭右开型</strong>，即从”起始”位开始，到”结束”位的前一位结束（不包含结束位本身)。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">name = <span class="string">'abcdef'</span></div><div class="line">print(name[<span class="number">0</span>:<span class="number">3</span>]) <span class="comment"># 取 下标0~2 的字符，即abc</span></div></pre></td></tr></table></figure></p>
+<p>选取的区间属于 <strong>左闭右开型</strong>，即从”起始”位开始，到”结束”位的前一位结束（不包含结束位本身)。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">name = <span class="string">'abcdef'</span></div><div class="line">print(name[<span class="number">0</span>:<span class="number">3</span>]) <span class="comment"># 取 下标0~2 的字符，即abc</span></div></pre></td></tr></table></figure>
 <h1 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">namesList = [<span class="string">'xiaoWang'</span>,<span class="string">'xiaoZhang'</span>,<span class="string">'xiaoHua'</span>]</div></pre></td></tr></table></figure>
 <p>比C语言的数组强大的地方在于列表中的元素可以是不同类型的<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">testList = [<span class="number">1</span>, <span class="string">'a'</span>]</div></pre></td></tr></table></figure></p>
 <h2 id="列表的循环遍历"><a href="#列表的循环遍历" class="headerlink" title="列表的循环遍历"></a>列表的循环遍历</h2><h3 id="用-for-遍历"><a href="#用-for-遍历" class="headerlink" title="用 for 遍历"></a>用 for 遍历</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">namesList = [<span class="string">'xiaoWang'</span>,<span class="string">'xiaoZhang'</span>,<span class="string">'xiaoHua'</span>]</div><div class="line"><span class="keyword">for</span> name <span class="keyword">in</span> namesList:</div><div class="line">    print(name)</div></pre></td></tr></table></figure>
