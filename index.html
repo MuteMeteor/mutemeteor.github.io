@@ -360,20 +360,7 @@
 </li>
 </ul>
 <hr>
-<h1 id="面向对象进阶"><a href="#面向对象进阶" class="headerlink" title="面向对象进阶"></a>面向对象进阶</h1><p>元类</p>
-<ol>
-<li>类也是对象<br>在大多数编程语言中，类就是一组用来描述如何生成一个对象的代码段。在Python中这一点仍然成立：<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="class"><span class="keyword">class</span> <span class="title">ObjectCreator</span><span class="params">(object)</span>:</span></div><div class="line">…       <span class="keyword">pass</span></div><div class="line">…</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>my_object = ObjectCreator()</div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> my_object</div><div class="line">&lt;__main__.ObjectCreator object at <span class="number">0x8974f2c</span>&gt;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>但是，Python中的类还远不止如此。类同样也是一种对象。是的，没错，就是对象。只要你使用关键字class，Python解释器在执行的时候就会创建一个对象。</p>
-<p>下面的代码段：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="class"><span class="keyword">class</span> <span class="title">ObjectCreator</span><span class="params">(object)</span>:</span></div><div class="line">…       <span class="keyword">pass</span></div><div class="line">…</div></pre></td></tr></table></figure></p>
-<p>将在内存中创建一个对象，名字就是ObjectCreator。这个对象（类对象ObjectCreator）拥有创建对象（实例对象）的能力。但是，它的本质仍然是一个对象，于是乎你可以对它做如下的操作：</p>
-<ul>
-<li>可以将它赋值给一个变量</li>
-<li>可以拷贝它</li>
-<li>可以为它增加属性</li>
-<li>可以将它作为函数参数进行传递</li>
-</ul>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><p>如果在开发程序时，需要某块代码多次，但是为了提高编写的效率以及代码的重用，所以把具有独立功能的代码块组织为一个小模块，这就是函数。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/11/14/Python3-note3/#more" rel="contents">
