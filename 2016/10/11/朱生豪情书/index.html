@@ -1,245 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  
-  <title>《朱生豪情书》 | Mute Meteor</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="听一个男人说这么多的情话，竟也没觉得腻得慌或者矫情。自己并不向往这样的爱情，却依然觉得朱&amp;amp;宋如此美好。想起豆瓣有人评论朱生豪，他短暂的一生只做了两件事，翻译莎士比亚全集和给爱的人写情书。而后者是比前者更伟大的成就。
+include mixins
 
+extends partial/layout
 
-要是我们两人一同在雨声里做梦，那境界是如何不同，或者一同在雨声里失眠，那也是何等有味。
-这里一切都是丑的，风、雨、太阳，都丑，人也丑，我也丑得很。只有你是青天">
-<meta property="og:type" content="article">
-<meta property="og:title" content="《朱生豪情书》">
-<meta property="og:url" content="http://mutemeteor.com/2016/10/11/朱生豪情书/index.html">
-<meta property="og:site_name" content="Mute Meteor">
-<meta property="og:description" content="听一个男人说这么多的情话，竟也没觉得腻得慌或者矫情。自己并不向往这样的爱情，却依然觉得朱&amp;amp;宋如此美好。想起豆瓣有人评论朱生豪，他短暂的一生只做了两件事，翻译莎士比亚全集和给爱的人写情书。而后者是比前者更伟大的成就。
+block site_title
+    != page.title + " · " + config.title
 
+block description
+    - var desc = page.desc || strip_html(page.content).replace(/^\s*/, '').replace(/\s*$/, '').substring(0, 150);
+    meta(name="description", content=desc)
 
-要是我们两人一同在雨声里做梦，那境界是如何不同，或者一同在雨声里失眠，那也是何等有味。
-这里一切都是丑的，风、雨、太阳，都丑，人也丑，我也丑得很。只有你是青天">
-<meta property="og:image" content="http://oevzkmimu.bkt.clouddn.com/%E6%9C%B1%E7%94%9F%E8%B1%AA%E6%83%85%E4%B9%A6.png">
-<meta property="og:updated_time" content="2017-03-21T12:05:58.054Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="《朱生豪情书》">
-<meta name="twitter:description" content="听一个男人说这么多的情话，竟也没觉得腻得慌或者矫情。自己并不向往这样的爱情，却依然觉得朱&amp;amp;宋如此美好。想起豆瓣有人评论朱生豪，他短暂的一生只做了两件事，翻译莎士比亚全集和给爱的人写情书。而后者是比前者更伟大的成就。
-
-
-要是我们两人一同在雨声里做梦，那境界是如何不同，或者一同在雨声里失眠，那也是何等有味。
-这里一切都是丑的，风、雨、太阳，都丑，人也丑，我也丑得很。只有你是青天">
-<meta name="twitter:image" content="http://oevzkmimu.bkt.clouddn.com/%E6%9C%B1%E7%94%9F%E8%B1%AA%E6%83%85%E4%B9%A6.png">
-  
-  
-    <link rel="icon" href="/favicon.ico">
-  
-  <link rel="stylesheet" href="/css/typing.css">
-  <link rel="stylesheet" href="/css/donate.css">
-  
-  <link rel="stylesheet" href="/css/font-awesome.min.css">
-  
-</head>
-
-  
-    
-      <body>
-    
-  
-      <div id="container" class="container">
-        <article id="post-朱生豪情书" class="article article-type-post" itemscope itemprop="blogPost">
-  <header id="header" class="header">
-  <nav id="main-nav" class="main-nav">
-    
-      <a class="main-nav-link" href="/">Home</a>
-    
-      <a class="main-nav-link" href="/archives">Archives</a>
-    
-      <a class="main-nav-link" href="/about">About</a>
-    
-  </nav>
-</header>
-
-  <hr/>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      《朱生豪情书》
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry typo" itemprop="articleBody">
-      
-        <p><a href="http://oevzkmimu.bkt.clouddn.com/%E6%9C%B1%E7%94%9F%E8%B1%AA%E6%83%85%E4%B9%A6.png" target="_blank" rel="external"><br>    <img src="http://oevzkmimu.bkt.clouddn.com/%E6%9C%B1%E7%94%9F%E8%B1%AA%E6%83%85%E4%B9%A6.png" alt="朱生豪情书">
-</a></p>
-<blockquote>
-<p>听一个男人说这么多的情话，竟也没觉得腻得慌或者矫情。自己并不向往这样的爱情，却依然觉得朱&amp;宋如此美好。想起豆瓣有人评论朱生豪，他短暂的一生只做了两件事，翻译莎士比亚全集和给爱的人写情书。而后者是比前者更伟大的成就。</p>
-</blockquote>
-<ul>
-<li>要是我们两人一同在雨声里做梦，那境界是如何不同，或者一同在雨声里失眠，那也是何等有味。</li>
-<li>这里一切都是丑的，风、雨、太阳，都丑，人也丑，我也丑得很。只有你是青天一样可羡。</li>
-<li>寄给你全宇宙的爱和自太古至永劫的思念。<a id="more"></a></li>
-<li>做人最好常在等待中，须是一个辽远的期望，不给你到达最后的终点，但一天比一天更接近这目标，永远是渴望，不实现也不摧毁，每天发现新的欢喜，是鼓舞而不是完全的满足。顶好是一切希望完全化为事实，在生命终了前的一秒钟中。</li>
-<li>为了你，我也有走向光明的热望，世界不会于我太寂寞。</li>
-<li>我是个平凡的人，不像你那么“狂野”，但我厌弃的是平凡的梦。我只愿意凭着这一点灵感的相通，时时带给彼此以慰藉，“像流星的光辉，照耀我疲惫的梦寐，永远存一个安慰，纵然在别离的时候。”</li>
-<li>我的快乐即是爱你，我的安慰即是思念你，你愿不愿待我好则非我所愿计及。</li>
-<li>临颖不如云，却怨天气好，愿化一面镜子，常常照你笑。</li>
-<li>接到你的信，真快活，风和日暖，令人愿意永远活下去。世上一切算得什么，只要有你。 我是，我是宋清如至上主义者。</li>
-<li>我一天一天明白你的平凡，同时却一天一天愈更深切地爱你。你如照镜子，你不会看得见你特别好的所在，但你如走进我的心里来时，你一定能知道自己是怎样好法</li>
-<li>但愿来生我们终日在一起，每天每天从早晨口角到夜深，恨不得大家走开。</li>
-<li>寂寞常是啮着我，唯你能给我感奋。</li>
-<li>不要愁老之将至，你老了一定很可爱。而且，假如你老了十岁，我当然也同样老了十岁，世界也老了十岁，上帝也老了十岁，一切都是一样。 我愿意舍弃一切，以想念你终此一生。 所有的恋慕。</li>
-<li>你总有一天会看我不起，因为我实在毫无希望，就是胡思乱想的本领，也比从前差得多了，如果不是因为今天是星期五之故，我真不想活。 不骗你，我很爱你，仍旧想跟你在一起做梦。</li>
-<li>如果我想要做一个梦，世界是一片大的草原，山在远处，青天在顶上，溪流在足下，鸟声在树上，如睡眠的静谧，没有一个人，只有你我，在一起跳着飞着躲着捉迷藏，你允不允许？因为你不允许我做的梦，我不敢做的。我不是诗人，否则一定要做一些可爱的梦，为着你的缘故。我不能写一首世间最美的抒情诗给你，这将是我终生抱憾的事。我多么愿意自己是个诗人，只是为了你的缘故。</li>
-<li>今后再不说诳话欺骗自己了，愿意炼成一个坚强的钢铁样的信心，永远倾向着你，当我疲倦了一切无谓的游戏之后。我不愿说那是恋爱，那自然是比恋爱更纯粹的信念。我愿意懂得“永恒”两字的意义，把悲壮的意味放入平凡的生活里，而做一个虔诚的人。因我是厌了易变的世事，也厌了易变的自己的心情。</li>
-<li>我的野心，便是想成为你的好朋友；现在我的野心，便是希望这样的友谊能继续到死时。谢谢你给我一个等待。</li>
-<li>上星期日是母亲忌辰，却忘记了，今天查起来才知道已经过去。也是昨天一样的天气，十一年前的那天，人生的悲哀掩上了我，以至于今日。</li>
-<li>如果不是那样饥渴地想忆着你，像沉舟者在海中拼命攀住一根漂浮的桅杆一样，我的思想一定会转入无底绝望而黑暗的深渊，我觉得我的生命好像不是属于自己的，非自己所能把握。</li>
-<li>不要自寻烦恼，最好，我知道你很懂得这意思。但是在必要的时候，无事可做的时候，不那样心里便是空虚得那样的时候，仍不妨寻寻烦恼，跟人吵吵闹闹哭哭气气都好的，只不要让烦恼生了根。</li>
-<li>假如有人问我烦忧的缘故， 我不敢说出你的名字。</li>
-<li>上天入地茫无路，我愿你——灵性不泯，挟风雨作伴，与日月同存；我也愿你——酣睡千秋，超然尘俗之外，忘怀古今得失。</li>
-</ul>
-
-      
-      <div id="donate" class="donate">
-        <a id="github" href="https://github.com/geekplux" target="_blank" class="pos-f tr3" title="Github"></a>
-	      <div id="DonateText" class="tr3">Donate</div>
-	      <ul id="donateBox" class="list pos-f tr3">
-		      <li id="PayPal"><a href="https://www.paypal.me/geekplux" target="_blank">PayPal</a></li>
-		      <li id="BTC" data-footnote="Copy addres and show QRCode"><button id="BTCBn"  data-clipboard-target="#btc-key" alt="Copy to clipboard">Bitcoin</button></li>
-		      <li id="AliPay">AliPay</li>
-		      <li id="WeChat">WeChat</li>
-	      </ul>
-	      <div id="QRBox" class="pos-f left-100">
-		      <div id="BTCQR" class="MainBox" style="background-image: url(http://7b1evr.com1.z0.glb.clouddn.com/donate/bitcoin.png)"></div>
-		      <div id="AliPayQR" class="MainBox" style="background-image: url(http://7b1evr.com1.z0.glb.clouddn.com/donate/alipayQR.jpg)"></div>
-		      <div id="WeChatQR" class="MainBox" style="background-image: url(http://7b1evr.com1.z0.glb.clouddn.com/donate/wechatQR.jpg)"></div>
-	      </div>
-	      <!-- Bitcoin 账号 -->
-	      <input id="btc-key" type="text" value="1AVngxh56oLvAzXsEFnzccUohZdHswjC7j" readonly="readonly">
-      </div>
-    </div>
-    <footer class="article-footer">
-      <ul class="article-meta">
-        <li>
-          <span class="label">Published Date:</span>
-          <a href="/2016/10/11/朱生豪情书/" class="article-date">
-  <time datetime="2016-10-11T13:11:55.000Z" itemprop="datePublished">2016-10-11</time>
-</a>
-
-        </li>
-        
-          <li>
-            <span class="label">Category:</span>
-            
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/读书记/">读书记</a>
-  </div>
-
-
-          </li>
-        
-        
-          <li>
-            <span class="label">Tag:</span>
-            
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/书信/">书信</a></li></ul>
-
-
-          </li>
-        
-        <hr/>
-      </ul>
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav" class="article-nav">
-  
-    <a href="/2016/10/12/邂逅渝滇——山城与艳遇之都的慢摇滚/" id="article-nav-newer" class="article-nav-link-wrap newer">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          邂逅滇渝——山城与艳遇之都的慢摇滚
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2016/10/11/云雀叫了一整天/" id="article-nav-older" class="article-nav-link-wrap older">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">《云雀叫了一整天》</div>
-    </a>
-  
-</nav>
-
-
-  
-</article>
-
-
-
-
-
-
-      </div>
-      
-    <footer id="footer" class="post-footer footer">
-      
-        <ul class="footer-links">
-          
-            <li><a href="/archives/"><span class="fa fa-book"></span></a></li>
-          
-            <li><a href="https://github.com/geekplux/hexo-theme-typing"><span class="fa fa-globe"></span></a></li>
-          
-            <li><a href="https://twitter.com/"><span class="fa fa-twitter"></span></a></li>
-          
-            <li><a href="https://github.com/"><span class="fa fa-github-alt"></span></a></li>
-          
-            <li><a href="https://www.youtube.com/"><span class="fa fa-youtube-play"></span></a></li>
-          
-            <li><a href="https://stackoverflow.com/"><span class="fa fa-stack-overflow"></span></a></li>
-          
-            <li><a href="https://plus.google.com/"><span class="fa fa-google-plus"></span></a></li>
-          
-            <li><a href="/atom.xml"><span class="fa fa-rss"></span></a></li>
-          
-        </ul>
-	    
-      <hr/>
-      <div id="footerContent" class="footer-content">
-        <p>ipsum dolor sit amet, <strong>consectetur adipiscing elit.</strong> Fusce eget urna vitae velit <em>eleifend interdum at ac nisi. In nec ligula lacus. Cum sociis natoque</em> penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eu cursus erat, ut dapibus quam. Post</p>
-
-
-      </div>
-    </footer>
-
-      
-
-
-
-<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.10/clipboard.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/typing.js"></script>
-<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
-
-
-
-
-
-
-
-    </div>
-  </body>
-</html>
+block content
+    .autopagerize_page_element: .content: .post-page
+        include mixins
+        +make_post(page, true)
+        .share
+            span= __('share')
+            | &nbsp;
+            span.soc
+                a.fa.fa-bookmark(href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title);}})();", ref="nofollow", target="_blank")
+            span.soc
+                a.fa.fa-weibo(href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&title=',e(d.title),'&appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));")
+            span.soc
+                a.fa.fa-twitter(href=url_for("http://twitter.com/home?status=" + "" + config.url + "/" + page.path + "%20" + config.title + "%20" + page.title + ""))
+        - var prev = page.prev ? page.prev.path : false;
+        - var next = page.next ? page.next.path : false;
+        .pagination
+            p.clearfix
+                if prev
+                    span.pre.pagbuttons
+                        a(role="navigation",href=url_for(prev), title=page.prev.title)
+                            i.fa.fa-angle-double-left
+                            |&nbsp;
+                            != __('prev_post')+': ' + page.prev.title
+                if next
+                    span &nbsp;
+                    span.next.pagbuttons
+                        a(role="navigation",href=url_for(next), title=page.next.title)
+                            != __('next_post')+': ' + page.next.title
+                            |&nbsp;
+                            i.fa.fa-angle-double-right
+        include partial/comments

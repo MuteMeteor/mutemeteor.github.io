@@ -1,284 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  
-  <title>Linux 学习笔记 | Mute Meteor</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="linux终端终端的概念通常我们在使用 Linux 时，并不是直接与系统打交道，而是通过一个叫做 Shell 的中间程序来完成的，在图形界面下为了实现让我们在一个窗口中完成用户输入和显示输出，Linux 系统还提供了一个叫做终端模拟器的程序（Terminal），下面是几个比较常见的终端模拟器： gnome-terminal，kconsole，xterm，rxvt，kvt，nxterm 和 eter">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Linux 学习笔记">
-<meta property="og:url" content="http://mutemeteor.com/2017/08/07/Linux/index.html">
-<meta property="og:site_name" content="Mute Meteor">
-<meta property="og:description" content="linux终端终端的概念通常我们在使用 Linux 时，并不是直接与系统打交道，而是通过一个叫做 Shell 的中间程序来完成的，在图形界面下为了实现让我们在一个窗口中完成用户输入和显示输出，Linux 系统还提供了一个叫做终端模拟器的程序（Terminal），下面是几个比较常见的终端模拟器： gnome-terminal，kconsole，xterm，rxvt，kvt，nxterm 和 eter">
-<meta property="og:updated_time" content="2017-09-05T01:43:43.128Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux 学习笔记">
-<meta name="twitter:description" content="linux终端终端的概念通常我们在使用 Linux 时，并不是直接与系统打交道，而是通过一个叫做 Shell 的中间程序来完成的，在图形界面下为了实现让我们在一个窗口中完成用户输入和显示输出，Linux 系统还提供了一个叫做终端模拟器的程序（Terminal），下面是几个比较常见的终端模拟器： gnome-terminal，kconsole，xterm，rxvt，kvt，nxterm 和 eter">
-  
-  
-    <link rel="icon" href="/favicon.ico">
-  
-  <link rel="stylesheet" href="/css/typing.css">
-  <link rel="stylesheet" href="/css/donate.css">
-  
-  <link rel="stylesheet" href="/css/font-awesome.min.css">
-  
-</head>
+include mixins
 
-  
-    
-      <body>
-    
-  
-      <div id="container" class="container">
-        <article id="post-Linux" class="article article-type-post" itemscope itemprop="blogPost">
-  <header id="header" class="header">
-  <nav id="main-nav" class="main-nav">
-    
-      <a class="main-nav-link" href="/">Home</a>
-    
-      <a class="main-nav-link" href="/archives">Archives</a>
-    
-      <a class="main-nav-link" href="/about">About</a>
-    
-  </nav>
-</header>
+extends partial/layout
 
-  <hr/>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Linux 学习笔记
-    </h1>
-  
+block site_title
+    != page.title + " · " + config.title
 
-      </header>
-    
-    <div class="article-entry typo" itemprop="articleBody">
-      
-        <h1 id="linux终端"><a href="#linux终端" class="headerlink" title="linux终端"></a>linux终端</h1><h2 id="终端的概念"><a href="#终端的概念" class="headerlink" title="终端的概念"></a>终端的概念</h2><p>通常我们在使用 Linux 时，并不是直接与系统打交道，而是通过一个叫做 Shell 的中间程序来完成的，在图形界面下为了实现让我们在一个窗口中完成用户输入和显示输出，Linux 系统还提供了一个叫做终端模拟器的程序（Terminal），下面是几个比较常见的终端模拟器： gnome-terminal，kconsole，xterm，rxvt，kvt，nxterm 和 eterm 。</p>
-<a id="more"></a>
-<h1 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h1><p>通常在图形界面中对实际体验带来差异的不是上述的不同发行版的各种终端模拟器，而是这个 Shell（壳）。有壳就有核，这里的核就是指 UNIX/Linux 内核，Shell 是指“提供给使用者使用界面”的软件（命令解析器），类似于 DOS 下的 command（命令行）和后来的 cmd.exe 。普通意义上的 Shell 就是可以接受用户输入命令的程序。它之所以被称作 Shell 是因为它隐藏了操作系统底层的细节。同样的 UNIX/Linux 下的图形用户界面 GNOME 和 KDE，有时也被叫做“虚拟 shell”或“图形 shell”。</p>
-<p>UNIX/Linux 操作系统下的 Shell 既是用户交互的界面，也是控制系统的脚本语言。当然这一点也有别于 Windows 下的命令行，虽然该命令行也提供了很简单的控制语句。在 Windows 操作系统下，有些用户从来都不会直接使用 Shell，然而在 UNIX 系列操作系统下，Shell 仍然是控制系统启动、X11 启动和很多其它实用工具的脚本解释程序。</p>
-<p>在 UNIX/Linux 中比较流行的常见的 Shell 有 bash、zsh、ksh、csh 等等，Ubuntu 终端默认使用的是 bash，默认的桌面环境是 GNOME 或者 Unity。</p>
-<h1 id="命令行操作"><a href="#命令行操作" class="headerlink" title="命令行操作"></a>命令行操作</h1><h2 id="Tab"><a href="#Tab" class="headerlink" title="[Tab]"></a>[Tab]</h2><p>使用Tab键来进行命令补全，Tab键一般是在字母Q旁边，这个技巧给你带来的最大的好处就是当你忘记某个命令的全称时可以只输入它的开头的一部分，然后按下Tab键就可以得到提示或者帮助完成，当然不止补全命令，补全目录、补全命令参数都是没问题的。</p>
-<h2 id="Ctrl-c"><a href="#Ctrl-c" class="headerlink" title="[Ctrl+c]"></a>[Ctrl+c]</h2><p>用Ctrl+c键来强行终止当前程序（且并不会使终端退出）。</p>
-<p>其他一些常用快捷键:</p>
-<table>
-<thead>
-<tr>
-<th>按键</th>
-<th style="text-align:center">作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Ctrl+d</code></td>
-<td style="text-align:center">键盘输入结束或退出终端</td>
-</tr>
-<tr>
-<td><code>Ctrl+s</code></td>
-<td style="text-align:center">暂停当前程序，暂停后按下任意键恢复运行</td>
-</tr>
-<tr>
-<td><code>Ctrl+z</code></td>
-<td style="text-align:center">将当前程序放到后台运行，恢复到前台为命令fg</td>
-</tr>
-<tr>
-<td><code>Ctrl+a</code></td>
-<td style="text-align:center">将光标移至输入行头，相当于Home键</td>
-</tr>
-<tr>
-<td><code>Ctrl+e</code></td>
-<td style="text-align:center">将光标移至输入行末，相当于End键</td>
-</tr>
-<tr>
-<td><code>Alt+Backspace</code></td>
-<td style="text-align:center">向前删除一个单词</td>
-</tr>
-<tr>
-<td><code>Shift+PgUp</code></td>
-<td style="text-align:center">将终端显示向上滚动</td>
-</tr>
-<tr>
-<td><code>Shift+PgDn</code></td>
-<td style="text-align:center">将终端显示向下滚动</td>
-</tr>
-</tbody>
-</table>
-<h2 id="历史输入命令"><a href="#历史输入命令" class="headerlink" title="历史输入命令"></a>历史输入命令</h2><p>很简单，使用键盘上的方向上键<code>↑</code>，恢复之前输入过的命令，一试便知。</p>
-<h2 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h2><p>通配符是一种特殊语句，主要有星号（*）和问号（?），用来对字符串进行模糊匹配（比如文件名、参数名）。当查找文件夹时，可以使用它来代替一个或多个真正字符；当不知道真正字符或者懒得输入完整名字时，常常使用通配符代替一个或多个真正字符。</p>
-<p>终端里面输入的通配符是由 Shell 处理的，不是由所涉及的命令语句处理的，它只会出现在命令的“参数值”里（它不能出现在命令名称里， 命令不记得，那就用<code>Tab</code>补全）。当 Shell 在“参数值”中遇到了通配符时，Shell 会将其当作路径或文件名在磁盘上搜寻可能的匹配：若符合要求的匹配存在，则进行代换（路径扩展）；否则就将该通配符作为一个普通字符传递给“命令”，然后再由命令进行处理。总之，通配符实际上就是一种 Shell 实现的路径扩展功能。在通配符被处理后， Shell 会先完成该命令的重组，然后继续处理重组后的命令，直至执行该命令。</p>
-<p>Shell 常用通配符：</p>
-<table>
-<thead>
-<tr>
-<th>字符</th>
-<th style="text-align:center">含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>*</code></td>
-<td style="text-align:center">匹配 0 或多个字符</td>
-</tr>
-<tr>
-<td><code>?</code></td>
-<td style="text-align:center">匹配任意一个字符</td>
-</tr>
-<tr>
-<td><code>[list]</code></td>
-<td style="text-align:center">匹配 list 中的任意单一字符</td>
-</tr>
-<tr>
-<td><code>[!list]</code></td>
-<td style="text-align:center">匹配 除list 中的任意单一字符以外的字符</td>
-</tr>
-<tr>
-<td><code>[c1-c2]</code></td>
-<td style="text-align:center">匹配 c1-c2 中的任意单一字符 如：[0-9] [a-z]</td>
-</tr>
-<tr>
-<td><code>{string1,string2,...}</code></td>
-<td style="text-align:center">匹配 string1 或 string2 (或更多)其一字符串</td>
-</tr>
-<tr>
-<td><code>{c1..c2}</code></td>
-<td style="text-align:center">匹配 c1-c2 中全部字符 如{1..10}</td>
-</tr>
-</tbody>
-</table>
+block description
+    - var desc = page.desc || strip_html(page.content).replace(/^\s*/, '').replace(/\s*$/, '').substring(0, 150);
+    meta(name="description", content=desc)
 
-      
-      <div id="donate" class="donate">
-        <a id="github" href="https://github.com/geekplux" target="_blank" class="pos-f tr3" title="Github"></a>
-	      <div id="DonateText" class="tr3">Donate</div>
-	      <ul id="donateBox" class="list pos-f tr3">
-		      <li id="PayPal"><a href="https://www.paypal.me/geekplux" target="_blank">PayPal</a></li>
-		      <li id="BTC" data-footnote="Copy addres and show QRCode"><button id="BTCBn"  data-clipboard-target="#btc-key" alt="Copy to clipboard">Bitcoin</button></li>
-		      <li id="AliPay">AliPay</li>
-		      <li id="WeChat">WeChat</li>
-	      </ul>
-	      <div id="QRBox" class="pos-f left-100">
-		      <div id="BTCQR" class="MainBox" style="background-image: url(http://7b1evr.com1.z0.glb.clouddn.com/donate/bitcoin.png)"></div>
-		      <div id="AliPayQR" class="MainBox" style="background-image: url(http://7b1evr.com1.z0.glb.clouddn.com/donate/alipayQR.jpg)"></div>
-		      <div id="WeChatQR" class="MainBox" style="background-image: url(http://7b1evr.com1.z0.glb.clouddn.com/donate/wechatQR.jpg)"></div>
-	      </div>
-	      <!-- Bitcoin 账号 -->
-	      <input id="btc-key" type="text" value="1AVngxh56oLvAzXsEFnzccUohZdHswjC7j" readonly="readonly">
-      </div>
-    </div>
-    <footer class="article-footer">
-      <ul class="article-meta">
-        <li>
-          <span class="label">Published Date:</span>
-          <a href="/2017/08/07/Linux/" class="article-date">
-  <time datetime="2017-08-07T11:39:31.000Z" itemprop="datePublished">2017-08-07</time>
-</a>
-
-        </li>
-        
-        
-          <li>
-            <span class="label">Tag:</span>
-            
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Notes/">Notes</a></li></ul>
-
-
-          </li>
-        
-        <hr/>
-      </ul>
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav" class="article-nav">
-  
-    <a href="/2017/08/10/Psychological-Clinic/" id="article-nav-newer" class="article-nav-link-wrap newer">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Psychological Clinic
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2017/07/23/vim/" id="article-nav-older" class="article-nav-link-wrap older">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Vim 学习笔记</div>
-    </a>
-  
-</nav>
-
-
-  
-</article>
-
-
-
-
-
-
-      </div>
-      
-    <footer id="footer" class="post-footer footer">
-      
-        <ul class="footer-links">
-          
-            <li><a href="/archives/"><span class="fa fa-book"></span></a></li>
-          
-            <li><a href="https://github.com/geekplux/hexo-theme-typing"><span class="fa fa-globe"></span></a></li>
-          
-            <li><a href="https://twitter.com/"><span class="fa fa-twitter"></span></a></li>
-          
-            <li><a href="https://github.com/"><span class="fa fa-github-alt"></span></a></li>
-          
-            <li><a href="https://www.youtube.com/"><span class="fa fa-youtube-play"></span></a></li>
-          
-            <li><a href="https://stackoverflow.com/"><span class="fa fa-stack-overflow"></span></a></li>
-          
-            <li><a href="https://plus.google.com/"><span class="fa fa-google-plus"></span></a></li>
-          
-            <li><a href="/atom.xml"><span class="fa fa-rss"></span></a></li>
-          
-        </ul>
-	    
-      <hr/>
-      <div id="footerContent" class="footer-content">
-        <p>ipsum dolor sit amet, <strong>consectetur adipiscing elit.</strong> Fusce eget urna vitae velit <em>eleifend interdum at ac nisi. In nec ligula lacus. Cum sociis natoque</em> penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eu cursus erat, ut dapibus quam. Post</p>
-
-
-      </div>
-    </footer>
-
-      
-
-
-
-<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.10/clipboard.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/typing.js"></script>
-<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
-
-
-
-
-
-
-
-    </div>
-  </body>
-</html>
+block content
+    .autopagerize_page_element: .content: .post-page
+        include mixins
+        +make_post(page, true)
+        .share
+            span= __('share')
+            | &nbsp;
+            span.soc
+                a.fa.fa-bookmark(href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title);}})();", ref="nofollow", target="_blank")
+            span.soc
+                a.fa.fa-weibo(href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&title=',e(d.title),'&appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));")
+            span.soc
+                a.fa.fa-twitter(href=url_for("http://twitter.com/home?status=" + "" + config.url + "/" + page.path + "%20" + config.title + "%20" + page.title + ""))
+        - var prev = page.prev ? page.prev.path : false;
+        - var next = page.next ? page.next.path : false;
+        .pagination
+            p.clearfix
+                if prev
+                    span.pre.pagbuttons
+                        a(role="navigation",href=url_for(prev), title=page.prev.title)
+                            i.fa.fa-angle-double-left
+                            |&nbsp;
+                            != __('prev_post')+': ' + page.prev.title
+                if next
+                    span &nbsp;
+                    span.next.pagbuttons
+                        a(role="navigation",href=url_for(next), title=page.next.title)
+                            != __('next_post')+': ' + page.next.title
+                            |&nbsp;
+                            i.fa.fa-angle-double-right
+        include partial/comments

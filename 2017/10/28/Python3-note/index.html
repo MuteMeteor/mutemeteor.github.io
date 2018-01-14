@@ -1,382 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  
-  <title>Python3 学习笔记（一） | Mute Meteor</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="认识 Python
-Python的发音与拼写 [ˈpaɪθən]
-Python的意思是蟒蛇，源于作者喜欢的一部电视剧 (C呢？)
-Python的作者是Guido van Rossum（龟叔）
-Python是龟叔在1989年圣诞节期间，为了打发无聊的圣诞节而用C编写的一个编程语言
-Python正式诞生于1991年
-Python的解释器如今有多个语言实现，我们常用的是CPython（官方版本的C语言实">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Python3 学习笔记（一）">
-<meta property="og:url" content="http://mutemeteor.com/2017/10/28/Python3-note/index.html">
-<meta property="og:site_name" content="Mute Meteor">
-<meta property="og:description" content="认识 Python
-Python的发音与拼写 [ˈpaɪθən]
-Python的意思是蟒蛇，源于作者喜欢的一部电视剧 (C呢？)
-Python的作者是Guido van Rossum（龟叔）
-Python是龟叔在1989年圣诞节期间，为了打发无聊的圣诞节而用C编写的一个编程语言
-Python正式诞生于1991年
-Python的解释器如今有多个语言实现，我们常用的是CPython（官方版本的C语言实">
-<meta property="og:updated_time" content="2017-11-14T01:26:03.484Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python3 学习笔记（一）">
-<meta name="twitter:description" content="认识 Python
-Python的发音与拼写 [ˈpaɪθən]
-Python的意思是蟒蛇，源于作者喜欢的一部电视剧 (C呢？)
-Python的作者是Guido van Rossum（龟叔）
-Python是龟叔在1989年圣诞节期间，为了打发无聊的圣诞节而用C编写的一个编程语言
-Python正式诞生于1991年
-Python的解释器如今有多个语言实现，我们常用的是CPython（官方版本的C语言实">
-  
-  
-    <link rel="icon" href="/favicon.ico">
-  
-  <link rel="stylesheet" href="/css/typing.css">
-  <link rel="stylesheet" href="/css/donate.css">
-  
-  <link rel="stylesheet" href="/css/font-awesome.min.css">
-  
-</head>
+include mixins
 
-  
-    
-      <body>
-    
-  
-      <div id="container" class="container">
-        <article id="post-Python3-note" class="article article-type-post" itemscope itemprop="blogPost">
-  <header id="header" class="header">
-  <nav id="main-nav" class="main-nav">
-    
-      <a class="main-nav-link" href="/">Home</a>
-    
-      <a class="main-nav-link" href="/archives">Archives</a>
-    
-      <a class="main-nav-link" href="/about">About</a>
-    
-  </nav>
-</header>
+extends partial/layout
 
-  <hr/>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Python3 学习笔记（一）
-    </h1>
-  
+block site_title
+    != page.title + " · " + config.title
 
-      </header>
-    
-    <div class="article-entry typo" itemprop="articleBody">
-      
-        <h1 id="认识-Python"><a href="#认识-Python" class="headerlink" title="认识 Python"></a>认识 Python</h1><ul>
-<li>Python的发音与拼写 [ˈpaɪθən]</li>
-<li>Python的意思是蟒蛇，源于作者喜欢的一部电视剧 (C呢？)</li>
-<li>Python的作者是Guido van Rossum（龟叔）</li>
-<li>Python是龟叔在1989年圣诞节期间，为了打发无聊的圣诞节而用C编写的一个编程语言</li>
-<li>Python正式诞生于1991年</li>
-<li>Python的解释器如今有多个语言实现，我们常用的是CPython（官方版本的C语言实现），其他还有Jython（可以运行在Java平台）、IronPython（可以运行在.NET和Mono平台）、PyPy（Python实现的，支持JIT即时编译）</li>
-<li>Python目前有两个版本，Python2和Python3，最新版分别为2.7.12和3.5.2，现阶段大部分公司用的是Python2<a id="more"></a>
-</li>
-</ul>
-<h1 id="Python优缺点"><a href="#Python优缺点" class="headerlink" title="Python优缺点"></a>Python优缺点</h1><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><ul>
-<li><p>简单————Python是一种代表简单主义思想的语言。阅读一个良好的Python程序就感觉像是在读英语一样，尽管这个英语的要求非常严格。</p>
-</li>
-<li><p>易学————Python有极其简单的语法。</p>
-</li>
-<li><p>免费、开源————Python是FLOSS（自由/开放源码软件）之一。简单地说，你可以自由地发布这个软件的拷贝、阅读它的源代码、对它做改动、把它的一部分用于新的自由软件中。FLOSS是基于一个团体分享知识的概念。这是为什么Python如此优秀的原因之一——它是由一群希望看到一个更加优秀的Python的人创造并经常改进着的。</p>
-</li>
-<li><p>高层语言————当你用Python语言编写程序的时候，你无需考虑诸如如何管理你的程序使用的内存一类的底层细节。</p>
-</li>
-<li><p>可移植性————由于它的开源本质，Python已经被移植在许多平台上（经过改动使它能够工作在不同平台上）。如果你小心地避免使用依赖于系统的特性，那么你的所有Python程序无需修改就可以在下述任何平台上面运行。</p>
-</li>
-<li><p>解释性————一个用编译性语言比如C或C++写的程序可以从源文件（即C或C++语言）转换到一个计算机使用的语言（二进制代码，即0和1）。这个过程通过编译器和不同的标记、选项完成。当运行程序的时候，连接/转载器软件把程序从硬盘复制到内存中并且运行。而Python语言写的程序不需要编译成二进制代码，可以直接从源代码运行程序。在计算机内部，Python解释器把源代码转换成称为字节码的中间形式，然后再把它翻译成计算机使用的机器语言并运行。事实上，由于不再需要担心如何编译程序，如何确保连接转载正确的库等等，所有这一切使得使用Python更加简单。</p>
-</li>
-<li><p>面向对象————Python既支持面向过程的编程也支持面向对象的编程。在“面向过程”的语言中，程序是由过程或仅仅是可重用代码的函数构建起来的。在“面向对象”的语言中，程序是由数据和功能组合而成的对象构建起来的。与其他主要的语言如C++和Java相比，Python以一种非常强大又简单的方式实现面向对象编程。</p>
-</li>
-<li><p>可扩展性————如果需要一段关键代码运行得更快或者希望某些算法不公开，可以把部分程序用C或C++编写，然后在Python程序中使用它们。</p>
-</li>
-<li><p>丰富的库————Python标准库确实很庞大。它可以帮助你处理各种工作，包括正则表达式、文档生成、单元测试、线程、数据库、网页浏览器、CGI、FTP、电子邮件、XML、XML-RPC、HTML、WAV文件、密码系统、GUI（图形用户界面）、Tk和其他与系统有关的操作。记住，只要安装了Python，所有这些功能都是可用的。这被称作Python的“功能齐全”理念。除了标准库以外，还有许多其他高质量的库，如wxPython、Twisted和Python图像库等等。</p>
-</li>
-<li><p>规范的代码————Python采用强制缩进的方式使得代码具有极佳的可读性。</p>
-</li>
-</ul>
-<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><ul>
-<li>运行速度，有速度要求的话，用C++改写关键部分吧。</li>
-<li>国内市场较小（国内以python来做主要开发的，目前只有一些web2.0公司）。但时间推移，目前很多国内软件公司，尤其是游戏公司，也开始规模使用他。</li>
-<li>中文资料匮乏（好的python中文资料屈指可数）。托社区的福，有几本优秀的教材已经被翻译了，但入门级教材多，高级内容还是只能看英语版。</li>
-<li>构架选择太多（没有像C#这样的官方.net构架，也没有像ruby由于历史较短，构架开发的相对集中。Ruby on Rails 构架开发中小型web程序天下无敌）。不过这也从另一个侧面说明，python比较优秀，吸引的人才多，项目也多。</li>
-</ul>
-<hr>
-<h1 id="解释器-amp-脚本文件"><a href="#解释器-amp-脚本文件" class="headerlink" title="解释器&amp;脚本文件"></a>解释器&amp;脚本文件</h1><p>Python 是一个脚本语言，可以在 Python 解释器中直接写代码或者将代码写到一个文件里，然后执行这个文件（即脚本文件）。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">$ python3</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">"Hello World!"</span>)</div><div class="line">Hello World!</div><div class="line">exit()  </div><div class="line"></div><div class="line">vim helloworld.py                       <span class="comment">#按i进入插入模式</span></div><div class="line"><span class="comment">#!/usr/bin/env python3              </span></div><div class="line">print(<span class="string">"Hello World!"</span>)                   <span class="comment">#输完文本按esc退出，并敲：wq</span></div><div class="line"></div><div class="line">$ chmod +x helloworld.py                <span class="comment">#给文件添加可执行权限</span></div><div class="line">$ ./helloworld.py</div></pre></td></tr></table></figure>
-<h1 id="代码风格建议"><a href="#代码风格建议" class="headerlink" title="代码风格建议"></a>代码风格建议</h1><p>在 Python 中，空格很重要，使用空格将标识符区分开，行开始处的空格我们称之为缩进，如果缩进是错误的，Python 解释器会抛出错误。</p>
-<p>所以建议遵守以下约定：</p>
-<ul>
-<li>使用 4 个空格来缩进</li>
-<li>永远不要混用空格和制表符</li>
-<li>在函数之间空一行</li>
-<li>在类之间空两行</li>
-<li>字典，列表，元组以及参数列表中，在 , 后添加一个空格。对于字典，: 后面也添加一个空格</li>
-<li>在赋值运算符和比较运算符周围要有空格（参数列表中除外），但是括号里侧不加空格：a = f(1, 2) + g(3, 4)</li>
-</ul>
-<h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><p>Python 的注释以 # 字符开始的，在 # 字符到行尾之间的所有东西都被程序忽略为注释，也就说对程序没有任何影响。快捷键为<code>Ctrl+/</code>。</p>
-<p>多行注释是用三引号包含的。</p>
-<hr>
-<h1 id="变量和数据类型"><a href="#变量和数据类型" class="headerlink" title="变量和数据类型"></a>变量和数据类型</h1><h2 id="关键字和标识符"><a href="#关键字和标识符" class="headerlink" title="关键字和标识符"></a>关键字和标识符</h2><p>Python3 的关键字，不能用于通常的标识符。关键字可以通过 Python3 解释器中得到：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ python3</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>help（）</div><div class="line">help&gt; keywords</div></pre></td></tr></table></figure>
-<p>在 Python 中不需要为变量指定数据类型。所以可以直接写出 abc = 1 ，这样变量 abc 就是整数类型。如果写出 abc = 1.0 ，那么变量 abc 就是浮点类型。</p>
-<p>Python 也能操作字符串，它们用单引号或双引号括起来，就像下面这样。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ python3</div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">"Hello World!"</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'Hello World!'</span></div></pre></td></tr></table></figure>
-<h2 id="从键盘读取输入"><a href="#从键盘读取输入" class="headerlink" title="从键盘读取输入"></a>从键盘读取输入</h2><p>通常情况下，Python 的代码中是不需要从键盘读取输入的。不过我们还是可以在 Python 中使用函数 input() 来做到这一点，input() 有一个用于打印在屏幕上的可选字符串参数，返回用户输入的字符串。</p>
-<h2 id="单行定义多个变量或赋值"><a href="#单行定义多个变量或赋值" class="headerlink" title="单行定义多个变量或赋值"></a>单行定义多个变量或赋值</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>a , b = <span class="number">45</span>, <span class="number">54</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>a</div><div class="line"><span class="number">45</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>b</div><div class="line"><span class="number">54</span></div></pre></td></tr></table></figure>
-<p>这个技巧用来交换两个数的值非常方便:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>a, b = b , a</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>a</div><div class="line"><span class="number">54</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>b</div><div class="line"><span class="number">45</span></div></pre></td></tr></table></figure>
-<p>要明白这是怎么工作的，需要学习元组（tuple）这个数据类型。python3用逗号创建元组。在赋值语句的右边创建了一个元组，称这为元组封装（tuple packing），赋值语句的左边则做的是元组拆封 （tuple unpacking）。<br>下面是另一个元组拆封的例子：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>data = (<span class="string">"mute"</span>, <span class="string">"China"</span>, <span class="string">"Python"</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>name, country, language = data</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>name</div><div class="line"><span class="string">'mute'</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>country</div><div class="line"><span class="string">'China'</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>language</div><div class="line"><span class="string">'Python'</span></div></pre></td></tr></table></figure>
-<hr>
-<h1 id="运算符和表达式"><a href="#运算符和表达式" class="headerlink" title="运算符和表达式"></a>运算符和表达式</h1><h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><p>运算符是一些符号，它告诉 Python 解释器去做一些数学或逻辑操作。只要有任意一个操作数是浮点数，结果就会是浮点数。</p>
-<p>进行除法运算时若是除不尽，结果将会是小数，这很自然，如果要进行整除，使用 // 运算符，它将返回商的整数部分。</p>
-<h2 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h2><table>
-<thead>
-<tr>
-<th>Operator</th>
-<th style="text-align:center">Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>&lt;</td>
-<td style="text-align:center">Is less than</td>
-</tr>
-<tr>
-<td>&lt;=</td>
-<td style="text-align:center">Is less than or equal to</td>
-</tr>
-<tr>
-<td>&gt;</td>
-<td style="text-align:center">Is greater than</td>
-</tr>
-<tr>
-<td>&gt;=</td>
-<td style="text-align:center">Is greater than or equal to</td>
-</tr>
-<tr>
-<td>==</td>
-<td style="text-align:center">Is equal to</td>
-</tr>
-<tr>
-<td>!=</td>
-<td style="text-align:center">Is not equal to</td>
-</tr>
-</tbody>
-</table>
-<p>举一些例子：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">1</span> &lt; <span class="number">2</span></div><div class="line"><span class="keyword">True</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">3</span> &gt; <span class="number">34</span></div><div class="line"><span class="keyword">False</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">23</span> == <span class="number">45</span></div><div class="line"><span class="keyword">False</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">34</span> != <span class="number">323</span></div><div class="line"><span class="keyword">True</span></div></pre></td></tr></table></figure>
-<h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><p>对于逻辑 与，或，非，使用 and，or，not 这几个关键字。</p>
-<p>逻辑运算符 and 和 or 也称作短路运算符：它们的参数从左向右解析，一旦结果可以确定就停止。例如，如果 A 和 C 为真而 B 为假，A and B and C 不会解析 C 。作用于一个普通的非逻辑值时，短路运算符的返回值通常是能够最先确定结果的那个操作数。</p>
-<p>关系运算可以通过逻辑运算符 and 和 or 组合，比较的结果可以用 not 来取反意。逻辑运算符的优先级又低于关系运算符，在它们之中，not 具有最高的优先级，or 优先级最低，所以 A and not B or C 等于 (A and (notB)) or C。当然，括号也可以用于比较表达式。</p>
-<p>举一些例子：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">5</span> <span class="keyword">and</span> <span class="number">4</span></div><div class="line"><span class="number">4</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">0</span> <span class="keyword">and</span> <span class="number">4</span></div><div class="line"><span class="number">0</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">False</span> <span class="keyword">or</span> <span class="number">3</span> <span class="keyword">or</span> <span class="number">0</span></div><div class="line"><span class="number">3</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">2</span> &gt; <span class="number">1</span> <span class="keyword">and</span> <span class="keyword">not</span> <span class="number">3</span> &gt; <span class="number">5</span> <span class="keyword">or</span> <span class="number">4</span></div><div class="line"><span class="keyword">True</span></div></pre></td></tr></table></figure></p>
-<h2 id="简写运算符"><a href="#简写运算符" class="headerlink" title="简写运算符"></a>简写运算符</h2><p>x op= expression 为简写运算的语法形式。其等价于 x = x op expression ，举例如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="number">12</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>a += <span class="number">13</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>a</div><div class="line"><span class="number">25</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>a /= <span class="number">3</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>a</div><div class="line"><span class="number">8.333333333333334</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>a += (<span class="number">26</span> * <span class="number">32</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>a</div><div class="line"><span class="number">840.3333333333334</span></div></pre></td></tr></table></figure></p>
-<h2 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python3</span></div><div class="line">a = <span class="number">9</span></div><div class="line">b = <span class="number">12</span></div><div class="line">c = <span class="number">3</span></div><div class="line">x = a - b / <span class="number">3</span> + c * <span class="number">2</span> - <span class="number">1</span></div><div class="line">y = a - b / (<span class="number">3</span> + c) * (<span class="number">2</span> - <span class="number">1</span>)</div><div class="line">z = a - (b / (<span class="number">3</span> + c) * <span class="number">2</span>) - <span class="number">1</span></div><div class="line">print(<span class="string">"X = "</span>, x)</div><div class="line">print(<span class="string">"Y = "</span>, y)</div><div class="line">print(<span class="string">"Z = "</span>, z)</div><div class="line"></div><div class="line">$ ./evaluationexp.py</div><div class="line">X =  <span class="number">10</span></div><div class="line">Y =  <span class="number">7</span></div><div class="line">Z =  <span class="number">4</span></div></pre></td></tr></table></figure>
-<h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><table>
-<thead>
-<tr>
-<th>类型转换函数</th>
-<th style="text-align:center">转换路径</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>float(string)</td>
-<td style="text-align:center">字符串 -&gt; 浮点值</td>
-</tr>
-<tr>
-<td>int(string)</td>
-<td style="text-align:center">字符串 -&gt; 整数值</td>
-</tr>
-<tr>
-<td>str(integer)</td>
-<td style="text-align:center">整数值 -&gt; 字符串</td>
-</tr>
-<tr>
-<td>str(float)</td>
-<td style="text-align:center">浮点值 -&gt; 字符串</td>
-</tr>
-</tbody>
-</table>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="number">8.126768</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>str(a)</div><div class="line"><span class="string">'8.126768'</span></div><div class="line">总结</div></pre></td></tr></table></figure>
-<p>除了数值运算，关系和逻辑运算也是程序的重要组成部分。另外 Python 是强类型语言，所以必要的时候需要手动进行类型转换。</p>
-<hr>
-<h1 id="判断语句"><a href="#判断语句" class="headerlink" title="判断语句"></a>判断语句</h1><h2 id="if-else"><a href="#if-else" class="headerlink" title="if-else"></a>if-else</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> 条件:</div><div class="line">    满足条件时要做的事情</div><div class="line"><span class="keyword">else</span>:</div><div class="line">    不满足条件时要做的事情</div></pre></td></tr></table></figure>
-<h2 id="elif"><a href="#elif" class="headerlink" title="elif"></a>elif</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> xxx1:</div><div class="line">    事情<span class="number">1</span></div><div class="line"><span class="keyword">elif</span> xxx2:</div><div class="line">    事情<span class="number">2</span></div><div class="line"><span class="keyword">elif</span> xxx3:</div><div class="line">    事情<span class="number">3</span></div></pre></td></tr></table></figure>
-<p>Demo：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">score = <span class="number">77</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> score&gt;=<span class="number">90</span> <span class="keyword">and</span> score&lt;=<span class="number">100</span>:</div><div class="line">    print(<span class="string">'本次考试，等级为A'</span>)</div><div class="line"><span class="keyword">elif</span> score&gt;=<span class="number">80</span> <span class="keyword">and</span> score&lt;<span class="number">90</span>:</div><div class="line">    print(<span class="string">'本次考试，等级为B'</span>)</div><div class="line"><span class="keyword">elif</span> score&gt;=<span class="number">70</span> <span class="keyword">and</span> score&lt;<span class="number">80</span>:</div><div class="line">    print(<span class="string">'本次考试，等级为C'</span>)</div><div class="line"><span class="keyword">elif</span> score&gt;=<span class="number">60</span> <span class="keyword">and</span> score&lt;<span class="number">70</span>:</div><div class="line">    print(<span class="string">'本次考试，等级为D'</span>)</div><div class="line"><span class="keyword">elif</span> score&gt;=<span class="number">0</span> <span class="keyword">and</span> score&lt;<span class="number">60</span>:</div><div class="line">    print(<span class="string">'本次考试，等级为E'</span>)</div></pre></td></tr></table></figure>
-<h2 id="if嵌套"><a href="#if嵌套" class="headerlink" title="if嵌套"></a>if嵌套</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> 条件<span class="number">1</span>:</div><div class="line"></div><div class="line">   满足条件<span class="number">1</span> 做的事情<span class="number">1</span></div><div class="line">   满足条件<span class="number">1</span> 做的事情<span class="number">2</span></div><div class="line">   ...(省略)...</div><div class="line"></div><div class="line">   <span class="keyword">if</span> 条件<span class="number">2</span>:</div><div class="line">       满足条件<span class="number">2</span> 做的事情<span class="number">1</span></div><div class="line">       满足条件<span class="number">2</span> 做的事情<span class="number">2</span></div><div class="line">       ...(省略)...</div></pre></td></tr></table></figure>
-<p>Demo：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">ticket = <span class="number">1</span>     <span class="comment"># 用1代表有车票，0代表没有车票</span></div><div class="line">knife = <span class="number">9</span>     <span class="comment"># 刀子的长度，单位为cm</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> ticket == <span class="number">1</span>:</div><div class="line">    print(<span class="string">"有车票，可以进站"</span>)</div><div class="line">    <span class="keyword">if</span> knife &lt; <span class="number">10</span>:</div><div class="line">        print(<span class="string">"通过安检"</span>)</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        print(<span class="string">"没有通过安检"</span>)</div><div class="line"><span class="keyword">else</span>:</div><div class="line">    print(<span class="string">"没有车票，不能进站"</span>)</div></pre></td></tr></table></figure>
-<h2 id="小应用-猜拳游戏"><a href="#小应用-猜拳游戏" class="headerlink" title="小应用-猜拳游戏"></a>小应用-猜拳游戏</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> random</div><div class="line"></div><div class="line">player = input(<span class="string">'请输入：剪刀(0)  石头(1)  布(2):'</span>)</div><div class="line"></div><div class="line">player = int(player)</div><div class="line"></div><div class="line">computer = random.randint(<span class="number">0</span>,<span class="number">2</span>)</div><div class="line"></div><div class="line"><span class="comment"># 用来进行测试</span></div><div class="line"><span class="comment">#print('player=%d,computer=%d',(player,computer))</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> ((player == <span class="number">0</span>) <span class="keyword">and</span> (computer == <span class="number">2</span>)) <span class="keyword">or</span> ((player ==<span class="number">1</span>) <span class="keyword">and</span> (computer == <span class="number">0</span>)) <span class="keyword">or</span> ((player == <span class="number">2</span>) <span class="keyword">and</span> (computer == <span class="number">1</span>)):</div><div class="line">    print(<span class="string">'获胜，哈哈，你太厉害了'</span>)</div><div class="line"><span class="keyword">elif</span> player == computer:</div><div class="line">    print(<span class="string">'平局，要不再来一局'</span>)</div><div class="line"><span class="keyword">else</span>:</div><div class="line">    print(<span class="string">'输了，不要走，洗洗手接着来，决战到天亮'</span>)</div></pre></td></tr></table></figure>
-<hr>
-<h1 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h1><h2 id="while"><a href="#while" class="headerlink" title="while"></a>while</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> 条件:</div><div class="line">        条件满足时，做的事情<span class="number">1</span></div><div class="line">        条件满足时，做的事情<span class="number">2</span></div><div class="line">        条件满足时，做的事情<span class="number">3</span></div><div class="line">        ...(省略)...</div></pre></td></tr></table></figure>
-<p>Demo:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">i = <span class="number">0</span></div><div class="line"><span class="keyword">while</span> i&lt;<span class="number">5</span>:</div><div class="line">    print(<span class="string">"当前是第%d次执行循环"</span>%(i+<span class="number">1</span>))</div><div class="line">    print(<span class="string">"i=%d"</span>%i)</div><div class="line">    i+=<span class="number">1</span></div></pre></td></tr></table></figure>
-<h2 id="while循环嵌套"><a href="#while循环嵌套" class="headerlink" title="while循环嵌套"></a>while循环嵌套</h2><p>要求：打印如下图形：</p>
-<pre><code>*
-* *
-* * *
-* * * *
-* * * * *
-</code></pre><p>参考代码：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">i = <span class="number">1</span></div><div class="line"><span class="keyword">while</span> i&lt;=<span class="number">5</span>:</div><div class="line">    j = <span class="number">1</span></div><div class="line">    <span class="keyword">while</span> j&lt;=i:</div><div class="line">        print(<span class="string">"* "</span>,end=<span class="string">''</span>)</div><div class="line">        j+=<span class="number">1</span></div><div class="line"></div><div class="line">    print(<span class="string">"\n"</span>)</div><div class="line">    i+=<span class="number">1</span></div></pre></td></tr></table></figure>
-<p>99乘法表</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">i = <span class="number">1</span></div><div class="line"><span class="keyword">while</span> i&lt;=<span class="number">9</span>:</div><div class="line">    j=<span class="number">1</span></div><div class="line">    <span class="keyword">while</span> j&lt;=i:</div><div class="line">        print(<span class="string">"%d*%d=%-2d "</span>%(j,i,i*j),end=<span class="string">''</span>)</div><div class="line">        j+=<span class="number">1</span></div><div class="line">    print(<span class="string">'\n'</span>)</div><div class="line">    i+=<span class="number">1</span></div></pre></td></tr></table></figure>
-<h2 id="for"><a href="#for" class="headerlink" title="for"></a>for</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> 临时变量 <span class="keyword">in</span> 列表或者字符串等:</div><div class="line">    循环满足条件时执行的代码</div><div class="line"><span class="keyword">else</span>:</div><div class="line">    循环不满足条件时执行的代码</div></pre></td></tr></table></figure>
+block description
+    - var desc = page.desc || strip_html(page.content).replace(/^\s*/, '').replace(/\s*$/, '').substring(0, 150);
+    meta(name="description", content=desc)
 
-      
-      <div id="donate" class="donate">
-        <a id="github" href="https://github.com/geekplux" target="_blank" class="pos-f tr3" title="Github"></a>
-	      <div id="DonateText" class="tr3">Donate</div>
-	      <ul id="donateBox" class="list pos-f tr3">
-		      <li id="PayPal"><a href="https://www.paypal.me/geekplux" target="_blank">PayPal</a></li>
-		      <li id="BTC" data-footnote="Copy addres and show QRCode"><button id="BTCBn"  data-clipboard-target="#btc-key" alt="Copy to clipboard">Bitcoin</button></li>
-		      <li id="AliPay">AliPay</li>
-		      <li id="WeChat">WeChat</li>
-	      </ul>
-	      <div id="QRBox" class="pos-f left-100">
-		      <div id="BTCQR" class="MainBox" style="background-image: url(http://7b1evr.com1.z0.glb.clouddn.com/donate/bitcoin.png)"></div>
-		      <div id="AliPayQR" class="MainBox" style="background-image: url(http://7b1evr.com1.z0.glb.clouddn.com/donate/alipayQR.jpg)"></div>
-		      <div id="WeChatQR" class="MainBox" style="background-image: url(http://7b1evr.com1.z0.glb.clouddn.com/donate/wechatQR.jpg)"></div>
-	      </div>
-	      <!-- Bitcoin 账号 -->
-	      <input id="btc-key" type="text" value="1AVngxh56oLvAzXsEFnzccUohZdHswjC7j" readonly="readonly">
-      </div>
-    </div>
-    <footer class="article-footer">
-      <ul class="article-meta">
-        <li>
-          <span class="label">Published Date:</span>
-          <a href="/2017/10/28/Python3-note/" class="article-date">
-  <time datetime="2017-10-28T13:01:30.000Z" itemprop="datePublished">2017-10-28</time>
-</a>
-
-        </li>
-        
-          <li>
-            <span class="label">Category:</span>
-            
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Tech/">Tech</a>
-  </div>
-
-
-          </li>
-        
-        
-          <li>
-            <span class="label">Tag:</span>
-            
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Notes/">Notes</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
-
-
-          </li>
-        
-        <hr/>
-      </ul>
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav" class="article-nav">
-  
-    <a href="/2017/11/08/Python3-note2/" id="article-nav-newer" class="article-nav-link-wrap newer">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          python3 学习笔记（二）
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2017/10/28/ScalaNote/" id="article-nav-older" class="article-nav-link-wrap older">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Scala 入门学习笔记</div>
-    </a>
-  
-</nav>
-
-
-  
-</article>
-
-
-
-
-
-
-      </div>
-      
-    <footer id="footer" class="post-footer footer">
-      
-        <ul class="footer-links">
-          
-            <li><a href="/archives/"><span class="fa fa-book"></span></a></li>
-          
-            <li><a href="https://github.com/geekplux/hexo-theme-typing"><span class="fa fa-globe"></span></a></li>
-          
-            <li><a href="https://twitter.com/"><span class="fa fa-twitter"></span></a></li>
-          
-            <li><a href="https://github.com/"><span class="fa fa-github-alt"></span></a></li>
-          
-            <li><a href="https://www.youtube.com/"><span class="fa fa-youtube-play"></span></a></li>
-          
-            <li><a href="https://stackoverflow.com/"><span class="fa fa-stack-overflow"></span></a></li>
-          
-            <li><a href="https://plus.google.com/"><span class="fa fa-google-plus"></span></a></li>
-          
-            <li><a href="/atom.xml"><span class="fa fa-rss"></span></a></li>
-          
-        </ul>
-	    
-      <hr/>
-      <div id="footerContent" class="footer-content">
-        <p>ipsum dolor sit amet, <strong>consectetur adipiscing elit.</strong> Fusce eget urna vitae velit <em>eleifend interdum at ac nisi. In nec ligula lacus. Cum sociis natoque</em> penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eu cursus erat, ut dapibus quam. Post</p>
-
-
-      </div>
-    </footer>
-
-      
-
-
-
-<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.10/clipboard.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/typing.js"></script>
-<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
-
-
-
-
-
-
-
-    </div>
-  </body>
-</html>
+block content
+    .autopagerize_page_element: .content: .post-page
+        include mixins
+        +make_post(page, true)
+        .share
+            span= __('share')
+            | &nbsp;
+            span.soc
+                a.fa.fa-bookmark(href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title);}})();", ref="nofollow", target="_blank")
+            span.soc
+                a.fa.fa-weibo(href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&title=',e(d.title),'&appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));")
+            span.soc
+                a.fa.fa-twitter(href=url_for("http://twitter.com/home?status=" + "" + config.url + "/" + page.path + "%20" + config.title + "%20" + page.title + ""))
+        - var prev = page.prev ? page.prev.path : false;
+        - var next = page.next ? page.next.path : false;
+        .pagination
+            p.clearfix
+                if prev
+                    span.pre.pagbuttons
+                        a(role="navigation",href=url_for(prev), title=page.prev.title)
+                            i.fa.fa-angle-double-left
+                            |&nbsp;
+                            != __('prev_post')+': ' + page.prev.title
+                if next
+                    span &nbsp;
+                    span.next.pagbuttons
+                        a(role="navigation",href=url_for(next), title=page.next.title)
+                            != __('next_post')+': ' + page.next.title
+                            |&nbsp;
+                            i.fa.fa-angle-double-right
+        include partial/comments
