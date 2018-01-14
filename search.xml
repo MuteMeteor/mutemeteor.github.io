@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[database2]]></title>
-    <url>%2F2018%2F01%2F14%2Fdatabase2%2F</url>
-    <content type="text"></content>
-  </entry>
-  <entry>
-    <title><![CDATA[database]]></title>
-    <url>%2F2018%2F01%2F13%2Fdatabase1%2F</url>
-    <content type="text"></content>
-  </entry>
-  <entry>
     <title><![CDATA[Win10 安装msi提示错误代码2503、2502]]></title>
     <url>%2F2018%2F01%2F02%2Fnode-js-reinstall%2F</url>
     <content type="text"><![CDATA[之前尝试在win 10系统上搭建 ‘Hugo’ 时，不小心把电脑上的所有环境变量 ‘Path’ 都删掉了，重新添加找目录又费劲，所以直接重新下载了node.js和Python，安装时又发现不断出现弹窗，显示“The installer has encountered an unexpected error installing this package.this may indicate a problem with package.the error code is 2502.The installer has encountered an unexpected error installing this package.this may indicate a problem with package.the error code is 2503.” 应该是权限问题，Google找解决办法，都没解决，后来综合了两个解决方法，成功安装。 具体步骤： 永久提权1、按WIN+R，在运行框中输入“gpedit.msc” 确认；2、打开本地策略组编辑器后依次展开 ：“计算机配置”-》“管理模板”-》“windows组件”-》“windows installer”，并找到“始终以提升的权限进行安装”；3、双击该选项，设置为“已启用”，并应用；4、最后还要在【用户配置】中进行同样的操作； 临时安装1、鼠标移到桌面左下角-&gt;右键（或者直接： WIN+X键），命令提示符（管理员）；2、输入：msiexec /package +‘msi文件路径’（输入的时候注意半角字符且路径不能为中文名）例如：C:\Windows\system32&gt;msiexec /package G:\tool\node-v8.9.3-x64.msiC:\Windows\system32&gt;msiexec /package G:\software\python\python-3.4.3.msiC:\Windows\system32&gt;msiexec /package G:\software\python\python-2.7.10.msi 大功告成。]]></content>
