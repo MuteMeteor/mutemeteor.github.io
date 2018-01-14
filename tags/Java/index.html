@@ -1,19 +1,266 @@
-extends partial/layout
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  <title>Tag: Java | Mute Meteor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="the coutrage to speak softly">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mute Meteor">
+<meta property="og:url" content="http://mutemeteor.com/tags/Java/index.html">
+<meta property="og:site_name" content="Mute Meteor">
+<meta property="og:description" content="the coutrage to speak softly">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mute Meteor">
+<meta name="twitter:description" content="the coutrage to speak softly">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/typing.css">
+  <link rel="stylesheet" href="/css/donate.css">
+  
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  
+</head>
 
-block site_title
-    != page.tag + " · " + config.title
+  
+    
+      <body>
+    
+  
+      <div id="container" class="container">
+        <div class="category-container">
+  <header id="header" class="header">
+  <nav id="main-nav" class="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+  </nav>
+</header>
 
-block description
-    - var desc = __("Tags")+': ' + page.tag + ' - ' + config.title;
-    meta(name="description", content=desc)
+  <hr/>
+  
+  
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2017/10/02/algorithm-sort/" class="archive-article-date">
+  <time datetime="2017-10-02T07:33:33.000Z" itemprop="datePublished">Oct 2 2017</time>
+</a>
 
-block content
-    .autopagerize_page_element: .content
-        .archive.animated.fadeInDown
-            ul.list-with-title
-                p.post-title
-                    != __("Tags")+' ' + page.tag
-                include mixins
-                +postList()
-                include mixins
-                +make_pager(__('prev'), __('next'))
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/10/02/algorithm-sort/">【数据结构与算法】排序专题</a>
+    </h1>
+  
+
+    </header>
+  </div>
+</article>
+
+  
+    
+    
+    <article class="archive-article archive-type-w">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2017/09/30/algorithm-binarytree/" class="archive-article-date">
+  <time datetime="2017-09-30T10:54:38.000Z" itemprop="datePublished">Sep 30 2017</time>
+</a>
+
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/09/30/algorithm-binarytree/">【数据结构与算法】二叉树专题</a>
+    </h1>
+  
+
+    </header>
+  </div>
+</article>
+
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2017/09/27/algorithm-linkedlist/" class="archive-article-date">
+  <time datetime="2017-09-27T11:59:01.000Z" itemprop="datePublished">Sep 27 2017</time>
+</a>
+
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/09/27/algorithm-linkedlist/">【数据结构与算法】链表专题</a>
+    </h1>
+  
+
+    </header>
+  </div>
+</article>
+
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2017/09/18/algorithm-string/" class="archive-article-date">
+  <time datetime="2017-09-18T08:10:36.000Z" itemprop="datePublished">Sep 18 2017</time>
+</a>
+
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/09/18/algorithm-string/">【数据结构与算法】字符串专题</a>
+    </h1>
+  
+
+    </header>
+  </div>
+</article>
+
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2017/09/10/java-note3/" class="archive-article-date">
+  <time datetime="2017-09-10T14:42:07.000Z" itemprop="datePublished">Sep 10 2017</time>
+</a>
+
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/09/10/java-note3/">Java 学习笔记（三）</a>
+    </h1>
+  
+
+    </header>
+  </div>
+</article>
+
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2017/09/10/java-note2/" class="archive-article-date">
+  <time datetime="2017-09-10T14:33:15.000Z" itemprop="datePublished">Sep 10 2017</time>
+</a>
+
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/09/10/java-note2/">Java 学习笔记（二）</a>
+    </h1>
+  
+
+    </header>
+  </div>
+</article>
+
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2017/09/10/java-note/" class="archive-article-date">
+  <time datetime="2017-09-10T10:32:05.000Z" itemprop="datePublished">Sep 10 2017</time>
+</a>
+
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/09/10/java-note/">Java 学习笔记（一）</a>
+    </h1>
+  
+
+    </header>
+  </div>
+</article>
+
+  
+  
+    </div></section>
+  
+
+
+
+</div>
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      
+        <ul class="footer-links">
+          
+            <li><a href="/archives/"><span class="fa fa-book"></span></a></li>
+          
+            <li><a href="https://github.com/geekplux/hexo-theme-typing"><span class="fa fa-globe"></span></a></li>
+          
+            <li><a href="https://twitter.com/"><span class="fa fa-twitter"></span></a></li>
+          
+            <li><a href="https://github.com/"><span class="fa fa-github-alt"></span></a></li>
+          
+            <li><a href="https://www.youtube.com/"><span class="fa fa-youtube-play"></span></a></li>
+          
+            <li><a href="https://stackoverflow.com/"><span class="fa fa-stack-overflow"></span></a></li>
+          
+            <li><a href="https://plus.google.com/"><span class="fa fa-google-plus"></span></a></li>
+          
+            <li><a href="/atom.xml"><span class="fa fa-rss"></span></a></li>
+          
+        </ul>
+	    
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>ipsum dolor sit amet, <strong>consectetur adipiscing elit.</strong> Fusce eget urna vitae velit <em>eleifend interdum at ac nisi. In nec ligula lacus. Cum sociis natoque</em> penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eu cursus erat, ut dapibus quam. Post</p>
+
+
+      </div>
+    </footer>
+
+      
+
+
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>
