@@ -191,7 +191,8 @@
 
 	  
 
-	  	<p>之前尝试在win 10系统上搭建 ‘Hugo’ 时，不小心把电脑上的所有环境变量 ‘Path’ 都删掉了，重新添加找目录又费劲，所以直接重新下载了node.js和Python，安装时又发现不断出现弹窗，显示“The installer has encountered an unexpected error installing this package.this may indicate a problem with package.the error code is 2502.<br>The installer has encountered an unexpected error installing this package.this may indicate a problem with package.the error code is 2503.”</p>
+	  	<p>之前尝试在win 10系统上搭建 ‘Hugo’ 时，不小心把电脑上的所有环境变量 ‘Path’ 都删掉了，重新添加找目录又费劲，所以直接重新下载了node.js和Python，安装时又发现不断出现弹窗，显示:</p>
+<p>“The installer has encountered an unexpected error installing this package.this may indicate a problem with package.the error code is 2502.<br>The installer has encountered an unexpected error installing this package.this may indicate a problem with package.the error code is 2503.”</p>
 <p>应该是权限问题，Google找解决办法，都没解决，后来综合了两个解决方法，成功安装。</p>
 <p>具体步骤：</p>
 <h1 id="永久提权"><a href="#永久提权" class="headerlink" title="永久提权"></a>永久提权</h1><p>1、按WIN+R，在运行框中输入“gpedit.msc” 确认；<br>2、打开本地策略组编辑器后依次展开 ：“计算机配置”-》“管理模板”-》“windows组件”-》“windows installer”，并找到“始终以提升的权限进行安装”；<br>3、双击该选项，设置为“已启用”，并应用；<br>4、最后还要在【用户配置】中进行同样的操作；</p>
@@ -224,7 +225,7 @@
 		
 
 		<span class="post-words"><span class="iconfont icon-words"></span>
-		873
+		875
 		</span>		
 </div>		
 
