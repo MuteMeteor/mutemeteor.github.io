@@ -14,6 +14,16 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[database2]]></title>
+    <url>%2F2018%2F01%2F14%2FRedis%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[database]]></title>
+    <url>%2F2018%2F01%2F13%2FMongoDB%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[Win10 安装msi提示错误代码2503、2502]]></title>
     <url>%2F2018%2F01%2F02%2Fnode-js-reinstall%2F</url>
     <content type="text"><![CDATA[之前尝试在win 10系统上搭建 ‘Hugo’ 时，不小心把电脑上的所有环境变量 ‘Path’ 都删掉了，重新添加找目录又费劲，所以直接重新下载了node.js和Python，安装时又发现不断出现弹窗，显示: “The installer has encountered an unexpected error installing this package.this may indicate a problem with package.the error code is 2502.The installer has encountered an unexpected error installing this package.this may indicate a problem with package.the error code is 2503.” 应该是权限问题，Google找解决办法，都没解决，后来综合了两个解决方法，成功安装。 具体步骤： 永久提权1、按WIN+R，在运行框中输入“gpedit.msc” 确认；2、打开本地策略组编辑器后依次展开 ：“计算机配置”-》“管理模板”-》“windows组件”-》“windows installer”，并找到“始终以提升的权限进行安装”；3、双击该选项，设置为“已启用”，并应用；4、最后还要在【用户配置】中进行同样的操作； 临时安装1、鼠标移到桌面左下角-&gt;右键（或者直接： WIN+X键），命令提示符（管理员）；2、输入：msiexec /package +‘msi文件路径’（输入的时候注意半角字符且路径不能为中文名）例如：C:\Windows\system32&gt;msiexec /package G:\tool\node-v8.9.3-x64.msiC:\Windows\system32&gt;msiexec /package G:\software\python\python-3.4.3.msiC:\Windows\system32&gt;msiexec /package G:\software\python\python-2.7.10.msi 大功告成。]]></content>
@@ -73,18 +83,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Scala 入门学习笔记]]></title>
-    <url>%2F2017%2F10%2F28%2FScalaNote%2F</url>
-    <content type="text"><![CDATA[Scala 是一门多范式的编程语言，类似于 Java 。设计初衷是实现可伸缩的语言、并集成面向对象编程和函数式编程的各种特性。 实现 Hello World12345object HelloWorld &#123; def main(args: Array[String]) &#123; println("Hello, world!") &#125;&#125; 可以使用命令行交互式执行： HelloWorld.main(null)]]></content>
-      <categories>
-        <category>Tech</category>
-      </categories>
-      <tags>
-        <tag>Notes</tag>
-        <tag>Scala</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[《极简宇宙史》]]></title>
     <url>%2F2017%2F10%2F05%2FUniverse%2F</url>
     <content type="text"><![CDATA[读这本书时一直在随着作者的描述去想象，却仍然无法在脑海里描绘出宇宙之磅礴之诡谲之绮丽之深邃。唯有感叹宇宙之浩瀚，人类之渺小。我们看到的太阳，永远是8分20秒之前的太阳，永远不可能是它当下的样子，甚至不在我们看到它在的地方，因为它已经绕着银河系中心旋转的轨道上移动了117,300公里。 宇宙 大概四十亿年前，我们年轻的行星与另一颗行星撞在一起，后者大概有火星那么大，这次撞击从地球上扯了一块物质下来，被带入太空。在随后的几亿年时间里，所有那次撞击产生的碎片聚到一起，形成了一个球体绕着地球运行。等这一切尘埃落定之时，就是月球的诞生之日。 如果这次撞击发生在今天，其剧烈程度足以将地球上的一切生命抹去。而当时，我们的地球上还是一片荒芜，没有生命。有趣的是，如果没有这次灾难性的碰撞，我们就不会有月亮照亮我们的夜晚，没有潮汐变化，而地球上可能也不会出现如我们现在所熟悉的生命形式。当那颗蓝色的地球跃过月平线，出现在你眼前时，你意识到这场宇宙级的灾难事件所带来的创生与破坏一样伟大。 如果人类能够以某种方式收获太阳在一秒钟内辐射出的所有能量，它就足以满足我们全世界五亿年的能量需求。 我们可以依据原子的大小将它们分类。它们中最小的一个被称为氢原子。第二小的被称为氦原子。这两种原子加在一起构成了已知宇宙的百分之九十八的物质。的确很多。但与以前比，这个比例现在已经变小了，大概一百三十八亿年前，这两种原子几乎构成了宇宙中所有的已知物质。今天我们可以看到的除了氢与氦之外的原子还包括氮原子、碳原子、氧原子或银原子等。 热核聚变，一个用较小的原子核产生较大的原子核的过程。热核聚变反应能够发生的一个必要条件是巨大的能量，太阳压倒一切的自身引力就是这种巨大能量的来源。 我们的行星体积太小，而且不够致密，因此自身引力不足以让其内核达到足以触发热核聚变反应的温度和压力。在定义上，这就是行星与恒星的主要差别。 当两颗原子核融合在一起变成一个更大的原子核时，它们的一部分质量消失了。聚合而成的新核比创造它的两颗旧核的总质量来得轻。 太阳的爆炸将发生在五十亿年后的某个星期四，前后误差各三天。 时不时地，因为碰撞或其他某种扰动，某个或某些脏雪球（属于海王星）会脱离它们原本安静而遥远的绕日轨道。当它们朝向太阳飞行时，会慢慢来到较暖的环境并在太阳辐射的照耀下融化并留下长长的尾巴，这条尾巴里是微小的冰块或石块，在黑暗的背景下被阳光照得闪闪发光。这就是我们称之为“彗星”的天体。 从冥王星被发现并被称为太阳系第九大行星到这个称号被剥夺、归于矮行星的七十六个地球年里，它们绕太阳一周都没走完，也就是这一切都发生在冥王星上的一年时间里。冥王星的大小只有月球的四分之一。 一个储存着几千亿亿亿个可能彗星的彗星库形成一个巨大的球状星云，看起来就像占据了太阳与其他恒星之间的所有空间。这个彗星库被称为“奥尔特云”。 比邻星属于那种被称为红矮星的家族。它比太阳小很多（只有太阳的大约七分之一大），色调偏红。这也是红矮星名字的来源。红矮星非常普遍，天空里大多数恒星都属于红矮星。因为比太阳小，它微小的内核里原子聚合的速度比太阳慢好多好多。对恒星来说，大小，的确至关重要：体积越大，寿命越短。 从月球发出的光需要大约一秒到达地球，然后再花一秒返回。太阳就更远了。光需要八分二十秒才能到达地球，对话变得有趣起来，因为一方要等超过十六分钟才能听到对方对自己问题的回答。但在宇宙中，太阳到地球的距离只能说是近邻。如果现在你从比邻星边上致电地球，电话铃声将在四年两个月后响起。 保持S2以这种速度旋转而不被甩出去，所需要的质量要超过四百万颗太阳。 如果你把太阳系，以及其中的行星、小行星和彗星看成我们在宇宙里的家庭，把比邻星当作我们的邻居，那么银河系就是我们在宇宙中的大城市，一个由三千亿颗恒星构成的繁华都市，而我们的太阳，只是其中的一颗。 即使在人类混乱的历史上最黑暗的日子里，也有些人勇敢地挑战宗教权威，坚信其他世界的存在。意大利天主教教士乔达诺·布鲁诺就是其中的一个，因为公开宣传这种异教思想，他在一六〇〇年的意大利罗马被活活烧死。他宣称“有无数太阳与无数的地球存在，这些地球围绕着各自的太阳旋转”。他因这些信念而痛苦地死去。 银河系属于一个由五十四个不同星系通过引力相互纠缠而构成的一个小小星系群。科学家把这个星系群命名为“本星系群”。它的区域覆盖了宽度大约八百四十万光年的球状区域。银河系是其中第二大的成员，大王是仙女座星系。 我们的望远镜已经探测到并且绘出了这道墙。这个尽头，这道光线无法透过的墙被称为“临界最后散射面”。 理解外部空间 水星看起来很普通，只比我们的月亮大了一点点，是太阳系八大行星中最小的一个。它是岩石质地，表面满是陨石坑，相当长的时间内都不会消失。水星没有大气层，因此也就没有气候变化来抹平它不规则的形状和伤痕。总之，水星不会是一个可能被选作度假目的地的行星。它自转一周需要五十九个地球日，也就是说水星上的一个夜晚相当于地球上的一个月，紧接着是同样漫长的白昼。水星上的白昼与黑夜都同地狱一般残酷，白天的温度可以高达430°C，到了晚上，又低到-180°C。 引力原来是宇宙的构造被它所含的物体弯曲所引起的。将物质与宇宙的局部几何联系起来并用以解释引力本质的理论，被称为广义相对论。 光，别名电磁辐射，可被认为既是微粒（光子），又是波。光波的高度代表着我们所称的强度。 包围着我们的各种光线，从最低到最高能量依次是：无线电波、微波、红外线、可见光、紫外线、X光和伽玛射线。无线电波有着很长的波长，波峰之间距离可从一米到十万公里或更长，而伽玛射线，其波长短于一毫米的十亿分之一——但它们都是光线。 我们所探测到的最遥远星光在到达我们的望远镜的旅途上走了一百三十八亿年时间，出发于宇宙黑暗世纪，当宇宙开始变得透明之时。 发现宇宙膨胀的是美国天文学家埃德温·哈勃，他是在一九二九年发现的，因此描述远处的星系越走越远这一行为的定律被命名为哈勃定律。 引力永远是互相吸引的，它永远让物体掉落，但竞争产生了层次，某些物体不得不往上走，以腾出空间容纳比自己更重的物体。 快跃入量子世界到达空间与时间的源头意料之外的谜团迈向已知世界之外的第一步]]></content>
@@ -99,56 +97,56 @@
   <entry>
     <title><![CDATA[【数据结构与算法】排序专题]]></title>
     <url>%2F2017%2F10%2F02%2Falgorithm-sort%2F</url>
-    <content type="text"><![CDATA[算法分析 时间复杂度-执行时间(比较和交换次数) 空间复杂度-所消耗的额外内存空间 使用小堆栈或表 使用链表或指针、数组索引来代表数据 排序数据的副本 对具有重键的数据(同一组数按不同键多次排序)进行排序时，需要考虑排序方法的稳定性，在非稳定性排序算法中需要稳定性时可考虑加入小索引。 稳定性：如果排序后文件中拥有相同键的项的相对位置不变，这种排序方式是稳定的。 常见的排序算法根据是否需要比较可以分为如下几类： Comparison Sorting Bubble Sort Selection Sort Insertion Sort Shell Sort Merge Sort Quck Sort Heap Sort Bucket Sort Counting Sort Radix Sort 从稳定性角度考虑可分为如下两类： 稳定 非稳定 【数据结构与算法】笔记相关链接： 作者主页：http://www.yuanbin.me/ 项目Github地址：https://github.com/billryan/algorithm-exercise]]></content>
+    <content type="text"><![CDATA[算法分析 时间复杂度-执行时间(比较和交换次数) 空间复杂度-所消耗的额外内存空间 使用小堆栈或表 使用链表或指针、数组索引来代表数据 排序数据的副本 对具有重键的数据(同一组数按不同键多次排序)进行排序时，需要考虑排序方法的稳定性，在非稳定性排序算法中需要稳定性时可考虑加入小索引。 稳定性：如果排序后文件中拥有相同键的项的相对位置不变，这种排序方式是稳定的。 常见的排序算法根据是否需要比较可以分为如下几类： Comparison Sorting Bubble Sort Selection Sort Insertion Sort Shell Sort Merge Sort Quck Sort Heap Sort Bucket Sort Counting Sort Radix Sort 从稳定性角度考虑可分为如下两类： 稳定 非稳定]]></content>
       <categories>
         <category>Tech</category>
       </categories>
       <tags>
+        <tag>Python</tag>
         <tag>Algorithm</tag>
         <tag>DataStructure</tag>
-        <tag>Java</tag>
         <tag>Sort</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[【数据结构与算法】二叉树专题]]></title>
     <url>%2F2017%2F09%2F30%2Falgorithm-binarytree%2F</url>
-    <content type="text"><![CDATA[编程实现 123456789 public class TreeNode &#123; public int val; public TreeNode left, right; public TreeNode(int val) &#123; this.val = val; this.left = null; this.right = null; &#125;&#125; 树的遍历 从二叉树的根节点出发，节点的遍历分为三个主要步骤：对当前节点进行操作（称为“访问”节点，或者根节点）、遍历左边子节点、遍历右边子节点。访问节点顺序的不同也就形成了不同的遍历方式。需要注意的是树的遍历通常使用递归的方法进行理解和实现，在访问元素时也需要使用递归的思想去理解。实际实现中对于前序和中序遍历可尝试使用递归实现。 按照访问根元素(当前元素)的前后顺序，遍历方式可划分为如下几种：深度优先：先访问子节点，再访问父节点，最后访问第二个子节点。 根据根节点相对于左右子节点的访问先后顺序又可细分为以下三种方式。前序(pre-order)：先根后左再右中序(in-order)：先左后根再右后序(post-order)：先左后右再根广度优先：先访问根节点，沿着树的宽度遍历子节点，直到所有节点均被访问为止。 如下图所示，遍历顺序在右侧框中，红色A为根节点。使用递归和整体的思想去分析遍历顺序较为清晰。 二叉树的广度优先遍历和树的前序/中序/后序遍历不太一样，前/中/后序遍历使用递归，也就是栈的思想对二叉树进行遍历，广度优先一般使用队列的思想对二叉树进行遍历。 如果已知中序遍历和前序遍历或者后序遍历，那么就可以完全恢复出原二叉树结构。其中最为关键的是前序遍历中第一个一定是根，而后序遍历最后一个一定是根，中序遍历在得知根节点后又可进一步递归得知左右子树的根节点。但是这种方法也是有适用范围的：元素不能重复！否则无法完成定位。 【数据结构与算法】笔记相关链接： 作者主页：http://www.yuanbin.me/ 项目Github地址：https://github.com/billryan/algorithm-exercise]]></content>
+    <content type="text"><![CDATA[编程实现 123456789 public class TreeNode &#123; public int val; public TreeNode left, right; public TreeNode(int val) &#123; this.val = val; this.left = null; this.right = null; &#125;&#125; 树的遍历 从二叉树的根节点出发，节点的遍历分为三个主要步骤：对当前节点进行操作（称为“访问”节点，或者根节点）、遍历左边子节点、遍历右边子节点。访问节点顺序的不同也就形成了不同的遍历方式。需要注意的是树的遍历通常使用递归的方法进行理解和实现，在访问元素时也需要使用递归的思想去理解。实际实现中对于前序和中序遍历可尝试使用递归实现。 按照访问根元素(当前元素)的前后顺序，遍历方式可划分为如下几种：深度优先：先访问子节点，再访问父节点，最后访问第二个子节点。 根据根节点相对于左右子节点的访问先后顺序又可细分为以下三种方式。前序(pre-order)：先根后左再右中序(in-order)：先左后根再右后序(post-order)：先左后右再根广度优先：先访问根节点，沿着树的宽度遍历子节点，直到所有节点均被访问为止。 如下图所示，遍历顺序在右侧框中，红色A为根节点。使用递归和整体的思想去分析遍历顺序较为清晰。 二叉树的广度优先遍历和树的前序/中序/后序遍历不太一样，前/中/后序遍历使用递归，也就是栈的思想对二叉树进行遍历，广度优先一般使用队列的思想对二叉树进行遍历。 如果已知中序遍历和前序遍历或者后序遍历，那么就可以完全恢复出原二叉树结构。其中最为关键的是前序遍历中第一个一定是根，而后序遍历最后一个一定是根，中序遍历在得知根节点后又可进一步递归得知左右子树的根节点。但是这种方法也是有适用范围的：元素不能重复！否则无法完成定位。]]></content>
       <categories>
         <category>Tech</category>
       </categories>
       <tags>
+        <tag>Python</tag>
         <tag>Algorithm</tag>
         <tag>DataStructure</tag>
-        <tag>Java</tag>
         <tag>binarytree</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[【数据结构与算法】链表专题]]></title>
     <url>%2F2017%2F09%2F27%2Falgorithm-linkedlist%2F</url>
-    <content type="text"><![CDATA[链表是线性表的一种。线性表是最基本、最简单、也是最常用的一种数据结构。线性表中数据元素之间的关系是一对一的关系，即除了第一个和最后一个数据元素之外，其它数据元素都是首尾相接的。线性表有两种存储方式，一种是顺序存储结构，另一种是链式存储结构。我们常用的数组就是一种典型的顺序存储结构。 相反，链式存储结构就是两个相邻的元素在内存中可能不是相邻的，每一个元素都有一个指针域，指针域一般是存储着到下一个元素的指针。这种存储方式的优点是定点插入和定点删除的时间复杂度为 O(1)，不会浪费太多内存，添加元素的时候才会申请内存，删除元素会释放内存。缺点是访问的时间复杂度最坏为 O(n)。 顺序表的特性是随机读取，也就是访问一个元素的时间复杂度是O(1)，链式表的特性是插入和删除的时间复杂度为O(1)。 链表就是链式存储的线性表。根据指针域的不同，链表分为单向链表、双向链表、循环链表等等。 Part I - BasicsJava编程实现12345678public class ListNode &#123; public int val; public ListNode next; public ListNode(int val) &#123; this.val = val; this.next = null; &#125;&#125; 链表的基本操作反转链表单向链表链表的基本形式是：1 -&gt; 2 -&gt; 3 -&gt; null，反转需要变为 3 -&gt; 2 -&gt; 1 -&gt; null。这里要注意：访问某个节点 curt.next 时，要检验 curt 是否为 null。要把反转后的最后一个节点（即反转前的第一个节点）指向 null。 12345678910111213141516171819202122232425262728293031class ListNode &#123; int val; ListNode next; ListNode(int val) &#123; this.val = val; &#125;&#125;// iterative methodpublic ListNode reverse(ListNode head) &#123; ListNode prev = null; while (head != null) &#123; ListNode next = head.next; head.next = prev; prev = head; head = next; &#125; return prev;&#125;// recursive methodpublic ListNode reverse(ListNode head) &#123; if (head == null || head.next == null) &#123; return head; &#125; ListNode next = head.next; ListNode newHead = reverse(next); next.next = head; head.next = null; return newHead; &#125; 双向链表和单向链表的区别在于：双向链表的反转核心在于next和prev域的交换，还需要注意的是当前节点和上一个节点的递推。 12345678910111213141516171819class DListNode &#123; int val; DListNode prev, next; DListNode(int val) &#123; this.val = val; this.prev = this.next = null; &#125;&#125;public DListNode reverse(DListNode head) &#123; DListNode curr = null; while (head != null) &#123; curr = head; head = curr.next; curr.next = curr.prev; curr.prev = head; &#125; return curr;&#125; Part II - Coding 【数据结构与算法】笔记相关链接： 作者主页：http://www.yuanbin.me/ 项目Github地址：https://github.com/billryan/algorithm-exercise]]></content>
+    <content type="text"><![CDATA[链表是线性表的一种。线性表是最基本、最简单、也是最常用的一种数据结构。线性表中数据元素之间的关系是一对一的关系，即除了第一个和最后一个数据元素之外，其它数据元素都是首尾相接的。线性表有两种存储方式，一种是顺序存储结构，另一种是链式存储结构。我们常用的数组就是一种典型的顺序存储结构。 相反，链式存储结构就是两个相邻的元素在内存中可能不是相邻的，每一个元素都有一个指针域，指针域一般是存储着到下一个元素的指针。这种存储方式的优点是定点插入和定点删除的时间复杂度为 O(1)，不会浪费太多内存，添加元素的时候才会申请内存，删除元素会释放内存。缺点是访问的时间复杂度最坏为 O(n)。 顺序表的特性是随机读取，也就是访问一个元素的时间复杂度是O(1)，链式表的特性是插入和删除的时间复杂度为O(1)。 链表就是链式存储的线性表。根据指针域的不同，链表分为单向链表、双向链表、循环链表等等。 Part I - BasicsJava编程实现12345678public class ListNode &#123; public int val; public ListNode next; public ListNode(int val) &#123; this.val = val; this.next = null; &#125;&#125; 链表的基本操作反转链表单向链表链表的基本形式是：1 -&gt; 2 -&gt; 3 -&gt; null，反转需要变为 3 -&gt; 2 -&gt; 1 -&gt; null。这里要注意：访问某个节点 curt.next 时，要检验 curt 是否为 null。要把反转后的最后一个节点（即反转前的第一个节点）指向 null。 12345678910111213141516171819202122232425262728293031class ListNode &#123; int val; ListNode next; ListNode(int val) &#123; this.val = val; &#125;&#125;// iterative methodpublic ListNode reverse(ListNode head) &#123; ListNode prev = null; while (head != null) &#123; ListNode next = head.next; head.next = prev; prev = head; head = next; &#125; return prev;&#125;// recursive methodpublic ListNode reverse(ListNode head) &#123; if (head == null || head.next == null) &#123; return head; &#125; ListNode next = head.next; ListNode newHead = reverse(next); next.next = head; head.next = null; return newHead; &#125; 双向链表和单向链表的区别在于：双向链表的反转核心在于next和prev域的交换，还需要注意的是当前节点和上一个节点的递推。 12345678910111213141516171819class DListNode &#123; int val; DListNode prev, next; DListNode(int val) &#123; this.val = val; this.prev = this.next = null; &#125;&#125;public DListNode reverse(DListNode head) &#123; DListNode curr = null; while (head != null) &#123; curr = head; head = curr.next; curr.next = curr.prev; curr.prev = head; &#125; return curr;&#125; Part II - Coding]]></content>
       <categories>
         <category>Tech</category>
       </categories>
       <tags>
+        <tag>Python</tag>
         <tag>Algorithm</tag>
         <tag>DataStructure</tag>
-        <tag>Java</tag>
         <tag>LinkedList</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[【数据结构与算法】字符串专题]]></title>
     <url>%2F2017%2F09%2F18%2Falgorithm-string%2F</url>
-    <content type="text"><![CDATA[Part I - BasicsJava中字符串常用的方法： 123456789101112String s1 = new String();String s2 = "mutemeteor";int s2Len = s2.length();s2.substring(4,9); // return "meteor"StringBuilder s3 = new StringBuilder(s2.substring(4,8));s3.append("mute");String s2new = s3.toString(); // return "mutemeteor"// convert String to char arraychar[] s2Char = s2.toCharArray();// char ch = s2.charAt(4); // return 'm'// find index at firstint index = s2.indexof('m'); // return 4, if not found, return -1 Part II - Coding 处理字符串操作相关问题时，常见的做法是从字符串尾部开始编辑，从后往前逆向操作。这么做的原因是因为字符串的尾部往往有足够空间，可以直接修改而不用担心覆盖字符串前面的数据。 Implement strStrlintcode #13Problem Statement:Implement strStr().Returns the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack. 对于一个给定的 source 字符串和一个 target 字符串，你应该在 source 字符串中找出 target 字符串出现的第一个位置(从0开始)。如果不存在，则返回 -1。 1234567891011121314151617public class Solution &#123; public int strStr(String haystack, String needle) &#123; if (haystack == null &amp;&amp; needle == null) return 0; if (haystack == null) return -1; if (needle == null) return 0; for (int i = 0; i &lt; haystack.length() - needle.length() + 1; i++) &#123; int j = 0; for (; j &lt; needle.length(); j++) &#123; if (haystack.charAt(i+j) != needle.charAt(j)) break; &#125; if (j == needle.length()) return i; &#125; return -1; &#125;&#125; Two Strings Are AnagramsCompare StringsGroup AnagramsLongest Common SubstringRotate StringReverse Words in a StringValid PalindromeLongest Palindromic SubstringSpace ReplacementWildcard MatchingLength of Last WordsCount and Say 【数据结构与算法】笔记相关链接： 作者主页：http://www.yuanbin.me/ 项目Github地址：https://github.com/billryan/algorithm-exercise]]></content>
+    <content type="text"><![CDATA[Part I - BasicsJava中字符串常用的方法： 123456789101112String s1 = new String();String s2 = "mutemeteor";int s2Len = s2.length();s2.substring(4,9); // return "meteor"StringBuilder s3 = new StringBuilder(s2.substring(4,8));s3.append("mute");String s2new = s3.toString(); // return "mutemeteor"// convert String to char arraychar[] s2Char = s2.toCharArray();// char ch = s2.charAt(4); // return 'm'// find index at firstint index = s2.indexof('m'); // return 4, if not found, return -1 Part II - Coding 处理字符串操作相关问题时，常见的做法是从字符串尾部开始编辑，从后往前逆向操作。这么做的原因是因为字符串的尾部往往有足够空间，可以直接修改而不用担心覆盖字符串前面的数据。 Implement strStrlintcode #13Problem Statement:Implement strStr().Returns the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack. 对于一个给定的 source 字符串和一个 target 字符串，你应该在 source 字符串中找出 target 字符串出现的第一个位置(从0开始)。如果不存在，则返回 -1。 1234567891011121314151617public class Solution &#123; public int strStr(String haystack, String needle) &#123; if (haystack == null &amp;&amp; needle == null) return 0; if (haystack == null) return -1; if (needle == null) return 0; for (int i = 0; i &lt; haystack.length() - needle.length() + 1; i++) &#123; int j = 0; for (; j &lt; needle.length(); j++) &#123; if (haystack.charAt(i+j) != needle.charAt(j)) break; &#125; if (j == needle.length()) return i; &#125; return -1; &#125;&#125; Two Strings Are AnagramsCompare StringsGroup AnagramsLongest Common SubstringRotate StringReverse Words in a StringValid PalindromeLongest Palindromic SubstringSpace ReplacementWildcard MatchingLength of Last WordsCount and Say]]></content>
       <categories>
         <category>Tech</category>
       </categories>
       <tags>
+        <tag>Python</tag>
         <tag>Algorithm</tag>
         <tag>DataStructure</tag>
-        <tag>Java</tag>
         <tag>String</tag>
       </tags>
   </entry>
