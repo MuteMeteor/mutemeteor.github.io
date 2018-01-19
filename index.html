@@ -406,9 +406,65 @@
 </ol>
 <h2 id="打开文件"><a href="#打开文件" class="headerlink" title="打开文件"></a>打开文件</h2><p>在python，使用open函数，可以打开一个已经存在的文件，或者创建一个新文件</p>
 <p>open(文件名，访问模式)</p>
-<p>示例如下：</p>
-<pre><code>f = open(&apos;test.txt&apos;, &apos;w&apos;)
-</code></pre>
+<p>示例如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">f = open(<span class="string">'test.txt'</span>, <span class="string">'w'</span>)</div></pre></td></tr></table></figure></p>
+<table>
+<thead>
+<tr>
+<th>访问模式</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>r</td>
+<td style="text-align:center">以只读方式打开文件。文件的指针将会放在文件的开头。这是默认模式。</td>
+</tr>
+<tr>
+<td>w</td>
+<td style="text-align:center">打开一个文件只用于写入。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。</td>
+</tr>
+<tr>
+<td>a</td>
+<td style="text-align:center">打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。</td>
+</tr>
+<tr>
+<td>rb</td>
+<td style="text-align:center">以二进制格式打开一个文件用于只读。文件指针将会放在文件的开头。这是默认模式。</td>
+</tr>
+<tr>
+<td>wb</td>
+<td style="text-align:center">以二进制格式打开一个文件只用于写入。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。</td>
+</tr>
+<tr>
+<td>ab</td>
+<td style="text-align:center">以二进制格式打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。</td>
+</tr>
+<tr>
+<td>r+</td>
+<td style="text-align:center">打开一个文件用于读写。文件指针将会放在文件的开头。</td>
+</tr>
+<tr>
+<td>w+</td>
+<td style="text-align:center">打开一个文件用于读写。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。</td>
+</tr>
+<tr>
+<td>a+</td>
+<td style="text-align:center">打开一个文件用于读写。如果该文件已存在，文件指针将会放在文件的结尾。文件打开时会是追加模式。如果该文件不存在，创建新文件用于读写。</td>
+</tr>
+<tr>
+<td>rb+</td>
+<td style="text-align:center">以二进制格式打开一个文件用于读写。文件指针将会放在文件的开头。</td>
+</tr>
+<tr>
+<td>wb+</td>
+<td style="text-align:center">以二进制格式打开一个文件用于读写。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。</td>
+</tr>
+<tr>
+<td>ab+</td>
+<td style="text-align:center">以二进制格式打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。如果该文件不存在，创建新文件用于读写。</td>
+</tr>
+</tbody>
+</table>
 
 	     
 </div>
@@ -435,7 +491,7 @@
 		
 
 		<span class="post-words"><span class="iconfont icon-words"></span>
-		728
+		1376
 		</span>		
 </div>		
 
