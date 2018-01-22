@@ -113,7 +113,7 @@
 		
 
 		<span class="post-words"><span class="iconfont icon-words"></span>
-		2121
+		2078
 		</span>		
 	
 	</div> 
@@ -161,54 +161,9 @@
 <li>关闭套接字</li>
 </ul>
 <p>发送代码如下：</p>
-<p>‘’’python</p>
-<pre><code>#coding=utf-8
-
-from socket import *
-
-#1. 创建套接字
-udpSocket = socket(AF_INET, SOCK_DGRAM)
-
-#2. 准备接收方的地址
-sendAddr = (&apos;192.168.1.103&apos;, 8080)
-
-#3. 从键盘获取数据
-sendData = raw_input(&quot;请输入要发送的数据:&quot;)
-
-#4. 发送数据到指定的电脑上
-udpSocket.sendto(sendData, sendAddr)
-
-#5. 关闭套接字
-udpSocket.close()
-</code></pre><p>‘’’</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#coding=utf-8</span></div><div class="line"></div><div class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</div><div class="line"></div><div class="line"><span class="comment">#1. 创建套接字</span></div><div class="line">udpSocket = socket(AF_INET, SOCK_DGRAM)</div><div class="line"></div><div class="line"><span class="comment">#2. 准备接收方的地址</span></div><div class="line">sendAddr = (<span class="string">'192.168.1.103'</span>, <span class="number">8080</span>)</div><div class="line"></div><div class="line"><span class="comment">#3. 从键盘获取数据</span></div><div class="line">sendData = raw_input(<span class="string">"请输入要发送的数据:"</span>)</div><div class="line"></div><div class="line"><span class="comment">#4. 发送数据到指定的电脑上</span></div><div class="line">udpSocket.sendto(sendData, sendAddr)</div><div class="line"></div><div class="line"><span class="comment">#5. 关闭套接字</span></div><div class="line">udpSocket.close()</div></pre></td></tr></table></figure>
 <p>接收代码如下：</p>
-<p>‘’’python</p>
-<pre><code>#coding=utf-8
-
-from socket import *
-
-#1. 创建套接字
-udpSocket = socket(AF_INET, SOCK_DGRAM)
-
-#2. 准备接收方的地址
-sendAddr = (&apos;192.168.1.103&apos;, 8080)
-
-#3. 从键盘获取数据
-sendData = raw_input(&quot;请输入要发送的数据:&quot;)
-
-#4. 发送数据到指定的电脑上
-udpSocket.sendto(sendData, sendAddr)
-
-#5. 等待接收对方发送的数据
-recvData = udpSocket.recvfrom(1024) # 1024表示本次接收的最大字节数
-
-#6. 显示对方发送的数据
-print(recvData)
-
-#7. 关闭套接字
-udpSocket.close()
-</code></pre><p>‘’’</p>
-  
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#coding=utf-8</span></div><div class="line"></div><div class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</div><div class="line"></div><div class="line"><span class="comment">#1. 创建套接字</span></div><div class="line">udpSocket = socket(AF_INET, SOCK_DGRAM)</div><div class="line"></div><div class="line"><span class="comment">#2. 准备接收方的地址</span></div><div class="line">sendAddr = (<span class="string">'192.168.1.103'</span>, <span class="number">8080</span>)</div><div class="line"></div><div class="line"><span class="comment">#3. 从键盘获取数据</span></div><div class="line">sendData = raw_input(<span class="string">"请输入要发送的数据:"</span>)</div><div class="line"></div><div class="line"><span class="comment">#4. 发送数据到指定的电脑上</span></div><div class="line">udpSocket.sendto(sendData, sendAddr)</div><div class="line"></div><div class="line"><span class="comment">#5. 等待接收对方发送的数据</span></div><div class="line">recvData = udpSocket.recvfrom(<span class="number">1024</span>) <span class="comment"># 1024表示本次接收的最大字节数</span></div><div class="line"></div><div class="line"><span class="comment">#6. 显示对方发送的数据</span></div><div class="line">print(recvData)</div><div class="line"></div><div class="line"><span class="comment">#7. 关闭套接字</span></div><div class="line">udpSocket.close()</div></pre></td></tr></table></figure>  
 	  </div>     
 	  
 
