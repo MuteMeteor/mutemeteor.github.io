@@ -113,7 +113,7 @@
 		
 
 		<span class="post-words"><span class="iconfont icon-words"></span>
-		1727
+		2121
 		</span>		
 	
 	</div> 
@@ -154,13 +154,13 @@
 <li>DNS(域名解释）</li>
 </ul>
 <p>UDP操作简单，而且仅需要较少的监护，因此通常用于局域网高可靠性的分散系统中client/server应用程序。例如视频会议系统，并不要求音频视频数据绝对的正确，只要保证连贯性就可以了，这种情况下显然使用UDP会更合理一些。</p>
-<h2 id="udp网络程序-发送数据"><a href="#udp网络程序-发送数据" class="headerlink" title="udp网络程序-发送数据"></a>udp网络程序-发送数据</h2><p>创建一个udp客户端程序的流程是简单，具体步骤如下：</p>
+<h2 id="udp网络程序-发送、接受数据"><a href="#udp网络程序-发送、接受数据" class="headerlink" title="udp网络程序-发送、接受数据"></a>udp网络程序-发送、接受数据</h2><p>创建一个udp客户端程序的流程是简单，具体步骤如下：</p>
 <ul>
 <li>创建客户端套接字</li>
 <li>发送/接收数据</li>
 <li>关闭套接字</li>
 </ul>
-<p>代码如下：</p>
+<p>发送代码如下：</p>
 <p>‘’’python</p>
 <pre><code>#coding=utf-8
 
@@ -179,6 +179,33 @@ sendData = raw_input(&quot;请输入要发送的数据:&quot;)
 udpSocket.sendto(sendData, sendAddr)
 
 #5. 关闭套接字
+udpSocket.close()
+</code></pre><p>‘’’</p>
+<p>接收代码如下：</p>
+<p>‘’’python</p>
+<pre><code>#coding=utf-8
+
+from socket import *
+
+#1. 创建套接字
+udpSocket = socket(AF_INET, SOCK_DGRAM)
+
+#2. 准备接收方的地址
+sendAddr = (&apos;192.168.1.103&apos;, 8080)
+
+#3. 从键盘获取数据
+sendData = raw_input(&quot;请输入要发送的数据:&quot;)
+
+#4. 发送数据到指定的电脑上
+udpSocket.sendto(sendData, sendAddr)
+
+#5. 等待接收对方发送的数据
+recvData = udpSocket.recvfrom(1024) # 1024表示本次接收的最大字节数
+
+#6. 显示对方发送的数据
+print(recvData)
+
+#7. 关闭套接字
 udpSocket.close()
 </code></pre><p>‘’’</p>
   
