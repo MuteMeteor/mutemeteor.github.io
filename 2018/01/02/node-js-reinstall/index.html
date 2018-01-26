@@ -1,0 +1,351 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport"content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
+  
+  
+  <title>  Win10 安装Msi提示错误代码2503、2502 |   Mute Meteor</title>
+
+ 
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+
+
+  <!-- css -->
+  <link rel="stylesheet" href="/css/style.css">  
+  <!-- Jquery -->
+  <script src="//cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script> 
+  <!-- Add fancyBox -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script> 
+  <script src="/js/gallery.js"></script>
+  <!-- javascript --> 
+  <script src="/js/mobile.js"></script>  
+  <script src="/js/utils.js"></script>    
+  <script src="/js/script.js"></script>  
+</head> 
+  <body> 
+    <header class="header">
+	
+  <nav class="header-nav">       
+	
+  	<span class="iconfont icon-menu mobile-toggle"></span>  
+
+    <a class="header-logo" href="/"><span>Mute Meteor</a>  
+
+    <div class="header-menu">          
+              
+            
+
+              <a class="header-menu-link" id="header-menu-home" href="/">首页</a>     
+
+            
+            
+            
+
+              <a class="header-menu-link" id="header-menu-archives" href="/archives">归档</a>     
+
+            
+            
+            
+
+              <a class="header-menu-link" id="header-menu-categories" href="/categories">分类</a>     
+
+            
+            
+            
+
+              <a class="header-menu-link" id="header-menu-tags" href="/tags">标签</a>     
+
+            
+            
+            
+
+              <a class="header-menu-link" id="header-menu-about" href="/about">关于</a>     
+
+            
+                
+    </div>  
+    
+  </nav>
+</header>
+
+     <div class="container">         
+
+      
+        
+          <section id="main" ><article class="post">
+
+	  
+	<div class="slideDownMin center">
+
+	<span class="post-title">	
+		Win10 安装msi提示错误代码2503、2502
+	</span>
+
+	
+	<div class="post-info">
+
+		<time class="post-time"><span class="iconfont icon-date"></span>
+		2018/01/02 	
+		</time>
+		
+					
+
+				<span class="post-meta">		
+				<span class="iconfont icon-category"></span>
+				<a class="category-link" href="/categories/Tech/">Tech</a>
+				</span>
+		
+			
+
+		
+				
+				<span class="post-meta">
+				<span class="iconfont icon-tag"></span>
+				<a class="tag-link" href="/tags/Windows/">Windows</a>
+				</span>			
+			
+
+
+		
+
+		<span class="post-words"><span class="iconfont icon-words"></span>
+		875
+		</span>		
+	
+	</div> 
+
+</div> 
+
+
+	  <div class="post-content slideDownMin">
+
+		
+
+
+	  <p>之前尝试在win 10系统上搭建 ‘Hugo’ 时，不小心把电脑上的所有环境变量 ‘Path’ 都删掉了，重新添加找目录又费劲，所以直接重新下载了node.js和Python，安装时又发现不断出现弹窗，显示:</p>
+<p>“The installer has encountered an unexpected error installing this package.this may indicate a problem with package.the error code is 2502.<br>The installer has encountered an unexpected error installing this package.this may indicate a problem with package.the error code is 2503.”</p>
+<p>应该是权限问题，Google找解决办法，都没解决，后来综合了两个解决方法，成功安装。</p>
+<p>具体步骤：</p>
+<h1 id="永久提权"><a href="#永久提权" class="headerlink" title="永久提权"></a>永久提权</h1><p>1、按WIN+R，在运行框中输入“gpedit.msc” 确认；<br>2、打开本地策略组编辑器后依次展开 ：“计算机配置”-》“管理模板”-》“windows组件”-》“windows installer”，并找到“始终以提升的权限进行安装”；<br>3、双击该选项，设置为“已启用”，并应用；<br>4、最后还要在【用户配置】中进行同样的操作；</p>
+<h1 id="临时安装"><a href="#临时安装" class="headerlink" title="临时安装"></a>临时安装</h1><p>1、鼠标移到桌面左下角-&gt;右键（或者直接： WIN+X键），命令提示符（管理员）；<br>2、输入：msiexec /package +‘msi文件路径’（输入的时候注意半角字符且路径不能为中文名）<br>例如：<br>C:\Windows\system32&gt;msiexec /package G:\tool\node-v8.9.3-x64.msi<br>C:\Windows\system32&gt;msiexec /package G:\software\python\python-3.4.3.msi<br>C:\Windows\system32&gt;msiexec /package G:\software\python\python-2.7.10.msi</p>
+<p>大功告成。</p>
+  
+	  </div>     
+	  
+
+	<div class="post-footer">    
+
+   
+  
+
+
+   <nav class="post-nav">
+
+      
+       
+
+         
+
+      
+          <a href="/2018/01/13/MongoDB/">          
+
+            <span title="MongoDB 基本操作和高级操作">  上一篇 </span>
+
+          </a>
+    
+      
+    
+      
+
+         
+
+          <a href="/2017/11/14/python3-note4/">         
+
+           <span title="Python3 学习笔记（四）">下一篇 </span>  
+
+          </a>
+
+      
+
+  </nav>  
+</div> 
+	
+
+<div id="comment">   
+</div>
+
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine@v1.1.8-beta/dist/Valine.min.js'></script>
+
+
+<script>
+    new Valine({
+    el: '#comment',
+    notify:false, 
+    verify:false, 
+    app_id: 'CvL8tKYd1WrIljM0LRHWvH56-gzGzoHsz',
+    app_key: '8PRxqxT9rhxJbR3ACVd2LkiT',  
+    path:window.location.pathname, 
+    avatar:'mm' ,
+    guest_info:['nick','mail']
+    });
+</script>
+
+
+
+
+
+<style type="text/css">
+
+</style>
+
+
+<script>
+//set the placeholder
+$(function(){    
+
+    $('.vnick').attr('placeholder','昵称');
+    $('.veditor').attr('placeholder','说点什么吧');
+    $('.vmail').attr('placeholder','邮箱');   
+    $('.vsubmit').html('回复');   
+   
+})  
+</script>
+
+	
+
+</article>
+
+<script src="/js/post.js"></script></section>   
+          
+
+<div id="toc" class="fadeIn">		
+
+	<div class="toc-container">	
+
+	<span class="toc-contents iconfont icon-open"" onclick="change()"> 
+	<span>目录</span>
+	</span>
+
+	<ul class="toc-list"></ul>
+
+	</div>
+
+</div>
+
+
+<script src="/js/toc.js"></script>
+        
+    </div>        
+
+    
+    <div class="mask"> </div>
+    <div class="back-to-top iconfont icon-backtotop fadeIn"></div> 
+
+    
+
+
+     <div class="mobile-menu">      
+
+      
+      <img class="mobile-menu-icon no-gallery" src= /img/favicon.png >   
+      
+
+         
+            
+
+            <a class="mobile-menu-link" href="/">首页
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/archives">归档
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/categories">分类
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/tags">标签
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/about">关于
+            </a>
+            
+         
+</div>     
+    
+
+<footer id="footer">
+	   
+   	 <div>	
+   	 
+
+     <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+   
+     <span class="iconfont icon-pv"></span>
+     <span id="busuanzi_value_site_pv"></span>
+ 
+     <span class="iconfont icon-uv"></span>
+     <span id="busuanzi_value_site_uv"></span>
+	    	
+   	 </div>
+   
+   	 
+	 <div>
+	 &copy;
+	 2018
+	 Wang	 
+
+	 </div>
+
+
+
+   
+   	 <div>
+	
+	 <a href="http://hexo.io/" target="_blank">Hexo</a>
+
+	 Theme
+
+	 <a href="https://github.com/Lemonreds/hexo-theme-Nayo" target="_blank">Nayo</a> 
+
+	 </div>	
+
+
+	
+	
+</footer> 
+    
+
+<!-- Baidu Analytics -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?063129ce0f11ae9e4a1036a9220b94be"; 
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+
+ 
+  </body>   
+  <script src="/js/animation.js"></script>   
+</html>

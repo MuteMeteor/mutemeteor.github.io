@@ -1,0 +1,527 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport"content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
+  
+  
+  <title>  Vim 学习笔记 |   Mute Meteor</title>
+
+ 
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+
+
+  <!-- css -->
+  <link rel="stylesheet" href="/css/style.css">  
+  <!-- Jquery -->
+  <script src="//cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script> 
+  <!-- Add fancyBox -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script> 
+  <script src="/js/gallery.js"></script>
+  <!-- javascript --> 
+  <script src="/js/mobile.js"></script>  
+  <script src="/js/utils.js"></script>    
+  <script src="/js/script.js"></script>  
+</head> 
+  <body> 
+    <header class="header">
+	
+  <nav class="header-nav">       
+	
+  	<span class="iconfont icon-menu mobile-toggle"></span>  
+
+    <a class="header-logo" href="/"><span>Mute Meteor</a>  
+
+    <div class="header-menu">          
+              
+            
+
+              <a class="header-menu-link" id="header-menu-home" href="/">首页</a>     
+
+            
+            
+            
+
+              <a class="header-menu-link" id="header-menu-archives" href="/archives">归档</a>     
+
+            
+            
+            
+
+              <a class="header-menu-link" id="header-menu-categories" href="/categories">分类</a>     
+
+            
+            
+            
+
+              <a class="header-menu-link" id="header-menu-tags" href="/tags">标签</a>     
+
+            
+            
+            
+
+              <a class="header-menu-link" id="header-menu-about" href="/about">关于</a>     
+
+            
+                
+    </div>  
+    
+  </nav>
+</header>
+
+     <div class="container">         
+
+      
+        
+          <section id="main" ><article class="post">
+
+	  
+	<div class="slideDownMin center">
+
+	<span class="post-title">	
+		Vim 学习笔记
+	</span>
+
+	
+	<div class="post-info">
+
+		<time class="post-time"><span class="iconfont icon-date"></span>
+		2017/07/23 	
+		</time>
+		
+					
+
+				<span class="post-meta">		
+				<span class="iconfont icon-category"></span>
+				<a class="category-link" href="/categories/Tech/">Tech</a>
+				</span>
+		
+			
+
+		
+				
+				<span class="post-meta">
+				<span class="iconfont icon-tag"></span>
+				<a class="tag-link" href="/tags/Notes/">Notes</a> <a class="tag-link" href="/tags/Vim/">Vim</a>
+				</span>			
+			
+
+
+		
+
+		<span class="post-words"><span class="iconfont icon-words"></span>
+		2166
+		</span>		
+	
+	</div> 
+
+</div> 
+
+
+	  <div class="post-content slideDownMin">
+
+		
+
+
+	  <p>从vi演生出来的Vim具有多种模式，这种独特的设计容易使初学者产生混淆。几乎所有的编辑器都会有插入和执行命令两种模式，并且大多数的编辑器使用了与Vim截然不同的方式：命令目录（鼠标或者键盘驱动），组合键（通常通过control键（CTRL）和alt键（ALT）组成）或者鼠标输入。Vim和vi一样，仅仅通过键盘来在这些模式之中切换。这就使得Vim可以不用进行菜单或者鼠标操作，并且最小化组合键的操作。对文字录入员或者程序员可以大大增强速度和效率。</p>
+<a id="more"></a>
+<h1 id="Vim-的6种模式"><a href="#Vim-的6种模式" class="headerlink" title="Vim 的6种模式"></a>Vim 的6种模式</h1><h2 id="普通模式-Normal-mode"><a href="#普通模式-Normal-mode" class="headerlink" title="普通模式(Normal mode)"></a>普通模式(Normal mode)</h2><p>在普通模式中，用的编辑器命令，比如移动光标，删除文本等等。这也是Vim启动后的默认模式。这正好和许多新用户期待的操作方式相反（大多数编辑器默认模式为插入模式）。</p>
+<p>Vim强大的编辑能来自于其普通模式命令。普通模式命令往往需要一个操作符结尾。例如普通模式命令<code>dd</code>删除当前行，但是第一个”d”的后面可以跟另外的移动命令来代替第二个<code>d</code>，比如用移动到下一行的”j”键就可以删除当前行和下一行。另外还可以指定命令重复次数，<code>2dd</code>（重复<code>dd</code>两次），和<code>dj</code>的效果是一样的。用户学习了各种各样的文本间移动／跳转的命令和其他的普通模式的编辑命令，并且能够灵活组合使用的话，能够比那些没有模式的编辑器更加高效的进行文本编辑。</p>
+<p>在普通模式中，有很多方法可以进入插入模式。比较普通的方式是按<code>a</code>（append／追加）键或者<code>i</code>（insert／插入）键。</p>
+<h2 id="插入模式-Insert-mode"><a href="#插入模式-Insert-mode" class="headerlink" title="插入模式(Insert mode)"></a>插入模式(Insert mode)</h2><p>在这个模式中，大多数按键都会向文本缓冲中插入文本。大多数新用户希望文本编辑器编辑过程中一直保持这个模式。</p>
+<p>在插入模式中，可以按<code>ESC</code>键回到普通模式。</p>
+<h2 id="可视模式-Visual-mode"><a href="#可视模式-Visual-mode" class="headerlink" title="可视模式(Visual mode)"></a>可视模式(Visual mode)</h2><p>这个模式与普通模式比较相似。但是移动命令会扩大高亮的文本区域。高亮区域可以是字符、行或者是一块文本。当执行一个非移动命令时，命令会被执行到这块高亮的区域上。Vim的”文本对象”也能和移动命令一样用在这个模式中。</p>
+<h2 id="选择模式-Select-mode"><a href="#选择模式-Select-mode" class="headerlink" title="选择模式(Select mode)"></a>选择模式(Select mode)</h2><p>这个模式和无模式编辑器的行为比较相似（Windows标准文本控件的方式）。这个模式中，可以用鼠标或者光标键高亮选择文本，不过输入任何字符的话，Vim会用这个字符替换选择的高亮文本块，并且自动进入插入模式。</p>
+<h2 id="命令行模式-Command-line-mode"><a href="#命令行模式-Command-line-mode" class="headerlink" title="命令行模式(Command line mode)"></a>命令行模式(Command line mode)</h2><p>在命令行模式中可以输入会被解释成并执行的文本。例如执行命令（<code>:</code>键），搜索（<code>/</code>和<code>?</code>键）或者过滤命令（<code>!</code>键）。在命令执行之后，Vim返回到命令行模式之前的模式，通常是普通模式。</p>
+<h2 id="Ex模式-Ex-mode"><a href="#Ex模式-Ex-mode" class="headerlink" title="Ex模式(Ex mode)"></a>Ex模式(Ex mode)</h2><p>这和命令行模式比较相似，在使用<code>:visual</code>命令离开Ex模式前，可以一次执行多条命令。</p>
+<p>这其中我们常用到就是普通模式、插入模式和命令行模式。</p>
+<h1 id="三种常用模式的切换"><a href="#三种常用模式的切换" class="headerlink" title="三种常用模式的切换"></a>三种常用模式的切换</h1><p>vim启动进入普通模式，处于插入模式或命令行模式时只需要按<code>Esc</code>或者<code>Ctrl+[</code>即可进入普通模式。普通模式中按<code>i</code>（插入）或<code>a</code>（附加）键都可以进入插入模式，普通模式中按<code>:</code>进入命令行模式。命令行模式中输入<code>wq</code>回车后保存并退出vim。</p>
+<h1 id="进入vim"><a href="#进入vim" class="headerlink" title="进入vim"></a>进入vim</h1><h2 id="使用vim命令进入vim界面"><a href="#使用vim命令进入vim界面" class="headerlink" title="使用vim命令进入vim界面"></a>使用vim命令进入vim界面</h2><p>vim后面加上你要打开的已存在的文件名或者不存在（则作为新建文件）的文件名。</p>
+<p>打开终端，输入以下命令：</p>
+<pre><code>$ vim practice_1.txt
+</code></pre><p>直接使用vim也可以打开vim编辑器，但是不会打开任何文件：</p>
+<pre><code>$ vim
+</code></pre><p>进入命令行模式后输入<code>:e 文件路径</code> 同样可以打开相应文件。</p>
+<h2 id="游标移动"><a href="#游标移动" class="headerlink" title="游标移动"></a>游标移动</h2><p>在进入vim后，按下<code>i</code>键进入插入模式。<br>按<code>Esc</code>进入普通模式，在该模式下使用方向键或者<code>h</code>,<code>j</code>,<code>k</code>,<code>l</code>键可以移动游标。</p>
+<table>
+<thead>
+<tr>
+<th>按键</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>h</code></td>
+<td style="text-align:center">左</td>
+</tr>
+<tr>
+<td><code>l</code></td>
+<td style="text-align:center">右</td>
+</tr>
+<tr>
+<td><code>j</code></td>
+<td style="text-align:center">下</td>
+</tr>
+<tr>
+<td><code>k</code></td>
+<td style="text-align:center">上</td>
+</tr>
+<tr>
+<td><code>w</code></td>
+<td style="text-align:center">移动到下一个单词</td>
+</tr>
+<tr>
+<td><code>e</code></td>
+<td style="text-align:center">移动到上一个单词</td>
+</tr>
+</tbody>
+</table>
+<h2 id="进入插入模式"><a href="#进入插入模式" class="headerlink" title="进入插入模式"></a>进入插入模式</h2><p>在普通模式下使用下面的键将进入插入模式，并可以从相应的位置开始输入</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>i</code></td>
+<td style="text-align:center">在当前光标处进行编辑</td>
+</tr>
+<tr>
+<td><code>I</code></td>
+<td style="text-align:center">在行首插入</td>
+</tr>
+<tr>
+<td><code>A</code></td>
+<td style="text-align:center">在行末插入</td>
+</tr>
+<tr>
+<td><code>a</code></td>
+<td style="text-align:center">在光标后插入编辑</td>
+</tr>
+<tr>
+<td><code>o</code></td>
+<td style="text-align:center">在当前行后插入一个新行</td>
+</tr>
+<tr>
+<td><code>O</code></td>
+<td style="text-align:center">在当前行前插入一个新行</td>
+</tr>
+<tr>
+<td><code>cw</code></td>
+<td style="text-align:center">替换从光标所在位置后到一个单词结尾的字符</td>
+</tr>
+</tbody>
+</table>
+<h1 id="保存文档"><a href="#保存文档" class="headerlink" title="保存文档"></a>保存文档</h1><p>从普通模式输入<code>:</code>进入命令行模式，输入<code>w</code>回车，保存文档。输入<code>:w</code> 文件名可以将文档另存为其他文件名或存到其它路径下。</p>
+<h1 id="退出vim"><a href="#退出vim" class="headerlink" title="退出vim"></a>退出vim</h1><h2 id="命令行模式下退出vim"><a href="#命令行模式下退出vim" class="headerlink" title="命令行模式下退出vim"></a>命令行模式下退出vim</h2><p>从普通模式输入:进入命令行模式，输入wq回车，保存并退出编辑。</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>:q!</code></td>
+<td style="text-align:center">强制退出，不保存</td>
+</tr>
+<tr>
+<td><code>:q</code></td>
+<td style="text-align:center">退出</td>
+</tr>
+<tr>
+<td><code>:wq!</code></td>
+<td style="text-align:center">强制保存并退出</td>
+</tr>
+<tr>
+<td><code>:w &lt;文件路径&gt;</code></td>
+<td style="text-align:center">另存为</td>
+</tr>
+<tr>
+<td><code>:saveas 文件路径</code></td>
+<td style="text-align:center">另存为</td>
+</tr>
+<tr>
+<td><code>:x</code></td>
+<td style="text-align:center">保存并退出</td>
+</tr>
+<tr>
+<td><code>:wq</code></td>
+<td style="text-align:center">保存并退出</td>
+</tr>
+</tbody>
+</table>
+<h2 id="普通模式下退出vim"><a href="#普通模式下退出vim" class="headerlink" title="普通模式下退出vim"></a>普通模式下退出vim</h2><p>普通模式下输入<code>Shift+zz</code>即可保存退出vim。</p>
+<h1 id="删除文本"><a href="#删除文本" class="headerlink" title="删除文本"></a>删除文本</h1><p>进入普通模式，使用下列命令可以进行文本快速删除：</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x</code></td>
+<td style="text-align:center">删除游标所在的字符</td>
+</tr>
+<tr>
+<td><code>X</code></td>
+<td style="text-align:center">删除游标所在前一个字符</td>
+</tr>
+<tr>
+<td><code>Delete</code></td>
+<td style="text-align:center">同x</td>
+</tr>
+<tr>
+<td><code>dd</code></td>
+<td style="text-align:center">删除整行</td>
+</tr>
+<tr>
+<td><code>dw</code></td>
+<td style="text-align:center">删除一个单词（不适用中文）</td>
+</tr>
+<tr>
+<td><code>d$或D</code></td>
+<td style="text-align:center">删除至行尾</td>
+</tr>
+<tr>
+<td><code>d^</code></td>
+<td style="text-align:center">删除至行首</td>
+</tr>
+<tr>
+<td><code>dG</code></td>
+<td style="text-align:center">删除到文档结尾处</td>
+</tr>
+<tr>
+<td><code>d1G</code></td>
+<td style="text-align:center">删至文档首部</td>
+</tr>
+</tbody>
+</table>
+<p>除此之外，还可以在命令之前加上数字，表示一次删除多行，如：<code>2dd</code>表示一次删除2行。</p>
+<p><img src="http://on7kyvg9n.bkt.clouddn.com/vi-vim-cheat-sheet-sch.gif" alt="vim键盘图"></p>
+  
+	  </div>     
+	  
+
+	<div class="post-footer">    
+
+   
+  
+
+
+   <nav class="post-nav">
+
+      
+       
+
+         
+
+      
+          <a href="/2017/08/07/Linux/">          
+
+            <span title="Linux 学习笔记">  上一篇 </span>
+
+          </a>
+    
+      
+    
+      
+
+         
+
+          <a href="/2017/07/20/MySQL2/">         
+
+           <span title="MySQL 学习笔记之进阶篇">下一篇 </span>  
+
+          </a>
+
+      
+
+  </nav>  
+</div> 
+	
+
+<div id="comment">   
+</div>
+
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine@v1.1.8-beta/dist/Valine.min.js'></script>
+
+
+<script>
+    new Valine({
+    el: '#comment',
+    notify:false, 
+    verify:false, 
+    app_id: 'CvL8tKYd1WrIljM0LRHWvH56-gzGzoHsz',
+    app_key: '8PRxqxT9rhxJbR3ACVd2LkiT',  
+    path:window.location.pathname, 
+    avatar:'mm' ,
+    guest_info:['nick','mail']
+    });
+</script>
+
+
+
+
+
+<style type="text/css">
+
+</style>
+
+
+<script>
+//set the placeholder
+$(function(){    
+
+    $('.vnick').attr('placeholder','昵称');
+    $('.veditor').attr('placeholder','说点什么吧');
+    $('.vmail').attr('placeholder','邮箱');   
+    $('.vsubmit').html('回复');   
+   
+})  
+</script>
+
+	
+
+</article>
+
+<script src="/js/post.js"></script></section>   
+          
+
+<div id="toc" class="fadeIn">		
+
+	<div class="toc-container">	
+
+	<span class="toc-contents iconfont icon-open"" onclick="change()"> 
+	<span>目录</span>
+	</span>
+
+	<ul class="toc-list"></ul>
+
+	</div>
+
+</div>
+
+
+<script src="/js/toc.js"></script>
+        
+    </div>        
+
+    
+    <div class="mask"> </div>
+    <div class="back-to-top iconfont icon-backtotop fadeIn"></div> 
+
+    
+
+
+     <div class="mobile-menu">      
+
+      
+      <img class="mobile-menu-icon no-gallery" src= /img/favicon.png >   
+      
+
+         
+            
+
+            <a class="mobile-menu-link" href="/">首页
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/archives">归档
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/categories">分类
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/tags">标签
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/about">关于
+            </a>
+            
+         
+</div>     
+    
+
+<footer id="footer">
+	   
+   	 <div>	
+   	 
+
+     <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+   
+     <span class="iconfont icon-pv"></span>
+     <span id="busuanzi_value_site_pv"></span>
+ 
+     <span class="iconfont icon-uv"></span>
+     <span id="busuanzi_value_site_uv"></span>
+	    	
+   	 </div>
+   
+   	 
+	 <div>
+	 &copy;
+	 2018
+	 Wang	 
+
+	 </div>
+
+
+
+   
+   	 <div>
+	
+	 <a href="http://hexo.io/" target="_blank">Hexo</a>
+
+	 Theme
+
+	 <a href="https://github.com/Lemonreds/hexo-theme-Nayo" target="_blank">Nayo</a> 
+
+	 </div>	
+
+
+	
+	
+</footer> 
+    
+
+<!-- Baidu Analytics -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?063129ce0f11ae9e4a1036a9220b94be"; 
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+
+ 
+  </body>   
+  <script src="/js/animation.js"></script>   
+</html>

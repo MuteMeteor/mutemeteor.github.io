@@ -1,0 +1,434 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport"content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
+  
+  
+  <title>  Python3 学习笔记（四） |   Mute Meteor</title>
+
+ 
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+
+
+  <!-- css -->
+  <link rel="stylesheet" href="/css/style.css">  
+  <!-- Jquery -->
+  <script src="//cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script> 
+  <!-- Add fancyBox -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script> 
+  <script src="/js/gallery.js"></script>
+  <!-- javascript --> 
+  <script src="/js/mobile.js"></script>  
+  <script src="/js/utils.js"></script>    
+  <script src="/js/script.js"></script>  
+</head> 
+  <body> 
+    <header class="header">
+	
+  <nav class="header-nav">       
+	
+  	<span class="iconfont icon-menu mobile-toggle"></span>  
+
+    <a class="header-logo" href="/"><span>Mute Meteor</a>  
+
+    <div class="header-menu">          
+              
+            
+
+              <a class="header-menu-link" id="header-menu-home" href="/">首页</a>     
+
+            
+            
+            
+
+              <a class="header-menu-link" id="header-menu-archives" href="/archives">归档</a>     
+
+            
+            
+            
+
+              <a class="header-menu-link" id="header-menu-categories" href="/categories">分类</a>     
+
+            
+            
+            
+
+              <a class="header-menu-link" id="header-menu-tags" href="/tags">标签</a>     
+
+            
+            
+            
+
+              <a class="header-menu-link" id="header-menu-about" href="/about">关于</a>     
+
+            
+                
+    </div>  
+    
+  </nav>
+</header>
+
+     <div class="container">         
+
+      
+        
+          <section id="main" ><article class="post">
+
+	  
+	<div class="slideDownMin center">
+
+	<span class="post-title">	
+		Python3 学习笔记（四）
+	</span>
+
+	
+	<div class="post-info">
+
+		<time class="post-time"><span class="iconfont icon-date"></span>
+		2017/11/14 	
+		</time>
+		
+					
+
+				<span class="post-meta">		
+				<span class="iconfont icon-category"></span>
+				<a class="category-link" href="/categories/Tech/">Tech</a>
+				</span>
+		
+			
+
+		
+				
+				<span class="post-meta">
+				<span class="iconfont icon-tag"></span>
+				<a class="tag-link" href="/tags/Notes/">Notes</a> <a class="tag-link" href="/tags/Python/">Python</a>
+				</span>			
+			
+
+
+		
+
+		<span class="post-words"><span class="iconfont icon-words"></span>
+		2125
+		</span>		
+	
+	</div> 
+
+</div> 
+
+
+	  <div class="post-content slideDownMin">
+
+		
+
+
+	  <ul>
+<li><p><a href="http://mutemeteor.com/2017/10/28/Python3-note/">python3 学习笔记（一）</a></p>
+</li>
+<li><p><a href="http://mutemeteor.com/2017/11/08/Python3-note2/">python3 学习笔记（二）</a></p>
+</li>
+<li><p><a href="http://mutemeteor.com/2017/11/14/Python3-note3/">python3 学习笔记（三）</a></p>
+</li>
+</ul>
+<hr>
+<h1 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h1><p>在操作文件的整体过程与使用word编写一份简历的过程是很相似的：</p>
+<ol>
+<li>打开文件，或者新建立一个文件</li>
+<li>读/写数据</li>
+<li>关闭文件</li>
+</ol>
+<h2 id="打开文件"><a href="#打开文件" class="headerlink" title="打开文件"></a>打开文件</h2><p>在python，使用open函数，可以打开一个已经存在的文件，或者创建一个新文件</p>
+<p>open(文件名，访问模式)</p>
+<p>示例如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">f = open(<span class="string">'test.txt'</span>, <span class="string">'w'</span>)</div></pre></td></tr></table></figure></p>
+<table>
+<thead>
+<tr>
+<th>访问模式</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>r</td>
+<td style="text-align:center">以只读方式打开文件。文件的指针将会放在文件的开头。这是默认模式。</td>
+</tr>
+<tr>
+<td>w</td>
+<td style="text-align:center">打开一个文件只用于写入。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。</td>
+</tr>
+<tr>
+<td>a</td>
+<td style="text-align:center">打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。</td>
+</tr>
+<tr>
+<td>rb</td>
+<td style="text-align:center">以二进制格式打开一个文件用于只读。文件指针将会放在文件的开头。这是默认模式。</td>
+</tr>
+<tr>
+<td>wb</td>
+<td style="text-align:center">以二进制格式打开一个文件只用于写入。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。</td>
+</tr>
+<tr>
+<td>ab</td>
+<td style="text-align:center">以二进制格式打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。</td>
+</tr>
+<tr>
+<td>r+</td>
+<td style="text-align:center">打开一个文件用于读写。文件指针将会放在文件的开头。</td>
+</tr>
+<tr>
+<td>w+</td>
+<td style="text-align:center">打开一个文件用于读写。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。</td>
+</tr>
+<tr>
+<td>a+</td>
+<td style="text-align:center">打开一个文件用于读写。如果该文件已存在，文件指针将会放在文件的结尾。文件打开时会是追加模式。如果该文件不存在，创建新文件用于读写。</td>
+</tr>
+<tr>
+<td>rb+</td>
+<td style="text-align:center">以二进制格式打开一个文件用于读写。文件指针将会放在文件的开头。</td>
+</tr>
+<tr>
+<td>wb+</td>
+<td style="text-align:center">以二进制格式打开一个文件用于读写。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。</td>
+</tr>
+<tr>
+<td>ab+</td>
+<td style="text-align:center">以二进制格式打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。如果该文件不存在，创建新文件用于读写。</td>
+</tr>
+</tbody>
+</table>
+<a id="more"></a>
+<h2 id="关闭文件"><a href="#关闭文件" class="headerlink" title="关闭文件"></a>关闭文件</h2><p>close( )</p>
+<p>示例如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 新建一个文件，文件名为:test.txt</span></div><div class="line">f = open(<span class="string">'test.txt'</span>, <span class="string">'w'</span>)</div><div class="line"></div><div class="line"><span class="comment"># 关闭这个文件</span></div><div class="line">f.close()</div></pre></td></tr></table></figure>
+<h2 id="写数据-write"><a href="#写数据-write" class="headerlink" title="写数据(write)"></a>写数据(write)</h2><p>使用write()可以完成向文件写入数据</p>
+<p>demo:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">f = open(<span class="string">'test.txt'</span>, <span class="string">'w'</span>)</div><div class="line">f.write(<span class="string">'hello world, i am here!'</span>)</div><div class="line">f.close()</div></pre></td></tr></table></figure>
+<h2 id="读数据-read"><a href="#读数据-read" class="headerlink" title="读数据(read)"></a>读数据(read)</h2><p>使用read(num)可以从文件中读取数据，num表示要从文件中读取的数据的长度（单位是字节），如果没有传入num，那么就表示读取文件中所有的数据</p>
+<p>demo:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">f = open(<span class="string">'test.txt'</span>, <span class="string">'r'</span>)</div><div class="line"></div><div class="line">content = f.read(<span class="number">5</span>)</div><div class="line"></div><div class="line">print(content)</div><div class="line"></div><div class="line">print(<span class="string">"-"</span>*<span class="number">30</span>)</div><div class="line"></div><div class="line">content = f.read()</div><div class="line"></div><div class="line">print(content)</div><div class="line"></div><div class="line">f.close()</div></pre></td></tr></table></figure>
+<h2 id="读数据（readlines）"><a href="#读数据（readlines）" class="headerlink" title="读数据（readlines）"></a>读数据（readlines）</h2><p>就像read没有参数时一样，readlines可以按照行的方式把整个文件中的内容进行一次性读取，并且返回的是一个列表，其中每一行的数据为一个元素</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#coding=utf-8</span></div><div class="line"></div><div class="line">f = open(<span class="string">'test.txt'</span>, <span class="string">'r'</span>)</div><div class="line"></div><div class="line">content = f.readlines()</div><div class="line"></div><div class="line">print(type(content))</div><div class="line"></div><div class="line">i=<span class="number">1</span></div><div class="line"><span class="keyword">for</span> temp <span class="keyword">in</span> content:</div><div class="line">    print(<span class="string">"%d:%s"</span>%(i, temp))</div><div class="line">    i+=<span class="number">1</span></div><div class="line"></div><div class="line">f.close()</div></pre></td></tr></table></figure>
+<h2 id="读数据（readline）"><a href="#读数据（readline）" class="headerlink" title="读数据（readline）"></a>读数据（readline）</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#coding=utf-8</span></div><div class="line"></div><div class="line">f = open(<span class="string">'test.txt'</span>, <span class="string">'r'</span>)</div><div class="line"></div><div class="line">content = f.readline()</div><div class="line">print(<span class="string">"1:%s"</span>%content)</div><div class="line"></div><div class="line">content = f.readline()</div><div class="line">print(<span class="string">"2:%s"</span>%content)</div><div class="line"></div><div class="line"></div><div class="line">f.close()</div></pre></td></tr></table></figure>
+<h2 id="应用1——制作文件备份"><a href="#应用1——制作文件备份" class="headerlink" title="应用1——制作文件备份"></a>应用1——制作文件备份</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#coding=utf-8</span></div><div class="line"></div><div class="line">oldFileName = input(<span class="string">"请输入要拷贝的文件名字:"</span>)</div><div class="line"></div><div class="line">oldFile = open(oldFileName,<span class="string">'r'</span>)</div><div class="line"></div><div class="line"><span class="comment"># 如果打开文件</span></div><div class="line"><span class="keyword">if</span> oldFile:</div><div class="line"></div><div class="line">    <span class="comment"># 提取文件的后缀</span></div><div class="line">    fileFlagNum = oldFileName.rfind(<span class="string">'.'</span>)</div><div class="line">    <span class="keyword">if</span> fileFlagNum &gt; <span class="number">0</span>:</div><div class="line">        fileFlag = oldFileName[fileFlagNum:]</div><div class="line"></div><div class="line">    <span class="comment"># 组织新的文件名字</span></div><div class="line">    newFileName = oldFileName[:fileFlagNum] + <span class="string">'[复件]'</span> + fileFlag</div><div class="line"></div><div class="line">    <span class="comment"># 创建新文件</span></div><div class="line">    newFile = open(newFileName, <span class="string">'w'</span>)</div><div class="line"></div><div class="line">    <span class="comment"># 把旧文件中的数据，一行一行的进行复制到新文件中</span></div><div class="line">    <span class="keyword">for</span> lineContent <span class="keyword">in</span> oldFile.readlines():</div><div class="line">        newFile.write(lineContent)</div><div class="line"></div><div class="line">    <span class="comment"># 关闭文件</span></div><div class="line">    oldFile.close()</div><div class="line">    newFile.close()</div></pre></td></tr></table></figure>
+  
+	  </div>     
+	  
+
+	<div class="post-footer">    
+
+   
+  
+
+
+   <nav class="post-nav">
+
+      
+       
+
+         
+
+      
+          <a href="/2018/01/02/node-js-reinstall/">          
+
+            <span title="Win10 安装msi提示错误代码2503、2502">  上一篇 </span>
+
+          </a>
+    
+      
+    
+      
+
+         
+
+          <a href="/2017/11/14/Python3-note3/">         
+
+           <span title="Python3 学习笔记（三）">下一篇 </span>  
+
+          </a>
+
+      
+
+  </nav>  
+</div> 
+	
+
+<div id="comment">   
+</div>
+
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine@v1.1.8-beta/dist/Valine.min.js'></script>
+
+
+<script>
+    new Valine({
+    el: '#comment',
+    notify:false, 
+    verify:false, 
+    app_id: 'CvL8tKYd1WrIljM0LRHWvH56-gzGzoHsz',
+    app_key: '8PRxqxT9rhxJbR3ACVd2LkiT',  
+    path:window.location.pathname, 
+    avatar:'mm' ,
+    guest_info:['nick','mail']
+    });
+</script>
+
+
+
+
+
+<style type="text/css">
+
+</style>
+
+
+<script>
+//set the placeholder
+$(function(){    
+
+    $('.vnick').attr('placeholder','昵称');
+    $('.veditor').attr('placeholder','说点什么吧');
+    $('.vmail').attr('placeholder','邮箱');   
+    $('.vsubmit').html('回复');   
+   
+})  
+</script>
+
+	
+
+</article>
+
+<script src="/js/post.js"></script></section>   
+          
+
+<div id="toc" class="fadeIn">		
+
+	<div class="toc-container">	
+
+	<span class="toc-contents iconfont icon-open"" onclick="change()"> 
+	<span>目录</span>
+	</span>
+
+	<ul class="toc-list"></ul>
+
+	</div>
+
+</div>
+
+
+<script src="/js/toc.js"></script>
+        
+    </div>        
+
+    
+    <div class="mask"> </div>
+    <div class="back-to-top iconfont icon-backtotop fadeIn"></div> 
+
+    
+
+
+     <div class="mobile-menu">      
+
+      
+      <img class="mobile-menu-icon no-gallery" src= /img/favicon.png >   
+      
+
+         
+            
+
+            <a class="mobile-menu-link" href="/">首页
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/archives">归档
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/categories">分类
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/tags">标签
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/about">关于
+            </a>
+            
+         
+</div>     
+    
+
+<footer id="footer">
+	   
+   	 <div>	
+   	 
+
+     <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+   
+     <span class="iconfont icon-pv"></span>
+     <span id="busuanzi_value_site_pv"></span>
+ 
+     <span class="iconfont icon-uv"></span>
+     <span id="busuanzi_value_site_uv"></span>
+	    	
+   	 </div>
+   
+   	 
+	 <div>
+	 &copy;
+	 2018
+	 Wang	 
+
+	 </div>
+
+
+
+   
+   	 <div>
+	
+	 <a href="http://hexo.io/" target="_blank">Hexo</a>
+
+	 Theme
+
+	 <a href="https://github.com/Lemonreds/hexo-theme-Nayo" target="_blank">Nayo</a> 
+
+	 </div>	
+
+
+	
+	
+</footer> 
+    
+
+<!-- Baidu Analytics -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?063129ce0f11ae9e4a1036a9220b94be"; 
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+
+ 
+  </body>   
+  <script src="/js/animation.js"></script>   
+</html>

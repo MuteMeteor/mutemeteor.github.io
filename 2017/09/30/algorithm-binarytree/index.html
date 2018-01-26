@@ -1,0 +1,352 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport"content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
+  
+  
+  <title>  【数据结构与算法】二叉树专题 |   Mute Meteor</title>
+
+ 
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+
+
+  <!-- css -->
+  <link rel="stylesheet" href="/css/style.css">  
+  <!-- Jquery -->
+  <script src="//cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script> 
+  <!-- Add fancyBox -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script> 
+  <script src="/js/gallery.js"></script>
+  <!-- javascript --> 
+  <script src="/js/mobile.js"></script>  
+  <script src="/js/utils.js"></script>    
+  <script src="/js/script.js"></script>  
+</head> 
+  <body> 
+    <header class="header">
+	
+  <nav class="header-nav">       
+	
+  	<span class="iconfont icon-menu mobile-toggle"></span>  
+
+    <a class="header-logo" href="/"><span>Mute Meteor</a>  
+
+    <div class="header-menu">          
+              
+            
+
+              <a class="header-menu-link" id="header-menu-home" href="/">首页</a>     
+
+            
+            
+            
+
+              <a class="header-menu-link" id="header-menu-archives" href="/archives">归档</a>     
+
+            
+            
+            
+
+              <a class="header-menu-link" id="header-menu-categories" href="/categories">分类</a>     
+
+            
+            
+            
+
+              <a class="header-menu-link" id="header-menu-tags" href="/tags">标签</a>     
+
+            
+            
+            
+
+              <a class="header-menu-link" id="header-menu-about" href="/about">关于</a>     
+
+            
+                
+    </div>  
+    
+  </nav>
+</header>
+
+     <div class="container">         
+
+      
+        
+          <section id="main" ><article class="post">
+
+	  
+	<div class="slideDownMin center">
+
+	<span class="post-title">	
+		【数据结构与算法】二叉树专题
+	</span>
+
+	
+	<div class="post-info">
+
+		<time class="post-time"><span class="iconfont icon-date"></span>
+		2017/09/30 	
+		</time>
+		
+					
+
+				<span class="post-meta">		
+				<span class="iconfont icon-category"></span>
+				<a class="category-link" href="/categories/Tech/">Tech</a>
+				</span>
+		
+			
+
+		
+				
+				<span class="post-meta">
+				<span class="iconfont icon-tag"></span>
+				<a class="tag-link" href="/tags/Algorithm/">Algorithm</a> <a class="tag-link" href="/tags/DataStructure/">DataStructure</a> <a class="tag-link" href="/tags/Python/">Python</a> <a class="tag-link" href="/tags/binarytree/">binarytree</a>
+				</span>			
+			
+
+
+		
+
+		<span class="post-words"><span class="iconfont icon-words"></span>
+		1235
+		</span>		
+	
+	</div> 
+
+</div> 
+
+
+	  <div class="post-content slideDownMin">
+
+		
+
+
+	  <h1 id="编程实现"><a href="#编程实现" class="headerlink" title="编程实现"></a>编程实现</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span>:</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, val)</span>:</span></div><div class="line">    self.val = val</div><div class="line">    self.left, self.right = <span class="keyword">None</span>, <span class="keyword">None</span></div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h1 id="树的遍历"><a href="#树的遍历" class="headerlink" title="树的遍历"></a>树的遍历</h1><p>从二叉树的根节点出发，节点的遍历分为三个主要步骤：对当前节点进行操作（称为“访问”节点，或者根节点）、遍历左边子节点、遍历右边子节点。访问节点顺序的不同也就形成了不同的遍历方式。需要注意的是树的遍历通常使用递归的方法进行理解和实现，在访问元素时也需要使用递归的思想去理解。实际实现中对于前序和中序遍历可尝试使用递归实现。</p>
+<p>按照访问根元素(当前元素)的前后顺序，遍历方式可划分为如下几种：<br>深度优先：先访问子节点，再访问父节点，最后访问第二个子节点。</p>
+<p>根据根节点相对于左右子节点的访问先后顺序又可细分为以下三种方式。<br>前序(pre-order)：先根后左再右<br>中序(in-order)：先左后根再右<br>后序(post-order)：先左后右再根<br>广度优先：先访问根节点，沿着树的宽度遍历子节点，直到所有节点均被访问为止。</p>
+<p>如下图所示，遍历顺序在右侧框中，红色A为根节点。使用递归和整体的思想去分析遍历顺序较为清晰。</p>
+<p>二叉树的广度优先遍历和树的前序/中序/后序遍历不太一样，前/中/后序遍历使用递归，也就是栈的思想对二叉树进行遍历，广度优先一般使用队列的思想对二叉树进行遍历。</p>
+<p>如果已知中序遍历和前序遍历或者后序遍历，那么就可以完全恢复出原二叉树结构。其中最为关键的是前序遍历中第一个一定是根，而后序遍历最后一个一定是根，中序遍历在得知根节点后又可进一步递归得知左右子树的根节点。但是这种方法也是有适用范围的：元素不能重复！否则无法完成定位。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, val)</span>:</span></div><div class="line">        self.val = val</div><div class="line">        self.left, self.right = <span class="keyword">None</span>, <span class="keyword">None</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Traversal</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">        self.traverse_path = list()</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">preorder</span><span class="params">(self, root)</span>:</span></div><div class="line">        <span class="keyword">if</span> root:</div><div class="line">            self.traverse_path.append(root.val)</div><div class="line">            self.preorder(root.left)</div><div class="line">            self.preorder(root.right)</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inorder</span><span class="params">(self,root)</span>:</span></div><div class="line">        <span class="keyword">if</span> root:</div><div class="line">            self.inorder(root.left)</div><div class="line">            self.traverse_path.append(root.val)</div><div class="line">            self.inorder(root.right)</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">postorder</span><span class="params">(self,root)</span>:</span></div><div class="line">        <span class="keyword">if</span> root:</div><div class="line">            self.postorder(root.left)</div><div class="line">            self.postorder(root.right)</div><div class="line">            self.traverse_path.append(root.val)</div></pre></td></tr></table></figure>  
+	  </div>     
+	  
+
+	<div class="post-footer">    
+
+   
+  
+
+
+   <nav class="post-nav">
+
+      
+       
+
+         
+
+      
+          <a href="/2017/10/02/algorithm-sort/">          
+
+            <span title="【数据结构与算法】排序专题">  上一篇 </span>
+
+          </a>
+    
+      
+    
+      
+
+         
+
+          <a href="/2017/09/27/algorithm-linkedlist/">         
+
+           <span title="【数据结构与算法】链表专题">下一篇 </span>  
+
+          </a>
+
+      
+
+  </nav>  
+</div> 
+	
+
+<div id="comment">   
+</div>
+
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine@v1.1.8-beta/dist/Valine.min.js'></script>
+
+
+<script>
+    new Valine({
+    el: '#comment',
+    notify:false, 
+    verify:false, 
+    app_id: 'CvL8tKYd1WrIljM0LRHWvH56-gzGzoHsz',
+    app_key: '8PRxqxT9rhxJbR3ACVd2LkiT',  
+    path:window.location.pathname, 
+    avatar:'mm' ,
+    guest_info:['nick','mail']
+    });
+</script>
+
+
+
+
+
+<style type="text/css">
+
+</style>
+
+
+<script>
+//set the placeholder
+$(function(){    
+
+    $('.vnick').attr('placeholder','昵称');
+    $('.veditor').attr('placeholder','说点什么吧');
+    $('.vmail').attr('placeholder','邮箱');   
+    $('.vsubmit').html('回复');   
+   
+})  
+</script>
+
+	
+
+</article>
+
+<script src="/js/post.js"></script></section>   
+          
+
+<div id="toc" class="fadeIn">		
+
+	<div class="toc-container">	
+
+	<span class="toc-contents iconfont icon-open"" onclick="change()"> 
+	<span>目录</span>
+	</span>
+
+	<ul class="toc-list"></ul>
+
+	</div>
+
+</div>
+
+
+<script src="/js/toc.js"></script>
+        
+    </div>        
+
+    
+    <div class="mask"> </div>
+    <div class="back-to-top iconfont icon-backtotop fadeIn"></div> 
+
+    
+
+
+     <div class="mobile-menu">      
+
+      
+      <img class="mobile-menu-icon no-gallery" src= /img/favicon.png >   
+      
+
+         
+            
+
+            <a class="mobile-menu-link" href="/">首页
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/archives">归档
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/categories">分类
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/tags">标签
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/about">关于
+            </a>
+            
+         
+</div>     
+    
+
+<footer id="footer">
+	   
+   	 <div>	
+   	 
+
+     <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+   
+     <span class="iconfont icon-pv"></span>
+     <span id="busuanzi_value_site_pv"></span>
+ 
+     <span class="iconfont icon-uv"></span>
+     <span id="busuanzi_value_site_uv"></span>
+	    	
+   	 </div>
+   
+   	 
+	 <div>
+	 &copy;
+	 2018
+	 Wang	 
+
+	 </div>
+
+
+
+   
+   	 <div>
+	
+	 <a href="http://hexo.io/" target="_blank">Hexo</a>
+
+	 Theme
+
+	 <a href="https://github.com/Lemonreds/hexo-theme-Nayo" target="_blank">Nayo</a> 
+
+	 </div>	
+
+
+	
+	
+</footer> 
+    
+
+<!-- Baidu Analytics -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?063129ce0f11ae9e4a1036a9220b94be"; 
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+
+ 
+  </body>   
+  <script src="/js/animation.js"></script>   
+</html>

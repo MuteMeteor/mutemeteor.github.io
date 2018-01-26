@@ -1,0 +1,351 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport"content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
+  
+  
+  <title>  Template Render Error - Unknown Block Tag Cq |   Mute Meteor</title>
+
+ 
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+
+
+  <!-- css -->
+  <link rel="stylesheet" href="/css/style.css">  
+  <!-- Jquery -->
+  <script src="//cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script> 
+  <!-- Add fancyBox -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script> 
+  <script src="/js/gallery.js"></script>
+  <!-- javascript --> 
+  <script src="/js/mobile.js"></script>  
+  <script src="/js/utils.js"></script>    
+  <script src="/js/script.js"></script>  
+</head> 
+  <body> 
+    <header class="header">
+	
+  <nav class="header-nav">       
+	
+  	<span class="iconfont icon-menu mobile-toggle"></span>  
+
+    <a class="header-logo" href="/"><span>Mute Meteor</a>  
+
+    <div class="header-menu">          
+              
+            
+
+              <a class="header-menu-link" id="header-menu-home" href="/">首页</a>     
+
+            
+            
+            
+
+              <a class="header-menu-link" id="header-menu-archives" href="/archives">归档</a>     
+
+            
+            
+            
+
+              <a class="header-menu-link" id="header-menu-categories" href="/categories">分类</a>     
+
+            
+            
+            
+
+              <a class="header-menu-link" id="header-menu-tags" href="/tags">标签</a>     
+
+            
+            
+            
+
+              <a class="header-menu-link" id="header-menu-about" href="/about">关于</a>     
+
+            
+                
+    </div>  
+    
+  </nav>
+</header>
+
+     <div class="container">         
+
+      
+        
+          <section id="main" ><article class="post">
+
+	  
+	<div class="slideDownMin center">
+
+	<span class="post-title">	
+		Template render error - unknown block tag cq
+	</span>
+
+	
+	<div class="post-info">
+
+		<time class="post-time"><span class="iconfont icon-date"></span>
+		2018/01/15 	
+		</time>
+		
+					
+
+				<span class="post-meta">		
+				<span class="iconfont icon-category"></span>
+				<a class="category-link" href="/categories/Tech/">Tech</a>
+				</span>
+		
+			
+
+		
+				
+				<span class="post-meta">
+				<span class="iconfont icon-tag"></span>
+				<a class="tag-link" href="/tags/Hexo/">Hexo</a> <a class="tag-link" href="/tags/JavaScript/">JavaScript</a> <a class="tag-link" href="/tags/Node-js/">Node.js</a>
+				</span>			
+			
+
+
+		
+
+		<span class="post-words"><span class="iconfont icon-words"></span>
+		834
+		</span>		
+	
+	</div> 
+
+</div> 
+
+
+	  <div class="post-content slideDownMin">
+
+		
+
+
+	  <p>最近想给博客换个theme，装新主题的过程中deploy忽然崩错，错误如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">INFO  Start processing</div><div class="line">FATAL Something&apos;s wrong. Maybe you can find the solution here: http://hexo.io/docs/troubleshooting.html</div><div class="line">Template render error: (unknown path) [Line 5, Column 3]</div><div class="line">unknown block tag: cq</div></pre></td></tr></table></figure>
+<p>因为之前只修改过主题和配置文件，所以一直以为是主题下文件出了问题，就从主题下手，把新clone下来的主题删掉，发现不可行，依然崩错，遂Google。StackOverflow上有相同问题，看解答是md文件出了错，cq这个tag用错了导致渲染失败，所以把所有post剪切掉，再编译，错误变了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">INFO  Start processing</div><div class="line">FATAL Something&apos;s wrong. Maybe you can find the solution here: http://hexo.io/docs/troubleshooting.html</div><div class="line">Template render error: (unknown path)</div><div class="line">Error: Unable to call `the return value of (posts[&quot;first&quot;])[&quot;updated&quot;][&quot;toISOString&quot;]`, which is undefined or falsey</div></pre></td></tr></table></figure>
+<p>应该是post全被删除的缘故，所以进行部分post调试，终于找到了问题post，删掉了问题post的cq标签，编译成功。</p>
+<p>不过还是不知道为什么忽然就编译失败，这篇出问题post已经发了几个月，之前deploy一直没有出现过问题，猜想可能是因为所用标签除了next主题其他都无法渲染。</p>
+<p>所以只想简单换个主题，结果又是一个下午的找bug……sigh</p>
+  
+	  </div>     
+	  
+
+	<div class="post-footer">    
+
+   
+  
+
+
+   <nav class="post-nav">
+
+      
+       
+
+         
+
+      
+          <a href="/2018/01/22/network-tcpip/">          
+
+            <span title="UDP 和 TCP 那点事儿">  上一篇 </span>
+
+          </a>
+    
+      
+    
+      
+
+         
+
+          <a href="/2018/01/14/Redis/">         
+
+           <span title="Redis 数据操作">下一篇 </span>  
+
+          </a>
+
+      
+
+  </nav>  
+</div> 
+	
+
+<div id="comment">   
+</div>
+
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine@v1.1.8-beta/dist/Valine.min.js'></script>
+
+
+<script>
+    new Valine({
+    el: '#comment',
+    notify:false, 
+    verify:false, 
+    app_id: 'CvL8tKYd1WrIljM0LRHWvH56-gzGzoHsz',
+    app_key: '8PRxqxT9rhxJbR3ACVd2LkiT',  
+    path:window.location.pathname, 
+    avatar:'mm' ,
+    guest_info:['nick','mail']
+    });
+</script>
+
+
+
+
+
+<style type="text/css">
+
+</style>
+
+
+<script>
+//set the placeholder
+$(function(){    
+
+    $('.vnick').attr('placeholder','昵称');
+    $('.veditor').attr('placeholder','说点什么吧');
+    $('.vmail').attr('placeholder','邮箱');   
+    $('.vsubmit').html('回复');   
+   
+})  
+</script>
+
+	
+
+</article>
+
+<script src="/js/post.js"></script></section>   
+          
+
+<div id="toc" class="fadeIn">		
+
+	<div class="toc-container">	
+
+	<span class="toc-contents iconfont icon-open"" onclick="change()"> 
+	<span>目录</span>
+	</span>
+
+	<ul class="toc-list"></ul>
+
+	</div>
+
+</div>
+
+
+<script src="/js/toc.js"></script>
+        
+    </div>        
+
+    
+    <div class="mask"> </div>
+    <div class="back-to-top iconfont icon-backtotop fadeIn"></div> 
+
+    
+
+
+     <div class="mobile-menu">      
+
+      
+      <img class="mobile-menu-icon no-gallery" src= /img/favicon.png >   
+      
+
+         
+            
+
+            <a class="mobile-menu-link" href="/">首页
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/archives">归档
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/categories">分类
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/tags">标签
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/about">关于
+            </a>
+            
+         
+</div>     
+    
+
+<footer id="footer">
+	   
+   	 <div>	
+   	 
+
+     <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+   
+     <span class="iconfont icon-pv"></span>
+     <span id="busuanzi_value_site_pv"></span>
+ 
+     <span class="iconfont icon-uv"></span>
+     <span id="busuanzi_value_site_uv"></span>
+	    	
+   	 </div>
+   
+   	 
+	 <div>
+	 &copy;
+	 2018
+	 Wang	 
+
+	 </div>
+
+
+
+   
+   	 <div>
+	
+	 <a href="http://hexo.io/" target="_blank">Hexo</a>
+
+	 Theme
+
+	 <a href="https://github.com/Lemonreds/hexo-theme-Nayo" target="_blank">Nayo</a> 
+
+	 </div>	
+
+
+	
+	
+</footer> 
+    
+
+<!-- Baidu Analytics -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?063129ce0f11ae9e4a1036a9220b94be"; 
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+
+ 
+  </body>   
+  <script src="/js/animation.js"></script>   
+</html>
