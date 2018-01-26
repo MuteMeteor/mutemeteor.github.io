@@ -113,7 +113,7 @@
 		
 
 		<span class="post-words"><span class="iconfont icon-words"></span>
-		630
+		631
 		</span>		
 	
 	</div> 
@@ -135,6 +135,7 @@
 </ol>
 <h1 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h1><h2 id="urlopen"><a href="#urlopen" class="headerlink" title="urlopen"></a>urlopen</h2><p>urllib.request.urlopen(url)</p>
 <p>eg.(GET)：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib.request</div><div class="line">response = urllib.request.urlopen(<span class="string">'http://www.baidu.com'</span>)</div><div class="line">print(response.read().decode(<span class="string">'utf-8'</span>))</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <p>eg.(POST):<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib.parse</div><div class="line"><span class="keyword">import</span> urllib.request</div><div class="line">data = bytes(urllib.parse.urlencode(&#123;<span class="string">'word'</span>:<span class="string">'hello'</span>&#125;),encoding=<span class="string">'utf8'</span>)</div><div class="line">response = urllib.request.urlopen(<span class="string">'http://httpbin.org/post'</span>,data=data)</div><div class="line">print(response.read())</div></pre></td></tr></table></figure></p>
 <p>eg.(超时)：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib.request</div><div class="line">response = urllib.request.urlopen(<span class="string">'http://httpbin.org/post'</span>,timeout=<span class="number">1</span>)</div><div class="line">print(response.read())</div></pre></td></tr></table></figure></p>
   
