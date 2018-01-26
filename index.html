@@ -128,9 +128,9 @@
 <li>urllib.robotparser robots.txt 异常处理模块</li>
 </ol>
 <h1 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h1><h2 id="urlopen"><a href="#urlopen" class="headerlink" title="urlopen"></a>urlopen</h2><p>urllib.request.urlopen(url)</p>
-<p>eg.(GET)：<br>import urllib.request<br>response = urllib.request.urlopen(‘<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>‘)<br>print(response.read().decode(‘utf-8’))</p>
-<p>eg.(POST):<br>import urllib.parse<br>import urllib.request<br>data = bytes(urllib.parse.urlencode({‘word’:’hello’}),encoding=’utf8’)<br>response = urllib.request.urlopen(‘<a href="http://httpbin.org/post&#39;,data=data" target="_blank" rel="external">http://httpbin.org/post&#39;,data=data</a>)<br>print(response.read())</p>
-<p>eg.(超时)：<br>import urllib.request<br>response = urllib.request.urlopen(‘<a href="http://httpbin.org/post&#39;,timeout=1" target="_blank" rel="external">http://httpbin.org/post&#39;,timeout=1</a>)<br>print(response.read())</p>
+<p>eg.(GET)：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib.request</div><div class="line">response = urllib.request.urlopen(<span class="string">'http://www.baidu.com'</span>)</div><div class="line">print(response.read().decode(<span class="string">'utf-8'</span>))</div></pre></td></tr></table></figure></p>
+<p>eg.(POST):<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib.parse</div><div class="line"><span class="keyword">import</span> urllib.request</div><div class="line">data = bytes(urllib.parse.urlencode(&#123;<span class="string">'word'</span>:<span class="string">'hello'</span>&#125;),encoding=<span class="string">'utf8'</span>)</div><div class="line">response = urllib.request.urlopen(<span class="string">'http://httpbin.org/post'</span>,data=data)</div><div class="line">print(response.read())</div></pre></td></tr></table></figure></p>
+<p>eg.(超时)：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib.request</div><div class="line">response = urllib.request.urlopen(<span class="string">'http://httpbin.org/post'</span>,timeout=<span class="number">1</span>)</div><div class="line">print(response.read())</div></pre></td></tr></table></figure></p>
  
 
 	    
@@ -158,7 +158,7 @@
 		
 
 		<span class="post-words"><span class="iconfont icon-words"></span>
-		617
+		630
 		</span>		
 </div>		
 
@@ -197,40 +197,8 @@
 <li>请求头</li>
 <li>请求体</li>
 </ol>
-<h2 id="获取响应内容"><a href="#获取响应内容" class="headerlink" title="获取响应内容"></a>获取响应内容</h2><p>Response</p>
-<ol>
-<li>响应状态</li>
-<li>响应头</li>
-<li>响应体</li>
-</ol>
-<h2 id="解析内容"><a href="#解析内容" class="headerlink" title="解析内容"></a>解析内容</h2><ol>
-<li>网页文本：HTML/Json格式文本等</li>
-<li>图片格式 二进制抓取</li>
-<li>视频 二进制抓取</li>
-</ol>
-<h2 id="解析方式"><a href="#解析方式" class="headerlink" title="解析方式"></a>解析方式</h2><ol>
-<li>直接处理</li>
-<li>Json解析</li>
-<li>正则表达式</li>
-<li>BeautifulSoup</li>
-<li>PyQuery</li>
-<li>Xpath</li>
-</ol>
-<h2 id="怎样解决JS渲染问题"><a href="#怎样解决JS渲染问题" class="headerlink" title="怎样解决JS渲染问题"></a>怎样解决JS渲染问题</h2><ol>
-<li>分析Ajax请求 Json字符串</li>
-<li>Selenium/WebDriver</li>
-<li>Splash</li>
-<li>PyV8，Ghostpy</li>
-</ol>
-<h2 id="保存数据"><a href="#保存数据" class="headerlink" title="保存数据"></a>保存数据</h2><ol>
-<li>文本</li>
-<li>关系型数据库，如MySQL，Oracle等</li>
-<li>非关系型数据库，如MongoDB，Redis等Key-Value型数据库</li>
-<li>二进制文件</li>
-</ol>
- 
 
-	    
+	     
 </div>
 
 <div class="center">
@@ -255,7 +223,7 @@
 		
 
 		<span class="post-words"><span class="iconfont icon-words"></span>
-		334
+		335
 		</span>		
 </div>		
 
