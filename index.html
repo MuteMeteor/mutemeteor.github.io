@@ -240,7 +240,7 @@
 	   
 	<div class="article-header">
 	    
-	     <a class="article-title"  href="/2018/01/26/python-selenium/">python3 selenium报错</a>  
+	     <a class="article-title"  href="/2018/01/26/python-selenium/">python3 selenium 调用Firefox报错</a>  
 	       
 		 
 
@@ -254,28 +254,25 @@
 
 	  
 
-	  	<p>‘’’python<br>    from selenium import webdriver<br>    driver = webdriver.Firefox()<br>‘’’</p>
-<p>报错</p>
-<p>‘’’<br>      Traceback (most recent call last):<br>        File “/usr/local/lib/python3.5/dist-packages/selenium/webdriver/common/service.py”, line 76, in start<br>          stdin=PIPE)<br>        File “/usr/lib/python3.5/subprocess.py”, line 947, in <strong>init</strong><br>          restore_signals, start_new_session)<br>        File “/usr/lib/python3.5/subprocess.py”, line 1551, in _execute_child<br>          raise child_exception_type(errno_num, err_msg)<br>      FileNotFoundError: [Errno 2] No such file or directory: ‘geckodriver’</p>
-<pre><code>During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
-  File &quot;/usr/local/lib/python3.5/dist-packages/selenium/webdriver/firefox/webdriver.py&quot;, line 148, in __init__
-    self.service.start()
-  File &quot;/usr/local/lib/python3.5/dist-packages/selenium/webdriver/common/service.py&quot;, line 83, in start
-    os.path.basename(self.path), self.start_error_message)
-selenium.common.exceptions.WebDriverException: Message: &apos;geckodriver&apos; executable needs to be in PATH.
-</code></pre><p>‘’’<br><a href="https://github.com/mozilla/geckodriver/releases" target="_blank" rel="external">https://github.com/mozilla/geckodriver/releases</a></p>
-<p>sudo tar zxvf geckodriver-v0.19.1-linux32.tar.gz<br>sudo mv geckodriver /usr/bin/<br>cd /usr/bin/<br>sudo chmod +x gecko<br>driver</p>
-<p>from selenium import webdriver<br>driver = webdriver.Firefox()<br>driver.get(‘<a href="http://www.zhihu.com" target="_blank" rel="external">http://www.zhihu.com</a>‘)</p>
+	  	<p>通过selenium 调用 webdriver 操控 Firefox：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</div><div class="line">driver = webdriver.Firefox()</div></pre></td></tr></table></figure>
+<p>发现报错：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">      Traceback (most recent call last):</div><div class="line">        File <span class="string">"/usr/local/lib/python3.5/dist-packages/selenium/webdriver/common/service.py"</span>, line <span class="number">76</span>, <span class="keyword">in</span> start</div><div class="line">          stdin=PIPE)</div><div class="line">        File <span class="string">"/usr/lib/python3.5/subprocess.py"</span>, line <span class="number">947</span>, <span class="keyword">in</span> __init__</div><div class="line">          restore_signals, start_new_session)</div><div class="line">        File <span class="string">"/usr/lib/python3.5/subprocess.py"</span>, line <span class="number">1551</span>, <span class="keyword">in</span> _execute_child</div><div class="line">          <span class="keyword">raise</span> child_exception_type(errno_num, err_msg)</div><div class="line">      FileNotFoundError: [Errno <span class="number">2</span>] No such file <span class="keyword">or</span> directory: <span class="string">'geckodriver'</span></div><div class="line"></div><div class="line">      During handling of the above exception, another exception occurred:</div><div class="line"></div><div class="line">      Traceback (most recent call last):</div><div class="line">        File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</div><div class="line">        File <span class="string">"/usr/local/lib/python3.5/dist-packages/selenium/webdriver/firefox/webdriver.py"</span>, line <span class="number">148</span>, <span class="keyword">in</span> __init__</div><div class="line">          self.service.start()</div><div class="line">        File <span class="string">"/usr/local/lib/python3.5/dist-packages/selenium/webdriver/common/service.py"</span>, line <span class="number">83</span>, <span class="keyword">in</span> start</div><div class="line">          os.path.basename(self.path), self.start_error_message)</div><div class="line">      selenium.common.exceptions.WebDriverException: Message: <span class="string">'geckodriver'</span> executable needs to be <span class="keyword">in</span> PATH.</div><div class="line">```python</div><div class="line"></div><div class="line"></div><div class="line">https://github.com/mozilla/geckodriver/releases</div></pre></td></tr></table></figure>
+<p>sudo tar zxvf geckodriver-v0.19.1-linux32.tar.gz<br>sudo mv geckodriver /usr/bin/<br>cd /usr/bin/<br>sudo chmod +x geckodriver<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">```python</div><div class="line">from selenium import webdriver</div><div class="line">driver = webdriver.Firefox()</div><div class="line">driver.get(&apos;http://www.zhihu.com&apos;)</div></pre></td></tr></table></figure></p>
  
 
 	    
 </div>
 
 <div class="center">
-				
+			
+
+				<span class="post-meta">		
+				<span class="iconfont icon-category"></span>
+				<a class="category-link" href="/categories/Tech/">Tech</a>
+				</span>
+		
+			
 
 		
 				
@@ -289,7 +286,7 @@ selenium.common.exceptions.WebDriverException: Message: &apos;geckodriver&apos; 
 		
 
 		<span class="post-words"><span class="iconfont icon-words"></span>
-		1255
+		1295
 		</span>		
 </div>		
 

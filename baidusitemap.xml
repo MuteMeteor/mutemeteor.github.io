@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://mutemeteor.com/2018/01/26/python-selenium/</loc>
+    <lastmod>2018-01-26T01:45:35.180Z</lastmod>
+    <data>
+        <display>
+        <title>python3 selenium 调用Firefox报错</title>
+        <pubTime>2018-01-25T17:56:26.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>selenium</tag>
+         
+         
+           
+             
+              <breadCrumb title="Tech" url="http://mutemeteor.com/categories/Tech/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://mutemeteor.com/2018/01/26/02-urllib/</loc>
     <lastmod>2018-01-26T01:41:30.152Z</lastmod>
     <data>
@@ -62,25 +84,6 @@
              
               <breadCrumb title="Tech" url="http://mutemeteor.com/categories/Tech/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://mutemeteor.com/2018/01/26/python-selenium/</loc>
-    <lastmod>2018-01-25T18:11:48.633Z</lastmod>
-    <data>
-        <display>
-        <title>python3 selenium报错</title>
-        <pubTime>2018-01-25T17:56:26.000Z</pubTime>
-        
-        <tag>python</tag>
-         
-        <tag>selenium</tag>
-         
-         
-           
         </display>
     </data>
     </url>
