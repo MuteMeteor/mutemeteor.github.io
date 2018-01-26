@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://mutemeteor.com/2018/01/02/node-js-reinstall/</loc>
+    
+    <lastmod>2018-01-26T01:40:33.135Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://mutemeteor.com/2018/01/26/02-urllib/</loc>
     
-    <lastmod>2018-01-26T08:49:03.754Z</lastmod>
+    <lastmod>2018-01-26T01:39:33.550Z</lastmod>
     
   </url>
   
@@ -145,13 +152,6 @@
     <loc>http://mutemeteor.com/2017/11/08/Python3-note2/</loc>
     
     <lastmod>2018-01-15T05:25:21.523Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://mutemeteor.com/2018/01/02/node-js-reinstall/</loc>
-    
-    <lastmod>2018-01-15T01:06:10.729Z</lastmod>
     
   </url>
   
