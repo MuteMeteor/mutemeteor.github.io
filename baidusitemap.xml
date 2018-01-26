@@ -20,14 +20,21 @@
     
   <url>
     <loc>http://mutemeteor.com/2018/01/26/01-principalOfCrawler/</loc>
-    <lastmod>2018-01-26T08:48:37.019Z</lastmod>
+    <lastmod>2018-01-26T01:38:24.691Z</lastmod>
     <data>
         <display>
-        <title>01-principalOfCrawler</title>
+        <title>Python爬虫之爬虫基本原理</title>
         <pubTime>2018-01-26T08:48:36.000Z</pubTime>
         
+        <tag>Python</tag>
+         
+        <tag>爬虫</tag>
+         
          
            
+             
+              <breadCrumb title="Tech" url="http://mutemeteor.com/categories/Tech/"/>
+          
         </display>
     </data>
     </url>

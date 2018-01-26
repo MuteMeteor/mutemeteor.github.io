@@ -6,9 +6,16 @@
     <content type="text"></content>
   </entry>
   <entry>
-    <title><![CDATA[01-principalOfCrawler]]></title>
+    <title><![CDATA[Python爬虫之爬虫基本原理]]></title>
     <url>%2F2018%2F01%2F26%2F01-principalOfCrawler%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[什么是爬虫请求网站并提取数据的自动化程序 爬虫基本流程发起请求Request 请求方式 GET POST 请求URL 请求头 请求体 获取响应内容Response 响应状态 响应头 响应体 解析内容 网页文本：HTML/Json格式文本等 图片格式 二进制抓取 视频 二进制抓取 解析方式 直接处理 Json解析 正则表达式 BeautifulSoup PyQuery Xpath 怎样解决JS渲染问题 分析Ajax请求 Json字符串 Selenium/WebDriver Splash PyV8，Ghostpy 保存数据 文本 关系型数据库，如MySQL，Oracle等 非关系型数据库，如MongoDB，Redis等Key-Value型数据库 二进制文件]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>爬虫</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[python3 selenium报错]]></title>
