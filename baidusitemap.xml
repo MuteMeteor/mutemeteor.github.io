@@ -4,6 +4,51 @@
 
     
   <url>
+    <loc>http://mutemeteor.com/2018/01/30/BeautifulSoup/</loc>
+    <lastmod>2018-01-30T11:11:14.331Z</lastmod>
+    <data>
+        <display>
+        <title>BeautifulSoup</title>
+        <pubTime>2018-01-30T11:11:14.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://mutemeteor.com/2018/01/30/regular-expressions/</loc>
+    <lastmod>2018-01-30T11:10:55.335Z</lastmod>
+    <data>
+        <display>
+        <title>regular-expressions</title>
+        <pubTime>2018-01-30T11:10:55.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://mutemeteor.com/2018/01/30/requests/</loc>
+    <lastmod>2018-01-30T11:10:33.199Z</lastmod>
+    <data>
+        <display>
+        <title>requests</title>
+        <pubTime>2018-01-30T11:10:33.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://mutemeteor.com/2018/01/26/python-selenium/</loc>
     <lastmod>2018-01-26T02:00:20.668Z</lastmod>
     <data>
@@ -185,9 +230,9 @@
         <title>Python3 学习笔记（四）</title>
         <pubTime>2017-11-14T02:46:56.000Z</pubTime>
         
-        <tag>Notes</tag>
-         
         <tag>Python</tag>
+         
+        <tag>Notes</tag>
          
          
            
@@ -444,9 +489,9 @@
         <title>Python3 学习笔记（三）</title>
         <pubTime>2017-11-13T17:17:58.000Z</pubTime>
         
-        <tag>Notes</tag>
-         
         <tag>Python</tag>
+         
+        <tag>Notes</tag>
          
          
            
@@ -466,9 +511,9 @@
         <title>python3 学习笔记（二）</title>
         <pubTime>2017-11-08T06:02:58.000Z</pubTime>
         
-        <tag>Notes</tag>
-         
         <tag>Python</tag>
+         
+        <tag>Notes</tag>
          
          
            
@@ -534,9 +579,9 @@
         <title>Python3 学习笔记（一）</title>
         <pubTime>2017-10-28T13:01:30.000Z</pubTime>
         
-        <tag>Notes</tag>
-         
         <tag>Python</tag>
+         
+        <tag>Notes</tag>
          
          
            

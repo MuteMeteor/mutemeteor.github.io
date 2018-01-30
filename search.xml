@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[BeautifulSoup]]></title>
+    <url>%2F2018%2F01%2F30%2FBeautifulSoup%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[regular-expressions]]></title>
+    <url>%2F2018%2F01%2F30%2Fregular-expressions%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[requests]]></title>
+    <url>%2F2018%2F01%2F30%2Frequests%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[Python爬虫之urllib库]]></title>
     <url>%2F2018%2F01%2F26%2F02-urllib%2F</url>
     <content type="text"><![CDATA[什么是UrllibPython内置的HTTP请求库 urllib.request 请求模块 urllib.error 异常处理模块 urllib.parse url解析模块 urllib.robotparser robots.txt 异常处理模块 基本用法urlopenurllib.request.urlopen(url) eg.(GET)：123import urllib.requestresponse = urllib.request.urlopen('http://www.baidu.com')print(response.read().decode('utf-8')) eg.(POST):12345import urllib.parseimport urllib.requestdata = bytes(urllib.parse.urlencode(&#123;'word':'hello'&#125;),encoding='utf8')response = urllib.request.urlopen('http://httpbin.org/post',data=data)print(response.read()) eg.(超时)：123import urllib.requestresponse = urllib.request.urlopen('http://httpbin.org/post',timeout=1)print(response.read())]]></content>
@@ -140,8 +155,8 @@
         <category>Tech</category>
       </categories>
       <tags>
-        <tag>Notes</tag>
         <tag>Python</tag>
+        <tag>Notes</tag>
       </tags>
   </entry>
   <entry>
@@ -152,8 +167,8 @@
         <category>Tech</category>
       </categories>
       <tags>
-        <tag>Notes</tag>
         <tag>Python</tag>
+        <tag>Notes</tag>
       </tags>
   </entry>
   <entry>
@@ -164,8 +179,8 @@
         <category>Tech</category>
       </categories>
       <tags>
-        <tag>Notes</tag>
         <tag>Python</tag>
+        <tag>Notes</tag>
       </tags>
   </entry>
   <entry>
@@ -176,8 +191,8 @@
         <category>Tech</category>
       </categories>
       <tags>
-        <tag>Notes</tag>
         <tag>Python</tag>
+        <tag>Notes</tag>
       </tags>
   </entry>
   <entry>

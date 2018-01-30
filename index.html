@@ -106,6 +106,141 @@
 	   
 	<div class="article-header">
 	    
+	     <a class="article-title"  href="/2018/01/30/BeautifulSoup/">BeautifulSoup</a>  
+	       
+		 
+
+		 <time>2018-01-30 </time>    
+	</div>
+
+
+    <div class="article-excerpt">	
+	
+  	
+
+	  
+
+	  	 
+
+	    
+</div>
+
+<div class="center">
+				
+
+			
+
+
+		
+
+		<span class="post-words"><span class="iconfont icon-words"></span>
+		0
+		</span>		
+</div>		
+
+		
+    <a class="article-readmore" href="/2018/01/30/BeautifulSoup/">阅读更多</a> 
+    	
+</article>     
+     	
+      	  	
+
+  		
+    	<article class="article">	
+		
+	   
+	<div class="article-header">
+	    
+	     <a class="article-title"  href="/2018/01/30/regular-expressions/">regular-expressions</a>  
+	       
+		 
+
+		 <time>2018-01-30 </time>    
+	</div>
+
+
+    <div class="article-excerpt">	
+	
+  	
+
+	  
+
+	  	 
+
+	    
+</div>
+
+<div class="center">
+				
+
+			
+
+
+		
+
+		<span class="post-words"><span class="iconfont icon-words"></span>
+		0
+		</span>		
+</div>		
+
+		
+    <a class="article-readmore" href="/2018/01/30/regular-expressions/">阅读更多</a> 
+    	
+</article>     
+     	
+      	  	
+
+  		
+    	<article class="article">	
+		
+	   
+	<div class="article-header">
+	    
+	     <a class="article-title"  href="/2018/01/30/requests/">requests</a>  
+	       
+		 
+
+		 <time>2018-01-30 </time>    
+	</div>
+
+
+    <div class="article-excerpt">	
+	
+  	
+
+	  
+
+	  	 
+
+	    
+</div>
+
+<div class="center">
+				
+
+			
+
+
+		
+
+		<span class="post-words"><span class="iconfont icon-words"></span>
+		0
+		</span>		
+</div>		
+
+		
+    <a class="article-readmore" href="/2018/01/30/requests/">阅读更多</a> 
+    	
+</article>     
+     	
+      	  	
+
+  		
+    	<article class="article">	
+		
+	   
+	<div class="article-header">
+	    
 	     <a class="article-title"  href="/2018/01/26/02-urllib/">Python爬虫之urllib库</a>  
 	       
 		 
@@ -521,210 +656,6 @@
 
 		
     <a class="article-readmore" href="/2018/01/22/network-tcpip/">阅读更多</a> 
-    	
-</article>     
-     	
-      	  	
-
-  		
-    	<article class="article">	
-		
-	   
-	<div class="article-header">
-	    
-	     <a class="article-title"  href="/2018/01/15/TemReError/">Template render error - unknown block tag cq</a>  
-	       
-		 
-
-		 <time>2018-01-15 </time>    
-	</div>
-
-
-    <div class="article-excerpt">	
-	
-  	
-
-	  
-
-	  	<p>最近想给博客换个theme，装新主题的过程中deploy忽然崩错，错误如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">INFO  Start processing</div><div class="line">FATAL Something&apos;s wrong. Maybe you can find the solution here: http://hexo.io/docs/troubleshooting.html</div><div class="line">Template render error: (unknown path) [Line 5, Column 3]</div><div class="line">unknown block tag: cq</div></pre></td></tr></table></figure>
-<p>因为之前只修改过主题和配置文件，所以一直以为是主题下文件出了问题，就从主题下手，把新clone下来的主题删掉，发现不可行，依然崩错，遂Google。StackOverflow上有相同问题，看解答是md文件出了错，cq这个tag用错了导致渲染失败，所以把所有post剪切掉，再编译，错误变了：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">INFO  Start processing</div><div class="line">FATAL Something&apos;s wrong. Maybe you can find the solution here: http://hexo.io/docs/troubleshooting.html</div><div class="line">Template render error: (unknown path)</div><div class="line">Error: Unable to call `the return value of (posts[&quot;first&quot;])[&quot;updated&quot;][&quot;toISOString&quot;]`, which is undefined or falsey</div></pre></td></tr></table></figure>
-<p>应该是post全被删除的缘故，所以进行部分post调试，终于找到了问题post，删掉了问题post的cq标签，编译成功。</p>
-<p>不过还是不知道为什么忽然就编译失败，这篇出问题post已经发了几个月，之前deploy一直没有出现过问题，猜想可能是因为所用标签除了next主题其他都无法渲染。</p>
-<p>所以只想简单换个主题，结果又是一个下午的找bug……sigh</p>
- 
-
-	    
-</div>
-
-<div class="center">
-			
-
-				<span class="post-meta">		
-				<span class="iconfont icon-category"></span>
-				<a class="category-link" href="/categories/Tech/">Tech</a>
-				</span>
-		
-			
-
-		
-				
-				<span class="post-meta">
-				<span class="iconfont icon-tag"></span>
-				<a class="tag-link" href="/tags/Hexo/">Hexo</a> <a class="tag-link" href="/tags/JavaScript/">JavaScript</a> <a class="tag-link" href="/tags/Node-js/">Node.js</a>
-				</span>			
-			
-
-
-		
-
-		<span class="post-words"><span class="iconfont icon-words"></span>
-		834
-		</span>		
-</div>		
-
-		
-    <a class="article-readmore" href="/2018/01/15/TemReError/">阅读更多</a> 
-    	
-</article>     
-     	
-      	  	
-
-  		
-    	<article class="article">	
-		
-	   
-	<div class="article-header">
-	    
-	     <a class="article-title"  href="/2018/01/14/Redis/">Redis 数据操作</a>  
-	       
-		 
-
-		 <time>2018-01-14 </time>    
-	</div>
-
-
-    <div class="article-excerpt">	
-	
-  	
-
-	  
-
-	  	<ul>
-<li>redis是key-value的数据，所以每个数据都是一个键值对</li>
-<li>键的类型是字符串</li>
-<li>值的类型分为五种：</li>
-</ul>
-<ol>
-<li>字符串string</li>
-<li>哈希hash</li>
-<li>列表list</li>
-<li>集合set</li>
-<li>有序集合zset</li>
-<li>数据操作的全部命令，可以查看中文网站</li>
-</ol>
- 
-
-	    
-</div>
-
-<div class="center">
-			
-
-				<span class="post-meta">		
-				<span class="iconfont icon-category"></span>
-				<a class="category-link" href="/categories/Tech/">Tech</a>
-				</span>
-		
-			
-
-		
-				
-				<span class="post-meta">
-				<span class="iconfont icon-tag"></span>
-				<a class="tag-link" href="/tags/NoSQL/">NoSQL</a> <a class="tag-link" href="/tags/Redis/">Redis</a>
-				</span>			
-			
-
-
-		
-
-		<span class="post-words"><span class="iconfont icon-words"></span>
-		114
-		</span>		
-</div>		
-
-		
-    <a class="article-readmore" href="/2018/01/14/Redis/">阅读更多</a> 
-    	
-</article>     
-     	
-      	  	
-
-  		
-    	<article class="article">	
-		
-	   
-	<div class="article-header">
-	    
-	     <a class="article-title"  href="/2018/01/13/MongoDB/">MongoDB 基本操作和高级操作</a>  
-	       
-		 
-
-		 <time>2018-01-13 </time>    
-	</div>
-
-
-    <div class="article-excerpt">	
-	
-  	
-
-	  
-
-	  	<h1 id="MongoDB特点"><a href="#MongoDB特点" class="headerlink" title="MongoDB特点"></a>MongoDB特点</h1><ol>
-<li>模式自由 :可以把不同结构的文档存储在同一个数据库里</li>
-<li>面向集合的存储：适合存储 JSON风格文件的形式</li>
-<li>完整的索引支持：对任何属性可索引</li>
-<li>复制和高可用性：支持服务器之间的数据复制，支持主-从模式及服务器之间的相互复制。复制的主要目的是提供冗余及自动故障转移</li>
-<li>自动分片：支持云级别的伸缩性：自动分片功能支持水平的数据库集群，可动态添加额外的机器</li>
-<li>丰富的查询：支持丰富的查询表达方式，查询指令使用JSON形式的标记，可轻易查询文档中的内嵌的对象及数组</li>
-<li>快速就地更新：查询优化器会分析查询表达式，并生成一个高效的查询计划</li>
-<li>高效的传统存储方式：支持二进制数据及大型对象（如照片或图片）</li>
-</ol>
- 
-
-	    
-</div>
-
-<div class="center">
-			
-
-				<span class="post-meta">		
-				<span class="iconfont icon-category"></span>
-				<a class="category-link" href="/categories/Tech/">Tech</a>
-				</span>
-		
-			
-
-		
-				
-				<span class="post-meta">
-				<span class="iconfont icon-tag"></span>
-				<a class="tag-link" href="/tags/MongoDB/">MongoDB</a> <a class="tag-link" href="/tags/NoSQL/">NoSQL</a>
-				</span>			
-			
-
-
-		
-
-		<span class="post-words"><span class="iconfont icon-words"></span>
-		298
-		</span>		
-</div>		
-
-		
-    <a class="article-readmore" href="/2018/01/13/MongoDB/">阅读更多</a> 
     	
 </article>     
      	
