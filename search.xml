@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Selenium]]></title>
+    <url>%2F2018%2F01%2F31%2FSelenium%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[PyQuery]]></title>
+    <url>%2F2018%2F01%2F31%2FPyQuery%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[BeautifulSoup]]></title>
     <url>%2F2018%2F01%2F30%2FBeautifulSoup%2F</url>
     <content type="text"></content>

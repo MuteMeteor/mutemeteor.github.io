@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://mutemeteor.com/2018/01/31/Selenium/</loc>
+    
+    <lastmod>2018-01-31T01:44:31.777Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://mutemeteor.com/2018/01/31/PyQuery/</loc>
+    
+    <lastmod>2018-01-31T01:43:31.415Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://mutemeteor.com/2018/01/30/BeautifulSoup/</loc>
     
     <lastmod>2018-01-30T11:11:14.331Z</lastmod>
