@@ -2,37 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://mutemeteor.com/2018/01/31/Selenium/</loc>
+    <loc>http://mutemeteor.com/2018/01/30/03-requests/</loc>
     
-    <lastmod>2018-01-31T01:44:31.777Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://mutemeteor.com/2018/01/31/PyQuery/</loc>
-    
-    <lastmod>2018-01-31T01:43:31.415Z</lastmod>
+    <lastmod>2018-02-02T13:24:00.500Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://mutemeteor.com/2018/01/30/BeautifulSoup/</loc>
+    <loc>http://mutemeteor.com/2018/01/31/07-Selenium/</loc>
     
-    <lastmod>2018-01-30T11:11:14.331Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://mutemeteor.com/2018/01/30/regular-expressions/</loc>
-    
-    <lastmod>2018-01-30T11:10:55.335Z</lastmod>
+    <lastmod>2018-02-02T13:22:36.615Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://mutemeteor.com/2018/01/30/requests/</loc>
+    <loc>http://mutemeteor.com/2018/01/30/05-BeautifulSoup/</loc>
     
-    <lastmod>2018-01-30T11:10:33.199Z</lastmod>
+    <lastmod>2018-02-02T13:22:28.822Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://mutemeteor.com/2018/01/31/06-PyQuery/</loc>
+    
+    <lastmod>2018-02-02T13:22:13.933Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://mutemeteor.com/2018/01/30/04-regular-expressions/</loc>
+    
+    <lastmod>2018-02-02T13:22:01.035Z</lastmod>
     
   </url>
   

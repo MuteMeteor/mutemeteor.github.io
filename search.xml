@@ -1,29 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Selenium]]></title>
-    <url>%2F2018%2F01%2F31%2FSelenium%2F</url>
+    <title><![CDATA[Python爬虫之Selenium]]></title>
+    <url>%2F2018%2F01%2F31%2F07-Selenium%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Python爬虫之PyQuery]]></title>
+    <url>%2F2018%2F01%2F31%2F06-PyQuery%2F</url>
     <content type="text"></content>
   </entry>
   <entry>
-    <title><![CDATA[PyQuery]]></title>
-    <url>%2F2018%2F01%2F31%2FPyQuery%2F</url>
+    <title><![CDATA[Python爬虫之BeautifulSoup]]></title>
+    <url>%2F2018%2F01%2F30%2F05-BeautifulSoup%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Python爬虫之正则表达式]]></title>
+    <url>%2F2018%2F01%2F30%2F04-regular-expressions%2F</url>
     <content type="text"></content>
   </entry>
   <entry>
-    <title><![CDATA[BeautifulSoup]]></title>
-    <url>%2F2018%2F01%2F30%2FBeautifulSoup%2F</url>
-    <content type="text"></content>
-  </entry>
-  <entry>
-    <title><![CDATA[regular-expressions]]></title>
-    <url>%2F2018%2F01%2F30%2Fregular-expressions%2F</url>
-    <content type="text"></content>
-  </entry>
-  <entry>
-    <title><![CDATA[requests]]></title>
-    <url>%2F2018%2F01%2F30%2Frequests%2F</url>
-    <content type="text"></content>
+    <title><![CDATA[Python爬虫之requests]]></title>
+    <url>%2F2018%2F01%2F30%2F03-requests%2F</url>
+    <content type="text"><![CDATA[什么是 RequestsRequests 基于 urllib，采用Apache2 License 开源协议的HTTP库。 Python实现的简单易用的HTTP库。 基本操作1234567import requestsresponse = requests.get（'http://www.baidu.com/'）print(type(response))print(response.status_code)print(type(response.text))print(response.text)print(response.cookies)]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>爬虫</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Python爬虫之urllib库]]></title>
