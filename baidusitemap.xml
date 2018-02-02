@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://mutemeteor.com/2018/01/30/04-regular-expressions/</loc>
+    <lastmod>2018-02-02T13:43:21.477Z</lastmod>
+    <data>
+        <display>
+        <title>Python爬虫之正则表达式</title>
+        <pubTime>2018-01-30T11:10:55.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+        <tag>爬虫</tag>
+         
+         
+           
+             
+              <breadCrumb title="Tech" url="http://mutemeteor.com/categories/Tech/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://mutemeteor.com/2018/01/26/python-selenium/</loc>
     <lastmod>2018-02-02T13:35:43.535Z</lastmod>
     <data>
@@ -123,21 +145,6 @@
              
               <breadCrumb title="Tech" url="http://mutemeteor.com/categories/Tech/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://mutemeteor.com/2018/01/30/04-regular-expressions/</loc>
-    <lastmod>2018-02-02T13:22:01.035Z</lastmod>
-    <data>
-        <display>
-        <title>Python爬虫之正则表达式</title>
-        <pubTime>2018-01-30T11:10:55.000Z</pubTime>
-        
-         
-           
         </display>
     </data>
     </url>
