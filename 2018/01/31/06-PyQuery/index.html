@@ -92,15 +92,28 @@
 		2018/01/31 	
 		</time>
 		
-						
+					
 
+				<span class="post-meta">		
+				<span class="iconfont icon-category"></span>
+				<a class="category-link" href="/categories/Tech/">Tech</a>
+				</span>
+		
+			
+
+		
+				
+				<span class="post-meta">
+				<span class="iconfont icon-tag"></span>
+				<a class="tag-link" href="/tags/Python/">Python</a> <a class="tag-link" href="/tags/爬虫/">爬虫</a>
+				</span>			
 			
 
 
 		
 
 		<span class="post-words"><span class="iconfont icon-words"></span>
-		0
+		530
 		</span>		
 	
 	</div> 
@@ -113,7 +126,14 @@
 		
 
 
-	    
+	  <h1 id="PyQuery"><a href="#PyQuery" class="headerlink" title="PyQuery"></a>PyQuery</h1><p>正则太麻烦？BeautifulSoup语法太难记？<br>PyQuery 是一个好选择。</p>
+<h1 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h1><h2 id="字符串初始化"><a href="#字符串初始化" class="headerlink" title="字符串初始化"></a>字符串初始化</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> pyquery <span class="keyword">import</span> PyQuery <span class="keyword">as</span> pq</div><div class="line">doc = pq(html)</div><div class="line">print(doc(<span class="string">'li'</span>))</div></pre></td></tr></table></figure>
+<h2 id="URL初始化"><a href="#URL初始化" class="headerlink" title="URL初始化"></a>URL初始化</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> pyquery <span class="keyword">import</span> PyQuery <span class="keyword">as</span> pq</div><div class="line">doc = pq(url=<span class="string">'http://baidu.com'</span>)</div><div class="line">print(doc(<span class="string">'head'</span>))</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="文件初始化"><a href="#文件初始化" class="headerlink" title="文件初始化"></a>文件初始化</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> pyquery <span class="keyword">import</span> PyQuery <span class="keyword">as</span> pq</div><div class="line">doc = pq(filename=<span class="string">'demo.html'</span>)</div><div class="line">print(doc(<span class="string">'li'</span>))</div></pre></td></tr></table></figure>
+<h1 id="基本CSS选择器"><a href="#基本CSS选择器" class="headerlink" title="基本CSS选择器"></a>基本CSS选择器</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> pyquery <span class="keyword">import</span> PyQuery <span class="keyword">as</span> pq</div><div class="line">doc = pq(html)</div><div class="line">print(doc(<span class="string">'#container .list.li'</span>)) <span class="comment">#空格表示嵌套关系</span></div></pre></td></tr></table></figure>
+<h1 id="查找元素"><a href="#查找元素" class="headerlink" title="查找元素"></a>查找元素</h1><h2 id="子元素"><a href="#子元素" class="headerlink" title="子元素"></a>子元素</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> pyquery <span class="keyword">import</span> PyQuery <span class="keyword">as</span> pq</div><div class="line">doc = pq(html)</div><div class="line">items = doc(<span class="string">'.list'</span>)</div><div class="line">print(type(items))</div><div class="line">print(items)</div><div class="line">lis = items.find(<span class="string">'li'</span>)</div><div class="line">print(type(lis))</div><div class="line">print(lis)</div></pre></td></tr></table></figure>
+<h2 id="父元素"><a href="#父元素" class="headerlink" title="父元素"></a>父元素</h2>  
 	  </div>     
 	  
 

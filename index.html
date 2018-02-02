@@ -178,21 +178,36 @@
 
 	  
 
-	  	 
+	  	<h1 id="PyQuery"><a href="#PyQuery" class="headerlink" title="PyQuery"></a>PyQuery</h1><p>正则太麻烦？BeautifulSoup语法太难记？<br>PyQuery 是一个好选择。</p>
+<h1 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h1><h2 id="字符串初始化"><a href="#字符串初始化" class="headerlink" title="字符串初始化"></a>字符串初始化</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> pyquery <span class="keyword">import</span> PyQuery <span class="keyword">as</span> pq</div><div class="line">doc = pq(html)</div><div class="line">print(doc(<span class="string">'li'</span>))</div></pre></td></tr></table></figure>
+<h2 id="URL初始化"><a href="#URL初始化" class="headerlink" title="URL初始化"></a>URL初始化</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> pyquery <span class="keyword">import</span> PyQuery <span class="keyword">as</span> pq</div><div class="line">doc = pq(url=<span class="string">'http://baidu.com'</span>)</div><div class="line">print(doc(<span class="string">'head'</span>))</div></pre></td></tr></table></figure>
 
-	    
+	     
 </div>
 
 <div class="center">
-				
+			
 
+				<span class="post-meta">		
+				<span class="iconfont icon-category"></span>
+				<a class="category-link" href="/categories/Tech/">Tech</a>
+				</span>
+		
+			
+
+		
+				
+				<span class="post-meta">
+				<span class="iconfont icon-tag"></span>
+				<a class="tag-link" href="/tags/Python/">Python</a> <a class="tag-link" href="/tags/爬虫/">爬虫</a>
+				</span>			
 			
 
 
 		
 
 		<span class="post-words"><span class="iconfont icon-words"></span>
-		0
+		530
 		</span>		
 </div>		
 
@@ -223,9 +238,36 @@
 
 	  
 
-	  	 
+	  	<h1 id="BeautifulSoup"><a href="#BeautifulSoup" class="headerlink" title="BeautifulSoup"></a>BeautifulSoup</h1><p>灵活方便的网页解析库，处理高校，支持多种解析器。利用它不用编写正则表达式即可方便地实现网页信息的提取。</p>
+<h1 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h1><h2 id="解析库"><a href="#解析库" class="headerlink" title="解析库"></a>解析库</h2><table>
+<thead>
+<tr>
+<th>解析器</th>
+<th style="text-align:center">使用方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python标准库</td>
+<td style="text-align:center">BeautifulSoup(markup,’html.parser’)</td>
+</tr>
+<tr>
+<td>lxml HTML解析器</td>
+<td style="text-align:center">BeautifulSoup(markup,’lxml’)</td>
+</tr>
+<tr>
+<td>lxml XML解析器</td>
+<td style="text-align:center">BeautifulSoup(markup,’xml’)</td>
+</tr>
+<tr>
+<td>html5lib</td>
+<td style="text-align:center">BeautifulSoup(markup,’html5lib’)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</div><div class="line">soup = BeautifulSoup(html,<span class="string">'lxml'</span>)</div><div class="line">print(soup.prettify())  <span class="comment">#自动格式化代码</span></div><div class="line">print(soup.title.string)</div></pre></td></tr></table></figure>
 
-	    
+	     
 </div>
 
 <div class="center">
@@ -250,7 +292,7 @@
 		
 
 		<span class="post-words"><span class="iconfont icon-words"></span>
-		0
+		1867
 		</span>		
 </div>		
 
