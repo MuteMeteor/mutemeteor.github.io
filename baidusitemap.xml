@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://mutemeteor.com/2018/01/31/07-Selenium/</loc>
+    <lastmod>2018-02-03T12:21:12.051Z</lastmod>
+    <data>
+        <display>
+        <title>Python爬虫之Selenium</title>
+        <pubTime>2018-01-31T01:44:31.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+        <tag>爬虫</tag>
+         
+         
+           
+             
+              <breadCrumb title="Tech" url="http://mutemeteor.com/categories/Tech/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://mutemeteor.com/2018/01/30/04-regular-expressions/</loc>
     <lastmod>2018-02-03T12:19:46.837Z</lastmod>
     <data>
@@ -113,28 +135,6 @@
         <display>
         <title>Python爬虫之requests</title>
         <pubTime>2018-01-30T11:10:33.000Z</pubTime>
-        
-        <tag>Python</tag>
-         
-        <tag>爬虫</tag>
-         
-         
-           
-             
-              <breadCrumb title="Tech" url="http://mutemeteor.com/categories/Tech/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://mutemeteor.com/2018/01/31/07-Selenium/</loc>
-    <lastmod>2018-02-02T13:22:36.615Z</lastmod>
-    <data>
-        <display>
-        <title>Python爬虫之Selenium</title>
-        <pubTime>2018-01-31T01:44:31.000Z</pubTime>
         
         <tag>Python</tag>
          

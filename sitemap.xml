@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://mutemeteor.com/2018/01/31/07-Selenium/</loc>
+    
+    <lastmod>2018-02-03T12:21:12.051Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://mutemeteor.com/2018/01/30/04-regular-expressions/</loc>
     
     <lastmod>2018-02-03T12:19:46.837Z</lastmod>
@@ -40,13 +47,6 @@
     <loc>http://mutemeteor.com/2018/01/30/03-requests/</loc>
     
     <lastmod>2018-02-02T13:24:00.500Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://mutemeteor.com/2018/01/31/07-Selenium/</loc>
-    
-    <lastmod>2018-02-02T13:22:36.615Z</lastmod>
     
   </url>
   

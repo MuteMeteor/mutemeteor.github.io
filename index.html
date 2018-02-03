@@ -165,7 +165,9 @@
 
 	  
 
-	  	 
+	  	<h1 id="什么是Selenium"><a href="#什么是Selenium" class="headerlink" title="什么是Selenium"></a>什么是Selenium</h1><p>自动化测试工具，支持多种浏览器。爬虫中主要用来解决JavaScript渲染的问题。</p>
+<h1 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</div><div class="line"><span class="keyword">from</span> selenium.webdriver.common.by <span class="keyword">import</span> By</div><div class="line"><span class="keyword">from</span> selenium.webdriver.common.keys <span class="keyword">import</span> Keys</div><div class="line"><span class="keyword">from</span> selenium.webdriver.support <span class="keyword">import</span> expected_conditions <span class="keyword">as</span> EC</div><div class="line"><span class="keyword">from</span> selenium.webdriver.support.wait <span class="keyword">import</span> WebDriverWait</div><div class="line"></div><div class="line">browser = webdriver.Firefox()</div><div class="line"><span class="keyword">try</span>:</div><div class="line">  browser.get(<span class="string">'https://www.baidu.com'</span>)</div><div class="line">  input = browser.find_element_by_id(<span class="string">'kw'</span>)</div><div class="line">  input.send_keys(<span class="string">'Python'</span>)</div><div class="line">  input.send_keys(Keys.ENTER)</div><div class="line">  wait = WebDriverWait(browser,<span class="number">10</span>)</div><div class="line">  wait.until(EC.presence_of_element_located((By.ID,(<span class="string">'content_left'</span>)))</div><div class="line">  print(browser.current_url)</div><div class="line">  print(browser.get_cookies())</div><div class="line">  print(browser.page_source)</div><div class="line"><span class="keyword">finally</span>:</div><div class="line">  browser.close()</div></pre></td></tr></table></figure>
+<h2 id="查找元素"><a href="#查找元素" class="headerlink" title="查找元素"></a>查找元素</h2> 
 
 	    
 </div>
@@ -192,7 +194,7 @@
 		
 
 		<span class="post-words"><span class="iconfont icon-words"></span>
-		0
+		672
 		</span>		
 </div>		
 
