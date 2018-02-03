@@ -44,7 +44,7 @@
   <entry>
     <title><![CDATA[Python爬虫之正则表达式]]></title>
     <url>%2F2018%2F01%2F30%2F04-regular-expressions%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[什么是正则表达式用事先定义好的一些特定字符及这些特定字符的组合，组成一个“规则字符串”，这个“规则字符串”用来表达对字符串的一种过滤逻辑。 re模块 re.match从第一字符匹配 最常规的匹配泛匹配.* group 匹配目标使用括号得到匹配目标 贪婪匹配非贪婪匹配尽量使用非贪婪模式 注：有换行符就用re.S 转义\ re.search扫描整个字符串并返回第一个成功匹配。 注：为匹配方便，能用search就不用match re.findall搜索字符串，以列表形式返回全部能匹配的子串。 re.sub替换字符串中每一个匹配的子串后返回替换后的字符。re.compile将正则字符串编译成正则表达式对象。 代码复用。 实战练习豆瓣读书页面爬取。 123456789101112import requsetsimport recontent = requests.get('https://book.douban.com/').textpattern - re.compile('&lt;li.*?cover.*？href=“(.*?)”.*?title="(.*?)".*?more-meta.*?author"&gt;(.*?)&lt;/span&gt;.*?year"&gt;(.*?)&lt;/span&gt;.*?&lt;/li&gt;',re.S)results = re.findall(pattern,content)print(results)for result in results: url,name,author,date = result print(url,name,author,date.strip())# 或用re.sub方法# author = re.sub('\s','',author)# data = re.sub('\s','',date)]]></content>
       <categories>
         <category>Tech</category>
       </categories>
