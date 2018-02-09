@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Django]]></title>
+    <url>%2F2018%2F02%2F09%2FDjango%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[requests-moyanmovie]]></title>
     <url>%2F2018%2F02%2F02%2Frequests-moyanmovie%2F</url>
     <content type="text"></content>
