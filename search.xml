@@ -112,25 +112,15 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[《Automate The Boring Stuff With Python》(Ⅱ)]]></title>
-    <url>%2F2018%2F01%2F23%2FautomateTheBoringStuffWithPython2%2F</url>
-    <content type="text"><![CDATA[自动化任务Chapter7 模式匹配与正则表达式Chapter8 读写文件Chapter9 组织文件Chapter10 调试Chapter11 从 Web 抓取信息Chapter12 处理 Excel 电子表格Chapter13 处理 PDF 和 Word 文档Chapter14 处理 CSV 文件和 JSON 数据Chapter15 保持时间、计划任务和启动程序Chapter16 发送电子邮件和短信Chapter17 操作图像Chapter18 用 GUI 自动化控制键盘和鼠标]]></content>
-      <categories>
-        <category>读书记</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[《Automate The Boring Stuff With Python》(Ⅰ)]]></title>
-    <url>%2F2018%2F01%2F23%2FautomateTheBoringStuffWithPython1%2F</url>
+    <title><![CDATA[《金字塔原理》]]></title>
+    <url>%2F2018%2F01%2F23%2F%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%2F</url>
     <content type="text"><![CDATA[豆瓣 mark 这本书很久了，正巧赶上淘宝打折，果断下单，又花了两天把书撸完。 整本书逻辑框架十分清晰，我这种菜鸟新手整个看的过程也很流畅，作为入门书籍非常棒，从实用的例子来练习熟悉，章节顺序安排合理，跟着练下来可以信心十足的明确自己会做哪些，还能做哪些。包括最开始介绍的如何排查错误，其思路也可以运用到很多事物上。 Python编程基础Chapter1 Python基础Chapter2 控制流Chapter3 函数Chapter4 列表Chapter5 字典和结构化数据Chapter6 字符串操作]]></content>
       <categories>
         <category>读书记</category>
       </categories>
       <tags>
-        <tag>Python</tag>
+        <tag>写作</tag>
+        <tag>思考</tag>
       </tags>
   </entry>
   <entry>
