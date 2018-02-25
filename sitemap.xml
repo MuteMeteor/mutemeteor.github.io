@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://mutemeteor.com/about/index.html</loc>
+    
+    <lastmod>2018-02-25T12:54:23.841Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://mutemeteor.com/2018/01/23/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86/</loc>
     
     <lastmod>2018-02-22T18:51:34.960Z</lastmod>
@@ -138,13 +145,6 @@
     <loc>http://mutemeteor.com/2017/09/18/algorithm-string/</loc>
     
     <lastmod>2018-01-16T10:19:01.996Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://mutemeteor.com/about/index.html</loc>
-    
-    <lastmod>2018-01-16T06:19:35.462Z</lastmod>
     
   </url>
   
