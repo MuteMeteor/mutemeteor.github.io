@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://mutemeteor.com/categories/index.html</loc>
+    
+    <lastmod>2018-02-25T13:13:34.446Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://mutemeteor.com/tags/index.html</loc>
+    
+    <lastmod>2018-02-25T13:12:54.974Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://mutemeteor.com/about/index.html</loc>
     
     <lastmod>2018-02-25T12:54:23.841Z</lastmod>
@@ -215,20 +229,6 @@
     <loc>http://mutemeteor.com/2018/01/15/TemReError/</loc>
     
     <lastmod>2018-01-15T01:05:18.450Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://mutemeteor.com/tags/index.html</loc>
-    
-    <lastmod>2018-01-14T12:40:10.215Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://mutemeteor.com/categories/index.html</loc>
-    
-    <lastmod>2018-01-14T12:39:25.952Z</lastmod>
     
   </url>
   
