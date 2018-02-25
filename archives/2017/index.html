@@ -1,625 +1,1068 @@
 <!DOCTYPE html>
-<html lang="zh-Hans">
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
-  <link rel="stylesheet" href="/style/style.css">
-<script>
-    var NlviConfig = {
-        title: "Mute Meteor",
-        author: "Kyrene Wang",
-        theme: "banderole",
-        lightbox: true,
-        animate: true,
-        baseUrl: "/",
-        search: true
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.4" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.0.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
+  };
 </script>
 
 
-
-    <link rel="stylesheet" href="/script/lib/lightbox/css/lightbox.min.css">
-
-
-
-
-    <link rel="stylesheet" href="/syuanpi/syuanpi.min.css">
-
-
-
-
-
-
-
-
-
-
-<meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="browsermode" content="application">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Mute Meteor">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="msapplication-navbutton-color" content="#666666">
-<meta name= "format-detection" content="telephone=no" />
-<meta name="keywords" content="nlvi, Nlvi" />
-
-
-
-  <meta name="description" content="the coutrage to speak softly">
-
-
-
-  <title>
   
-    Archives · Mute Meteor
+
+
+
+
   
-</title>
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+<meta name="description" content="the coutrage to speak softly">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mute Meteor">
+<meta property="og:url" content="http://mutemeteor.com/archives/2017/index.html">
+<meta property="og:site_name" content="Mute Meteor">
+<meta property="og:description" content="the coutrage to speak softly">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mute Meteor">
+<meta name="twitter:description" content="the coutrage to speak softly">
+
+
+
+
+
+
+  <link rel="canonical" href="http://mutemeteor.com/archives/2017/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+  <title>Archive | Mute Meteor</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?063129ce0f11ae9e4a1036a9220b94be";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
 </head>
-<body>
-  <div class="progress">
-  <div class="progress-inner"></div>
-</div>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
   
   
-    <div class="tagcloud-mask"></div>  
-<div class="tagcloud" id="tagcloud">
-  <div class="tagcloud-inner">
-    <a href="/tags/Algorithm/" style="font-size: 14px;">Algorithm</a> <a href="/tags/DataStructure/" style="font-size: 14px;">DataStructure</a> <a href="/tags/HTTP/" style="font-size: 14px;">HTTP</a> <a href="/tags/Hexo/" style="font-size: 14px;">Hexo</a> <a href="/tags/Java/" style="font-size: 14px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 14px;">JavaScript</a> <a href="/tags/LinkedList/" style="font-size: 14px;">LinkedList</a> <a href="/tags/Linux/" style="font-size: 14px;">Linux</a> <a href="/tags/Mind-Map/" style="font-size: 14px;">Mind Map</a> <a href="/tags/MongoDB/" style="font-size: 14px;">MongoDB</a> <a href="/tags/MySQL/" style="font-size: 14px;">MySQL</a> <a href="/tags/NoSQL/" style="font-size: 14px;">NoSQL</a> <a href="/tags/Node-js/" style="font-size: 14px;">Node.js</a> <a href="/tags/Notes/" style="font-size: 14px;">Notes</a> <a href="/tags/Python/" style="font-size: 14px;">Python</a> <a href="/tags/Redis/" style="font-size: 14px;">Redis</a> <a href="/tags/Sort/" style="font-size: 14px;">Sort</a> <a href="/tags/Story/" style="font-size: 14px;">Story</a> <a href="/tags/String/" style="font-size: 14px;">String</a> <a href="/tags/Vim/" style="font-size: 14px;">Vim</a> <a href="/tags/Windows/" style="font-size: 14px;">Windows</a> <a href="/tags/binarytree/" style="font-size: 14px;">binarytree</a> <a href="/tags/network/" style="font-size: 14px;">network</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/selenium/" style="font-size: 14px;">selenium</a> <a href="/tags/server/" style="font-size: 14px;">server</a> <a href="/tags/tcp/" style="font-size: 14px;">tcp</a> <a href="/tags/udp/" style="font-size: 14px;">udp</a> <a href="/tags/web/" style="font-size: 14px;">web</a> <a href="/tags/书信/" style="font-size: 14px;">书信</a> <a href="/tags/写作/" style="font-size: 14px;">写作</a> <a href="/tags/天文/" style="font-size: 14px;">天文</a> <a href="/tags/思考/" style="font-size: 14px;">思考</a> <a href="/tags/旅行/" style="font-size: 14px;">旅行</a> <a href="/tags/爬虫/" style="font-size: 14px;">爬虫</a> <a href="/tags/科普/" style="font-size: 14px;">科普</a> <a href="/tags/诗/" style="font-size: 14px;">诗</a> <a href="/tags/软件工程/" style="font-size: 14px;">软件工程</a> <a href="/tags/随笔/" style="font-size: 14px;">随笔</a>
-  </div>
-</div>  
+    
   
 
-  <div class="container">
+  <div class="container sidebar-position-left page-archive">
+    <div class="headband"></div>
 
-    <header class="header" id="header">
-  <div class="header-wrapper">
-    <div class="logo">
-  <div class="logo-inner syuanpi tvIn">
-    <span><a href="/">Mute Meteor</a></span>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
     
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Mute Meteor</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
   </div>
 </div>
-    <nav class="main-nav">
-        
-  <ul class="main-nav-list syuanpi tvIn">
+
+<nav class="site-nav">
   
-    <li class="menu-item">
-      <a href="javascript:;" id="search">
-        <span>Search</span>
-        
-          <span class="menu-item-label">search</span>
-        
-      </a>
-    </li>
+
   
-  
-    
+    <ul id="menu" class="menu">
       
-    
-    <li class="menu-item">
-      <a href="/" id="article">
-        <span class="base-name">Article</span>
         
-          <span class="menu-item-label">article</span>
-        
-      </a>
-    </li>  
-  
-    
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+        </li>
       
-    
-    <li class="menu-item">
-      <a href="/archives" id="archives">
-        <span class="base-name">Archives</span>
         
-          <span class="menu-item-label">archives</span>
-        
-      </a>
-    </li>  
-  
-    
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />About</a>
+        </li>
       
-    
-    <li class="menu-item">
-      <a href="javascript:;" id="tags">
-        <span class="base-name">Tags</span>
         
-          <span class="menu-item-label">tags</span>
-        
-      </a>
-    </li>  
-  
-    
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+        </li>
       
-    
-    <li class="menu-item">
-      <a href="/about" id="about">
-        <span class="base-name">About</span>
         
-          <span class="menu-item-label">about</span>
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
+        </li>
+      
         
-      </a>
-    </li>  
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />Schedule</a>
+        </li>
+      
+
+      
+    </ul>
   
-  </ul>
+
   
 </nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
     
-    
-  </div>
-</header>
-<div class="mobile-header">
-  <div class="mobile-header-body">
-    <div class="mobile-header-list">
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  
+  
+  
+  <div class="post-block archive">
+    <div id="posts" class="posts-collapse">
+      <span class="archive-move-on"></span>
+
       
+      <span class="archive-page-counter">
         
-            <div class="mobile-nav-item">
-                <a href="/">
-                    <span>Article</span>
-                    
-                        <span class="menu-item-label">article</span>
-                    
-                </a>
-            </div>
         
+         
+        
+        OK! 43 posts in total. Keep on posting.
+      </span>
       
-        
-            <div class="mobile-nav-item">
-                <a href="/archives">
-                    <span>Archives</span>
-                    
-                        <span class="menu-item-label">archives</span>
-                    
-                </a>
-            </div>
-        
+
       
+
         
-          <div class="mobile-nav-item inner-cloud">
-            <div class="mobile-nav-tag">
-              <a href="javascript:;" id="mobile-tags">
-                <span>Tags</span>
-                
-                    <span class="menu-item-label">tags</span>
-                
-              </a>
-            </div>
-            <div class="mobile-nav-tagcloud">
-              <div class="mobile-tagcloud-inner">
-                <a href="/tags/Algorithm/" style="font-size: 14px;">Algorithm</a> <a href="/tags/DataStructure/" style="font-size: 14px;">DataStructure</a> <a href="/tags/HTTP/" style="font-size: 14px;">HTTP</a> <a href="/tags/Hexo/" style="font-size: 14px;">Hexo</a> <a href="/tags/Java/" style="font-size: 14px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 14px;">JavaScript</a> <a href="/tags/LinkedList/" style="font-size: 14px;">LinkedList</a> <a href="/tags/Linux/" style="font-size: 14px;">Linux</a> <a href="/tags/Mind-Map/" style="font-size: 14px;">Mind Map</a> <a href="/tags/MongoDB/" style="font-size: 14px;">MongoDB</a> <a href="/tags/MySQL/" style="font-size: 14px;">MySQL</a> <a href="/tags/NoSQL/" style="font-size: 14px;">NoSQL</a> <a href="/tags/Node-js/" style="font-size: 14px;">Node.js</a> <a href="/tags/Notes/" style="font-size: 14px;">Notes</a> <a href="/tags/Python/" style="font-size: 14px;">Python</a> <a href="/tags/Redis/" style="font-size: 14px;">Redis</a> <a href="/tags/Sort/" style="font-size: 14px;">Sort</a> <a href="/tags/Story/" style="font-size: 14px;">Story</a> <a href="/tags/String/" style="font-size: 14px;">String</a> <a href="/tags/Vim/" style="font-size: 14px;">Vim</a> <a href="/tags/Windows/" style="font-size: 14px;">Windows</a> <a href="/tags/binarytree/" style="font-size: 14px;">binarytree</a> <a href="/tags/network/" style="font-size: 14px;">network</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/selenium/" style="font-size: 14px;">selenium</a> <a href="/tags/server/" style="font-size: 14px;">server</a> <a href="/tags/tcp/" style="font-size: 14px;">tcp</a> <a href="/tags/udp/" style="font-size: 14px;">udp</a> <a href="/tags/web/" style="font-size: 14px;">web</a> <a href="/tags/书信/" style="font-size: 14px;">书信</a> <a href="/tags/写作/" style="font-size: 14px;">写作</a> <a href="/tags/天文/" style="font-size: 14px;">天文</a> <a href="/tags/思考/" style="font-size: 14px;">思考</a> <a href="/tags/旅行/" style="font-size: 14px;">旅行</a> <a href="/tags/爬虫/" style="font-size: 14px;">爬虫</a> <a href="/tags/科普/" style="font-size: 14px;">科普</a> <a href="/tags/诗/" style="font-size: 14px;">诗</a> <a href="/tags/软件工程/" style="font-size: 14px;">软件工程</a> <a href="/tags/随笔/" style="font-size: 14px;">随笔</a>
-              </div>
-            </div>
+        
+        
+
+        
+          
+          <div class="collection-title">
+            <h2 class="archive-year" id="archive-year-2017">2017</h2>
           </div>
         
-      
         
-            <div class="mobile-nav-item">
-                <a href="/about">
-                    <span>About</span>
-                    
-                        <span class="menu-item-label">about</span>
-                    
-                </a>
-            </div>
+
         
-      
-    </div>
-  </div>
-  <div class="mobile-header-nav">
-    <div class="mobile-header-item" id="mobile-left">
-      <div class="header-menu-item">
-        <span class="header-menu-line"></span>
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h3 class="post-title">
+        
+            <a class="post-title-link" href="/2017/11/14/python3-note4/" itemprop="url">
+              
+                <span itemprop="name">Python3 学习笔记（四）</span>
+              
+            </a>
+        
+      </h3>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-11-14T10:46:56+08:00"
+              content="2017-11-14" >
+          11-14
+        </time>
       </div>
+
+    </header>
+  </article>
+
+
+
+      
+
+        
+        
+        
+
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h3 class="post-title">
+        
+            <a class="post-title-link" href="/2017/11/14/Python3-note3/" itemprop="url">
+              
+                <span itemprop="name">Python3 学习笔记（三）</span>
+              
+            </a>
+        
+      </h3>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-11-14T01:17:58+08:00"
+              content="2017-11-14" >
+          11-14
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+      
+
+        
+        
+        
+
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h3 class="post-title">
+        
+            <a class="post-title-link" href="/2017/11/08/Python3-note2/" itemprop="url">
+              
+                <span itemprop="name">python3 学习笔记（二）</span>
+              
+            </a>
+        
+      </h3>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-11-08T14:02:58+08:00"
+              content="2017-11-08" >
+          11-08
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+      
+
+        
+        
+        
+
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h3 class="post-title">
+        
+            <a class="post-title-link" href="/2017/10/28/Python3-note/" itemprop="url">
+              
+                <span itemprop="name">Python3 学习笔记（一）</span>
+              
+            </a>
+        
+      </h3>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-10-28T21:01:30+08:00"
+              content="2017-10-28" >
+          10-28
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+      
+
+        
+        
+        
+
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h3 class="post-title">
+        
+            <a class="post-title-link" href="/2017/10/05/极简宇宙史/" itemprop="url">
+              
+                <span itemprop="name">《极简宇宙史》</span>
+              
+            </a>
+        
+      </h3>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-10-05T16:12:43+08:00"
+              content="2017-10-05" >
+          10-05
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+      
+
+        
+        
+        
+
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h3 class="post-title">
+        
+            <a class="post-title-link" href="/2017/10/02/algorithm-sort/" itemprop="url">
+              
+                <span itemprop="name">【数据结构与算法】排序专题</span>
+              
+            </a>
+        
+      </h3>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-10-02T15:33:33+08:00"
+              content="2017-10-02" >
+          10-02
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+      
+
+        
+        
+        
+
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h3 class="post-title">
+        
+            <a class="post-title-link" href="/2017/09/30/algorithm-binarytree/" itemprop="url">
+              
+                <span itemprop="name">【数据结构与算法】二叉树专题</span>
+              
+            </a>
+        
+      </h3>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-09-30T18:54:38+08:00"
+              content="2017-09-30" >
+          09-30
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+      
+
+        
+        
+        
+
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h3 class="post-title">
+        
+            <a class="post-title-link" href="/2017/09/27/algorithm-linkedlist/" itemprop="url">
+              
+                <span itemprop="name">【数据结构与算法】链表专题</span>
+              
+            </a>
+        
+      </h3>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-09-27T19:59:01+08:00"
+              content="2017-09-27" >
+          09-27
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+      
+
+        
+        
+        
+
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h3 class="post-title">
+        
+            <a class="post-title-link" href="/2017/09/18/algorithm-string/" itemprop="url">
+              
+                <span itemprop="name">【数据结构与算法】字符串专题</span>
+              
+            </a>
+        
+      </h3>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-09-18T16:10:36+08:00"
+              content="2017-09-18" >
+          09-18
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+      
+
+        
+        
+        
+
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h3 class="post-title">
+        
+            <a class="post-title-link" href="/2017/09/16/SE-note/" itemprop="url">
+              
+                <span itemprop="name">软件工程开发的技术基础 学习笔记</span>
+              
+            </a>
+        
+      </h3>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-09-16T09:01:49+08:00"
+              content="2017-09-16" >
+          09-16
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+      
+
     </div>
-    <h1 class="mobile-header-title">
-      <a href="/">Mute Meteor</a>
-    </h1>
-    <div class="mobile-header-item"></div>
   </div>
-</div>
-    <div class="container-inner">
-      <main class="main" id="main">
-        <div class="main-wrapper">
-          
-    
-    <div class="archive syuanpi riseIn-light" id="archive">
-        
-            <h1 class="archive-title">Total</h1>
-            <span class="archive-num">43 Posts In Total</span>
-        
-        <div class="archive-list">
-            <ul>
-        
-            
-                
-                
-                
-                    
-                     
-                        <h2 class="archive-year"> 2017 </h2>
-                    
-                
-            
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    11-14
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2017/11/14/python3-note4/">Python3 学习笔记（四）</a>
-                </span>
-            </li>
+  
+  
+  
 
-        
-            
-                
-                
-                
-            
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    11-14
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2017/11/14/Python3-note3/">Python3 学习笔记（三）</a>
-                </span>
-            </li>
-
-        
-            
-                
-                
-                
-            
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    11-08
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2017/11/08/Python3-note2/">python3 学习笔记（二）</a>
-                </span>
-            </li>
-
-        
-            
-                
-                
-                
-            
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    10-28
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2017/10/28/Python3-note/">Python3 学习笔记（一）</a>
-                </span>
-            </li>
-
-        
-            
-                
-                
-                
-            
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    10-05
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2017/10/05/极简宇宙史/">《极简宇宙史》</a>
-                </span>
-            </li>
-
-        
-            
-                
-                
-                
-            
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    10-02
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2017/10/02/algorithm-sort/">【数据结构与算法】排序专题</a>
-                </span>
-            </li>
-
-        
-            
-                
-                
-                
-            
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    09-30
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2017/09/30/algorithm-binarytree/">【数据结构与算法】二叉树专题</a>
-                </span>
-            </li>
-
-        
-            
-                
-                
-                
-            
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    09-27
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2017/09/27/algorithm-linkedlist/">【数据结构与算法】链表专题</a>
-                </span>
-            </li>
-
-        
-            
-                
-                
-                
-            
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    09-18
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2017/09/18/algorithm-string/">【数据结构与算法】字符串专题</a>
-                </span>
-            </li>
-
-        
-            
-                
-                
-                
-            
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    09-16
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2017/09/16/SE-note/">软件工程开发的技术基础 学习笔记</a>
-                </span>
-            </li>
-
-        
-            </ul>
-        </div>
-    </div>
-    
+  
   <nav class="pagination">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2017/page/2/">2</a><a class="extend next" rel="next" href="/archives/2017/page/2/">Next ></a>
+    <span class="page-number current">1</span><a class="page-number" href="/archives/2017/page/2/">2</a><a class="extend next" rel="next" href="/archives/2017/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
 
+
+          </div>
+          
+
         </div>
-      </main>
-
-      <footer class="footer syuanpi fadeIn" id="footer">
-  <hr>
-  <div class="footer-wrapper">
-    <div class="left">
-      <div class="contact-icon">
-    
-    
-    
-    
-    
-    
-    
-    
         
-        
-        
-        
-        
-            <a href="https://www.facebook.com/1" class="iconfont icon-facebook" title="facebook"></a>
-        
-        
-        
-    
-        
-        
-        
-            <a href="https://twitter.com/2" class="iconfont icon-twitter" title="twitter"></a>
-        
-        
-        
-        
-        
-    
-        
-        
-        
-        
-        
-        
-        
-            <a href="https://www.instagram.com/3" class="iconfont icon-ins" title="instagram"></a>
-        
-    
-        
-        
-            <a href="https://weibo.com/4" class="iconfont icon-weibo" title="weibo"></a>
-        
-        
-        
-        
-        
-        
-    
-        
-        
-        
-        
-            <a href="https://www.zhihu.com/people/5" class="iconfont icon-zhihu" title="zhihu"></a>
-        
-        
-        
-        
-    
-        
-            <a href="https://github.com/6" class="iconfont icon-github" title="github"></a>
-        
-        
-        
-        
-        
-        
-        
-    
-        
-        
-        
-        
-        
-        
-            <a href="https://www.linkedin.com/in/7" class="iconfont icon-linkedin" title="linkedin"></a>
-        
-        
-    
-</div>
-    </div>
-    <div class="right">
-      <div class="copyright">
-    <div class="info">
-        <span>&copy;</span>
-        <span>2016 ~ 2018</span>
-        <span>❤</span>
-        <span>Kyrene Wang</span>
-    </div>
-    <div class="theme">
-        <span>
-            Powered by
-            <a href="http://hexo.io/" target="_blank">Hexo </a>
-        </span>
-        <span>
-            Theme
-            <a href="https://github.com/ColMugX/hexo-theme-Nlvi"> Nlvi </a>
-        </span>
-    </div>
-    
-</div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
   </div>
-</footer>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://on7kyvg9n.bkt.clouddn.com/avatar.jpg"
+                alt="Kyrene Wang" />
+            
+              <p class="site-author-name" itemprop="name">Kyrene Wang</p>
+              <p class="site-description motion-element" itemprop="description">the coutrage to speak softly</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">43</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">39</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
     </div>
-  </div>
-  <script src="/script/lib/jquery/jquery-3.2.1.min.js"></script>
+  </aside>
 
 
-    <script src="/script/lib/lightbox/js/lightbox.min.js"></script>
-
-
-
-
-
-    
-        <script src="/h.js"></script>
-    
-        <script src="/e.js"></script>
-    
-        <script src="/x.js"></script>
-    
-        <script src="/o.js"></script>
-    
-        <script src="/-.js"></script>
-    
-        <script src="/g.js"></script>
-    
-        <script src="/e.js"></script>
-    
-        <script src="/n.js"></script>
-    
-        <script src="/e.js"></script>
-    
-        <script src="/r.js"></script>
-    
-        <script src="/a.js"></script>
-    
-        <script src="/t.js"></script>
-    
-        <script src="/e.js"></script>
-    
-        <script src="/-.js"></script>
-    
-        <script src="/f.js"></script>
-    
-        <script src="/e.js"></script>
-    
-        <script src="/e.js"></script>
-    
-        <script src="/d.js"></script>
-    
-
-
-<script src="/script/src/nlvi.js"></script>
-<script src="/script/src/utils.js"></script>
-<script src="/script/scheme/balance.js"></script>
-<script src="/script/src/plugins.js"></script>
-<script src="/script/bootstarp.js"></script>
-
-
-<div class="backtop syuanpi dead toTop" id="backtop">
-    <i class="iconfont icon-up"></i>
-    <span style="text-align:center;font-family:Georgia;"><span style="font-family:Georgia;" id="scrollpercent">1</span>%</span>
-</div>
-
-
-  <div class="search" id="search">
-    <div class="mask" id="mask"></div>
-    <div class="search-wrapper syuanpi">
-      <h2 id="search-header" class="syuanpi">搜索一下？</h2>
-      <div class="input">
-        <input type="text" id="local-search-input" results="0" name="">
+        
       </div>
-      <div id="local-search-result"></div>
-    </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kyrene Wang</span>
+
+  
+
+  
+</div>
+
+
+  
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://github.com/theme-next/hexo-theme-next">NexT.Pisces</a> v6.0.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
   </div>
-  <script>
-  if (NlviConfig.theme === 'banderole') {
-    var GREETING = {
-      morning: "我的博客里可没有早饭！",
-      noon: "记得午休吃饭，不着急看我的博客~",
-      after: "下午好，感谢查阅我的博客",
-      night: "您来我的博客看笑话当做休息嘛",
-      midnight: "我觉得大半夜就不要看啦"
-    }
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
   }
-  </script>
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.4"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
 
 </body>
 </html>
