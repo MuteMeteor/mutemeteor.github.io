@@ -1,20 +1,398 @@
-extends partial/layout
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
-block site_title
-    != page.title + " · " + config.title
 
-block description
-    - var desc = page.desc || page.title + ' - ' + config.author;
-    meta(name="description", content=desc)
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
-block container
-    include mixins/post
-    +post(page)
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-block pagination
-    include mixins/paginator
-    +post()
-    include partial/comment
 
-block copyright
-    include partial/copyright
+
+  <meta name="description" content="《云雀叫了一整天》"/>
+
+
+
+
+  <meta name="keywords" content="诗, Mute Meteor" />
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/default" title="Mute Meteor">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.6.0" />
+
+
+
+<link rel="canonical" href="http://mutemeteor.com/2016/10/11/云雀叫了一整天/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
+
+
+
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+    <title> 《云雀叫了一整天》 - Mute Meteor </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Mute Meteor</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Mute Meteor</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          《云雀叫了一整天》
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2016-10-11
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/读书记/">读书记</a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        <p><a href="http://oevzkmimu.bkt.clouddn.com/%E4%BA%91%E9%9B%80%E5%8F%AB%E4%BA%86%E4%B8%80%E6%95%B4%E5%A4%A9.png" target="_blank" rel="external"><img src="http://oevzkmimu.bkt.clouddn.com/%E4%BA%91%E9%9B%80%E5%8F%AB%E4%BA%86%E4%B8%80%E6%95%B4%E5%A4%A9.png" alt="云雀叫了一整天"></a></p>
+<blockquote>
+<p>读木心的诗，你需要懂点历史，懂点地理，懂点文学，中国的外国的，你还得懂点冷幽默……</p>
+</blockquote>
+<ul>
+<li>“我能抗拒任何事物 除了诱惑”（王尔德） 我能抗拒任何诱惑 直到它们被我所诱惑</li>
+<li>这里的花都是深紫色的 我倒并不悲伤 只是想放声大哭一场<a id="more"></a></li>
+<li>马车已驶进城里的石砌街道 行人们向我招呼 我答礼 游目贪看那些房屋的顶层 悬挂在墙洞间的铜钟 栖满了密密麻麻的燕子 一忽儿成群飞起 一忽儿啾啾唧唧 我知道它们准备远行 这里的阳光不够温暖 凉风阵阵 黄叶飘零 仿佛听见古老的歌 “当我归来时 啊 我归来时 一切都已成空”</li>
+<li>吃美国大兵剩下来的饲料 读俄罗斯悲天悯人的长篇小说 八年离乱熬过去了 人躺着 两脚高搁床档上 满脑子意大利文艺复兴法国印象派 这便是我辈动辄大言不惭的黑色青春</li>
+<li>我愿他人活在我身上 我愿自己活在他人身上 这是“知” 我曾经活在他人身上 他人曾经活在我身上 这是“爱” 雷奥纳多说 知得愈多 爱得愈多 爱得愈多 知得愈多 知与爱永成正比</li>
+<li>那时的天气也常会连日阴冷 海鸥飞鸣于屋子的上空 事情发生了 又发生 说不得的 除非记忆 记忆就像滚滚浪潮 撞上海湾里的礁石激出巨响 记忆的巨响人们是听不到的</li>
+<li>我们以形骸为贽礼 确曾是 蒙昧的智者 喜怒哀乐皆可念 虽然我并未预知 青春是一去不回来的</li>
+<li>迎春送春是说说的 春天又不是一个人</li>
+<li>我是一个在黑暗中大雪纷飞的人哪</li>
+<li>那种夜说长好长 说短诚然太短 那种黎明惫已惫极 猛烈又怎生猛烈 床上早餐吃什么 已经快正午了 总以为一生就这样下去</li>
+<li>彼癖而不洁 此洁而不癖</li>
+<li>街角的寒风比野地的寒风尤为悲凉</li>
+<li>记得早先少年时 大家诚诚恳恳 说一句是一句 清早上火车站 长街黑暗无行人 卖豆浆的小店冒着热气 从前的日色变得慢 车、马、邮件都慢 一生只够爱一个人 从前的锁也好看 钥匙精美有样子 你锁了 人家就懂了</li>
+<li>创作是父性的 翻译是母性的</li>
+<li>第一个发明刮耳光的人多有才气</li>
+<li>懂得树 就懂得贝多芬</li>
+<li>我不好斗 只好胜</li>
+<li>好事坏事 过后谈起来都很罗曼蒂克</li>
+<li>唐诗下酒 宋词伴茶</li>
+<li>有的书 读了便成文盲</li>
+<li>海上的早晨 好大好大的早晨</li>
+<li>你再不来 我要下雪了</li>
+<li>蠢 都是资深的</li>
+<li>世界是一口钟 敲在任何地方 都会响的</li>
+<li>鹰滑翔的时候 是它思想的时候</li>
+<li>主啊 兄弟得罪我 原谅他七次够了么 主说 已经不是兄弟了</li>
+<li>把寄与他人的希望收回来放在自己身上 倒也温馨</li>
+<li>直道相思了无益 且作新狂解旧狂</li>
+<li>天鹅谈飞行术 麻雀说哪有这么多的讲究</li>
+<li>玩物丧志 其志小 志大者玩物养志</li>
+<li>一次又一次觉得 灵智比肉欲要性感得多</li>
+<li>你强 强在你不爱我 我弱 弱在我爱你</li>
+<li>花的香是形而上的</li>
+<li>忽有谈话的欲望 环顾阒无一人</li>
+<li>哥德七十四岁犹动情 到底是哥德</li>
+<li>我也曾猝倒在洪大的幸福中</li>
+</ul>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://mutemeteor.com">Kyrene Wang</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://mutemeteor.com/2016/10/11/云雀叫了一整天/">http://mutemeteor.com/2016/10/11/云雀叫了一整天/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/诗/">诗</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2016/10/11/朱生豪情书/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">《朱生豪情书》</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+  </nav>
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+      
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2018
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Kyrene Wang</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.6.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.6.0"></script>
+
+  </body>
+</html>

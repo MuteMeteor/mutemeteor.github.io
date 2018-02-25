@@ -1,20 +1,463 @@
-extends partial/layout
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
-block site_title
-    != page.title + " · " + config.title
 
-block description
-    - var desc = page.desc || page.title + ' - ' + config.author;
-    meta(name="description", content=desc)
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
-block container
-    include mixins/post
-    +post(page)
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-block pagination
-    include mixins/paginator
-    +post()
-    include partial/comment
 
-block copyright
-    include partial/copyright
+
+  <meta name="description" content="Linux 学习笔记"/>
+
+
+
+
+  <meta name="keywords" content="Notes, Linux, Mute Meteor" />
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/default" title="Mute Meteor">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.6.0" />
+
+
+
+<link rel="canonical" href="http://mutemeteor.com/2017/08/07/Linux/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
+
+
+
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+    <title> Linux 学习笔记 - Mute Meteor </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Mute Meteor</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Mute Meteor</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Linux 学习笔记
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2017-08-07
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/Tech/">Tech</a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#linux终端"><span class="toc-text">linux终端</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#终端的概念"><span class="toc-text">终端的概念</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Shell"><span class="toc-text">Shell</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#命令行操作"><span class="toc-text">命令行操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Tab"><span class="toc-text">[Tab]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ctrl-c"><span class="toc-text">[Ctrl+c]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#历史输入命令"><span class="toc-text">历史输入命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#通配符"><span class="toc-text">通配符</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
+      
+        <h1 id="linux终端"><a href="#linux终端" class="headerlink" title="linux终端"></a>linux终端</h1><h2 id="终端的概念"><a href="#终端的概念" class="headerlink" title="终端的概念"></a>终端的概念</h2><p>通常我们在使用 Linux 时，并不是直接与系统打交道，而是通过一个叫做 Shell 的中间程序来完成的，在图形界面下为了实现让我们在一个窗口中完成用户输入和显示输出，Linux 系统还提供了一个叫做终端模拟器的程序（Terminal），下面是几个比较常见的终端模拟器： gnome-terminal，kconsole，xterm，rxvt，kvt，nxterm 和 eterm 。</p>
+<a id="more"></a>
+<h1 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h1><p>通常在图形界面中对实际体验带来差异的不是上述的不同发行版的各种终端模拟器，而是这个 Shell（壳）。有壳就有核，这里的核就是指 UNIX/Linux 内核，Shell 是指“提供给使用者使用界面”的软件（命令解析器），类似于 DOS 下的 command（命令行）和后来的 cmd.exe 。普通意义上的 Shell 就是可以接受用户输入命令的程序。它之所以被称作 Shell 是因为它隐藏了操作系统底层的细节。同样的 UNIX/Linux 下的图形用户界面 GNOME 和 KDE，有时也被叫做“虚拟 shell”或“图形 shell”。</p>
+<p>UNIX/Linux 操作系统下的 Shell 既是用户交互的界面，也是控制系统的脚本语言。当然这一点也有别于 Windows 下的命令行，虽然该命令行也提供了很简单的控制语句。在 Windows 操作系统下，有些用户从来都不会直接使用 Shell，然而在 UNIX 系列操作系统下，Shell 仍然是控制系统启动、X11 启动和很多其它实用工具的脚本解释程序。</p>
+<p>在 UNIX/Linux 中比较流行的常见的 Shell 有 bash、zsh、ksh、csh 等等，Ubuntu 终端默认使用的是 bash，默认的桌面环境是 GNOME 或者 Unity。</p>
+<h1 id="命令行操作"><a href="#命令行操作" class="headerlink" title="命令行操作"></a>命令行操作</h1><h2 id="Tab"><a href="#Tab" class="headerlink" title="[Tab]"></a>[Tab]</h2><p>使用Tab键来进行命令补全，Tab键一般是在字母Q旁边，这个技巧给你带来的最大的好处就是当你忘记某个命令的全称时可以只输入它的开头的一部分，然后按下Tab键就可以得到提示或者帮助完成，当然不止补全命令，补全目录、补全命令参数都是没问题的。</p>
+<h2 id="Ctrl-c"><a href="#Ctrl-c" class="headerlink" title="[Ctrl+c]"></a>[Ctrl+c]</h2><p>用Ctrl+c键来强行终止当前程序（且并不会使终端退出）。</p>
+<p>其他一些常用快捷键:</p>
+<table>
+<thead>
+<tr>
+<th>按键</th>
+<th style="text-align:center">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Ctrl+d</code></td>
+<td style="text-align:center">键盘输入结束或退出终端</td>
+</tr>
+<tr>
+<td><code>Ctrl+s</code></td>
+<td style="text-align:center">暂停当前程序，暂停后按下任意键恢复运行</td>
+</tr>
+<tr>
+<td><code>Ctrl+z</code></td>
+<td style="text-align:center">将当前程序放到后台运行，恢复到前台为命令fg</td>
+</tr>
+<tr>
+<td><code>Ctrl+a</code></td>
+<td style="text-align:center">将光标移至输入行头，相当于Home键</td>
+</tr>
+<tr>
+<td><code>Ctrl+e</code></td>
+<td style="text-align:center">将光标移至输入行末，相当于End键</td>
+</tr>
+<tr>
+<td><code>Alt+Backspace</code></td>
+<td style="text-align:center">向前删除一个单词</td>
+</tr>
+<tr>
+<td><code>Shift+PgUp</code></td>
+<td style="text-align:center">将终端显示向上滚动</td>
+</tr>
+<tr>
+<td><code>Shift+PgDn</code></td>
+<td style="text-align:center">将终端显示向下滚动</td>
+</tr>
+</tbody>
+</table>
+<h2 id="历史输入命令"><a href="#历史输入命令" class="headerlink" title="历史输入命令"></a>历史输入命令</h2><p>很简单，使用键盘上的方向上键<code>↑</code>，恢复之前输入过的命令，一试便知。</p>
+<h2 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h2><p>通配符是一种特殊语句，主要有星号（*）和问号（?），用来对字符串进行模糊匹配（比如文件名、参数名）。当查找文件夹时，可以使用它来代替一个或多个真正字符；当不知道真正字符或者懒得输入完整名字时，常常使用通配符代替一个或多个真正字符。</p>
+<p>终端里面输入的通配符是由 Shell 处理的，不是由所涉及的命令语句处理的，它只会出现在命令的“参数值”里（它不能出现在命令名称里， 命令不记得，那就用<code>Tab</code>补全）。当 Shell 在“参数值”中遇到了通配符时，Shell 会将其当作路径或文件名在磁盘上搜寻可能的匹配：若符合要求的匹配存在，则进行代换（路径扩展）；否则就将该通配符作为一个普通字符传递给“命令”，然后再由命令进行处理。总之，通配符实际上就是一种 Shell 实现的路径扩展功能。在通配符被处理后， Shell 会先完成该命令的重组，然后继续处理重组后的命令，直至执行该命令。</p>
+<p>Shell 常用通配符：</p>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>*</code></td>
+<td style="text-align:center">匹配 0 或多个字符</td>
+</tr>
+<tr>
+<td><code>?</code></td>
+<td style="text-align:center">匹配任意一个字符</td>
+</tr>
+<tr>
+<td><code>[list]</code></td>
+<td style="text-align:center">匹配 list 中的任意单一字符</td>
+</tr>
+<tr>
+<td><code>[!list]</code></td>
+<td style="text-align:center">匹配 除list 中的任意单一字符以外的字符</td>
+</tr>
+<tr>
+<td><code>[c1-c2]</code></td>
+<td style="text-align:center">匹配 c1-c2 中的任意单一字符 如：[0-9] [a-z]</td>
+</tr>
+<tr>
+<td><code>{string1,string2,...}</code></td>
+<td style="text-align:center">匹配 string1 或 string2 (或更多)其一字符串</td>
+</tr>
+<tr>
+<td><code>{c1..c2}</code></td>
+<td style="text-align:center">匹配 c1-c2 中全部字符 如{1..10}</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://mutemeteor.com">Kyrene Wang</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://mutemeteor.com/2017/08/07/Linux/">http://mutemeteor.com/2017/08/07/Linux/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/Notes/">Notes</a>
+            
+              <a href="/tags/Linux/">Linux</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2017/08/10/Psychological-Clinic/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Psychological Clinic</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/2017/07/23/vim/">
+        <span class="next-text nav-default">Vim 学习笔记</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+      
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2018
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Kyrene Wang</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.6.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.6.0"></script>
+
+  </body>
+</html>
