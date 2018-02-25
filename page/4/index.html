@@ -1,603 +1,546 @@
 <!DOCTYPE html>
-<html lang="zh-Hans">
-  <head>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>Mute Meteor</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Mute Meteor">
+    <meta name="author" content="Kyrene Wang">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="Mute Meteor" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
     
-<meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
 
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
 
-<meta name="theme-color" content="#f8f5ec" />
-<meta name="msapplication-navbutton-color" content="#f8f5ec">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
-
-
-
-  <meta name="description" content="the coutrage to speak softly"/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <link rel="alternate" href="/default" title="Mute Meteor">
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.6.0" />
-
-
-
-<link rel="canonical" href="http://mutemeteor.com/page/4/"/>
-
-
-<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
-
-
-
-
-
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
 
   
-
-
-
-  <script id="baidu_push">
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
-
-
-
-
-
-
-
-
-
-    <title> Mute Meteor </title>
-  </head>
-
-  <body><div id="mobile-navbar" class="mobile-navbar">
-  <div class="mobile-header-logo">
-    <a href="/." class="logo">Mute Meteor</a>
-  </div>
-  <div class="mobile-navbar-icon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</div>
-
-<nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    
-      <a href="/">
-        <li class="mobile-menu-item">
-          
-          
-            首页
-          
-        </li>
-      </a>
-    
-      <a href="/archives/">
-        <li class="mobile-menu-item">
-          
-          
-            归档
-          
-        </li>
-      </a>
-    
-  </ul>
-</nav>
-
-    <div class="container" id="mobile-panel">
-      <header id="header" class="header"><div class="logo-wrapper">
-  <a href="/." class="logo">Mute Meteor</a>
-</div>
-
-<nav class="site-navbar">
   
-    <ul id="menu" class="menu">
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/">
-            
-            
-              首页
-            
-          </a>
-        </li>
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/archives/">
-            
-            
-              归档
-            
-          </a>
-        </li>
-      
-    </ul>
   
-</nav>
 
-      </header>
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
 
-      <main id="main" class="main">
-        <div class="content-wrapper">
-          <div id="content" class="content">
+<!--
+<body class="home-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
             
-  <section id="posts" class="posts">
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/Tech/" class="animsition-link">Tech<small>(30)</small></a></li>
+				    
+				    <li><a href="/categories/子不语/" class="animsition-link">子不语<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/旅人说/" class="animsition-link">旅人说<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/读书记/" class="animsition-link">读书记<small>(6)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
     
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">Mute Meteor</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      <!-- ============================ Hero Image =========================== -->
+
+<section id="hero" class="scrollme">
+    <div class="container-fluid element-img" style="background: url(/img/bg_img.jpg) no-repeat center center fixed;background-size: cover">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
+                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
+                    <div>
+                        
+                        <h2>YOU'VE MADE A <span>BRAVE</span> DECISION, WELCOME.</h2>
+                        <p></p>
+                        
+                        <h2></h2>
+                        <p>每一个不曾起舞的日子都是对生命的辜负。</p>
+                        
+
+                    </div>
+                </div>
+            </div>
+            <!-- // .col-md-12 -->
+        </div>
+        <div class="herofade beige-dk"></div>
+    </div>
+</section>
+
+<!-- Height spacing helper -->
+<div class="heightblock"></div>
+<!-- // End height spacing helper -->
+
+<!-- ============================ END Hero Image =========================== -->
+<!-- ============================ Content =========================== -->
+
+<section id="intro">
+    <div class="container">
         
-          <a class="post-link" href="/2017/09/10/java-note/">Java 学习笔记（一）</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2017/09/10/java-note/">Java 学习笔记（一）</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2017-09-10T10:32:05.000Z" itemprop="datePublished">
           2017-09-10
-        </span>
-        
-          <div class="post-category">
-            
-              <a href="/categories/Tech/">Tech</a>
-            
-          </div>
-        
-        
-      </div>
-    </header>
-
+      </time>
     
     
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <h1 id="HelloWorld-认识Java"><a href="#HelloWorld-认识Java" class="headerlink" title="HelloWorld 认识Java"></a>HelloWorld 认识Java</h1><h2 id="利用文本文件编辑-Java-程序"><a href="#利用文本文件编辑-Java-程序" class="headerlink" title="利用文本文件编辑 Java 程序"></a>利用文本文件编辑 Java 程序</h2><p>开发一个Java程序，主要有三步。</p>
+    | 
+    <a href='/tags/Notes/'>Notes</a>,
+    
+    <a href='/tags/Java/'>Java</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p class="index-excerpt">
+                      
+                        <h1 id="HelloWorld-认识Java"><a href="#HelloWorld-认识Java" class="headerlink" title="HelloWorld 认识Java"></a>HelloWorld 认识Java</h1><h2 id="利用文本文件编辑-Java-程序"><a href="#利用文本文件编辑-Java-程序" class="headerlink" title="利用文本文件编辑 Java 程序"></a>利用文本文件编辑 Java 程序</h2><p>开发一个Java程序，主要有三步。</p>
 <p>第一步，使用文本文件去编写Java的源代码文件，Java的源代码文件以<code>.java</code>结尾，源代码文件默认是不能被机器执行的。</p>
 <p>第二步，要使用编译器（也就是javac命令），对源代码文件进行编译的操作。把它编译成字节码文件，字节码文件是以<code>.class</code>结尾。它与平台无关，也就是说无论是windows还是linux，字节码文件都是这样的一个文件，这跟系统没有关系。实际上Java的跨平台就是因为字节码文件的存在。</p>
 <p>第三步，就是解释器。针对不同的平台，根据相应的解释器，去解释运行字节码文件（这里使用java命令），最终我们可以看到程序运行出的结果。</p>
 <p><img src="http://ow2f9s8zh.bkt.clouddn.com/2017-09-10%2021-45-46.png" alt="java1"></p>
-          <div class="read-more">
-            <a href="/2017/09/10/java-note/" class="read-more-link">阅读更多</a>
-          </div>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2017/09/10/java-note/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/08/10/Psychological-Clinic/">Psychological Clinic</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2017/08/10/Psychological-Clinic/">Psychological Clinic</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2017-08-10T09:54:01.000Z" itemprop="datePublished">
           2017-08-10
-        </span>
-        
-          <div class="post-category">
-            
-              <a href="/categories/子不语/">子不语</a>
-            
-          </div>
-        
-        
-      </div>
-    </header>
-
+      </time>
     
     
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <blockquote>
+    | 
+    <a href='/tags/Story/'>Story</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p class="index-excerpt">
+                      
+                        <blockquote>
 <p>This is a little detective story written in the writing practice course. </p>
 </blockquote>
-          <div class="read-more">
-            <a href="/2017/08/10/Psychological-Clinic/" class="read-more-link">阅读更多</a>
-          </div>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2017/08/10/Psychological-Clinic/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/08/07/Linux/">Linux 学习笔记</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2017/08/07/Linux/">Linux 学习笔记</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2017-08-07T11:39:31.000Z" itemprop="datePublished">
           2017-08-07
-        </span>
-        
-          <div class="post-category">
-            
-              <a href="/categories/Tech/">Tech</a>
-            
-          </div>
-        
-        
-      </div>
-    </header>
-
+      </time>
     
     
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <h1 id="linux终端"><a href="#linux终端" class="headerlink" title="linux终端"></a>linux终端</h1><h2 id="终端的概念"><a href="#终端的概念" class="headerlink" title="终端的概念"></a>终端的概念</h2><p>通常我们在使用 Linux 时，并不是直接与系统打交道，而是通过一个叫做 Shell 的中间程序来完成的，在图形界面下为了实现让我们在一个窗口中完成用户输入和显示输出，Linux 系统还提供了一个叫做终端模拟器的程序（Terminal），下面是几个比较常见的终端模拟器： gnome-terminal，kconsole，xterm，rxvt，kvt，nxterm 和 eterm 。</p>
-          <div class="read-more">
-            <a href="/2017/08/07/Linux/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
+    | 
+    <a href='/tags/Notes/'>Notes</a>,
     
-
+    <a href='/tags/Linux/'>Linux</a>
     
-
-  </article>
-
     
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p class="index-excerpt">
+                      
+                        <h1 id="linux终端"><a href="#linux终端" class="headerlink" title="linux终端"></a>linux终端</h1><h2 id="终端的概念"><a href="#终端的概念" class="headerlink" title="终端的概念"></a>终端的概念</h2><p>通常我们在使用 Linux 时，并不是直接与系统打交道，而是通过一个叫做 Shell 的中间程序来完成的，在图形界面下为了实现让我们在一个窗口中完成用户输入和显示输出，Linux 系统还提供了一个叫做终端模拟器的程序（Terminal），下面是几个比较常见的终端模拟器： gnome-terminal，kconsole，xterm，rxvt，kvt，nxterm 和 eterm 。</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2017/08/07/Linux/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
-          <a class="post-link" href="/2017/07/23/vim/">Vim 学习笔记</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2017/07/23/vim/">Vim 学习笔记</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2017-07-23T10:41:22.000Z" itemprop="datePublished">
           2017-07-23
-        </span>
-        
-          <div class="post-category">
-            
-              <a href="/categories/Tech/">Tech</a>
-            
-          </div>
-        
-        
-      </div>
-    </header>
-
+      </time>
     
     
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p>从vi演生出来的Vim具有多种模式，这种独特的设计容易使初学者产生混淆。几乎所有的编辑器都会有插入和执行命令两种模式，并且大多数的编辑器使用了与Vim截然不同的方式：命令目录（鼠标或者键盘驱动），组合键（通常通过control键（CTRL）和alt键（ALT）组成）或者鼠标输入。Vim和vi一样，仅仅通过键盘来在这些模式之中切换。这就使得Vim可以不用进行菜单或者鼠标操作，并且最小化组合键的操作。对文字录入员或者程序员可以大大增强速度和效率。</p>
-          <div class="read-more">
-            <a href="/2017/07/23/vim/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
+    | 
+    <a href='/tags/Notes/'>Notes</a>,
     
-
+    <a href='/tags/Vim/'>Vim</a>
     
-
-  </article>
-
     
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p class="index-excerpt">
+                      
+                        <p>从vi演生出来的Vim具有多种模式，这种独特的设计容易使初学者产生混淆。几乎所有的编辑器都会有插入和执行命令两种模式，并且大多数的编辑器使用了与Vim截然不同的方式：命令目录（鼠标或者键盘驱动），组合键（通常通过control键（CTRL）和alt键（ALT）组成）或者鼠标输入。Vim和vi一样，仅仅通过键盘来在这些模式之中切换。这就使得Vim可以不用进行菜单或者鼠标操作，并且最小化组合键的操作。对文字录入员或者程序员可以大大增强速度和效率。</p>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2017/07/23/vim/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
-          <a class="post-link" href="/2017/07/20/MySQL2/">MySQL 学习笔记之进阶篇</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2017/07/20/MySQL2/">MySQL 学习笔记之进阶篇</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2017-07-20T13:43:24.000Z" itemprop="datePublished">
           2017-07-20
-        </span>
-        
-          <div class="post-category">
-            
-              <a href="/categories/Tech/">Tech</a>
-            
-          </div>
-        
-        
-      </div>
-    </header>
-
+      </time>
     
     
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <h1 id="进阶篇-MySQL-服务安装及命令使用"><a href="#进阶篇-MySQL-服务安装及命令使用" class="headerlink" title="进阶篇 - MySQL 服务安装及命令使用"></a>进阶篇 - MySQL 服务安装及命令使用</h1><h1 id="进阶篇-MySQL-操作详解"><a href="#进阶篇-MySQL-操作详解" class="headerlink" title="进阶篇 - MySQL 操作详解"></a>进阶篇 - MySQL 操作详解</h1><h1 id="进阶篇-MySQL-常用查询"><a href="#进阶篇-MySQL-常用查询" class="headerlink" title="进阶篇 - MySQL 常用查询"></a>进阶篇 - MySQL 常用查询</h1><h1 id="进阶篇-MySQL-语言结构"><a href="#进阶篇-MySQL-语言结构" class="headerlink" title="进阶篇 - MySQL 语言结构"></a>进阶篇 - MySQL 语言结构</h1><h1 id="进阶篇-MySQL-数据类型"><a href="#进阶篇-MySQL-数据类型" class="headerlink" title="进阶篇 - MySQL 数据类型"></a>进阶篇 - MySQL 数据类型</h1><h1 id="进阶篇-MySQL-函数和操作符"><a href="#进阶篇-MySQL-函数和操作符" class="headerlink" title="进阶篇 - MySQL 函数和操作符"></a>进阶篇 - MySQL 函数和操作符</h1><h1 id="进阶篇-SQL-语句语法详解"><a href="#进阶篇-SQL-语句语法详解" class="headerlink" title="进阶篇 - SQL 语句语法详解"></a>进阶篇 - SQL 语句语法详解</h1><h1 id="进阶篇-MySQL-触发器"><a href="#进阶篇-MySQL-触发器" class="headerlink" title="进阶篇 - MySQL 触发器"></a>进阶篇 - MySQL 触发器</h1><h1 id="进阶篇-MySQL-视图"><a href="#进阶篇-MySQL-视图" class="headerlink" title="进阶篇 - MySQL 视图"></a>进阶篇 - MySQL 视图</h1><h1 id="进阶篇-MySQL-存储过程和函数"><a href="#进阶篇-MySQL-存储过程和函数" class="headerlink" title="进阶篇 - MySQL 存储过程和函数"></a>进阶篇 - MySQL 存储过程和函数</h1><h1 id="进阶篇-MySQL-数据库管理"><a href="#进阶篇-MySQL-数据库管理" class="headerlink" title="进阶篇 - MySQL 数据库管理"></a>进阶篇 - MySQL 数据库管理</h1>
-        
-      
-    </div>
-
+    | 
+    <a href='/tags/Notes/'>Notes</a>,
     
-
+    <a href='/tags/MySQL/'>MySQL</a>
     
-
-  </article>
-
     
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p class="index-excerpt">
+                      
+                        进阶篇 - MySQL 服务安装及命令使用进阶篇 - MySQL 操作详解进阶篇 - MySQL 常用查询进阶篇 - MySQL 语言结构进阶篇 - MySQL 数据类型进阶篇 - MySQL 函数和操作符进阶篇 - SQL 语句语法详解进阶篇 - MySQL 触发器进阶篇 - MySQL 视图进阶篇 - MySQL 存储过程和函数进阶篇 - MySQL 数据库管理
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2017/07/20/MySQL2/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
-          <a class="post-link" href="/2017/03/31/MySQL1/">MySQL 学习笔记之基础篇</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2017/03/31/MySQL1/">MySQL 学习笔记之基础篇</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2017-03-31T11:32:24.000Z" itemprop="datePublished">
           2017-03-31
-        </span>
-        
-          <div class="post-category">
-            
-              <a href="/categories/Tech/">Tech</a>
-            
-          </div>
-        
-        
-      </div>
-    </header>
-
+      </time>
     
     
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <h1 id="基础篇-SQL-介绍"><a href="#基础篇-SQL-介绍" class="headerlink" title="基础篇 - SQL 介绍"></a>基础篇 - SQL 介绍</h1><h2 id="数据库和-SQL-概念"><a href="#数据库和-SQL-概念" class="headerlink" title="数据库和 SQL 概念"></a>数据库和 SQL 概念</h2><p>数据库（Database）是按照数据结构来组织、存储和管理数据的仓库，它的产生距今已有六十多年。</p>
+    | 
+    <a href='/tags/Notes/'>Notes</a>,
+    
+    <a href='/tags/MySQL/'>MySQL</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p class="index-excerpt">
+                      
+                        <h1 id="基础篇-SQL-介绍"><a href="#基础篇-SQL-介绍" class="headerlink" title="基础篇 - SQL 介绍"></a>基础篇 - SQL 介绍</h1><h2 id="数据库和-SQL-概念"><a href="#数据库和-SQL-概念" class="headerlink" title="数据库和 SQL 概念"></a>数据库和 SQL 概念</h2><p>数据库（Database）是按照数据结构来组织、存储和管理数据的仓库，它的产生距今已有六十多年。</p>
 <p>结构化查询语言(Structured Query Language)简称 SQL，是上世纪 70 年代由 IBM 公司开发，用于对数据库进行操作的语言。SQL 是一种数据库查询和程序设计语言，用于存取数据以及查询、更新和管理关系数据库系统，同时也是数据库脚本文件的扩展名。</p>
 <h2 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h2><p>MySQL 是一个 DBMS（数据库管理系统），由瑞典 MySQLAB 公司开发，目前属于 Oracle 公司，MySQL 是最流行的关系型数据库管理系统。MySQL 是一个 DBMS（数据库管理系统），由瑞典 MySQLAB 公司开发，目前属于 Oracle 公司，MySQL 是最流行的关系型数据库管理系统<br>
-          <div class="read-more">
-            <a href="/2017/03/31/MySQL1/" class="read-more-link">阅读更多</a>
-          </div>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2017/03/31/MySQL1/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/02/03/思维导图使用手册/">《思维导图使用手册》</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2017/02/03/思维导图使用手册/">《思维导图使用手册》</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2017-02-03T12:42:08.000Z" itemprop="datePublished">
           2017-02-03
-        </span>
-        
-          <div class="post-category">
-            
-              <a href="/categories/读书记/">读书记</a>
-            
-          </div>
-        
-        
-      </div>
-    </header>
-
+      </time>
     
     
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p>寒假在家读了几本书，整理了几个导图。</p>
+    | 
+    <a href='/tags/Mind-Map/'>Mind Map</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p class="index-excerpt">
+                      
+                        <p>寒假在家读了几本书，整理了几个导图。</p>
 <p>东尼·博赞的这本书可以说是思维导图制作的入门书，内容不多，算上做图的时间，大概读了两个小时左右。总得来说讲的还是比较浅，加读《如何阅读一本书》效果可能会更好。</p>
 <p><a href="http://ol4v2310i.bkt.clouddn.com/use%20your%20head.svg">《思维导图使用手册》 mind map</a><br>
-          <div class="read-more">
-            <a href="/2017/02/03/思维导图使用手册/" class="read-more-link">阅读更多</a>
-          </div>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2017/02/03/思维导图使用手册/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2016/11/19/大唐叛逆记/">大唐叛逆记</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2016/11/19/大唐叛逆记/">大唐叛逆记</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2016-11-19T12:00:00.000Z" itemprop="datePublished">
           2016-11-19
-        </span>
-        
-          <div class="post-category">
-            
-              <a href="/categories/旅人说/">旅人说</a>
-            
-          </div>
-        
-        
-      </div>
-    </header>
-
+      </time>
     
     
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <blockquote>
+    | 
+    <a href='/tags/旅行/'>旅行</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p class="index-excerpt">
+                      
+                        <blockquote>
 <p>我喉咙干燥，也不愿发声，听天由命<br>  我来寻找的是高贵的朋友，锦绣的前程<br>                    ——木心《伪所罗门书》</p>
 </blockquote>
 <h1 id="小絮叨"><a href="#小絮叨" class="headerlink" title="小絮叨"></a><strong>小絮叨</strong></h1><p>懒癌晚期的某人终于在11月下旬敲下了十一游记的第一个字。所幸时间隔得也不算太久，希望记忆力奇差的我没有忘光其中的细节。</p>
-          <div class="read-more">
-            <a href="/2016/11/19/大唐叛逆记/" class="read-more-link">阅读更多</a>
-          </div>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2016/11/19/大唐叛逆记/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2016/11/02/春天责备/">《春天责备》</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2016/11/02/春天责备/">《春天责备》</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2016-11-02T13:13:46.000Z" itemprop="datePublished">
           2016-11-02
-        </span>
-        
-          <div class="post-category">
-            
-              <a href="/categories/读书记/">读书记</a>
-            
-          </div>
-        
-        
-      </div>
-    </header>
-
+      </time>
     
     
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p><a href="http://oevzkmimu.bkt.clouddn.com/%E6%98%A5%E5%A4%A9%E8%B4%A3%E5%A4%87.jpg"><br>    <img src="http://oevzkmimu.bkt.clouddn.com/%E6%98%A5%E5%A4%A9%E8%B4%A3%E5%A4%87.jpg" alt="春天责备">
+    | 
+    <a href='/tags/诗/'>诗</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p class="index-excerpt">
+                      
+                        <p><a href="http://oevzkmimu.bkt.clouddn.com/%E6%98%A5%E5%A4%A9%E8%B4%A3%E5%A4%87.jpg"><br>    <img src="http://oevzkmimu.bkt.clouddn.com/%E6%98%A5%E5%A4%A9%E8%B4%A3%E5%A4%87.jpg" alt="春天责备">
 </a></p>
 <ul>
 <li><p>马齿咀嚼青草，星星在黑暗中，咀嚼亡魂。</p>
@@ -605,193 +548,170 @@
 <li><p>还没到秋天<br>街就空了<br>街隔着玻璃窗伸手乞讨<br>他想要一个来自远方的脏孩子<br>我举着枪 准星巨大如天</p>
 </li>
 <li><p>星光下 一千个失眠者列队静默<br>今夜，没有爱情<br>我怜悯老迈的天空</p>
-          <div class="read-more">
-            <a href="/2016/11/02/春天责备/" class="read-more-link">阅读更多</a>
-          </div>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2016/11/02/春天责备/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2016/10/12/刨个坑，埋坛酒/">刨个坑，埋坛酒</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2016/10/12/刨个坑，埋坛酒/">刨个坑，埋坛酒</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2016-10-12T13:21:57.000Z" itemprop="datePublished">
           2016-10-12
-        </span>
-        
-          <div class="post-category">
-            
-              <a href="/categories/子不语/">子不语</a>
-            
-          </div>
-        
-        
-      </div>
-    </header>
-
+      </time>
     
     
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p><img src="http://oevzkmimu.bkt.clouddn.com/paogegengmaitanjiu.png" alt="刨个坑，埋坛酒"></p>
+    | 
+    <a href='/tags/随笔/'>随笔</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p class="index-excerpt">
+                      
+                        <p><img src="http://oevzkmimu.bkt.clouddn.com/paogegengmaitanjiu.png" alt="刨个坑，埋坛酒"></p>
 <blockquote>
 <p>“Life is like spring dream which vanishes without a trace.” I should be ungrateful to the gods if I did not try to put my life down on record.</p>
 </blockquote>
-          <div class="read-more">
-            <a href="/2016/10/12/刨个坑，埋坛酒/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    
-      <a class="prev" href="/page/3/">
-        <i class="iconfont icon-left"></i>
-        <span class="prev-text">上一页</span>
-      </a>
-    
-    
-      <a class="next" href="/page/5/">
-        <span class="next-text">下一页</span>
-        <i class="iconfont icon-right"></i>
-      </a>
-    
-  </nav>
-
-
-          </div>
-          
-
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2016/10/12/刨个坑，埋坛酒/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
         </div>
-      </main>
-
-      <footer id="footer" class="footer">
-
-  <div class="social-links">
-    
-      
         
-          <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
-        
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-    
-    
-      
-      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
-    
-  </div>
-
-
-<div class="copyright">
-  <span class="power-by">
-    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    主题 - 
-    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
-  </span>
-
-  <span class="copyright-year">
-    
-    &copy; 
-     
-      2015 - 
-    
-    2018
-
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">Kyrene Wang</span>
-  </span>
-</div>
-
-      </footer>
-
-      <div class="back-to-top" id="back-to-top">
-        <i class="iconfont icon-up"></i>
-      </div>
+        <nav class="pagination" role="pagination">
+          <a class="pull-left" href="/page/3/">← Newer Posts</a>
+          <a class="pull-right" href="/page/5/">Older Posts →</a>
+        </nav>
     </div>
+</section>
+<section id="statement">
+    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
+        <div class="row">
+            <p>虽然还没想好写点什么，但是总觉得这里放句话比较和谐。</p>
+        </div>
+    </div>
+</section>
+<!-- ============================ END Content =========================== -->
 
-    
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By Kyrene Wang. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
 
 
-    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
 
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
 
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
 
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      (function(){
+        console.log('font');
+        var getCss = function(path) {
+          var head = document.getElementsByTagName('head')[0];
+          link = document.createElement('link');
+          link.href = path;
+          link.rel = 'stylesheet';
+          link.type = 'text/css';
+          head.appendChild(link);
+        };
+        getCss('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+        getCss('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+      })();
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
 
-  
-    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
-  
-
-  
-    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
-  
-
-  
-
-
-    <script type="text/javascript" src="/js/src/even.js?v=2.6.0"></script>
-<script type="text/javascript" src="/js/src/bootstrap.js?v=2.6.0"></script>
-
-  </body>
+</body>
 </html>
