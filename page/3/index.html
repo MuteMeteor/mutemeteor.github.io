@@ -1,9 +1,989 @@
-extends partial/layout
-block content
-	.autopagerize_page_element: .content
-		- page.posts.each(function (item) {
-			include mixins
-			+make_post(item, false)
-		- })
-		include mixins
-		+make_pager(__('prev'), __('next'))
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <link rel="stylesheet" href="/style/style.css">
+<script>
+    var NlviConfig = {
+        title: "Mute Meteor",
+        author: "Kyrene Wang",
+        theme: "banderole",
+        lightbox: true,
+        animate: true,
+        baseUrl: "/",
+        search: true
+    }
+</script>
+
+
+
+    <link rel="stylesheet" href="/script/lib/lightbox/css/lightbox.min.css">
+
+
+
+
+    <link rel="stylesheet" href="/syuanpi/syuanpi.min.css">
+
+
+
+
+
+
+
+
+
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="browsermode" content="application">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Mute Meteor">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="msapplication-navbutton-color" content="#666666">
+<meta name= "format-detection" content="telephone=no" />
+<meta name="keywords" content="nlvi, Nlvi" />
+
+
+
+  <meta name="description" content="the coutrage to speak softly">
+
+
+
+  <title>
+  Mute Meteor
+  
+</title>
+</head>
+<body>
+  <div class="progress">
+  <div class="progress-inner"></div>
+</div>
+  
+  
+    <div class="tagcloud-mask"></div>  
+<div class="tagcloud" id="tagcloud">
+  <div class="tagcloud-inner">
+    <a href="/tags/Algorithm/" style="font-size: 14px;">Algorithm</a> <a href="/tags/DataStructure/" style="font-size: 14px;">DataStructure</a> <a href="/tags/HTTP/" style="font-size: 14px;">HTTP</a> <a href="/tags/Hexo/" style="font-size: 14px;">Hexo</a> <a href="/tags/Java/" style="font-size: 14px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 14px;">JavaScript</a> <a href="/tags/LinkedList/" style="font-size: 14px;">LinkedList</a> <a href="/tags/Linux/" style="font-size: 14px;">Linux</a> <a href="/tags/Mind-Map/" style="font-size: 14px;">Mind Map</a> <a href="/tags/MongoDB/" style="font-size: 14px;">MongoDB</a> <a href="/tags/MySQL/" style="font-size: 14px;">MySQL</a> <a href="/tags/NoSQL/" style="font-size: 14px;">NoSQL</a> <a href="/tags/Node-js/" style="font-size: 14px;">Node.js</a> <a href="/tags/Notes/" style="font-size: 14px;">Notes</a> <a href="/tags/Python/" style="font-size: 14px;">Python</a> <a href="/tags/Redis/" style="font-size: 14px;">Redis</a> <a href="/tags/Sort/" style="font-size: 14px;">Sort</a> <a href="/tags/Story/" style="font-size: 14px;">Story</a> <a href="/tags/String/" style="font-size: 14px;">String</a> <a href="/tags/Vim/" style="font-size: 14px;">Vim</a> <a href="/tags/Windows/" style="font-size: 14px;">Windows</a> <a href="/tags/binarytree/" style="font-size: 14px;">binarytree</a> <a href="/tags/network/" style="font-size: 14px;">network</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/selenium/" style="font-size: 14px;">selenium</a> <a href="/tags/server/" style="font-size: 14px;">server</a> <a href="/tags/tcp/" style="font-size: 14px;">tcp</a> <a href="/tags/udp/" style="font-size: 14px;">udp</a> <a href="/tags/web/" style="font-size: 14px;">web</a> <a href="/tags/书信/" style="font-size: 14px;">书信</a> <a href="/tags/写作/" style="font-size: 14px;">写作</a> <a href="/tags/天文/" style="font-size: 14px;">天文</a> <a href="/tags/思考/" style="font-size: 14px;">思考</a> <a href="/tags/旅行/" style="font-size: 14px;">旅行</a> <a href="/tags/爬虫/" style="font-size: 14px;">爬虫</a> <a href="/tags/科普/" style="font-size: 14px;">科普</a> <a href="/tags/诗/" style="font-size: 14px;">诗</a> <a href="/tags/软件工程/" style="font-size: 14px;">软件工程</a> <a href="/tags/随笔/" style="font-size: 14px;">随笔</a>
+  </div>
+</div>  
+  
+
+  <div class="container">
+
+    <header class="header" id="header">
+  <div class="header-wrapper">
+    <div class="logo">
+  <div class="logo-inner syuanpi tvIn">
+    <span><a href="/">Mute Meteor</a></span>
+    
+  </div>
+</div>
+    <nav class="main-nav">
+        
+  <ul class="main-nav-list syuanpi tvIn">
+  
+    <li class="menu-item">
+      <a href="javascript:;" id="search">
+        <span>Search</span>
+        
+          <span class="menu-item-label">search</span>
+        
+      </a>
+    </li>
+  
+  
+    
+      
+    
+    <li class="menu-item">
+      <a href="/" id="article">
+        <span class="base-name">Article</span>
+        
+          <span class="menu-item-label">article</span>
+        
+      </a>
+    </li>  
+  
+    
+      
+    
+    <li class="menu-item">
+      <a href="/archives" id="archives">
+        <span class="base-name">Archives</span>
+        
+          <span class="menu-item-label">archives</span>
+        
+      </a>
+    </li>  
+  
+    
+      
+    
+    <li class="menu-item">
+      <a href="javascript:;" id="tags">
+        <span class="base-name">Tags</span>
+        
+          <span class="menu-item-label">tags</span>
+        
+      </a>
+    </li>  
+  
+    
+      
+    
+    <li class="menu-item">
+      <a href="/about" id="about">
+        <span class="base-name">About</span>
+        
+          <span class="menu-item-label">about</span>
+        
+      </a>
+    </li>  
+  
+  </ul>
+  
+</nav>
+    
+    
+  </div>
+</header>
+<div class="mobile-header">
+  <div class="mobile-header-body">
+    <div class="mobile-header-list">
+      
+        
+            <div class="mobile-nav-item">
+                <a href="/">
+                    <span>Article</span>
+                    
+                        <span class="menu-item-label">article</span>
+                    
+                </a>
+            </div>
+        
+      
+        
+            <div class="mobile-nav-item">
+                <a href="/archives">
+                    <span>Archives</span>
+                    
+                        <span class="menu-item-label">archives</span>
+                    
+                </a>
+            </div>
+        
+      
+        
+          <div class="mobile-nav-item inner-cloud">
+            <div class="mobile-nav-tag">
+              <a href="javascript:;" id="mobile-tags">
+                <span>Tags</span>
+                
+                    <span class="menu-item-label">tags</span>
+                
+              </a>
+            </div>
+            <div class="mobile-nav-tagcloud">
+              <div class="mobile-tagcloud-inner">
+                <a href="/tags/Algorithm/" style="font-size: 14px;">Algorithm</a> <a href="/tags/DataStructure/" style="font-size: 14px;">DataStructure</a> <a href="/tags/HTTP/" style="font-size: 14px;">HTTP</a> <a href="/tags/Hexo/" style="font-size: 14px;">Hexo</a> <a href="/tags/Java/" style="font-size: 14px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 14px;">JavaScript</a> <a href="/tags/LinkedList/" style="font-size: 14px;">LinkedList</a> <a href="/tags/Linux/" style="font-size: 14px;">Linux</a> <a href="/tags/Mind-Map/" style="font-size: 14px;">Mind Map</a> <a href="/tags/MongoDB/" style="font-size: 14px;">MongoDB</a> <a href="/tags/MySQL/" style="font-size: 14px;">MySQL</a> <a href="/tags/NoSQL/" style="font-size: 14px;">NoSQL</a> <a href="/tags/Node-js/" style="font-size: 14px;">Node.js</a> <a href="/tags/Notes/" style="font-size: 14px;">Notes</a> <a href="/tags/Python/" style="font-size: 14px;">Python</a> <a href="/tags/Redis/" style="font-size: 14px;">Redis</a> <a href="/tags/Sort/" style="font-size: 14px;">Sort</a> <a href="/tags/Story/" style="font-size: 14px;">Story</a> <a href="/tags/String/" style="font-size: 14px;">String</a> <a href="/tags/Vim/" style="font-size: 14px;">Vim</a> <a href="/tags/Windows/" style="font-size: 14px;">Windows</a> <a href="/tags/binarytree/" style="font-size: 14px;">binarytree</a> <a href="/tags/network/" style="font-size: 14px;">network</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/selenium/" style="font-size: 14px;">selenium</a> <a href="/tags/server/" style="font-size: 14px;">server</a> <a href="/tags/tcp/" style="font-size: 14px;">tcp</a> <a href="/tags/udp/" style="font-size: 14px;">udp</a> <a href="/tags/web/" style="font-size: 14px;">web</a> <a href="/tags/书信/" style="font-size: 14px;">书信</a> <a href="/tags/写作/" style="font-size: 14px;">写作</a> <a href="/tags/天文/" style="font-size: 14px;">天文</a> <a href="/tags/思考/" style="font-size: 14px;">思考</a> <a href="/tags/旅行/" style="font-size: 14px;">旅行</a> <a href="/tags/爬虫/" style="font-size: 14px;">爬虫</a> <a href="/tags/科普/" style="font-size: 14px;">科普</a> <a href="/tags/诗/" style="font-size: 14px;">诗</a> <a href="/tags/软件工程/" style="font-size: 14px;">软件工程</a> <a href="/tags/随笔/" style="font-size: 14px;">随笔</a>
+              </div>
+            </div>
+          </div>
+        
+      
+        
+            <div class="mobile-nav-item">
+                <a href="/about">
+                    <span>About</span>
+                    
+                        <span class="menu-item-label">about</span>
+                    
+                </a>
+            </div>
+        
+      
+    </div>
+  </div>
+  <div class="mobile-header-nav">
+    <div class="mobile-header-item" id="mobile-left">
+      <div class="header-menu-item">
+        <span class="header-menu-line"></span>
+      </div>
+    </div>
+    <h1 class="mobile-header-title">
+      <a href="/">Mute Meteor</a>
+    </h1>
+    <div class="mobile-header-item"></div>
+  </div>
+</div>
+    <div class="container-inner">
+      <main class="main" id="main">
+        <div class="main-wrapper">
+          
+  
+
+<section class="posts">
+  
+    
+  <article class="
+  post
+  
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi riseIn-light back-1">
+        <div class="post-time-wrapper">
+          <span>2017-11-08</span>
+          
+            
+              <span class="post-category"><a href="/categories/Tech/">Tech</a></span>
+            
+          
+          
+        </div>
+      </div>
+      <h1 class="post-title syuanpi riseIn-light back-2">
+        
+          <a href="/2017/11/08/Python3-note2/">python3 学习笔记（二）</a>
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi riseIn-light back-3">
+      
+        
+          <ul>
+<li><a href="http://mutemeteor.com/2017/10/28/Python3-note/">python3 学习笔记（一）</a></li>
+</ul>
+<hr>
+<h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><p>双引号或者单引号中的数据，就是字符串。</p>
+<h2 id="字符串输出"><a href="#字符串输出" class="headerlink" title="字符串输出"></a>字符串输出</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">name = <span class="string">'KyreneWang'</span></div><div class="line">position = <span class="string">'Beijing'</span></div><div class="line">print(<span class="string">'--------------------------------------------------'</span>)</div><div class="line">print(<span class="string">"Name：%s"</span>%name)</div><div class="line">print(<span class="string">"position：%s"</span>%position)</div><div class="line">print(<span class="string">'--------------------------------------------------'</span>)</div></pre></td></tr></table></figure>
+<h2 id="字符串输入"><a href="#字符串输入" class="headerlink" title="字符串输入"></a>字符串输入</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment"># coding:utf8</span></div><div class="line">userName = input(<span class="string">'请输入用户名:'</span>)</div><div class="line">print(<span class="string">"用户名为：%s"</span>%userName)</div><div class="line">password = input(<span class="string">'请输入密码:'</span>)</div><div class="line">print(<span class="string">"密码为：%s"</span>%password)</div></pre></td></tr></table></figure>
+        
+      
+    
+      <p class="content-link">
+        <a href="/2017/11/08/Python3-note2/#more">
+          <span>Read More...</span>
+        </a>
+      </p>
+    
+    </div>
+    
+  </article>
+  
+   
+    
+  
+
+  
+    
+  <article class="
+  post
+  
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi riseIn-light back-1">
+        <div class="post-time-wrapper">
+          <span>2017-10-28</span>
+          
+            
+              <span class="post-category"><a href="/categories/Tech/">Tech</a></span>
+            
+          
+          
+        </div>
+      </div>
+      <h1 class="post-title syuanpi riseIn-light back-2">
+        
+          <a href="/2017/10/28/Python3-note/">Python3 学习笔记（一）</a>
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi riseIn-light back-3">
+      
+        
+          <h1 id="认识-Python"><a href="#认识-Python" class="headerlink" title="认识 Python"></a>认识 Python</h1><ul>
+<li>Python的发音与拼写 [ˈpaɪθən]</li>
+<li>Python的意思是蟒蛇，源于作者喜欢的一部电视剧 (C呢？)</li>
+<li>Python的作者是Guido van Rossum（龟叔）</li>
+<li>Python是龟叔在1989年圣诞节期间，为了打发无聊的圣诞节而用C编写的一个编程语言</li>
+<li>Python正式诞生于1991年</li>
+<li>Python的解释器如今有多个语言实现，我们常用的是CPython（官方版本的C语言实现），其他还有Jython（可以运行在Java平台）、IronPython（可以运行在.NET和Mono平台）、PyPy（Python实现的，支持JIT即时编译）</li>
+<li>Python目前有两个版本，Python2和Python3，最新版分别为2.7.12和3.5.2，现阶段大部分公司用的是Python2
+        
+      
+    
+      <p class="content-link">
+        <a href="/2017/10/28/Python3-note/#more">
+          <span>Read More...</span>
+        </a>
+      </p>
+    
+    </div>
+    
+  </article>
+  
+   
+    
+  
+
+  
+    
+  <article class="
+  post
+  
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi riseIn-light back-1">
+        <div class="post-time-wrapper">
+          <span>2017-10-05</span>
+          
+            
+              <span class="post-category"><a href="/categories/读书记/">读书记</a></span>
+            
+          
+          
+        </div>
+      </div>
+      <h1 class="post-title syuanpi riseIn-light back-2">
+        
+          <a href="/2017/10/05/极简宇宙史/">《极简宇宙史》</a>
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi riseIn-light back-3">
+      
+        
+          <p><a href="http://ogzkngv09.bkt.clouddn.com/universe.JPG"><img src="http://ogzkngv09.bkt.clouddn.com/universe.JPG" alt="极简宇宙史"></a></p>
+<blockquote>
+<p>读这本书时一直在随着作者的描述去想象，却仍然无法在脑海里描绘出宇宙之磅礴之诡谲之绮丽之深邃。唯有感叹宇宙之浩瀚，人类之渺小。我们看到的太阳，永远是8分20秒之前的太阳，永远不可能是它当下的样子，甚至不在我们看到它在的地方，因为它已经绕着银河系中心旋转的轨道上移动了117,300公里。</p>
+</blockquote>
+<ul>
+<li>大概四十亿年前，我们年轻的行星与另一颗行星撞在一起，后者大概有火星那么大，这次撞击从地球上扯了一块物质下来，被带入太空。在随后的几亿年时间里，所有那次撞击产生的碎片聚到一起，形成了一个球体绕着地球运行。等这一切尘埃落定之时，就是月球的诞生之日。</li>
+<li>如果这次撞击发生在今天，其剧烈程度足以将地球上的一切生命抹去。而当时，我们的地球上还是一片荒芜，没有生命。有趣的是，如果没有这次灾难性的碰撞，我们就不会有月亮照亮我们的夜晚，没有潮汐变化，而地球上可能也不会出现如我们现在所熟悉的生命形式。当那颗蓝色的地球跃过月平线，出现在你眼前时，你意识到这场宇宙级的灾难事件所带来的创生与破坏一样伟大。</li>
+</ul>
+        
+      
+    
+      <p class="content-link">
+        <a href="/2017/10/05/极简宇宙史/#more">
+          <span>Read More...</span>
+        </a>
+      </p>
+    
+    </div>
+    
+  </article>
+  
+   
+    
+  
+
+  
+    
+  <article class="
+  post
+  
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi riseIn-light back-1">
+        <div class="post-time-wrapper">
+          <span>2017-10-02</span>
+          
+            
+              <span class="post-category"><a href="/categories/Tech/">Tech</a></span>
+            
+          
+          
+        </div>
+      </div>
+      <h1 class="post-title syuanpi riseIn-light back-2">
+        
+          <a href="/2017/10/02/algorithm-sort/">【数据结构与算法】排序专题</a>
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi riseIn-light back-3">
+      
+        
+          <p>算法分析</p>
+<ol>
+<li>时间复杂度-执行时间(比较和交换次数)</li>
+<li>空间复杂度-所消耗的额外内存空间</li>
+</ol>
+<ul>
+<li>使用小堆栈或表</li>
+<li>使用链表或指针、数组索引来代表数据</li>
+<li>排序数据的副本</li>
+</ul>
+<p>对具有重键的数据(同一组数按不同键多次排序)进行排序时，需要考虑排序方法的稳定性，在非稳定性排序算法中需要稳定性时可考虑加入小索引。</p>
+<p>稳定性：如果排序后文件中拥有相同键的项的相对位置不变，这种排序方式是稳定的。</p>
+<p>常见的排序算法根据是否需要比较可以分为如下几类：</p>
+<ol>
+<li>Comparison Sorting</li>
+</ol>
+<ul>
+<li>Bubble Sort</li>
+<li>Selection Sort</li>
+<li>Insertion Sort</li>
+<li>Shell Sort</li>
+<li>Merge Sort</li>
+<li>Quck Sort</li>
+<li>Heap Sort</li>
+</ul>
+<ol>
+<li>Bucket Sort</li>
+<li>Counting Sort</li>
+<li>Radix Sort</li>
+</ol>
+<p>从稳定性角度考虑可分为如下两类：</p>
+<ul>
+<li>稳定</li>
+<li>非稳定
+        
+      
+    
+      <p class="content-link">
+        <a href="/2017/10/02/algorithm-sort/#more">
+          <span>Read More...</span>
+        </a>
+      </p>
+    
+    </div>
+    
+  </article>
+  
+   
+    
+  
+
+  
+    
+  <article class="
+  post
+  
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi riseIn-light back-1">
+        <div class="post-time-wrapper">
+          <span>2017-09-30</span>
+          
+            
+              <span class="post-category"><a href="/categories/Tech/">Tech</a></span>
+            
+          
+          
+        </div>
+      </div>
+      <h1 class="post-title syuanpi riseIn-light back-2">
+        
+          <a href="/2017/09/30/algorithm-binarytree/">【数据结构与算法】二叉树专题</a>
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi riseIn-light back-3">
+      
+        
+          <h1 id="编程实现"><a href="#编程实现" class="headerlink" title="编程实现"></a>编程实现</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span>:</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, val)</span>:</span></div><div class="line">    self.val = val</div><div class="line">    self.left, self.right = <span class="keyword">None</span>, <span class="keyword">None</span></div></pre></td></tr></table></figure>
+        
+      
+    
+      <p class="content-link">
+        <a href="/2017/09/30/algorithm-binarytree/#more">
+          <span>Read More...</span>
+        </a>
+      </p>
+    
+    </div>
+    
+  </article>
+  
+   
+    
+  
+
+  
+    
+  <article class="
+  post
+  
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi riseIn-light back-1">
+        <div class="post-time-wrapper">
+          <span>2017-09-27</span>
+          
+            
+              <span class="post-category"><a href="/categories/Tech/">Tech</a></span>
+            
+          
+          
+        </div>
+      </div>
+      <h1 class="post-title syuanpi riseIn-light back-2">
+        
+          <a href="/2017/09/27/algorithm-linkedlist/">【数据结构与算法】链表专题</a>
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi riseIn-light back-3">
+      
+        
+          <p>链表是线性表的一种。线性表是最基本、最简单、也是最常用的一种数据结构。线性表中数据元素之间的关系是一对一的关系，即除了第一个和最后一个数据元素之外，其它数据元素都是首尾相接的。线性表有两种存储方式，一种是顺序存储结构，另一种是链式存储结构。我们常用的数组就是一种典型的顺序存储结构。</p>
+<p>相反，链式存储结构就是两个相邻的元素在内存中可能不是相邻的，每一个元素都有一个指针域，指针域一般是存储着到下一个元素的指针。这种存储方式的优点是定点插入和定点删除的时间复杂度为 O(1)，不会浪费太多内存，添加元素的时候才会申请内存，删除元素会释放内存。缺点是访问的时间复杂度最坏为 O(n)。</p>
+<p>顺序表的特性是随机读取，也就是访问一个元素的时间复杂度是O(1)，链式表的特性是插入和删除的时间复杂度为O(1)。</p>
+<p>链表就是链式存储的线性表。根据指针域的不同，链表分为单向链表、双向链表、循环链表等等。</p>
+<h1 id="Python编程实现"><a href="#Python编程实现" class="headerlink" title="Python编程实现"></a>Python编程实现</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ListNode</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, val)</span>:</span></div><div class="line">        self.val = val</div><div class="line">        self.next = <span class="keyword">None</span></div></pre></td></tr></table></figure>
+        
+      
+    
+      <p class="content-link">
+        <a href="/2017/09/27/algorithm-linkedlist/#more">
+          <span>Read More...</span>
+        </a>
+      </p>
+    
+    </div>
+    
+  </article>
+  
+   
+    
+  
+
+  
+    
+  <article class="
+  post
+  
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi riseIn-light back-1">
+        <div class="post-time-wrapper">
+          <span>2017-09-18</span>
+          
+            
+              <span class="post-category"><a href="/categories/Tech/">Tech</a></span>
+            
+          
+          
+        </div>
+      </div>
+      <h1 class="post-title syuanpi riseIn-light back-2">
+        
+          <a href="/2017/09/18/algorithm-string/">【数据结构与算法】字符串专题</a>
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi riseIn-light back-3">
+      
+        
+          <h1 id="Python中字符串常用的方法"><a href="#Python中字符串常用的方法" class="headerlink" title="Python中字符串常用的方法"></a>Python中字符串常用的方法</h1><pre><code><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">s1 = str()</div><div class="line">s2 = <span class="string">"mutemeteor"</span> <span class="comment"># 'mutemeteor'</span></div><div class="line">s2len = len(s2)</div><div class="line"><span class="comment"># last 3 chars</span></div><div class="line">s2[<span class="number">-3</span>:] <span class="comment"># eor</span></div><div class="line">s2[<span class="number">5</span>:<span class="number">8</span>] <span class="comment"># ete</span></div><div class="line">s3 = s2[:<span class="number">5</span>] <span class="comment"># mutem</span></div><div class="line">s3 += <span class="string">'eteor'</span> <span class="comment"># return 'mutemeteor'</span></div><div class="line"></div><div class="line"><span class="comment"># list in python is same as ArrayList in C</span></div><div class="line">s2list = list(s3)</div><div class="line"><span class="comment"># string at index 4</span></div><div class="line">s2[<span class="number">4</span>] <span class="comment"># 'm'</span></div><div class="line"></div><div class="line"><span class="comment"># find index at first</span></div><div class="line">s2.index(<span class="string">'u'</span>)  <span class="comment"># return 1, if not found, throw ValueError</span></div><div class="line">s2.find(<span class="string">'u'</span>) <span class="comment"># return 1, if not found, return -1</span></div></pre></td></tr></table></figure>
+</code></pre>
+        
+      
+    
+      <p class="content-link">
+        <a href="/2017/09/18/algorithm-string/#more">
+          <span>Read More...</span>
+        </a>
+      </p>
+    
+    </div>
+    
+  </article>
+  
+   
+    
+  
+
+  
+    
+  <article class="
+  post
+  
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi riseIn-light back-1">
+        <div class="post-time-wrapper">
+          <span>2017-09-16</span>
+          
+            
+              <span class="post-category"><a href="/categories/Tech/">Tech</a></span>
+            
+          
+          
+        </div>
+      </div>
+      <h1 class="post-title syuanpi riseIn-light back-2">
+        
+          <a href="/2017/09/16/SE-note/">软件工程开发的技术基础 学习笔记</a>
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi riseIn-light back-3">
+      
+        
+          <p>该学习笔记整理于南大软工教材《软件开发的技术基础-软件工程与计算（卷二）》。</p>
+<pre><code>最后更新时间：2017年9月27日
+</code></pre><hr>
+<h1 id="软件工程概论"><a href="#软件工程概论" class="headerlink" title="软件工程概论"></a>软件工程概论</h1><h2 id="软件的核心是程序"><a href="#软件的核心是程序" class="headerlink" title="软件的核心是程序"></a>软件的核心是程序</h2><p>软件以程序代码为核心，由三个部分组成：</p>
+<ul>
+<li>程序，机器指令的集合</li>
+<li>文档，描述程序操作与使用的文档</li>
+<li>数据，程序运行时需要使用的信息</li>
+</ul>
+<h2 id="软件工程"><a href="#软件工程" class="headerlink" title="软件工程"></a>软件工程</h2><p><strong>定义（重点）</strong></p>
+<ol>
+<li><strong>应用系统的、规范的、可量化的方法来开发、运行和维护软件，即将工程应用到软件。</strong></li>
+<li><strong>对 1 中各种方法的研究。</strong></li>
+</ol>
+<h2 id="软件工程是一种工程活动"><a href="#软件工程是一种工程活动" class="headerlink" title="软件工程是一种工程活动"></a>软件工程是一种工程活动</h2><p>具备所有工程学科共有的特性：</p>
+<ul>
+<li>具有解决实际问题的动机</li>
+<li>应用科学知识知指导工程活动</li>
+<li>以成本效益比有效为基本条件</li>
+<li>构建机器或事物</li>
+<li>以服务人类为最终目的</li>
+</ul>
+        
+      
+    
+      <p class="content-link">
+        <a href="/2017/09/16/SE-note/#more">
+          <span>Read More...</span>
+        </a>
+      </p>
+    
+    </div>
+    
+  </article>
+  
+   
+    
+  
+
+  
+    
+  <article class="
+  post
+  
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi riseIn-light back-1">
+        <div class="post-time-wrapper">
+          <span>2017-09-10</span>
+          
+            
+              <span class="post-category"><a href="/categories/Tech/">Tech</a></span>
+            
+          
+          
+        </div>
+      </div>
+      <h1 class="post-title syuanpi riseIn-light back-2">
+        
+          <a href="/2017/09/10/java-note3/">Java 学习笔记（三）</a>
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi riseIn-light back-3">
+      
+        
+          <p><strong>面向对象有三大特性：封装、继承、多态。</strong></p>
+<h1 id="Java-封装"><a href="#Java-封装" class="headerlink" title="Java 封装"></a>Java 封装</h1><h2 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h2><p>封装是指，一种将抽象性函式接口的实例细节部份包装、隐藏起来的方法。封装可以被认为是一个保护屏障，防止该类的代码和数据被外部类定义的代码随机访问。要访问该类的代码和数据，必须通过严格的接口控制，通过该类提供的方法来实现对隐藏信息的操作和访问。</p>
+<p>那这样的好处是什么呢？</p>
+<ol>
+<li><p>只能通过规定的方法访问数据。</p>
+</li>
+<li><p>隐藏类的实例细节，方便修改和实现。</p>
+</li>
+</ol>
+<p>我们在开汽车的时候，只用去关注如何开车，我们并不在意车子是如何实现的，这就是封装。</p>
+<p>如何去实现类的封装呢？</p>
+<ol>
+<li><p>修改属性的可见性，在属性的前面添加修饰符(private 后面会讲)</p>
+</li>
+<li><p>对每个值属性提供对外的公共方法访问，如创建 getter/setter（取值和赋值） 方法，用于对私有属性的访问</p>
+</li>
+<li><p>在 getter/setter 方法里加入属性的控制语句，例如我们可以加一个判断语句，对于非法输入给予否定。</p>
+        
+      
+    
+      <p class="content-link">
+        <a href="/2017/09/10/java-note3/#more">
+          <span>Read More...</span>
+        </a>
+      </p>
+    
+    </div>
+    
+  </article>
+  
+   
+    
+  
+
+  
+    
+  <article class="
+  post
+  
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi riseIn-light back-1">
+        <div class="post-time-wrapper">
+          <span>2017-09-10</span>
+          
+            
+              <span class="post-category"><a href="/categories/Tech/">Tech</a></span>
+            
+          
+          
+        </div>
+      </div>
+      <h1 class="post-title syuanpi riseIn-light back-2">
+        
+          <a href="/2017/09/10/java-note2/">Java 学习笔记（二）</a>
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi riseIn-light back-3">
+      
+        
+          <h1 id="Java-数组"><a href="#Java-数组" class="headerlink" title="Java 数组"></a>Java 数组</h1><h2 id="数组的定义和初始化"><a href="#数组的定义和初始化" class="headerlink" title="数组的定义和初始化"></a>数组的定义和初始化</h2><p><strong>三步曲：声明 → 分配空间（new关键字） → 初始化</strong></p>
+<ol>
+<li>声明</li>
+</ol>
+<pre><code>数据类型[ ] 数组名;   //或者: 数据类型 数组名[ ];
+</code></pre><p>例如：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> ages[];      <span class="comment">//存放年龄的数组，类型为整型</span></div><div class="line"></div><div class="line"><span class="keyword">char</span> symbol[];   <span class="comment">//存放符号的数组，类型为字符型</span></div><div class="line"></div><div class="line">String [] name;  <span class="comment">//存放名称的数组，类型为字符串型</span></div></pre></td></tr></table></figure></p>
+<ol>
+<li>分配空间</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">数组名 = <span class="keyword">new</span>  数据类型 [ 数组长度 ];</div></pre></td></tr></table></figure>
+<ol>
+<li>初始化</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> [] ages = &#123;<span class="number">12</span>,<span class="number">18</span>,<span class="number">9</span>,<span class="number">33</span>,<span class="number">45</span>,<span class="number">60</span>&#125;; <span class="comment">//声明并初始化了一个整型数组，它有6个元素</span></div><div class="line"></div><div class="line"><span class="keyword">char</span> [] symbol = <span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">10</span>] <span class="comment">//声明并分配了一个长度为10的char型数组</span></div></pre></td></tr></table></figure>
+        
+      
+    
+      <p class="content-link">
+        <a href="/2017/09/10/java-note2/#more">
+          <span>Read More...</span>
+        </a>
+      </p>
+    
+    </div>
+    
+  </article>
+  
+   
+    
+  
+
+  
+</section>
+  
+  <nav class="pagination">
+      <a class="extend prev" rel="prev" href="/page/2/">< Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next ></a>
+  </nav>
+
+
+        </div>
+      </main>
+
+      <footer class="footer syuanpi fadeIn" id="footer">
+  <hr>
+  <div class="footer-wrapper">
+    <div class="left">
+      <div class="contact-icon">
+    
+    
+    
+    
+    
+    
+    
+    
+        
+        
+        
+        
+        
+            <a href="https://www.facebook.com/1" class="iconfont icon-facebook" title="facebook"></a>
+        
+        
+        
+    
+        
+        
+        
+            <a href="https://twitter.com/2" class="iconfont icon-twitter" title="twitter"></a>
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+        
+        
+            <a href="https://www.instagram.com/3" class="iconfont icon-ins" title="instagram"></a>
+        
+    
+        
+        
+            <a href="https://weibo.com/4" class="iconfont icon-weibo" title="weibo"></a>
+        
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+            <a href="https://www.zhihu.com/people/5" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+        
+        
+        
+    
+        
+            <a href="https://github.com/6" class="iconfont icon-github" title="github"></a>
+        
+        
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+        
+            <a href="https://www.linkedin.com/in/7" class="iconfont icon-linkedin" title="linkedin"></a>
+        
+        
+    
+</div>
+    </div>
+    <div class="right">
+      <div class="copyright">
+    <div class="info">
+        <span>&copy;</span>
+        <span>2016 ~ 2018</span>
+        <span>❤</span>
+        <span>Kyrene Wang</span>
+    </div>
+    <div class="theme">
+        <span>
+            Powered by
+            <a href="http://hexo.io/" target="_blank">Hexo </a>
+        </span>
+        <span>
+            Theme
+            <a href="https://github.com/ColMugX/hexo-theme-Nlvi"> Nlvi </a>
+        </span>
+    </div>
+    
+</div>
+    </div>
+  </div>
+</footer>
+    </div>
+  </div>
+  <script src="/script/lib/jquery/jquery-3.2.1.min.js"></script>
+
+
+    <script src="/script/lib/lightbox/js/lightbox.min.js"></script>
+
+
+
+
+
+    
+        <script src="/h.js"></script>
+    
+        <script src="/e.js"></script>
+    
+        <script src="/x.js"></script>
+    
+        <script src="/o.js"></script>
+    
+        <script src="/-.js"></script>
+    
+        <script src="/g.js"></script>
+    
+        <script src="/e.js"></script>
+    
+        <script src="/n.js"></script>
+    
+        <script src="/e.js"></script>
+    
+        <script src="/r.js"></script>
+    
+        <script src="/a.js"></script>
+    
+        <script src="/t.js"></script>
+    
+        <script src="/e.js"></script>
+    
+        <script src="/-.js"></script>
+    
+        <script src="/f.js"></script>
+    
+        <script src="/e.js"></script>
+    
+        <script src="/e.js"></script>
+    
+        <script src="/d.js"></script>
+    
+
+
+<script src="/script/src/nlvi.js"></script>
+<script src="/script/src/utils.js"></script>
+<script src="/script/scheme/balance.js"></script>
+<script src="/script/src/plugins.js"></script>
+<script src="/script/bootstarp.js"></script>
+
+
+<div class="backtop syuanpi dead toTop" id="backtop">
+    <i class="iconfont icon-up"></i>
+    <span style="text-align:center;font-family:Georgia;"><span style="font-family:Georgia;" id="scrollpercent">1</span>%</span>
+</div>
+
+
+  <div class="search" id="search">
+    <div class="mask" id="mask"></div>
+    <div class="search-wrapper syuanpi">
+      <h2 id="search-header" class="syuanpi">搜索一下？</h2>
+      <div class="input">
+        <input type="text" id="local-search-input" results="0" name="">
+      </div>
+      <div id="local-search-result"></div>
+    </div>
+  </div>
+  <script>
+  if (NlviConfig.theme === 'banderole') {
+    var GREETING = {
+      morning: "我的博客里可没有早饭！",
+      noon: "记得午休吃饭，不着急看我的博客~",
+      after: "下午好，感谢查阅我的博客",
+      night: "您来我的博客看笑话当做休息嘛",
+      midnight: "我觉得大半夜就不要看啦"
+    }
+  }
+  </script>
+
+</body>
+</html>

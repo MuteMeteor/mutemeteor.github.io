@@ -1,34 +1,650 @@
-extends partial/layout
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <link rel="stylesheet" href="/style/style.css">
+<script>
+    var NlviConfig = {
+        title: "Mute Meteor",
+        author: "Kyrene Wang",
+        theme: "banderole",
+        lightbox: true,
+        animate: true,
+        baseUrl: "/",
+        search: true
+    }
+</script>
 
-include mixins
 
-block site_title
-    != page.title + " · " + config.title
 
-block description
-    - var desc = page.desc || strip_html(page.content).replace(/^\s*/, '').replace(/\s*$/, '').substring(0, 150);
-    meta(name="description", content=desc)
+    <link rel="stylesheet" href="/script/lib/lightbox/css/lightbox.min.css">
 
-block content
-  .autopagerize_page_element: .content: .post-page
-    include mixins
-    +make_post(page, true)
-    .share
-      .evernote
-        a.fa.fa-bookmark(href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title);}})();", ref="nofollow", target="_blank")
-      .weibo
-        a.fa.fa-weibo(href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&title=',e(d.title),'&appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));")
-      .twitter
-        a.fa.fa-twitter(href=url_for("http://twitter.com/home?status="+","+config.url+"/"+page.path+","+config.title+","+page.title+",;"))
-    - var prev = page.prev ? page.prev.path : false;
-    - var next = page.next ? page.next.path : false;
-    .pagination
-      ul.clearfix
-        if prev
-          li.pre.pagbuttons
-            a.btn(role="navigation",href=url_for(prev), title=page.prev.title)!= __('prev_post')
-        if next
-          li.next.pagbuttons
-            a.btn(role="navigation",href=url_for(next), title=page.next.title)!= __('next_post')
-    if page.comments
-        include partial/comments
+
+
+
+    <link rel="stylesheet" href="/syuanpi/syuanpi.min.css">
+
+
+
+
+
+
+
+
+
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="browsermode" content="application">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Mute Meteor">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="msapplication-navbutton-color" content="#666666">
+<meta name= "format-detection" content="telephone=no" />
+<meta name="keywords" content="nlvi, Nlvi" />
+
+
+
+  <meta name="description" content="the coutrage to speak softly">
+
+
+
+  <meta name="keywords" content="Notes, Java, Nlvi" />
+
+  <title> Java 学习笔记（三） · Mute Meteor </title>
+</head>
+<body>
+  <div class="progress">
+  <div class="progress-inner"></div>
+</div>
+  
+  
+    <div class="tagcloud-mask"></div>  
+<div class="tagcloud" id="tagcloud">
+  <div class="tagcloud-inner">
+    <a href="/tags/Algorithm/" style="font-size: 14px;">Algorithm</a> <a href="/tags/DataStructure/" style="font-size: 14px;">DataStructure</a> <a href="/tags/HTTP/" style="font-size: 14px;">HTTP</a> <a href="/tags/Hexo/" style="font-size: 14px;">Hexo</a> <a href="/tags/Java/" style="font-size: 14px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 14px;">JavaScript</a> <a href="/tags/LinkedList/" style="font-size: 14px;">LinkedList</a> <a href="/tags/Linux/" style="font-size: 14px;">Linux</a> <a href="/tags/Mind-Map/" style="font-size: 14px;">Mind Map</a> <a href="/tags/MongoDB/" style="font-size: 14px;">MongoDB</a> <a href="/tags/MySQL/" style="font-size: 14px;">MySQL</a> <a href="/tags/NoSQL/" style="font-size: 14px;">NoSQL</a> <a href="/tags/Node-js/" style="font-size: 14px;">Node.js</a> <a href="/tags/Notes/" style="font-size: 14px;">Notes</a> <a href="/tags/Python/" style="font-size: 14px;">Python</a> <a href="/tags/Redis/" style="font-size: 14px;">Redis</a> <a href="/tags/Sort/" style="font-size: 14px;">Sort</a> <a href="/tags/Story/" style="font-size: 14px;">Story</a> <a href="/tags/String/" style="font-size: 14px;">String</a> <a href="/tags/Vim/" style="font-size: 14px;">Vim</a> <a href="/tags/Windows/" style="font-size: 14px;">Windows</a> <a href="/tags/binarytree/" style="font-size: 14px;">binarytree</a> <a href="/tags/network/" style="font-size: 14px;">network</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/selenium/" style="font-size: 14px;">selenium</a> <a href="/tags/server/" style="font-size: 14px;">server</a> <a href="/tags/tcp/" style="font-size: 14px;">tcp</a> <a href="/tags/udp/" style="font-size: 14px;">udp</a> <a href="/tags/web/" style="font-size: 14px;">web</a> <a href="/tags/书信/" style="font-size: 14px;">书信</a> <a href="/tags/写作/" style="font-size: 14px;">写作</a> <a href="/tags/天文/" style="font-size: 14px;">天文</a> <a href="/tags/思考/" style="font-size: 14px;">思考</a> <a href="/tags/旅行/" style="font-size: 14px;">旅行</a> <a href="/tags/爬虫/" style="font-size: 14px;">爬虫</a> <a href="/tags/科普/" style="font-size: 14px;">科普</a> <a href="/tags/诗/" style="font-size: 14px;">诗</a> <a href="/tags/软件工程/" style="font-size: 14px;">软件工程</a> <a href="/tags/随笔/" style="font-size: 14px;">随笔</a>
+  </div>
+</div>  
+  
+
+  <div class="container">
+
+    <header class="header" id="header">
+  <div class="header-wrapper">
+    <div class="logo">
+  <div class="logo-inner syuanpi tvIn">
+    <span><a href="/">Mute Meteor</a></span>
+    
+  </div>
+</div>
+    <nav class="main-nav">
+        
+  <ul class="main-nav-list syuanpi tvIn">
+  
+    <li class="menu-item">
+      <a href="javascript:;" id="search">
+        <span>Search</span>
+        
+          <span class="menu-item-label">search</span>
+        
+      </a>
+    </li>
+  
+  
+    
+      
+    
+    <li class="menu-item">
+      <a href="/" id="article">
+        <span class="base-name">Article</span>
+        
+          <span class="menu-item-label">article</span>
+        
+      </a>
+    </li>  
+  
+    
+      
+    
+    <li class="menu-item">
+      <a href="/archives" id="archives">
+        <span class="base-name">Archives</span>
+        
+          <span class="menu-item-label">archives</span>
+        
+      </a>
+    </li>  
+  
+    
+      
+    
+    <li class="menu-item">
+      <a href="javascript:;" id="tags">
+        <span class="base-name">Tags</span>
+        
+          <span class="menu-item-label">tags</span>
+        
+      </a>
+    </li>  
+  
+    
+      
+    
+    <li class="menu-item">
+      <a href="/about" id="about">
+        <span class="base-name">About</span>
+        
+          <span class="menu-item-label">about</span>
+        
+      </a>
+    </li>  
+  
+  </ul>
+  
+</nav>
+    
+    
+  </div>
+</header>
+<div class="mobile-header">
+  <div class="mobile-header-body">
+    <div class="mobile-header-list">
+      
+        
+            <div class="mobile-nav-item">
+                <a href="/">
+                    <span>Article</span>
+                    
+                        <span class="menu-item-label">article</span>
+                    
+                </a>
+            </div>
+        
+      
+        
+            <div class="mobile-nav-item">
+                <a href="/archives">
+                    <span>Archives</span>
+                    
+                        <span class="menu-item-label">archives</span>
+                    
+                </a>
+            </div>
+        
+      
+        
+          <div class="mobile-nav-item inner-cloud">
+            <div class="mobile-nav-tag">
+              <a href="javascript:;" id="mobile-tags">
+                <span>Tags</span>
+                
+                    <span class="menu-item-label">tags</span>
+                
+              </a>
+            </div>
+            <div class="mobile-nav-tagcloud">
+              <div class="mobile-tagcloud-inner">
+                <a href="/tags/Algorithm/" style="font-size: 14px;">Algorithm</a> <a href="/tags/DataStructure/" style="font-size: 14px;">DataStructure</a> <a href="/tags/HTTP/" style="font-size: 14px;">HTTP</a> <a href="/tags/Hexo/" style="font-size: 14px;">Hexo</a> <a href="/tags/Java/" style="font-size: 14px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 14px;">JavaScript</a> <a href="/tags/LinkedList/" style="font-size: 14px;">LinkedList</a> <a href="/tags/Linux/" style="font-size: 14px;">Linux</a> <a href="/tags/Mind-Map/" style="font-size: 14px;">Mind Map</a> <a href="/tags/MongoDB/" style="font-size: 14px;">MongoDB</a> <a href="/tags/MySQL/" style="font-size: 14px;">MySQL</a> <a href="/tags/NoSQL/" style="font-size: 14px;">NoSQL</a> <a href="/tags/Node-js/" style="font-size: 14px;">Node.js</a> <a href="/tags/Notes/" style="font-size: 14px;">Notes</a> <a href="/tags/Python/" style="font-size: 14px;">Python</a> <a href="/tags/Redis/" style="font-size: 14px;">Redis</a> <a href="/tags/Sort/" style="font-size: 14px;">Sort</a> <a href="/tags/Story/" style="font-size: 14px;">Story</a> <a href="/tags/String/" style="font-size: 14px;">String</a> <a href="/tags/Vim/" style="font-size: 14px;">Vim</a> <a href="/tags/Windows/" style="font-size: 14px;">Windows</a> <a href="/tags/binarytree/" style="font-size: 14px;">binarytree</a> <a href="/tags/network/" style="font-size: 14px;">network</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/selenium/" style="font-size: 14px;">selenium</a> <a href="/tags/server/" style="font-size: 14px;">server</a> <a href="/tags/tcp/" style="font-size: 14px;">tcp</a> <a href="/tags/udp/" style="font-size: 14px;">udp</a> <a href="/tags/web/" style="font-size: 14px;">web</a> <a href="/tags/书信/" style="font-size: 14px;">书信</a> <a href="/tags/写作/" style="font-size: 14px;">写作</a> <a href="/tags/天文/" style="font-size: 14px;">天文</a> <a href="/tags/思考/" style="font-size: 14px;">思考</a> <a href="/tags/旅行/" style="font-size: 14px;">旅行</a> <a href="/tags/爬虫/" style="font-size: 14px;">爬虫</a> <a href="/tags/科普/" style="font-size: 14px;">科普</a> <a href="/tags/诗/" style="font-size: 14px;">诗</a> <a href="/tags/软件工程/" style="font-size: 14px;">软件工程</a> <a href="/tags/随笔/" style="font-size: 14px;">随笔</a>
+              </div>
+            </div>
+          </div>
+        
+      
+        
+            <div class="mobile-nav-item">
+                <a href="/about">
+                    <span>About</span>
+                    
+                        <span class="menu-item-label">about</span>
+                    
+                </a>
+            </div>
+        
+      
+    </div>
+  </div>
+  <div class="mobile-header-nav">
+    <div class="mobile-header-item" id="mobile-left">
+      <div class="header-menu-item">
+        <span class="header-menu-line"></span>
+      </div>
+    </div>
+    <h1 class="mobile-header-title">
+      <a href="/">Mute Meteor</a>
+    </h1>
+    <div class="mobile-header-item"></div>
+  </div>
+</div>
+    <div class="container-inner">
+      <main class="main" id="main">
+        <div class="main-wrapper">
+          
+    
+  <article class="
+  post
+   is_post 
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi riseIn-light back-1">
+        <div class="post-time-wrapper">
+          <span>2017-09-10</span>
+          
+            
+              <span class="post-category"><a href="/categories/Tech/">Tech</a></span>
+            
+          
+          
+            
+              <aside class="post-tags syuanpi riseIn-light back-3">
+              
+                <a href="/tags/Notes/">Notes</a>
+              
+                <a href="/tags/Java/">Java</a>
+              
+              </aside>
+            
+          
+        </div>
+      </div>
+      <h1 class="post-title syuanpi riseIn-light back-2">
+        
+          Java 学习笔记（三）
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi riseIn-light back-3">
+      
+        <p><strong>面向对象有三大特性：封装、继承、多态。</strong></p>
+<h1 id="Java-封装"><a href="#Java-封装" class="headerlink" title="Java 封装"></a>Java 封装</h1><h2 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h2><p>封装是指，一种将抽象性函式接口的实例细节部份包装、隐藏起来的方法。封装可以被认为是一个保护屏障，防止该类的代码和数据被外部类定义的代码随机访问。要访问该类的代码和数据，必须通过严格的接口控制，通过该类提供的方法来实现对隐藏信息的操作和访问。</p>
+<p>那这样的好处是什么呢？</p>
+<ol>
+<li><p>只能通过规定的方法访问数据。</p>
+</li>
+<li><p>隐藏类的实例细节，方便修改和实现。</p>
+</li>
+</ol>
+<p>我们在开汽车的时候，只用去关注如何开车，我们并不在意车子是如何实现的，这就是封装。</p>
+<p>如何去实现类的封装呢？</p>
+<ol>
+<li><p>修改属性的可见性，在属性的前面添加修饰符(private 后面会讲)</p>
+</li>
+<li><p>对每个值属性提供对外的公共方法访问，如创建 getter/setter（取值和赋值） 方法，用于对私有属性的访问</p>
+</li>
+<li><p>在 getter/setter 方法里加入属性的控制语句，例如我们可以加一个判断语句，对于非法输入给予否定。</p>
+<a id="more"></a>
+</li>
+</ol>
+<h2 id="包"><a href="#包" class="headerlink" title="包"></a>包</h2><p>有时候在封装的时候会遇到这样的问题，就是我们的类名可能是重复的。为了更好地组织类，Java 提供了包机制，用于区别类名的命名空间。</p>
+<p>包的作用</p>
+<p>把功能相似或相关的类或接口组织在同一个包中，方便类的查找和使用。<br>包采用了树形目录的存储方式。同一个包中的类名字是不同的，不同的包中的类的名字是可以相同的，当同时调用两个不同包中相同类名的类时，应该加上包名加以区别。<br>包也限定了访问权限，拥有包访问权限的类才能访问某个包中的类。<br>我们在以前就学习过了如何定义一个包，我们使用package关键字，加上我们的包名。</p>
+<p>定义包语法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> 包名</div><div class="line"><span class="comment">//注意：必须放在源程序的第一行，包名可用"."号隔开</span></div></pre></td></tr></table></figure></p>
+<p>例如：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//我们在定义文件夹的时候利用"/"来区分层次</span></div><div class="line"><span class="comment">//包中我们用"."来分层</span></div><div class="line"><span class="keyword">package</span> com.test.Java</div></pre></td></tr></table></figure></p>
+<p>不仅是我们这样利用包名来区分类，系统也是这样做的。</p>
+<h2 id="访问修饰符"><a href="#访问修饰符" class="headerlink" title="访问修饰符"></a>访问修饰符</h2><p><code>private</code>: 本类</p>
+<p><code>默认</code>：本类，同包</p>
+<p><code>protected</code>：本类，同包，子类</p>
+<p><code>public</code>：本类，同包，子类，其他</p>
+<h2 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h2><p><code>this</code>关键字代表当前对象。使用<code>this.属性</code>操作当前对象的属性，this.方法调用当前对象的方法。</p>
+<p>当我们封装对象属性的时候，经常会使用<code>this</code>关键字。</p>
+<h2 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h2><p>可以将一个类的定义放在另一个类的定义内部，这就是内部类。而包含内部类的类被称为外部类。</p>
+<p>内部类的主要作用如下：</p>
+<ol>
+<li><p>内部类提供了更好的封装，可以把内部类隐藏在外部类之内，不允许同一个包中的其他类访问该类</p>
+</li>
+<li><p>内部类的方法可以直接访问外部类的所有数据，包括私有的数据</p>
+</li>
+<li><p>内部类所实现的功能使用外部类同样可以实现，只是有时使用内部类更方便</p>
+</li>
+<li><p>内部类允许继承多个非接口类型</p>
+</li>
+</ol>
+<p>注：内部类是一个编译时的概念，一旦编译成功，就会成为完全不同的两类。对于一个名为outer的外部类和其内部定义的名为inner的内部类。编译完成后出现outer.class和outer$inner.class两类。所以内部类的成员变量/方法名可以和外部类的相同。</p>
+<h1 id="Java-继承"><a href="#Java-继承" class="headerlink" title="Java 继承"></a>Java 继承</h1><h2 id="继承的定义"><a href="#继承的定义" class="headerlink" title="继承的定义"></a>继承的定义</h2><p>继承可以看成是类与类之间的衍生关系。比如狗类是动物类，牧羊犬类又是狗类。于是我们可以说狗类继承了动物类，而牧羊犬类就继承了狗类。于是狗类就是动物类的子类（或派生类），动物类就是狗类的父类（或基类）。</p>
+<pre><code>class 子类 extends 父类
+</code></pre><p>例如我们定义了一个 Animal 类，我们在创建一个 Dog 类，我们需要它继承 Animal 类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>为什么需要继承？</p>
+<p>如果有两个类相似，那么它们会有许多重复的代码，导致后果就是代码量大且臃肿，后期的维护性不高。通过继承就可以解决这个问题，将两段代码中相同的部分提取出来组成一个父类，实现代码的复用。</p>
+<p>继承的特点：</p>
+<ol>
+<li>子类拥有父类除private以外的所有属性和方法</li>
+<li>子类可以拥有自己的属性和方法</li>
+<li>子类可以重写实现父类的方法</li>
+<li>Java 中的继承是单继承，一个类只有一个父类</li>
+</ol>
+<p>注： Java 实现多继承的一个办法是 implements（实现）接口</p>
+<h2 id="方法的重写"><a href="#方法的重写" class="headerlink" title="方法的重写"></a>方法的重写</h2><p>虽然子类可以继承父类的方法，但如果子类对父类的方法不满意，想在里面加入适合自己的一些操作时，我们就需要将方法进行重写。并且子类在调用方法中，优先调用子类的方法。</p>
+<p>当然在方法重写时我们需要注意，重写的方法一定要与原父类的方法语法保持一致，比如返回值类型，参数类型及个数，和方法名都必须一致。</p>
+<h2 id="继承的初始化顺序"><a href="#继承的初始化顺序" class="headerlink" title="继承的初始化顺序"></a>继承的初始化顺序</h2><p>继承的初始化顺序是先初始化父类再初始化子类。</p>
+<p>注：<br><code>final</code>关键字可以修饰类、方法、属性和变量</p>
+<ol>
+<li><p><code>final</code> 修饰类，则该类不允许被继承，为最终类</p>
+</li>
+<li><p><code>final</code> 修饰方法，则该方法不允许被覆盖（重写）</p>
+</li>
+<li><p><code>final</code> 修饰属性：则该类的属性不会进行隐式的初始化（类的初始化属性必须有值）或在构造方法中赋值（但只能选其一）</p>
+</li>
+<li><p><code>final</code> 修饰变量，则该变量的值只能赋一次值，即变为常量</p>
+</li>
+</ol>
+<p><code>super</code>关键字在子类内部使用，代表父类对象。</p>
+<ol>
+<li><p>访问父类的属性 <code>super.属性名</code></p>
+</li>
+<li><p>访问父类的方法 <code>super.bark()</code></p>
+</li>
+<li><p>子类构造方法需要调用父类的构造方法时，在子类的构造方法体里最前面的位置：<code>super()</code></p>
+</li>
+</ol>
+<h1 id="Java-多态"><a href="#Java-多态" class="headerlink" title="Java 多态"></a>Java 多态</h1><p>多态是指允许不同类的对象对同一消息做出响应。即同一消息可以根据发送对象的不同而采用多种不同的行为方式。多态也称作动态绑定（dynamic binding），是指在执行期间判断所引用对象的实际类型，根据其实际的类型调用其相应的方法。</p>
+<p>通俗地讲，只通过父类就能够引用不同的子类，这就是多态，我们只有在运行的时候才会知道引用变量所指向的具体实例对象。</p>
+<h2 id="向上转型"><a href="#向上转型" class="headerlink" title="向上转型"></a>向上转型</h2><h2 id="多态的实现条件"><a href="#多态的实现条件" class="headerlink" title="多态的实现条件"></a>多态的实现条件</h2><p>Java 实现多态有三个必要条件：继承、重写和向上转型（即父类引用指向子类对象）。</p>
+<p>只有满足上述三个条件，我们才能够在同一个继承结构中使用统一的逻辑实现代码处理不同的对象，从而达到执行不同的行为。</p>
+<h2 id="多态的实现方法"><a href="#多态的实现方法" class="headerlink" title="多态的实现方法"></a>多态的实现方法</h2><p>Java中多态的实现方式：继承父类进行方法重写，抽象类和抽象方法，接口实现。</p>
+<h3 id="重写"><a href="#重写" class="headerlink" title="重写"></a>重写</h3><h3 id="抽象类和抽象方法"><a href="#抽象类和抽象方法" class="headerlink" title="抽象类和抽象方法"></a>抽象类和抽象方法</h3><p>Java提供了一个叫做抽象方法的机制，这种方法是不完整的，仅有声明而没有方法体。抽象方法声明语法如下：</p>
+<pre><code>abstract void f();                      //f()方法时抽象方法
+</code></pre><p>而包含抽象方法的类叫做抽象类，抽象类在定义类时，前面会加abstract关键字。</p>
+<p>那我们什么时候会用到抽象类呢？</p>
+<p>在某些情况下，某个父类只是知道其子类应该包含怎样的方法，但无法准确知道这些子类如何实现这些方法。也就是说抽象类是约束子类必须要实现哪些方法，而并不关注方法如何去实现。</p>
+<p>从多个具有相同特征的类中抽象出一个抽象类，以这个抽象类作为子类的模板，从而避免了子类设计的随意性。</p>
+<p>所以由上可知，抽象类是限制规定子类必须实现某些方法，但不关注实现细节。</p>
+<p>那抽象类如何用代码实现呢，它的规则如下：</p>
+<ol>
+<li><p>用 abstract 修饰符定义抽象类</p>
+</li>
+<li><p>用 abstract 修饰符定义抽象方法，只用声明，不需要实现</p>
+</li>
+<li><p>包含抽象方法的类就是抽象类</p>
+</li>
+<li><p>抽象类中可以包含普通的方法，也可以没有抽象方法</p>
+</li>
+<li><p>抽象类的对象不能直接创建，我们通常是定义引用变量指向子类对象。</p>
+</li>
+</ol>
+<h3 id="接口实现"><a href="#接口实现" class="headerlink" title="接口实现"></a>接口实现</h3><p><code>abstract</code> 关键字允许人们在类中创建一个或多个没有任何定义的方法，而 interface 使抽象的概念更向前迈进了一步，它会产生一个完全抽象类，根本没有提供任何方法体。</p>
+<p>接口的声明语法格式如下：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">修饰符 interface 接口名称 [extends 其他的类名] &#123;</div><div class="line">        // 声明变量</div><div class="line">        // 抽象方法</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>如声明一个 Animal 接口：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Animal</span> </span>&#123;</div><div class="line">        <span class="comment">//int x;</span></div><div class="line">        <span class="comment">//编译错误,x需要初始化，因为是 static final 类型</span></div><div class="line">        <span class="keyword">int</span> y = <span class="number">5</span>;</div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>;</div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">travel</span><span class="params">()</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>注意：</p>
+<ul>
+<li>接口不能用于实例化对象</li>
+<li>接口中所有的方法是抽象方法</li>
+<li>接口成员是 <code>static final</code> 类型</li>
+<li>接口支持多继承</li>
+</ul>
+<p>多继承实现方式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">修饰符 <span class="class"><span class="keyword">interface</span> <span class="title">A</span> <span class="keyword">extends</span> 接口1，接口2</span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">修饰符 <span class="class"><span class="keyword">class</span> <span class="title">A</span> <span class="keyword">implements</span> 接口1，接口2</span>&#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>实现上面的接口：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Cat</span> <span class="keyword">implements</span> <span class="title">Animal</span></span>&#123;</div><div class="line"></div><div class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>&#123;</div><div class="line">         System.out.println(<span class="string">"Cat eats"</span>);</div><div class="line">     &#125;</div><div class="line"></div><div class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">travel</span><span class="params">()</span></span>&#123;</div><div class="line">         System.out.println(<span class="string">"Cat travels"</span>);</div><div class="line">     &#125;</div><div class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        Cat cat = <span class="keyword">new</span> Cat();</div><div class="line">        cat.eat();</div><div class="line">        cat.travel();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    
+    </div>
+    
+      
+      
+  <hr class="copy-line">
+  <div class="post-copyright">
+    <div class="copy-author">
+      <span>Author :</span>
+      <span>Kyrene Wang</span>
+    </div>
+    <div class="copy-url">
+      <span>Url :</span>
+      <a href="http://mutemeteor.com/2017/09/10/java-note3/">http://mutemeteor.com/2017/09/10/java-note3/</a>
+    </div>
+    <div class="copy-origin">
+      <span>Origin :</span>
+      <a href="http://mutemeteor.com">http://mutemeteor.com</a>
+    </div>
+    <div class="copy-license">
+      
+      著作权归作者所有，转载请联系作者获得授权。
+    </div>
+  </div>
+
+    
+  </article>
+  
+    
+  <nav class="article-page">
+    
+      <a href="/2017/09/16/SE-note/" id="art-left" class="art-left">
+        <span class="next-title">
+          <i class="iconfont icon-left"></i>软件工程开发的技术基础 学习笔记
+        </span>
+      </a>
+    
+    
+      <a href="/2017/09/10/java-note2/" id="art-right" class="art-right">
+        <span class="prev-title"> 
+          Java 学习笔记（二）<i class="iconfont icon-right"></i>  
+        </span>
+      </a>
+    
+  </nav>
+
+    
+  <i id="com-switch" class="iconfont icon-more jumping-in long infinite" style="font-size:24px;display:block;text-align:center;transform:rotate(180deg);"></i>
+  <div class="post-comments" id="post-comments" style="display: block;margin: auto 16px;">
+    
+    
+    
+
+  </div>
+
+
+  
+   
+    
+  
+  <aside class="post-toc">
+    <span class="title" id="toc-switch"><span>Index</span></span>
+    <div class="toc-inner syuanpi back-1 fallIn-light">
+      <li class="title-link"><a href="javascript:;" class="toTop">Java 学习笔记（三）</a></li>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Java-封装"><span class="toc-text">Java 封装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#封装"><span class="toc-text">封装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#包"><span class="toc-text">包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#访问修饰符"><span class="toc-text">访问修饰符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#this关键字"><span class="toc-text">this关键字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内部类"><span class="toc-text">内部类</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Java-继承"><span class="toc-text">Java 继承</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#继承的定义"><span class="toc-text">继承的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法的重写"><span class="toc-text">方法的重写</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#继承的初始化顺序"><span class="toc-text">继承的初始化顺序</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Java-多态"><span class="toc-text">Java 多态</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#向上转型"><span class="toc-text">向上转型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多态的实现条件"><span class="toc-text">多态的实现条件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多态的实现方法"><span class="toc-text">多态的实现方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#重写"><span class="toc-text">重写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#抽象类和抽象方法"><span class="toc-text">抽象类和抽象方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接口实现"><span class="toc-text">接口实现</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </aside>
+
+
+  
+
+
+        </div>
+      </main>
+
+      <footer class="footer syuanpi fadeIn" id="footer">
+  <hr>
+  <div class="footer-wrapper">
+    <div class="left">
+      <div class="contact-icon">
+    
+    
+    
+    
+    
+    
+    
+    
+        
+        
+        
+        
+        
+            <a href="https://www.facebook.com/1" class="iconfont icon-facebook" title="facebook"></a>
+        
+        
+        
+    
+        
+        
+        
+            <a href="https://twitter.com/2" class="iconfont icon-twitter" title="twitter"></a>
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+        
+        
+            <a href="https://www.instagram.com/3" class="iconfont icon-ins" title="instagram"></a>
+        
+    
+        
+        
+            <a href="https://weibo.com/4" class="iconfont icon-weibo" title="weibo"></a>
+        
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+            <a href="https://www.zhihu.com/people/5" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+        
+        
+        
+    
+        
+            <a href="https://github.com/6" class="iconfont icon-github" title="github"></a>
+        
+        
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+        
+            <a href="https://www.linkedin.com/in/7" class="iconfont icon-linkedin" title="linkedin"></a>
+        
+        
+    
+</div>
+    </div>
+    <div class="right">
+      <div class="copyright">
+    <div class="info">
+        <span>&copy;</span>
+        <span>2016 ~ 2018</span>
+        <span>❤</span>
+        <span>Kyrene Wang</span>
+    </div>
+    <div class="theme">
+        <span>
+            Powered by
+            <a href="http://hexo.io/" target="_blank">Hexo </a>
+        </span>
+        <span>
+            Theme
+            <a href="https://github.com/ColMugX/hexo-theme-Nlvi"> Nlvi </a>
+        </span>
+    </div>
+    
+</div>
+    </div>
+  </div>
+</footer>
+    </div>
+  </div>
+  <script src="/script/lib/jquery/jquery-3.2.1.min.js"></script>
+
+
+    <script src="/script/lib/lightbox/js/lightbox.min.js"></script>
+
+
+
+
+
+    
+        <script src="/h.js"></script>
+    
+        <script src="/e.js"></script>
+    
+        <script src="/x.js"></script>
+    
+        <script src="/o.js"></script>
+    
+        <script src="/-.js"></script>
+    
+        <script src="/g.js"></script>
+    
+        <script src="/e.js"></script>
+    
+        <script src="/n.js"></script>
+    
+        <script src="/e.js"></script>
+    
+        <script src="/r.js"></script>
+    
+        <script src="/a.js"></script>
+    
+        <script src="/t.js"></script>
+    
+        <script src="/e.js"></script>
+    
+        <script src="/-.js"></script>
+    
+        <script src="/f.js"></script>
+    
+        <script src="/e.js"></script>
+    
+        <script src="/e.js"></script>
+    
+        <script src="/d.js"></script>
+    
+
+
+<script src="/script/src/nlvi.js"></script>
+<script src="/script/src/utils.js"></script>
+<script src="/script/scheme/balance.js"></script>
+<script src="/script/src/plugins.js"></script>
+<script src="/script/bootstarp.js"></script>
+
+
+<div class="backtop syuanpi dead toTop" id="backtop">
+    <i class="iconfont icon-up"></i>
+    <span style="text-align:center;font-family:Georgia;"><span style="font-family:Georgia;" id="scrollpercent">1</span>%</span>
+</div>
+
+
+  <div class="search" id="search">
+    <div class="mask" id="mask"></div>
+    <div class="search-wrapper syuanpi">
+      <h2 id="search-header" class="syuanpi">搜索一下？</h2>
+      <div class="input">
+        <input type="text" id="local-search-input" results="0" name="">
+      </div>
+      <div id="local-search-result"></div>
+    </div>
+  </div>
+  <script>
+  if (NlviConfig.theme === 'banderole') {
+    var GREETING = {
+      morning: "我的博客里可没有早饭！",
+      noon: "记得午休吃饭，不着急看我的博客~",
+      after: "下午好，感谢查阅我的博客",
+      night: "您来我的博客看笑话当做休息嘛",
+      midnight: "我觉得大半夜就不要看啦"
+    }
+  }
+  </script>
+
+</body>
+</html>

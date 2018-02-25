@@ -1,9 +1,903 @@
-extends partial/layout
-block content
-	.autopagerize_page_element: .content
-		- page.posts.each(function (item) {
-			include mixins
-			+make_post(item, false)
-		- })
-		include mixins
-		+make_pager(__('prev'), __('next'))
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <link rel="stylesheet" href="/style/style.css">
+<script>
+    var NlviConfig = {
+        title: "Mute Meteor",
+        author: "Kyrene Wang",
+        theme: "banderole",
+        lightbox: true,
+        animate: true,
+        baseUrl: "/",
+        search: true
+    }
+</script>
+
+
+
+    <link rel="stylesheet" href="/script/lib/lightbox/css/lightbox.min.css">
+
+
+
+
+    <link rel="stylesheet" href="/syuanpi/syuanpi.min.css">
+
+
+
+
+
+
+
+
+
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="browsermode" content="application">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Mute Meteor">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="msapplication-navbutton-color" content="#666666">
+<meta name= "format-detection" content="telephone=no" />
+<meta name="keywords" content="nlvi, Nlvi" />
+
+
+
+  <meta name="description" content="the coutrage to speak softly">
+
+
+
+  <title>
+  Mute Meteor
+  
+</title>
+</head>
+<body>
+  <div class="progress">
+  <div class="progress-inner"></div>
+</div>
+  
+  
+    <div class="tagcloud-mask"></div>  
+<div class="tagcloud" id="tagcloud">
+  <div class="tagcloud-inner">
+    <a href="/tags/Algorithm/" style="font-size: 14px;">Algorithm</a> <a href="/tags/DataStructure/" style="font-size: 14px;">DataStructure</a> <a href="/tags/HTTP/" style="font-size: 14px;">HTTP</a> <a href="/tags/Hexo/" style="font-size: 14px;">Hexo</a> <a href="/tags/Java/" style="font-size: 14px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 14px;">JavaScript</a> <a href="/tags/LinkedList/" style="font-size: 14px;">LinkedList</a> <a href="/tags/Linux/" style="font-size: 14px;">Linux</a> <a href="/tags/Mind-Map/" style="font-size: 14px;">Mind Map</a> <a href="/tags/MongoDB/" style="font-size: 14px;">MongoDB</a> <a href="/tags/MySQL/" style="font-size: 14px;">MySQL</a> <a href="/tags/NoSQL/" style="font-size: 14px;">NoSQL</a> <a href="/tags/Node-js/" style="font-size: 14px;">Node.js</a> <a href="/tags/Notes/" style="font-size: 14px;">Notes</a> <a href="/tags/Python/" style="font-size: 14px;">Python</a> <a href="/tags/Redis/" style="font-size: 14px;">Redis</a> <a href="/tags/Sort/" style="font-size: 14px;">Sort</a> <a href="/tags/Story/" style="font-size: 14px;">Story</a> <a href="/tags/String/" style="font-size: 14px;">String</a> <a href="/tags/Vim/" style="font-size: 14px;">Vim</a> <a href="/tags/Windows/" style="font-size: 14px;">Windows</a> <a href="/tags/binarytree/" style="font-size: 14px;">binarytree</a> <a href="/tags/network/" style="font-size: 14px;">network</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/selenium/" style="font-size: 14px;">selenium</a> <a href="/tags/server/" style="font-size: 14px;">server</a> <a href="/tags/tcp/" style="font-size: 14px;">tcp</a> <a href="/tags/udp/" style="font-size: 14px;">udp</a> <a href="/tags/web/" style="font-size: 14px;">web</a> <a href="/tags/书信/" style="font-size: 14px;">书信</a> <a href="/tags/写作/" style="font-size: 14px;">写作</a> <a href="/tags/天文/" style="font-size: 14px;">天文</a> <a href="/tags/思考/" style="font-size: 14px;">思考</a> <a href="/tags/旅行/" style="font-size: 14px;">旅行</a> <a href="/tags/爬虫/" style="font-size: 14px;">爬虫</a> <a href="/tags/科普/" style="font-size: 14px;">科普</a> <a href="/tags/诗/" style="font-size: 14px;">诗</a> <a href="/tags/软件工程/" style="font-size: 14px;">软件工程</a> <a href="/tags/随笔/" style="font-size: 14px;">随笔</a>
+  </div>
+</div>  
+  
+
+  <div class="container">
+
+    <header class="header" id="header">
+  <div class="header-wrapper">
+    <div class="logo">
+  <div class="logo-inner syuanpi tvIn">
+    <span><a href="/">Mute Meteor</a></span>
+    
+  </div>
+</div>
+    <nav class="main-nav">
+        
+  <ul class="main-nav-list syuanpi tvIn">
+  
+    <li class="menu-item">
+      <a href="javascript:;" id="search">
+        <span>Search</span>
+        
+          <span class="menu-item-label">search</span>
+        
+      </a>
+    </li>
+  
+  
+    
+      
+    
+    <li class="menu-item">
+      <a href="/" id="article">
+        <span class="base-name">Article</span>
+        
+          <span class="menu-item-label">article</span>
+        
+      </a>
+    </li>  
+  
+    
+      
+    
+    <li class="menu-item">
+      <a href="/archives" id="archives">
+        <span class="base-name">Archives</span>
+        
+          <span class="menu-item-label">archives</span>
+        
+      </a>
+    </li>  
+  
+    
+      
+    
+    <li class="menu-item">
+      <a href="javascript:;" id="tags">
+        <span class="base-name">Tags</span>
+        
+          <span class="menu-item-label">tags</span>
+        
+      </a>
+    </li>  
+  
+    
+      
+    
+    <li class="menu-item">
+      <a href="/about" id="about">
+        <span class="base-name">About</span>
+        
+          <span class="menu-item-label">about</span>
+        
+      </a>
+    </li>  
+  
+  </ul>
+  
+</nav>
+    
+    
+  </div>
+</header>
+<div class="mobile-header">
+  <div class="mobile-header-body">
+    <div class="mobile-header-list">
+      
+        
+            <div class="mobile-nav-item">
+                <a href="/">
+                    <span>Article</span>
+                    
+                        <span class="menu-item-label">article</span>
+                    
+                </a>
+            </div>
+        
+      
+        
+            <div class="mobile-nav-item">
+                <a href="/archives">
+                    <span>Archives</span>
+                    
+                        <span class="menu-item-label">archives</span>
+                    
+                </a>
+            </div>
+        
+      
+        
+          <div class="mobile-nav-item inner-cloud">
+            <div class="mobile-nav-tag">
+              <a href="javascript:;" id="mobile-tags">
+                <span>Tags</span>
+                
+                    <span class="menu-item-label">tags</span>
+                
+              </a>
+            </div>
+            <div class="mobile-nav-tagcloud">
+              <div class="mobile-tagcloud-inner">
+                <a href="/tags/Algorithm/" style="font-size: 14px;">Algorithm</a> <a href="/tags/DataStructure/" style="font-size: 14px;">DataStructure</a> <a href="/tags/HTTP/" style="font-size: 14px;">HTTP</a> <a href="/tags/Hexo/" style="font-size: 14px;">Hexo</a> <a href="/tags/Java/" style="font-size: 14px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 14px;">JavaScript</a> <a href="/tags/LinkedList/" style="font-size: 14px;">LinkedList</a> <a href="/tags/Linux/" style="font-size: 14px;">Linux</a> <a href="/tags/Mind-Map/" style="font-size: 14px;">Mind Map</a> <a href="/tags/MongoDB/" style="font-size: 14px;">MongoDB</a> <a href="/tags/MySQL/" style="font-size: 14px;">MySQL</a> <a href="/tags/NoSQL/" style="font-size: 14px;">NoSQL</a> <a href="/tags/Node-js/" style="font-size: 14px;">Node.js</a> <a href="/tags/Notes/" style="font-size: 14px;">Notes</a> <a href="/tags/Python/" style="font-size: 14px;">Python</a> <a href="/tags/Redis/" style="font-size: 14px;">Redis</a> <a href="/tags/Sort/" style="font-size: 14px;">Sort</a> <a href="/tags/Story/" style="font-size: 14px;">Story</a> <a href="/tags/String/" style="font-size: 14px;">String</a> <a href="/tags/Vim/" style="font-size: 14px;">Vim</a> <a href="/tags/Windows/" style="font-size: 14px;">Windows</a> <a href="/tags/binarytree/" style="font-size: 14px;">binarytree</a> <a href="/tags/network/" style="font-size: 14px;">network</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/selenium/" style="font-size: 14px;">selenium</a> <a href="/tags/server/" style="font-size: 14px;">server</a> <a href="/tags/tcp/" style="font-size: 14px;">tcp</a> <a href="/tags/udp/" style="font-size: 14px;">udp</a> <a href="/tags/web/" style="font-size: 14px;">web</a> <a href="/tags/书信/" style="font-size: 14px;">书信</a> <a href="/tags/写作/" style="font-size: 14px;">写作</a> <a href="/tags/天文/" style="font-size: 14px;">天文</a> <a href="/tags/思考/" style="font-size: 14px;">思考</a> <a href="/tags/旅行/" style="font-size: 14px;">旅行</a> <a href="/tags/爬虫/" style="font-size: 14px;">爬虫</a> <a href="/tags/科普/" style="font-size: 14px;">科普</a> <a href="/tags/诗/" style="font-size: 14px;">诗</a> <a href="/tags/软件工程/" style="font-size: 14px;">软件工程</a> <a href="/tags/随笔/" style="font-size: 14px;">随笔</a>
+              </div>
+            </div>
+          </div>
+        
+      
+        
+            <div class="mobile-nav-item">
+                <a href="/about">
+                    <span>About</span>
+                    
+                        <span class="menu-item-label">about</span>
+                    
+                </a>
+            </div>
+        
+      
+    </div>
+  </div>
+  <div class="mobile-header-nav">
+    <div class="mobile-header-item" id="mobile-left">
+      <div class="header-menu-item">
+        <span class="header-menu-line"></span>
+      </div>
+    </div>
+    <h1 class="mobile-header-title">
+      <a href="/">Mute Meteor</a>
+    </h1>
+    <div class="mobile-header-item"></div>
+  </div>
+</div>
+    <div class="container-inner">
+      <main class="main" id="main">
+        <div class="main-wrapper">
+          
+  
+
+<section class="posts">
+  
+    
+  <article class="
+  post
+  
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi riseIn-light back-1">
+        <div class="post-time-wrapper">
+          <span>2018-02-22</span>
+          
+          
+        </div>
+      </div>
+      <h1 class="post-title syuanpi riseIn-light back-2">
+        
+          <a href="/2018/02/22/R-note/">R-note</a>
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi riseIn-light back-3">
+      
+        
+          
+        
+      
+    
+    </div>
+    
+  </article>
+  
+   
+    
+  
+
+  
+    
+  <article class="
+  post
+  
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi riseIn-light back-1">
+        <div class="post-time-wrapper">
+          <span>2018-02-09</span>
+          
+          
+        </div>
+      </div>
+      <h1 class="post-title syuanpi riseIn-light back-2">
+        
+          <a href="/2018/02/09/Django/">Django</a>
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi riseIn-light back-3">
+      
+        
+          
+        
+      
+    
+    </div>
+    
+  </article>
+  
+   
+    
+  
+
+  
+    
+  <article class="
+  post
+  
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi riseIn-light back-1">
+        <div class="post-time-wrapper">
+          <span>2018-02-02</span>
+          
+          
+        </div>
+      </div>
+      <h1 class="post-title syuanpi riseIn-light back-2">
+        
+          <a href="/2018/02/02/requests-moyanmovie/">requests-moyanmovie</a>
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi riseIn-light back-3">
+      
+        
+          
+        
+      
+    
+    </div>
+    
+  </article>
+  
+   
+    
+  
+
+  
+    
+  <article class="
+  post
+  
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi riseIn-light back-1">
+        <div class="post-time-wrapper">
+          <span>2018-01-31</span>
+          
+            
+              <span class="post-category"><a href="/categories/Tech/">Tech</a></span>
+            
+          
+          
+        </div>
+      </div>
+      <h1 class="post-title syuanpi riseIn-light back-2">
+        
+          <a href="/2018/01/31/07-Selenium/">Python爬虫之Selenium</a>
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi riseIn-light back-3">
+      
+        
+          <h1 id="什么是Selenium"><a href="#什么是Selenium" class="headerlink" title="什么是Selenium"></a>什么是Selenium</h1><p>自动化测试工具，支持多种浏览器。爬虫中主要用来解决JavaScript渲染的问题。</p>
+<h1 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</div><div class="line"><span class="keyword">from</span> selenium.webdriver.common.by <span class="keyword">import</span> By</div><div class="line"><span class="keyword">from</span> selenium.webdriver.common.keys <span class="keyword">import</span> Keys</div><div class="line"><span class="keyword">from</span> selenium.webdriver.support <span class="keyword">import</span> expected_conditions <span class="keyword">as</span> EC</div><div class="line"><span class="keyword">from</span> selenium.webdriver.support.wait <span class="keyword">import</span> WebDriverWait</div><div class="line"></div><div class="line">browser = webdriver.Firefox()</div><div class="line"><span class="keyword">try</span>:</div><div class="line">  browser.get(<span class="string">'https://www.baidu.com'</span>)</div><div class="line">  input = browser.find_element_by_id(<span class="string">'kw'</span>)</div><div class="line">  input.send_keys(<span class="string">'Python'</span>)</div><div class="line">  input.send_keys(Keys.ENTER)</div><div class="line">  wait = WebDriverWait(browser,<span class="number">10</span>)</div><div class="line">  wait.until(EC.presence_of_element_located((By.ID,(<span class="string">'content_left'</span>)))</div><div class="line">  print(browser.current_url)</div><div class="line">  print(browser.get_cookies())</div><div class="line">  print(browser.page_source)</div><div class="line"><span class="keyword">finally</span>:</div><div class="line">  browser.close()</div></pre></td></tr></table></figure>
+<h2 id="查找元素"><a href="#查找元素" class="headerlink" title="查找元素"></a>查找元素</h2>
+        
+      
+    
+    </div>
+    
+  </article>
+  
+   
+    
+  
+
+  
+    
+  <article class="
+  post
+  
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi riseIn-light back-1">
+        <div class="post-time-wrapper">
+          <span>2018-01-31</span>
+          
+            
+              <span class="post-category"><a href="/categories/Tech/">Tech</a></span>
+            
+          
+          
+        </div>
+      </div>
+      <h1 class="post-title syuanpi riseIn-light back-2">
+        
+          <a href="/2018/01/31/06-PyQuery/">Python爬虫之PyQuery</a>
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi riseIn-light back-3">
+      
+        
+          <h1 id="PyQuery"><a href="#PyQuery" class="headerlink" title="PyQuery"></a>PyQuery</h1><p>正则太麻烦？BeautifulSoup语法太难记？<br>PyQuery 是一个好选择。</p>
+<h1 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h1><h2 id="字符串初始化"><a href="#字符串初始化" class="headerlink" title="字符串初始化"></a>字符串初始化</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> pyquery <span class="keyword">import</span> PyQuery <span class="keyword">as</span> pq</div><div class="line">doc = pq(html)</div><div class="line">print(doc(<span class="string">'li'</span>))</div></pre></td></tr></table></figure>
+<h2 id="URL初始化"><a href="#URL初始化" class="headerlink" title="URL初始化"></a>URL初始化</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> pyquery <span class="keyword">import</span> PyQuery <span class="keyword">as</span> pq</div><div class="line">doc = pq(url=<span class="string">'http://baidu.com'</span>)</div><div class="line">print(doc(<span class="string">'head'</span>))</div></pre></td></tr></table></figure>
+        
+      
+    
+      <p class="content-link">
+        <a href="/2018/01/31/06-PyQuery/#more">
+          <span>Read More...</span>
+        </a>
+      </p>
+    
+    </div>
+    
+  </article>
+  
+   
+    
+  
+
+  
+    
+  <article class="
+  post
+  
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi riseIn-light back-1">
+        <div class="post-time-wrapper">
+          <span>2018-01-30</span>
+          
+            
+              <span class="post-category"><a href="/categories/Tech/">Tech</a></span>
+            
+          
+          
+        </div>
+      </div>
+      <h1 class="post-title syuanpi riseIn-light back-2">
+        
+          <a href="/2018/01/30/05-BeautifulSoup/">Python爬虫之BeautifulSoup</a>
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi riseIn-light back-3">
+      
+        
+          <h1 id="BeautifulSoup"><a href="#BeautifulSoup" class="headerlink" title="BeautifulSoup"></a>BeautifulSoup</h1><p>灵活方便的网页解析库，处理高校，支持多种解析器。利用它不用编写正则表达式即可方便地实现网页信息的提取。</p>
+<h1 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h1><h2 id="解析库"><a href="#解析库" class="headerlink" title="解析库"></a>解析库</h2><table>
+<thead>
+<tr>
+<th>解析器</th>
+<th style="text-align:center">使用方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python标准库</td>
+<td style="text-align:center">BeautifulSoup(markup,’html.parser’)</td>
+</tr>
+<tr>
+<td>lxml HTML解析器</td>
+<td style="text-align:center">BeautifulSoup(markup,’lxml’)</td>
+</tr>
+<tr>
+<td>lxml XML解析器</td>
+<td style="text-align:center">BeautifulSoup(markup,’xml’)</td>
+</tr>
+<tr>
+<td>html5lib</td>
+<td style="text-align:center">BeautifulSoup(markup,’html5lib’)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</div><div class="line">soup = BeautifulSoup(html,<span class="string">'lxml'</span>)</div><div class="line">print(soup.prettify())  <span class="comment">#自动格式化代码</span></div><div class="line">print(soup.title.string)</div></pre></td></tr></table></figure>
+        
+      
+    
+      <p class="content-link">
+        <a href="/2018/01/30/05-BeautifulSoup/#more">
+          <span>Read More...</span>
+        </a>
+      </p>
+    
+    </div>
+    
+  </article>
+  
+   
+    
+  
+
+  
+    
+  <article class="
+  post
+  
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi riseIn-light back-1">
+        <div class="post-time-wrapper">
+          <span>2018-01-30</span>
+          
+            
+              <span class="post-category"><a href="/categories/Tech/">Tech</a></span>
+            
+          
+          
+        </div>
+      </div>
+      <h1 class="post-title syuanpi riseIn-light back-2">
+        
+          <a href="/2018/01/30/04-regular-expressions/">Python爬虫之正则表达式</a>
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi riseIn-light back-3">
+      
+        
+          <h1 id="什么是正则表达式"><a href="#什么是正则表达式" class="headerlink" title="什么是正则表达式"></a>什么是正则表达式</h1><p>用事先定义好的一些特定字符及这些特定字符的组合，组成一个“规则字符串”，这个“规则字符串”用来表达对字符串的一种过滤逻辑。</p>
+<p>re模块</p>
+<h1 id="re-match"><a href="#re-match" class="headerlink" title="re.match"></a>re.match</h1><p>从第一字符匹配</p>
+<h2 id="最常规的匹配"><a href="#最常规的匹配" class="headerlink" title="最常规的匹配"></a>最常规的匹配</h2><h2 id="泛匹配"><a href="#泛匹配" class="headerlink" title="泛匹配"></a>泛匹配</h2><p>.*</p>
+<p>group</p>
+<h2 id="匹配目标"><a href="#匹配目标" class="headerlink" title="匹配目标"></a>匹配目标</h2><p>使用括号得到匹配目标</p>
+<h2 id="贪婪匹配"><a href="#贪婪匹配" class="headerlink" title="贪婪匹配"></a>贪婪匹配</h2><h2 id="非贪婪匹配"><a href="#非贪婪匹配" class="headerlink" title="非贪婪匹配"></a>非贪婪匹配</h2><p>尽量使用非贪婪模式</p>
+<p>注：有换行符就用re.S</p>
+<h2 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h2><p>\</p>
+<h1 id="re-search"><a href="#re-search" class="headerlink" title="re.search"></a>re.search</h1><p>扫描整个字符串并返回第一个成功匹配。</p>
+<p>注：为匹配方便，能用search就不用match</p>
+<h1 id="re-findall"><a href="#re-findall" class="headerlink" title="re.findall"></a>re.findall</h1><p>搜索字符串，以<code>列表</code>形式返回全部能匹配的子串。</p>
+<h1 id="re-sub"><a href="#re-sub" class="headerlink" title="re.sub"></a>re.sub</h1><h2 id="替换字符串中每一个匹配的子串后返回替换后的字符。"><a href="#替换字符串中每一个匹配的子串后返回替换后的字符。" class="headerlink" title="替换字符串中每一个匹配的子串后返回替换后的字符。"></a>替换字符串中每一个匹配的子串后返回替换后的字符。</h2><h1 id="re-compile"><a href="#re-compile" class="headerlink" title="re.compile"></a>re.compile</h1><p>将正则字符串编译成正则表达式对象。</p>
+<p>代码复用。</p>
+<h1 id="实战练习"><a href="#实战练习" class="headerlink" title="实战练习"></a>实战练习</h1><p>豆瓣读书页面爬取。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requsets</div><div class="line"><span class="keyword">import</span> re</div><div class="line">content = requests.get(<span class="string">'https://book.douban.com/'</span>).text</div><div class="line">pattern - re.compile(<span class="string">'&lt;li.*?cover.*？href=“(.*?)”.*?title="(.*?)".*?more-meta.*?author"&gt;(.*?)&lt;/span&gt;.*?year"&gt;(.*?)&lt;/span&gt;.*?&lt;/li&gt;'</span>,re.S)</div><div class="line">results = re.findall(pattern,content)</div><div class="line">print(results)</div><div class="line"><span class="keyword">for</span> result <span class="keyword">in</span> results:</div><div class="line">  url,name,author,date = result</div><div class="line">  print(url,name,author,date.strip())</div><div class="line"><span class="comment"># 或用re.sub方法</span></div><div class="line"><span class="comment"># author = re.sub('\s','',author)</span></div><div class="line"><span class="comment"># data = re.sub('\s','',date)</span></div></pre></td></tr></table></figure>
+
+        
+      
+    
+    </div>
+    
+  </article>
+  
+   
+    
+  
+
+  
+    
+  <article class="
+  post
+  
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi riseIn-light back-1">
+        <div class="post-time-wrapper">
+          <span>2018-01-30</span>
+          
+            
+              <span class="post-category"><a href="/categories/Tech/">Tech</a></span>
+            
+          
+          
+        </div>
+      </div>
+      <h1 class="post-title syuanpi riseIn-light back-2">
+        
+          <a href="/2018/01/30/03-requests/">Python爬虫之requests</a>
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi riseIn-light back-3">
+      
+        
+          <h1 id="什么是-Requests"><a href="#什么是-Requests" class="headerlink" title="什么是 Requests"></a>什么是 Requests</h1><p>Requests 基于 urllib，采用Apache2 License 开源协议的HTTP库。</p>
+<p>Python实现的简单易用的HTTP库。</p>
+<h1 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requests</div><div class="line">response = requests.get（<span class="string">'http://www.baidu.com/'</span>）</div><div class="line">print(type(response))</div><div class="line">print(response.status_code)</div><div class="line">print(type(response.text))</div><div class="line">print(response.text)</div><div class="line">print(response.cookies)</div></pre></td></tr></table></figure>
+        
+      
+    
+      <p class="content-link">
+        <a href="/2018/01/30/03-requests/#more">
+          <span>Read More...</span>
+        </a>
+      </p>
+    
+    </div>
+    
+  </article>
+  
+   
+    
+  
+
+  
+    
+  <article class="
+  post
+  
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi riseIn-light back-1">
+        <div class="post-time-wrapper">
+          <span>2018-01-26</span>
+          
+            
+              <span class="post-category"><a href="/categories/Tech/">Tech</a></span>
+            
+          
+          
+        </div>
+      </div>
+      <h1 class="post-title syuanpi riseIn-light back-2">
+        
+          <a href="/2018/01/26/02-urllib/">Python爬虫之urllib库</a>
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi riseIn-light back-3">
+      
+        
+          <h1 id="什么是Urllib"><a href="#什么是Urllib" class="headerlink" title="什么是Urllib"></a>什么是Urllib</h1><p>Python内置的HTTP请求库</p>
+<ol>
+<li>urllib.request 请求模块</li>
+<li>urllib.error 异常处理模块</li>
+<li>urllib.parse url解析模块</li>
+<li>urllib.robotparser robots.txt 异常处理模块</li>
+</ol>
+<h1 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h1><h2 id="urlopen"><a href="#urlopen" class="headerlink" title="urlopen"></a>urlopen</h2><p>urllib.request.urlopen(url)</p>
+<p>eg.(GET)：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib.request</div><div class="line">response = urllib.request.urlopen(<span class="string">'http://www.baidu.com'</span>)</div><div class="line">print(response.read().decode(<span class="string">'utf-8'</span>))</div></pre></td></tr></table></figure></p>
+        
+      
+    
+      <p class="content-link">
+        <a href="/2018/01/26/02-urllib/#more">
+          <span>Read More...</span>
+        </a>
+      </p>
+    
+    </div>
+    
+  </article>
+  
+   
+    
+  
+
+  
+    
+  <article class="
+  post
+  
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi riseIn-light back-1">
+        <div class="post-time-wrapper">
+          <span>2018-01-26</span>
+          
+            
+              <span class="post-category"><a href="/categories/Tech/">Tech</a></span>
+            
+          
+          
+        </div>
+      </div>
+      <h1 class="post-title syuanpi riseIn-light back-2">
+        
+          <a href="/2018/01/26/01-principalOfCrawler/">Python爬虫之爬虫基本原理</a>
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi riseIn-light back-3">
+      
+        
+          <h1 id="什么是爬虫"><a href="#什么是爬虫" class="headerlink" title="什么是爬虫"></a>什么是爬虫</h1><p>请求网站并提取数据的自动化程序</p>
+<h1 id="爬虫基本流程"><a href="#爬虫基本流程" class="headerlink" title="爬虫基本流程"></a>爬虫基本流程</h1><h2 id="发起请求"><a href="#发起请求" class="headerlink" title="发起请求"></a>发起请求</h2><p>Request</p>
+<ol>
+<li>请求方式 GET POST</li>
+<li>请求URL</li>
+<li>请求头</li>
+<li>请求体</li>
+</ol>
+        
+      
+    
+      <p class="content-link">
+        <a href="/2018/01/26/01-principalOfCrawler/#more">
+          <span>Read More...</span>
+        </a>
+      </p>
+    
+    </div>
+    
+  </article>
+  
+   
+    
+  
+
+  
+</section>
+  
+  <nav class="pagination">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next ></a>
+  </nav>
+
+
+        </div>
+      </main>
+
+      <footer class="footer syuanpi fadeIn" id="footer">
+  <hr>
+  <div class="footer-wrapper">
+    <div class="left">
+      <div class="contact-icon">
+    
+    
+    
+    
+    
+    
+    
+    
+        
+        
+        
+        
+        
+            <a href="https://www.facebook.com/1" class="iconfont icon-facebook" title="facebook"></a>
+        
+        
+        
+    
+        
+        
+        
+            <a href="https://twitter.com/2" class="iconfont icon-twitter" title="twitter"></a>
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+        
+        
+            <a href="https://www.instagram.com/3" class="iconfont icon-ins" title="instagram"></a>
+        
+    
+        
+        
+            <a href="https://weibo.com/4" class="iconfont icon-weibo" title="weibo"></a>
+        
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+            <a href="https://www.zhihu.com/people/5" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+        
+        
+        
+    
+        
+            <a href="https://github.com/6" class="iconfont icon-github" title="github"></a>
+        
+        
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+        
+            <a href="https://www.linkedin.com/in/7" class="iconfont icon-linkedin" title="linkedin"></a>
+        
+        
+    
+</div>
+    </div>
+    <div class="right">
+      <div class="copyright">
+    <div class="info">
+        <span>&copy;</span>
+        <span>2016 ~ 2018</span>
+        <span>❤</span>
+        <span>Kyrene Wang</span>
+    </div>
+    <div class="theme">
+        <span>
+            Powered by
+            <a href="http://hexo.io/" target="_blank">Hexo </a>
+        </span>
+        <span>
+            Theme
+            <a href="https://github.com/ColMugX/hexo-theme-Nlvi"> Nlvi </a>
+        </span>
+    </div>
+    
+</div>
+    </div>
+  </div>
+</footer>
+    </div>
+  </div>
+  <script src="/script/lib/jquery/jquery-3.2.1.min.js"></script>
+
+
+    <script src="/script/lib/lightbox/js/lightbox.min.js"></script>
+
+
+
+
+
+    
+        <script src="/h.js"></script>
+    
+        <script src="/e.js"></script>
+    
+        <script src="/x.js"></script>
+    
+        <script src="/o.js"></script>
+    
+        <script src="/-.js"></script>
+    
+        <script src="/g.js"></script>
+    
+        <script src="/e.js"></script>
+    
+        <script src="/n.js"></script>
+    
+        <script src="/e.js"></script>
+    
+        <script src="/r.js"></script>
+    
+        <script src="/a.js"></script>
+    
+        <script src="/t.js"></script>
+    
+        <script src="/e.js"></script>
+    
+        <script src="/-.js"></script>
+    
+        <script src="/f.js"></script>
+    
+        <script src="/e.js"></script>
+    
+        <script src="/e.js"></script>
+    
+        <script src="/d.js"></script>
+    
+
+
+<script src="/script/src/nlvi.js"></script>
+<script src="/script/src/utils.js"></script>
+<script src="/script/scheme/balance.js"></script>
+<script src="/script/src/plugins.js"></script>
+<script src="/script/bootstarp.js"></script>
+
+
+<div class="backtop syuanpi dead toTop" id="backtop">
+    <i class="iconfont icon-up"></i>
+    <span style="text-align:center;font-family:Georgia;"><span style="font-family:Georgia;" id="scrollpercent">1</span>%</span>
+</div>
+
+
+  <div class="search" id="search">
+    <div class="mask" id="mask"></div>
+    <div class="search-wrapper syuanpi">
+      <h2 id="search-header" class="syuanpi">搜索一下？</h2>
+      <div class="input">
+        <input type="text" id="local-search-input" results="0" name="">
+      </div>
+      <div id="local-search-result"></div>
+    </div>
+  </div>
+  <script>
+  if (NlviConfig.theme === 'banderole') {
+    var GREETING = {
+      morning: "我的博客里可没有早饭！",
+      noon: "记得午休吃饭，不着急看我的博客~",
+      after: "下午好，感谢查阅我的博客",
+      night: "您来我的博客看笑话当做休息嘛",
+      midnight: "我觉得大半夜就不要看啦"
+    }
+  }
+  </script>
+
+</body>
+</html>

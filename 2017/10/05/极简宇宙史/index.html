@@ -1,34 +1,580 @@
-extends partial/layout
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <link rel="stylesheet" href="/style/style.css">
+<script>
+    var NlviConfig = {
+        title: "Mute Meteor",
+        author: "Kyrene Wang",
+        theme: "banderole",
+        lightbox: true,
+        animate: true,
+        baseUrl: "/",
+        search: true
+    }
+</script>
 
-include mixins
 
-block site_title
-    != page.title + " · " + config.title
 
-block description
-    - var desc = page.desc || strip_html(page.content).replace(/^\s*/, '').replace(/\s*$/, '').substring(0, 150);
-    meta(name="description", content=desc)
+    <link rel="stylesheet" href="/script/lib/lightbox/css/lightbox.min.css">
 
-block content
-  .autopagerize_page_element: .content: .post-page
-    include mixins
-    +make_post(page, true)
-    .share
-      .evernote
-        a.fa.fa-bookmark(href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title);}})();", ref="nofollow", target="_blank")
-      .weibo
-        a.fa.fa-weibo(href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&title=',e(d.title),'&appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));")
-      .twitter
-        a.fa.fa-twitter(href=url_for("http://twitter.com/home?status="+","+config.url+"/"+page.path+","+config.title+","+page.title+",;"))
-    - var prev = page.prev ? page.prev.path : false;
-    - var next = page.next ? page.next.path : false;
-    .pagination
-      ul.clearfix
-        if prev
-          li.pre.pagbuttons
-            a.btn(role="navigation",href=url_for(prev), title=page.prev.title)!= __('prev_post')
-        if next
-          li.next.pagbuttons
-            a.btn(role="navigation",href=url_for(next), title=page.next.title)!= __('next_post')
-    if page.comments
-        include partial/comments
+
+
+
+    <link rel="stylesheet" href="/syuanpi/syuanpi.min.css">
+
+
+
+
+
+
+
+
+
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="browsermode" content="application">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Mute Meteor">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="msapplication-navbutton-color" content="#666666">
+<meta name= "format-detection" content="telephone=no" />
+<meta name="keywords" content="nlvi, Nlvi" />
+
+
+
+  <meta name="description" content="the coutrage to speak softly">
+
+
+
+  <meta name="keywords" content="天文, 科普, Nlvi" />
+
+  <title> 《极简宇宙史》 · Mute Meteor </title>
+</head>
+<body>
+  <div class="progress">
+  <div class="progress-inner"></div>
+</div>
+  
+  
+    <div class="tagcloud-mask"></div>  
+<div class="tagcloud" id="tagcloud">
+  <div class="tagcloud-inner">
+    <a href="/tags/Algorithm/" style="font-size: 14px;">Algorithm</a> <a href="/tags/DataStructure/" style="font-size: 14px;">DataStructure</a> <a href="/tags/HTTP/" style="font-size: 14px;">HTTP</a> <a href="/tags/Hexo/" style="font-size: 14px;">Hexo</a> <a href="/tags/Java/" style="font-size: 14px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 14px;">JavaScript</a> <a href="/tags/LinkedList/" style="font-size: 14px;">LinkedList</a> <a href="/tags/Linux/" style="font-size: 14px;">Linux</a> <a href="/tags/Mind-Map/" style="font-size: 14px;">Mind Map</a> <a href="/tags/MongoDB/" style="font-size: 14px;">MongoDB</a> <a href="/tags/MySQL/" style="font-size: 14px;">MySQL</a> <a href="/tags/NoSQL/" style="font-size: 14px;">NoSQL</a> <a href="/tags/Node-js/" style="font-size: 14px;">Node.js</a> <a href="/tags/Notes/" style="font-size: 14px;">Notes</a> <a href="/tags/Python/" style="font-size: 14px;">Python</a> <a href="/tags/Redis/" style="font-size: 14px;">Redis</a> <a href="/tags/Sort/" style="font-size: 14px;">Sort</a> <a href="/tags/Story/" style="font-size: 14px;">Story</a> <a href="/tags/String/" style="font-size: 14px;">String</a> <a href="/tags/Vim/" style="font-size: 14px;">Vim</a> <a href="/tags/Windows/" style="font-size: 14px;">Windows</a> <a href="/tags/binarytree/" style="font-size: 14px;">binarytree</a> <a href="/tags/network/" style="font-size: 14px;">network</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/selenium/" style="font-size: 14px;">selenium</a> <a href="/tags/server/" style="font-size: 14px;">server</a> <a href="/tags/tcp/" style="font-size: 14px;">tcp</a> <a href="/tags/udp/" style="font-size: 14px;">udp</a> <a href="/tags/web/" style="font-size: 14px;">web</a> <a href="/tags/书信/" style="font-size: 14px;">书信</a> <a href="/tags/写作/" style="font-size: 14px;">写作</a> <a href="/tags/天文/" style="font-size: 14px;">天文</a> <a href="/tags/思考/" style="font-size: 14px;">思考</a> <a href="/tags/旅行/" style="font-size: 14px;">旅行</a> <a href="/tags/爬虫/" style="font-size: 14px;">爬虫</a> <a href="/tags/科普/" style="font-size: 14px;">科普</a> <a href="/tags/诗/" style="font-size: 14px;">诗</a> <a href="/tags/软件工程/" style="font-size: 14px;">软件工程</a> <a href="/tags/随笔/" style="font-size: 14px;">随笔</a>
+  </div>
+</div>  
+  
+
+  <div class="container">
+
+    <header class="header" id="header">
+  <div class="header-wrapper">
+    <div class="logo">
+  <div class="logo-inner syuanpi tvIn">
+    <span><a href="/">Mute Meteor</a></span>
+    
+  </div>
+</div>
+    <nav class="main-nav">
+        
+  <ul class="main-nav-list syuanpi tvIn">
+  
+    <li class="menu-item">
+      <a href="javascript:;" id="search">
+        <span>Search</span>
+        
+          <span class="menu-item-label">search</span>
+        
+      </a>
+    </li>
+  
+  
+    
+      
+    
+    <li class="menu-item">
+      <a href="/" id="article">
+        <span class="base-name">Article</span>
+        
+          <span class="menu-item-label">article</span>
+        
+      </a>
+    </li>  
+  
+    
+      
+    
+    <li class="menu-item">
+      <a href="/archives" id="archives">
+        <span class="base-name">Archives</span>
+        
+          <span class="menu-item-label">archives</span>
+        
+      </a>
+    </li>  
+  
+    
+      
+    
+    <li class="menu-item">
+      <a href="javascript:;" id="tags">
+        <span class="base-name">Tags</span>
+        
+          <span class="menu-item-label">tags</span>
+        
+      </a>
+    </li>  
+  
+    
+      
+    
+    <li class="menu-item">
+      <a href="/about" id="about">
+        <span class="base-name">About</span>
+        
+          <span class="menu-item-label">about</span>
+        
+      </a>
+    </li>  
+  
+  </ul>
+  
+</nav>
+    
+    
+  </div>
+</header>
+<div class="mobile-header">
+  <div class="mobile-header-body">
+    <div class="mobile-header-list">
+      
+        
+            <div class="mobile-nav-item">
+                <a href="/">
+                    <span>Article</span>
+                    
+                        <span class="menu-item-label">article</span>
+                    
+                </a>
+            </div>
+        
+      
+        
+            <div class="mobile-nav-item">
+                <a href="/archives">
+                    <span>Archives</span>
+                    
+                        <span class="menu-item-label">archives</span>
+                    
+                </a>
+            </div>
+        
+      
+        
+          <div class="mobile-nav-item inner-cloud">
+            <div class="mobile-nav-tag">
+              <a href="javascript:;" id="mobile-tags">
+                <span>Tags</span>
+                
+                    <span class="menu-item-label">tags</span>
+                
+              </a>
+            </div>
+            <div class="mobile-nav-tagcloud">
+              <div class="mobile-tagcloud-inner">
+                <a href="/tags/Algorithm/" style="font-size: 14px;">Algorithm</a> <a href="/tags/DataStructure/" style="font-size: 14px;">DataStructure</a> <a href="/tags/HTTP/" style="font-size: 14px;">HTTP</a> <a href="/tags/Hexo/" style="font-size: 14px;">Hexo</a> <a href="/tags/Java/" style="font-size: 14px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 14px;">JavaScript</a> <a href="/tags/LinkedList/" style="font-size: 14px;">LinkedList</a> <a href="/tags/Linux/" style="font-size: 14px;">Linux</a> <a href="/tags/Mind-Map/" style="font-size: 14px;">Mind Map</a> <a href="/tags/MongoDB/" style="font-size: 14px;">MongoDB</a> <a href="/tags/MySQL/" style="font-size: 14px;">MySQL</a> <a href="/tags/NoSQL/" style="font-size: 14px;">NoSQL</a> <a href="/tags/Node-js/" style="font-size: 14px;">Node.js</a> <a href="/tags/Notes/" style="font-size: 14px;">Notes</a> <a href="/tags/Python/" style="font-size: 14px;">Python</a> <a href="/tags/Redis/" style="font-size: 14px;">Redis</a> <a href="/tags/Sort/" style="font-size: 14px;">Sort</a> <a href="/tags/Story/" style="font-size: 14px;">Story</a> <a href="/tags/String/" style="font-size: 14px;">String</a> <a href="/tags/Vim/" style="font-size: 14px;">Vim</a> <a href="/tags/Windows/" style="font-size: 14px;">Windows</a> <a href="/tags/binarytree/" style="font-size: 14px;">binarytree</a> <a href="/tags/network/" style="font-size: 14px;">network</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/selenium/" style="font-size: 14px;">selenium</a> <a href="/tags/server/" style="font-size: 14px;">server</a> <a href="/tags/tcp/" style="font-size: 14px;">tcp</a> <a href="/tags/udp/" style="font-size: 14px;">udp</a> <a href="/tags/web/" style="font-size: 14px;">web</a> <a href="/tags/书信/" style="font-size: 14px;">书信</a> <a href="/tags/写作/" style="font-size: 14px;">写作</a> <a href="/tags/天文/" style="font-size: 14px;">天文</a> <a href="/tags/思考/" style="font-size: 14px;">思考</a> <a href="/tags/旅行/" style="font-size: 14px;">旅行</a> <a href="/tags/爬虫/" style="font-size: 14px;">爬虫</a> <a href="/tags/科普/" style="font-size: 14px;">科普</a> <a href="/tags/诗/" style="font-size: 14px;">诗</a> <a href="/tags/软件工程/" style="font-size: 14px;">软件工程</a> <a href="/tags/随笔/" style="font-size: 14px;">随笔</a>
+              </div>
+            </div>
+          </div>
+        
+      
+        
+            <div class="mobile-nav-item">
+                <a href="/about">
+                    <span>About</span>
+                    
+                        <span class="menu-item-label">about</span>
+                    
+                </a>
+            </div>
+        
+      
+    </div>
+  </div>
+  <div class="mobile-header-nav">
+    <div class="mobile-header-item" id="mobile-left">
+      <div class="header-menu-item">
+        <span class="header-menu-line"></span>
+      </div>
+    </div>
+    <h1 class="mobile-header-title">
+      <a href="/">Mute Meteor</a>
+    </h1>
+    <div class="mobile-header-item"></div>
+  </div>
+</div>
+    <div class="container-inner">
+      <main class="main" id="main">
+        <div class="main-wrapper">
+          
+    
+  <article class="
+  post
+   is_post 
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi riseIn-light back-1">
+        <div class="post-time-wrapper">
+          <span>2017-10-05</span>
+          
+            
+              <span class="post-category"><a href="/categories/读书记/">读书记</a></span>
+            
+          
+          
+            
+              <aside class="post-tags syuanpi riseIn-light back-3">
+              
+                <a href="/tags/天文/">天文</a>
+              
+                <a href="/tags/科普/">科普</a>
+              
+              </aside>
+            
+          
+        </div>
+      </div>
+      <h1 class="post-title syuanpi riseIn-light back-2">
+        
+          《极简宇宙史》
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi riseIn-light back-3">
+      
+        <p><a href="http://ogzkngv09.bkt.clouddn.com/universe.JPG" target="_blank" rel="external"><img src="http://ogzkngv09.bkt.clouddn.com/universe.JPG" alt="极简宇宙史"></a></p>
+<blockquote>
+<p>读这本书时一直在随着作者的描述去想象，却仍然无法在脑海里描绘出宇宙之磅礴之诡谲之绮丽之深邃。唯有感叹宇宙之浩瀚，人类之渺小。我们看到的太阳，永远是8分20秒之前的太阳，永远不可能是它当下的样子，甚至不在我们看到它在的地方，因为它已经绕着银河系中心旋转的轨道上移动了117,300公里。</p>
+</blockquote>
+<ul>
+<li>大概四十亿年前，我们年轻的行星与另一颗行星撞在一起，后者大概有火星那么大，这次撞击从地球上扯了一块物质下来，被带入太空。在随后的几亿年时间里，所有那次撞击产生的碎片聚到一起，形成了一个球体绕着地球运行。等这一切尘埃落定之时，就是月球的诞生之日。</li>
+<li>如果这次撞击发生在今天，其剧烈程度足以将地球上的一切生命抹去。而当时，我们的地球上还是一片荒芜，没有生命。有趣的是，如果没有这次灾难性的碰撞，我们就不会有月亮照亮我们的夜晚，没有潮汐变化，而地球上可能也不会出现如我们现在所熟悉的生命形式。当那颗蓝色的地球跃过月平线，出现在你眼前时，你意识到这场宇宙级的灾难事件所带来的创生与破坏一样伟大。</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li>如果人类能够以某种方式收获太阳在一秒钟内辐射出的所有能量，它就足以满足我们全世界五亿年的能量需求。</li>
+<li>我们可以依据原子的大小将它们分类。它们中最小的一个被称为氢原子。第二小的被称为氦原子。这两种原子加在一起构成了已知宇宙的百分之九十八的物质。的确很多。但与以前比，这个比例现在已经变小了，大概一百三十八亿年前，这两种原子几乎构成了宇宙中所有的已知物质。今天我们可以看到的除了氢与氦之外的原子还包括氮原子、碳原子、氧原子或银原子等。</li>
+<li>热核聚变，一个用较小的原子核产生较大的原子核的过程。热核聚变反应能够发生的一个必要条件是巨大的能量，太阳压倒一切的自身引力就是这种巨大能量的来源。</li>
+<li>我们的行星体积太小，而且不够致密，因此自身引力不足以让其内核达到足以触发热核聚变反应的温度和压力。在定义上，这就是行星与恒星的主要差别。</li>
+<li>当两颗原子核融合在一起变成一个更大的原子核时，它们的一部分质量消失了。聚合而成的新核比创造它的两颗旧核的总质量来得轻。</li>
+<li><p>太阳的爆炸将发生在五十亿年后的某个星期四，前后误差各三天。</p>
+</li>
+<li><p>时不时地，因为碰撞或其他某种扰动，某个或某些脏雪球（属于海王星）会脱离它们原本安静而遥远的绕日轨道。当它们朝向太阳飞行时，会慢慢来到较暖的环境并在太阳辐射的照耀下融化并留下长长的尾巴，这条尾巴里是微小的冰块或石块，在黑暗的背景下被阳光照得闪闪发光。这就是我们称之为“彗星”的天体。</p>
+</li>
+<li>从冥王星被发现并被称为太阳系第九大行星到这个称号被剥夺、归于矮行星的七十六个地球年里，它们绕太阳一周都没走完，也就是这一切都发生在冥王星上的一年时间里。冥王星的大小只有月球的四分之一。</li>
+<li>一个储存着几千亿亿亿个可能彗星的彗星库形成一个巨大的球状星云，看起来就像占据了太阳与其他恒星之间的所有空间。这个彗星库被称为“奥尔特云”。</li>
+</ul>
+<ul>
+<li>比邻星属于那种被称为红矮星的家族。它比太阳小很多（只有太阳的大约七分之一大），色调偏红。这也是红矮星名字的来源。红矮星非常普遍，天空里大多数恒星都属于红矮星。因为比太阳小，它微小的内核里原子聚合的速度比太阳慢好多好多。对恒星来说，大小，的确至关重要：体积越大，寿命越短。</li>
+<li><p>从月球发出的光需要大约一秒到达地球，然后再花一秒返回。太阳就更远了。光需要八分二十秒才能到达地球，对话变得有趣起来，因为一方要等超过十六分钟才能听到对方对自己问题的回答。但在宇宙中，太阳到地球的距离只能说是近邻。如果现在你从比邻星边上致电地球，电话铃声将在四年两个月后响起。</p>
+</li>
+<li><p>保持S2以这种速度旋转而不被甩出去，所需要的质量要超过四百万颗太阳。</p>
+</li>
+<li><p>如果你把太阳系，以及其中的行星、小行星和彗星看成我们在宇宙里的家庭，把比邻星当作我们的邻居，那么银河系就是我们在宇宙中的大城市，一个由三千亿颗恒星构成的繁华都市，而我们的太阳，只是其中的一颗。</p>
+</li>
+<li><p>即使在人类混乱的历史上最黑暗的日子里，也有些人勇敢地挑战宗教权威，坚信其他世界的存在。意大利天主教教士乔达诺·布鲁诺就是其中的一个，因为公开宣传这种异教思想，他在一六〇〇年的意大利罗马被活活烧死。他宣称“有无数太阳与无数的地球存在，这些地球围绕着各自的太阳旋转”。他因这些信念而痛苦地死去。</p>
+</li>
+<li><p>银河系属于一个由五十四个不同星系通过引力相互纠缠而构成的一个小小星系群。科学家把这个星系群命名为“本星系群”。它的区域覆盖了宽度大约八百四十万光年的球状区域。银河系是其中第二大的成员，大王是仙女座星系。</p>
+</li>
+<li>我们的望远镜已经探测到并且绘出了这道墙。这个尽头，这道光线无法透过的墙被称为“临界最后散射面”。</li>
+</ul>
+<ul>
+<li><p>水星看起来很普通，只比我们的月亮大了一点点，是太阳系八大行星中最小的一个。它是岩石质地，表面满是陨石坑，相当长的时间内都不会消失。水星没有大气层，因此也就没有气候变化来抹平它不规则的形状和伤痕。总之，水星不会是一个可能被选作度假目的地的行星。它自转一周需要五十九个地球日，也就是说水星上的一个夜晚相当于地球上的一个月，紧接着是同样漫长的白昼。水星上的白昼与黑夜都同地狱一般残酷，白天的温度可以高达430°C，到了晚上，又低到-180°C。</p>
+</li>
+<li><p>引力原来是宇宙的构造被它所含的物体弯曲所引起的。将物质与宇宙的局部几何联系起来并用以解释引力本质的理论，被称为广义相对论。</p>
+</li>
+<li><p>光，别名电磁辐射，可被认为既是微粒（光子），又是波。光波的高度代表着我们所称的强度。</p>
+</li>
+<li><p>包围着我们的各种光线，从最低到最高能量依次是：无线电波、微波、红外线、可见光、紫外线、X光和伽玛射线。无线电波有着很长的波长，波峰之间距离可从一米到十万公里或更长，而伽玛射线，其波长短于一毫米的十亿分之一——但它们都是光线。</p>
+</li>
+<li><p>我们所探测到的最遥远星光在到达我们的望远镜的旅途上走了一百三十八亿年时间，出发于宇宙黑暗世纪，当宇宙开始变得透明之时。</p>
+</li>
+<li><p>发现宇宙膨胀的是美国天文学家埃德温·哈勃，他是在一九二九年发现的，因此描述远处的星系越走越远这一行为的定律被命名为哈勃定律。</p>
+</li>
+<li><p>引力永远是互相吸引的，它永远让物体掉落，但竞争产生了层次，某些物体不得不往上走，以腾出空间容纳比自己更重的物体。</p>
+</li>
+</ul>
+
+      
+    
+    </div>
+    
+      
+      
+  <hr class="copy-line">
+  <div class="post-copyright">
+    <div class="copy-author">
+      <span>Author :</span>
+      <span>Kyrene Wang</span>
+    </div>
+    <div class="copy-url">
+      <span>Url :</span>
+      <a href="http://mutemeteor.com/2017/10/05/极简宇宙史/">http://mutemeteor.com/2017/10/05/极简宇宙史/</a>
+    </div>
+    <div class="copy-origin">
+      <span>Origin :</span>
+      <a href="http://mutemeteor.com">http://mutemeteor.com</a>
+    </div>
+    <div class="copy-license">
+      
+      著作权归作者所有，转载请联系作者获得授权。
+    </div>
+  </div>
+
+    
+  </article>
+  
+    
+  <nav class="article-page">
+    
+      <a href="/2017/10/28/Python3-note/" id="art-left" class="art-left">
+        <span class="next-title">
+          <i class="iconfont icon-left"></i>Python3 学习笔记（一）
+        </span>
+      </a>
+    
+    
+      <a href="/2017/10/02/algorithm-sort/" id="art-right" class="art-right">
+        <span class="prev-title"> 
+          【数据结构与算法】排序专题<i class="iconfont icon-right"></i>  
+        </span>
+      </a>
+    
+  </nav>
+
+    
+  <i id="com-switch" class="iconfont icon-more jumping-in long infinite" style="font-size:24px;display:block;text-align:center;transform:rotate(180deg);"></i>
+  <div class="post-comments" id="post-comments" style="display: block;margin: auto 16px;">
+    
+    
+    
+
+  </div>
+
+
+  
+   
+    
+  
+  <aside class="post-toc">
+    <span class="title" id="toc-switch"><span>Index</span></span>
+    <div class="toc-inner syuanpi back-1 fallIn-light">
+      <li class="title-link"><a href="javascript:;" class="toTop">《极简宇宙史》</a></li>
+      
+    </div>
+  </aside>
+
+
+  
+
+
+        </div>
+      </main>
+
+      <footer class="footer syuanpi fadeIn" id="footer">
+  <hr>
+  <div class="footer-wrapper">
+    <div class="left">
+      <div class="contact-icon">
+    
+    
+    
+    
+    
+    
+    
+    
+        
+        
+        
+        
+        
+            <a href="https://www.facebook.com/1" class="iconfont icon-facebook" title="facebook"></a>
+        
+        
+        
+    
+        
+        
+        
+            <a href="https://twitter.com/2" class="iconfont icon-twitter" title="twitter"></a>
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+        
+        
+            <a href="https://www.instagram.com/3" class="iconfont icon-ins" title="instagram"></a>
+        
+    
+        
+        
+            <a href="https://weibo.com/4" class="iconfont icon-weibo" title="weibo"></a>
+        
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+            <a href="https://www.zhihu.com/people/5" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+        
+        
+        
+    
+        
+            <a href="https://github.com/6" class="iconfont icon-github" title="github"></a>
+        
+        
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+        
+            <a href="https://www.linkedin.com/in/7" class="iconfont icon-linkedin" title="linkedin"></a>
+        
+        
+    
+</div>
+    </div>
+    <div class="right">
+      <div class="copyright">
+    <div class="info">
+        <span>&copy;</span>
+        <span>2016 ~ 2018</span>
+        <span>❤</span>
+        <span>Kyrene Wang</span>
+    </div>
+    <div class="theme">
+        <span>
+            Powered by
+            <a href="http://hexo.io/" target="_blank">Hexo </a>
+        </span>
+        <span>
+            Theme
+            <a href="https://github.com/ColMugX/hexo-theme-Nlvi"> Nlvi </a>
+        </span>
+    </div>
+    
+</div>
+    </div>
+  </div>
+</footer>
+    </div>
+  </div>
+  <script src="/script/lib/jquery/jquery-3.2.1.min.js"></script>
+
+
+    <script src="/script/lib/lightbox/js/lightbox.min.js"></script>
+
+
+
+
+
+    
+        <script src="/h.js"></script>
+    
+        <script src="/e.js"></script>
+    
+        <script src="/x.js"></script>
+    
+        <script src="/o.js"></script>
+    
+        <script src="/-.js"></script>
+    
+        <script src="/g.js"></script>
+    
+        <script src="/e.js"></script>
+    
+        <script src="/n.js"></script>
+    
+        <script src="/e.js"></script>
+    
+        <script src="/r.js"></script>
+    
+        <script src="/a.js"></script>
+    
+        <script src="/t.js"></script>
+    
+        <script src="/e.js"></script>
+    
+        <script src="/-.js"></script>
+    
+        <script src="/f.js"></script>
+    
+        <script src="/e.js"></script>
+    
+        <script src="/e.js"></script>
+    
+        <script src="/d.js"></script>
+    
+
+
+<script src="/script/src/nlvi.js"></script>
+<script src="/script/src/utils.js"></script>
+<script src="/script/scheme/balance.js"></script>
+<script src="/script/src/plugins.js"></script>
+<script src="/script/bootstarp.js"></script>
+
+
+<div class="backtop syuanpi dead toTop" id="backtop">
+    <i class="iconfont icon-up"></i>
+    <span style="text-align:center;font-family:Georgia;"><span style="font-family:Georgia;" id="scrollpercent">1</span>%</span>
+</div>
+
+
+  <div class="search" id="search">
+    <div class="mask" id="mask"></div>
+    <div class="search-wrapper syuanpi">
+      <h2 id="search-header" class="syuanpi">搜索一下？</h2>
+      <div class="input">
+        <input type="text" id="local-search-input" results="0" name="">
+      </div>
+      <div id="local-search-result"></div>
+    </div>
+  </div>
+  <script>
+  if (NlviConfig.theme === 'banderole') {
+    var GREETING = {
+      morning: "我的博客里可没有早饭！",
+      noon: "记得午休吃饭，不着急看我的博客~",
+      after: "下午好，感谢查阅我的博客",
+      night: "您来我的博客看笑话当做休息嘛",
+      midnight: "我觉得大半夜就不要看啦"
+    }
+  }
+  </script>
+
+</body>
+</html>

@@ -1,9 +1,983 @@
-extends partial/layout
-block content
-	.autopagerize_page_element: .content
-		- page.posts.each(function (item) {
-			include mixins
-			+make_post(item, false)
-		- })
-		include mixins
-		+make_pager(__('prev'), __('next'))
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <link rel="stylesheet" href="/style/style.css">
+<script>
+    var NlviConfig = {
+        title: "Mute Meteor",
+        author: "Kyrene Wang",
+        theme: "banderole",
+        lightbox: true,
+        animate: true,
+        baseUrl: "/",
+        search: true
+    }
+</script>
+
+
+
+    <link rel="stylesheet" href="/script/lib/lightbox/css/lightbox.min.css">
+
+
+
+
+    <link rel="stylesheet" href="/syuanpi/syuanpi.min.css">
+
+
+
+
+
+
+
+
+
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="browsermode" content="application">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Mute Meteor">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="msapplication-navbutton-color" content="#666666">
+<meta name= "format-detection" content="telephone=no" />
+<meta name="keywords" content="nlvi, Nlvi" />
+
+
+
+  <meta name="description" content="the coutrage to speak softly">
+
+
+
+  <title>
+  Mute Meteor
+  
+</title>
+</head>
+<body>
+  <div class="progress">
+  <div class="progress-inner"></div>
+</div>
+  
+  
+    <div class="tagcloud-mask"></div>  
+<div class="tagcloud" id="tagcloud">
+  <div class="tagcloud-inner">
+    <a href="/tags/Algorithm/" style="font-size: 14px;">Algorithm</a> <a href="/tags/DataStructure/" style="font-size: 14px;">DataStructure</a> <a href="/tags/HTTP/" style="font-size: 14px;">HTTP</a> <a href="/tags/Hexo/" style="font-size: 14px;">Hexo</a> <a href="/tags/Java/" style="font-size: 14px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 14px;">JavaScript</a> <a href="/tags/LinkedList/" style="font-size: 14px;">LinkedList</a> <a href="/tags/Linux/" style="font-size: 14px;">Linux</a> <a href="/tags/Mind-Map/" style="font-size: 14px;">Mind Map</a> <a href="/tags/MongoDB/" style="font-size: 14px;">MongoDB</a> <a href="/tags/MySQL/" style="font-size: 14px;">MySQL</a> <a href="/tags/NoSQL/" style="font-size: 14px;">NoSQL</a> <a href="/tags/Node-js/" style="font-size: 14px;">Node.js</a> <a href="/tags/Notes/" style="font-size: 14px;">Notes</a> <a href="/tags/Python/" style="font-size: 14px;">Python</a> <a href="/tags/Redis/" style="font-size: 14px;">Redis</a> <a href="/tags/Sort/" style="font-size: 14px;">Sort</a> <a href="/tags/Story/" style="font-size: 14px;">Story</a> <a href="/tags/String/" style="font-size: 14px;">String</a> <a href="/tags/Vim/" style="font-size: 14px;">Vim</a> <a href="/tags/Windows/" style="font-size: 14px;">Windows</a> <a href="/tags/binarytree/" style="font-size: 14px;">binarytree</a> <a href="/tags/network/" style="font-size: 14px;">network</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/selenium/" style="font-size: 14px;">selenium</a> <a href="/tags/server/" style="font-size: 14px;">server</a> <a href="/tags/tcp/" style="font-size: 14px;">tcp</a> <a href="/tags/udp/" style="font-size: 14px;">udp</a> <a href="/tags/web/" style="font-size: 14px;">web</a> <a href="/tags/书信/" style="font-size: 14px;">书信</a> <a href="/tags/写作/" style="font-size: 14px;">写作</a> <a href="/tags/天文/" style="font-size: 14px;">天文</a> <a href="/tags/思考/" style="font-size: 14px;">思考</a> <a href="/tags/旅行/" style="font-size: 14px;">旅行</a> <a href="/tags/爬虫/" style="font-size: 14px;">爬虫</a> <a href="/tags/科普/" style="font-size: 14px;">科普</a> <a href="/tags/诗/" style="font-size: 14px;">诗</a> <a href="/tags/软件工程/" style="font-size: 14px;">软件工程</a> <a href="/tags/随笔/" style="font-size: 14px;">随笔</a>
+  </div>
+</div>  
+  
+
+  <div class="container">
+
+    <header class="header" id="header">
+  <div class="header-wrapper">
+    <div class="logo">
+  <div class="logo-inner syuanpi tvIn">
+    <span><a href="/">Mute Meteor</a></span>
+    
+  </div>
+</div>
+    <nav class="main-nav">
+        
+  <ul class="main-nav-list syuanpi tvIn">
+  
+    <li class="menu-item">
+      <a href="javascript:;" id="search">
+        <span>Search</span>
+        
+          <span class="menu-item-label">search</span>
+        
+      </a>
+    </li>
+  
+  
+    
+      
+    
+    <li class="menu-item">
+      <a href="/" id="article">
+        <span class="base-name">Article</span>
+        
+          <span class="menu-item-label">article</span>
+        
+      </a>
+    </li>  
+  
+    
+      
+    
+    <li class="menu-item">
+      <a href="/archives" id="archives">
+        <span class="base-name">Archives</span>
+        
+          <span class="menu-item-label">archives</span>
+        
+      </a>
+    </li>  
+  
+    
+      
+    
+    <li class="menu-item">
+      <a href="javascript:;" id="tags">
+        <span class="base-name">Tags</span>
+        
+          <span class="menu-item-label">tags</span>
+        
+      </a>
+    </li>  
+  
+    
+      
+    
+    <li class="menu-item">
+      <a href="/about" id="about">
+        <span class="base-name">About</span>
+        
+          <span class="menu-item-label">about</span>
+        
+      </a>
+    </li>  
+  
+  </ul>
+  
+</nav>
+    
+    
+  </div>
+</header>
+<div class="mobile-header">
+  <div class="mobile-header-body">
+    <div class="mobile-header-list">
+      
+        
+            <div class="mobile-nav-item">
+                <a href="/">
+                    <span>Article</span>
+                    
+                        <span class="menu-item-label">article</span>
+                    
+                </a>
+            </div>
+        
+      
+        
+            <div class="mobile-nav-item">
+                <a href="/archives">
+                    <span>Archives</span>
+                    
+                        <span class="menu-item-label">archives</span>
+                    
+                </a>
+            </div>
+        
+      
+        
+          <div class="mobile-nav-item inner-cloud">
+            <div class="mobile-nav-tag">
+              <a href="javascript:;" id="mobile-tags">
+                <span>Tags</span>
+                
+                    <span class="menu-item-label">tags</span>
+                
+              </a>
+            </div>
+            <div class="mobile-nav-tagcloud">
+              <div class="mobile-tagcloud-inner">
+                <a href="/tags/Algorithm/" style="font-size: 14px;">Algorithm</a> <a href="/tags/DataStructure/" style="font-size: 14px;">DataStructure</a> <a href="/tags/HTTP/" style="font-size: 14px;">HTTP</a> <a href="/tags/Hexo/" style="font-size: 14px;">Hexo</a> <a href="/tags/Java/" style="font-size: 14px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 14px;">JavaScript</a> <a href="/tags/LinkedList/" style="font-size: 14px;">LinkedList</a> <a href="/tags/Linux/" style="font-size: 14px;">Linux</a> <a href="/tags/Mind-Map/" style="font-size: 14px;">Mind Map</a> <a href="/tags/MongoDB/" style="font-size: 14px;">MongoDB</a> <a href="/tags/MySQL/" style="font-size: 14px;">MySQL</a> <a href="/tags/NoSQL/" style="font-size: 14px;">NoSQL</a> <a href="/tags/Node-js/" style="font-size: 14px;">Node.js</a> <a href="/tags/Notes/" style="font-size: 14px;">Notes</a> <a href="/tags/Python/" style="font-size: 14px;">Python</a> <a href="/tags/Redis/" style="font-size: 14px;">Redis</a> <a href="/tags/Sort/" style="font-size: 14px;">Sort</a> <a href="/tags/Story/" style="font-size: 14px;">Story</a> <a href="/tags/String/" style="font-size: 14px;">String</a> <a href="/tags/Vim/" style="font-size: 14px;">Vim</a> <a href="/tags/Windows/" style="font-size: 14px;">Windows</a> <a href="/tags/binarytree/" style="font-size: 14px;">binarytree</a> <a href="/tags/network/" style="font-size: 14px;">network</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/selenium/" style="font-size: 14px;">selenium</a> <a href="/tags/server/" style="font-size: 14px;">server</a> <a href="/tags/tcp/" style="font-size: 14px;">tcp</a> <a href="/tags/udp/" style="font-size: 14px;">udp</a> <a href="/tags/web/" style="font-size: 14px;">web</a> <a href="/tags/书信/" style="font-size: 14px;">书信</a> <a href="/tags/写作/" style="font-size: 14px;">写作</a> <a href="/tags/天文/" style="font-size: 14px;">天文</a> <a href="/tags/思考/" style="font-size: 14px;">思考</a> <a href="/tags/旅行/" style="font-size: 14px;">旅行</a> <a href="/tags/爬虫/" style="font-size: 14px;">爬虫</a> <a href="/tags/科普/" style="font-size: 14px;">科普</a> <a href="/tags/诗/" style="font-size: 14px;">诗</a> <a href="/tags/软件工程/" style="font-size: 14px;">软件工程</a> <a href="/tags/随笔/" style="font-size: 14px;">随笔</a>
+              </div>
+            </div>
+          </div>
+        
+      
+        
+            <div class="mobile-nav-item">
+                <a href="/about">
+                    <span>About</span>
+                    
+                        <span class="menu-item-label">about</span>
+                    
+                </a>
+            </div>
+        
+      
+    </div>
+  </div>
+  <div class="mobile-header-nav">
+    <div class="mobile-header-item" id="mobile-left">
+      <div class="header-menu-item">
+        <span class="header-menu-line"></span>
+      </div>
+    </div>
+    <h1 class="mobile-header-title">
+      <a href="/">Mute Meteor</a>
+    </h1>
+    <div class="mobile-header-item"></div>
+  </div>
+</div>
+    <div class="container-inner">
+      <main class="main" id="main">
+        <div class="main-wrapper">
+          
+  
+
+<section class="posts">
+  
+    
+  <article class="
+  post
+  
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi riseIn-light back-1">
+        <div class="post-time-wrapper">
+          <span>2018-01-26</span>
+          
+            
+              <span class="post-category"><a href="/categories/Tech/">Tech</a></span>
+            
+          
+          
+        </div>
+      </div>
+      <h1 class="post-title syuanpi riseIn-light back-2">
+        
+          <a href="/2018/01/26/python-selenium/">Python3 Selenium 调用 Firefox 报错</a>
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi riseIn-light back-3">
+      
+        
+          <p>通过selenium 调用 webdriver 操控 Firefox：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</div><div class="line">driver = webdriver.Firefox()</div></pre></td></tr></table></figure>
+        
+      
+    
+      <p class="content-link">
+        <a href="/2018/01/26/python-selenium/#more">
+          <span>Read More...</span>
+        </a>
+      </p>
+    
+    </div>
+    
+  </article>
+  
+   
+    
+  
+
+  
+    
+  <article class="
+  post
+  
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi riseIn-light back-1">
+        <div class="post-time-wrapper">
+          <span>2018-01-23</span>
+          
+            
+              <span class="post-category"><a href="/categories/读书记/">读书记</a></span>
+            
+          
+          
+        </div>
+      </div>
+      <h1 class="post-title syuanpi riseIn-light back-2">
+        
+          <a href="/2018/01/23/金字塔原理/">《金字塔原理》</a>
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi riseIn-light back-3">
+      
+        
+          <p>豆瓣 mark 这本书很久了，正巧赶上淘宝打折，果断下单，又花了两天把书撸完。</p>
+<p>整本书逻辑框架十分清晰，我这种菜鸟新手整个看的过程也很流畅，作为入门书籍非常棒，从实用的例子来练习熟悉，章节顺序安排合理，跟着练下来可以信心十足的明确自己会做哪些，还能做哪些。包括最开始介绍的如何排查错误，其思路也可以运用到很多事物上。</p>
+        
+      
+    
+      <p class="content-link">
+        <a href="/2018/01/23/金字塔原理/#more">
+          <span>Read More...</span>
+        </a>
+      </p>
+    
+    </div>
+    
+  </article>
+  
+   
+    
+  
+
+  
+    
+  <article class="
+  post
+  
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi riseIn-light back-1">
+        <div class="post-time-wrapper">
+          <span>2018-01-23</span>
+          
+            
+              <span class="post-category"><a href="/categories/Tech/">Tech</a></span>
+            
+          
+          
+        </div>
+      </div>
+      <h1 class="post-title syuanpi riseIn-light back-2">
+        
+          <a href="/2018/01/23/web-server/">web-server</a>
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi riseIn-light back-3">
+      
+        
+          <h1 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h1>
+        
+      
+    
+      <p class="content-link">
+        <a href="/2018/01/23/web-server/#more">
+          <span>Read More...</span>
+        </a>
+      </p>
+    
+    </div>
+    
+  </article>
+  
+   
+    
+  
+
+  
+    
+  <article class="
+  post
+  
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi riseIn-light back-1">
+        <div class="post-time-wrapper">
+          <span>2018-01-22</span>
+          
+            
+              <span class="post-category"><a href="/categories/Tech/">Tech</a></span>
+            
+          
+          
+        </div>
+      </div>
+      <h1 class="post-title syuanpi riseIn-light back-2">
+        
+          <a href="/2018/01/22/network-tcpip/">UDP 和 TCP 那点事儿</a>
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi riseIn-light back-3">
+      
+        
+          <p>小时候最流行单机游戏，两个人，两个手柄，打到通关。后来网络把世界连接到了一起，让在不同的电脑上的软件和不同地区的人能够进行数据传递，在《计算机网络》中我们把它称作为进程之间的通信。</p>
+<p>那么不同种类之间的计算机到底是怎么进行数据传递的呢？就像说不同语言的人沟通一样，只要有一种大家都认可都遵守的协议即可，这个计算机都遵守的网络通信协议就是 ‘TCP/IP协议’ 。</p>
+<h1 id="TCP-IP协议-族"><a href="#TCP-IP协议-族" class="headerlink" title="TCP/IP协议(族)"></a>TCP/IP协议(族)</h1><p>早期的计算机网络，都是由各厂商自己规定一套协议，IBM、Apple和Microsoft都有各自的网络协议，互不兼容,为了把全世界的所有不同类型的计算机都连接起来，就必须规定一套全球通用的协议，为了实现互联网这个目标，互联网协议簇（Internet Protocol Suite）就是通用协议标准。</p>
+<p>因为互联网协议包含了上百种协议标准，但是最重要的两个协议是TCP和IP协议，所以，大家把互联网的协议简称TCP/IP协议。</p>
+        
+      
+    
+      <p class="content-link">
+        <a href="/2018/01/22/network-tcpip/#more">
+          <span>Read More...</span>
+        </a>
+      </p>
+    
+    </div>
+    
+  </article>
+  
+   
+    
+  
+
+  
+    
+  <article class="
+  post
+  
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi riseIn-light back-1">
+        <div class="post-time-wrapper">
+          <span>2018-01-15</span>
+          
+            
+              <span class="post-category"><a href="/categories/Tech/">Tech</a></span>
+            
+          
+          
+        </div>
+      </div>
+      <h1 class="post-title syuanpi riseIn-light back-2">
+        
+          <a href="/2018/01/15/TemReError/">Template render error - unknown block tag cq</a>
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi riseIn-light back-3">
+      
+        
+          <p>最近想给博客换个theme，装新主题的过程中deploy忽然崩错，错误如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">INFO  Start processing</div><div class="line">FATAL Something&apos;s wrong. Maybe you can find the solution here: http://hexo.io/docs/troubleshooting.html</div><div class="line">Template render error: (unknown path) [Line 5, Column 3]</div><div class="line">unknown block tag: cq</div></pre></td></tr></table></figure>
+<p>因为之前只修改过主题和配置文件，所以一直以为是主题下文件出了问题，就从主题下手，把新clone下来的主题删掉，发现不可行，依然崩错，遂Google。StackOverflow上有相同问题，看解答是md文件出了错，cq这个tag用错了导致渲染失败，所以把所有post剪切掉，再编译，错误变了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">INFO  Start processing</div><div class="line">FATAL Something&apos;s wrong. Maybe you can find the solution here: http://hexo.io/docs/troubleshooting.html</div><div class="line">Template render error: (unknown path)</div><div class="line">Error: Unable to call `the return value of (posts[&quot;first&quot;])[&quot;updated&quot;][&quot;toISOString&quot;]`, which is undefined or falsey</div></pre></td></tr></table></figure>
+<p>应该是post全被删除的缘故，所以进行部分post调试，终于找到了问题post，删掉了问题post的cq标签，编译成功。</p>
+<p>不过还是不知道为什么忽然就编译失败，这篇出问题post已经发了几个月，之前deploy一直没有出现过问题，猜想可能是因为所用标签除了next主题其他都无法渲染。</p>
+<p>所以只想简单换个主题，结果又是一个下午的找bug……sigh</p>
+
+        
+      
+    
+    </div>
+    
+  </article>
+  
+   
+    
+  
+
+  
+    
+  <article class="
+  post
+  
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi riseIn-light back-1">
+        <div class="post-time-wrapper">
+          <span>2018-01-14</span>
+          
+            
+              <span class="post-category"><a href="/categories/Tech/">Tech</a></span>
+            
+          
+          
+        </div>
+      </div>
+      <h1 class="post-title syuanpi riseIn-light back-2">
+        
+          <a href="/2018/01/14/Redis/">Redis 数据操作</a>
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi riseIn-light back-3">
+      
+        
+          <ul>
+<li>redis是key-value的数据，所以每个数据都是一个键值对</li>
+<li>键的类型是字符串</li>
+<li>值的类型分为五种：</li>
+</ul>
+<ol>
+<li>字符串string</li>
+<li>哈希hash</li>
+<li>列表list</li>
+<li>集合set</li>
+<li>有序集合zset</li>
+<li>数据操作的全部命令，可以查看中文网站</li>
+</ol>
+
+        
+      
+    
+    </div>
+    
+  </article>
+  
+   
+    
+  
+
+  
+    
+  <article class="
+  post
+  
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi riseIn-light back-1">
+        <div class="post-time-wrapper">
+          <span>2018-01-13</span>
+          
+            
+              <span class="post-category"><a href="/categories/Tech/">Tech</a></span>
+            
+          
+          
+        </div>
+      </div>
+      <h1 class="post-title syuanpi riseIn-light back-2">
+        
+          <a href="/2018/01/13/MongoDB/">MongoDB 基本操作和高级操作</a>
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi riseIn-light back-3">
+      
+        
+          <h1 id="MongoDB特点"><a href="#MongoDB特点" class="headerlink" title="MongoDB特点"></a>MongoDB特点</h1><ol>
+<li>模式自由 :可以把不同结构的文档存储在同一个数据库里</li>
+<li>面向集合的存储：适合存储 JSON风格文件的形式</li>
+<li>完整的索引支持：对任何属性可索引</li>
+<li>复制和高可用性：支持服务器之间的数据复制，支持主-从模式及服务器之间的相互复制。复制的主要目的是提供冗余及自动故障转移</li>
+<li>自动分片：支持云级别的伸缩性：自动分片功能支持水平的数据库集群，可动态添加额外的机器</li>
+<li>丰富的查询：支持丰富的查询表达方式，查询指令使用JSON形式的标记，可轻易查询文档中的内嵌的对象及数组</li>
+<li>快速就地更新：查询优化器会分析查询表达式，并生成一个高效的查询计划</li>
+<li>高效的传统存储方式：支持二进制数据及大型对象（如照片或图片）</li>
+</ol>
+
+        
+      
+    
+    </div>
+    
+  </article>
+  
+   
+    
+  
+
+  
+    
+  <article class="
+  post
+  
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi riseIn-light back-1">
+        <div class="post-time-wrapper">
+          <span>2018-01-02</span>
+          
+            
+              <span class="post-category"><a href="/categories/Tech/">Tech</a></span>
+            
+          
+          
+        </div>
+      </div>
+      <h1 class="post-title syuanpi riseIn-light back-2">
+        
+          <a href="/2018/01/02/node-js-reinstall/">Win10 安装msi提示错误代码2503、2502</a>
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi riseIn-light back-3">
+      
+        
+          <p>之前尝试在win 10系统上搭建 <code>Hugo</code> 时，不小心把电脑上的所有环境变量 <code>Path</code> 都删掉了，重新添加找目录又费劲，所以直接重新下载了 <code>node.js</code> 和 <code>Python</code>，安装时又发现不断出现弹窗，显示:</p>
+<p>“The installer has encountered an unexpected error installing this package.this may indicate a problem with package.the error code is 2502.<br>The installer has encountered an unexpected error installing this package.this may indicate a problem with package.the error code is 2503.”</p>
+<p>应该是权限问题，Google找解决办法，都没解决，后来综合了两个解决方法，成功安装。</p>
+<p>具体步骤：</p>
+<h1 id="永久提权"><a href="#永久提权" class="headerlink" title="永久提权"></a>永久提权</h1><p>1、按WIN+R，在运行框中输入“gpedit.msc” 确认；<br>2、打开本地策略组编辑器后依次展开 ：“计算机配置”-》“管理模板”-》“windows组件”-》“windows installer”，并找到“始终以提升的权限进行安装”；<br>3、双击该选项，设置为“已启用”，并应用；<br>4、最后还要在【用户配置】中进行同样的操作；</p>
+<h1 id="临时安装"><a href="#临时安装" class="headerlink" title="临时安装"></a>临时安装</h1><p>1、鼠标移到桌面左下角-&gt;右键（或者直接： WIN+X键），命令提示符（管理员）；<br>2、输入：msiexec /package +‘msi文件路径’（输入的时候注意半角字符且路径不能为中文名）<br>例如：<br>C:\Windows\system32&gt;msiexec /package G:\tool\node-v8.9.3-x64.msi<br>C:\Windows\system32&gt;msiexec /package G:\software\python\python-3.4.3.msi<br>C:\Windows\system32&gt;msiexec /package G:\software\python\python-2.7.10.msi</p>
+<p>大功告成。</p>
+
+        
+      
+    
+    </div>
+    
+  </article>
+  
+   
+    
+  
+
+  
+    
+  <article class="
+  post
+  
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi riseIn-light back-1">
+        <div class="post-time-wrapper">
+          <span>2017-11-14</span>
+          
+            
+              <span class="post-category"><a href="/categories/Tech/">Tech</a></span>
+            
+          
+          
+        </div>
+      </div>
+      <h1 class="post-title syuanpi riseIn-light back-2">
+        
+          <a href="/2017/11/14/python3-note4/">Python3 学习笔记（四）</a>
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi riseIn-light back-3">
+      
+        
+          <ul>
+<li><p><a href="http://mutemeteor.com/2017/10/28/Python3-note/">python3 学习笔记（一）</a></p>
+</li>
+<li><p><a href="http://mutemeteor.com/2017/11/08/Python3-note2/">python3 学习笔记（二）</a></p>
+</li>
+<li><p><a href="http://mutemeteor.com/2017/11/14/Python3-note3/">python3 学习笔记（三）</a></p>
+</li>
+</ul>
+<hr>
+<h1 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h1><p>在操作文件的整体过程与使用word编写一份简历的过程是很相似的：</p>
+<ol>
+<li>打开文件，或者新建立一个文件</li>
+<li>读/写数据</li>
+<li>关闭文件</li>
+</ol>
+<h2 id="打开文件"><a href="#打开文件" class="headerlink" title="打开文件"></a>打开文件</h2><p>在python，使用open函数，可以打开一个已经存在的文件，或者创建一个新文件</p>
+<p>open(文件名，访问模式)</p>
+<p>示例如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">f = open(<span class="string">'test.txt'</span>, <span class="string">'w'</span>)</div></pre></td></tr></table></figure></p>
+<table>
+<thead>
+<tr>
+<th>访问模式</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>r</td>
+<td style="text-align:center">以只读方式打开文件。文件的指针将会放在文件的开头。这是默认模式。</td>
+</tr>
+<tr>
+<td>w</td>
+<td style="text-align:center">打开一个文件只用于写入。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。</td>
+</tr>
+<tr>
+<td>a</td>
+<td style="text-align:center">打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。</td>
+</tr>
+<tr>
+<td>rb</td>
+<td style="text-align:center">以二进制格式打开一个文件用于只读。文件指针将会放在文件的开头。这是默认模式。</td>
+</tr>
+<tr>
+<td>wb</td>
+<td style="text-align:center">以二进制格式打开一个文件只用于写入。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。</td>
+</tr>
+<tr>
+<td>ab</td>
+<td style="text-align:center">以二进制格式打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。</td>
+</tr>
+<tr>
+<td>r+</td>
+<td style="text-align:center">打开一个文件用于读写。文件指针将会放在文件的开头。</td>
+</tr>
+<tr>
+<td>w+</td>
+<td style="text-align:center">打开一个文件用于读写。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。</td>
+</tr>
+<tr>
+<td>a+</td>
+<td style="text-align:center">打开一个文件用于读写。如果该文件已存在，文件指针将会放在文件的结尾。文件打开时会是追加模式。如果该文件不存在，创建新文件用于读写。</td>
+</tr>
+<tr>
+<td>rb+</td>
+<td style="text-align:center">以二进制格式打开一个文件用于读写。文件指针将会放在文件的开头。</td>
+</tr>
+<tr>
+<td>wb+</td>
+<td style="text-align:center">以二进制格式打开一个文件用于读写。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。</td>
+</tr>
+<tr>
+<td>ab+</td>
+<td style="text-align:center">以二进制格式打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。如果该文件不存在，创建新文件用于读写。</td>
+</tr>
+</tbody>
+</table>
+        
+      
+    
+      <p class="content-link">
+        <a href="/2017/11/14/python3-note4/#more">
+          <span>Read More...</span>
+        </a>
+      </p>
+    
+    </div>
+    
+  </article>
+  
+   
+    
+  
+
+  
+    
+  <article class="
+  post
+  
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi riseIn-light back-1">
+        <div class="post-time-wrapper">
+          <span>2017-11-14</span>
+          
+            
+              <span class="post-category"><a href="/categories/Tech/">Tech</a></span>
+            
+          
+          
+        </div>
+      </div>
+      <h1 class="post-title syuanpi riseIn-light back-2">
+        
+          <a href="/2017/11/14/Python3-note3/">Python3 学习笔记（三）</a>
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi riseIn-light back-3">
+      
+        
+          <ul>
+<li><p><a href="http://mutemeteor.com/2017/10/28/Python3-note/">python3 学习笔记（一）</a></p>
+</li>
+<li><p><a href="http://mutemeteor.com/2017/11/08/Python3-note2/">python3 学习笔记（二）</a></p>
+</li>
+</ul>
+<hr>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><p>如果在开发程序时，需要某块代码多次，但是为了提高编写的效率以及代码的重用，所以把具有独立功能的代码块组织为一个小模块，这就是函数。</p>
+<h2 id="定义函数"><a href="#定义函数" class="headerlink" title="定义函数"></a>定义函数</h2><p>定义函数的格式如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> 函数名<span class="params">()</span>:</span></div><div class="line">    代码</div></pre></td></tr></table></figure></p>
+<p>Demo:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 定义一个函数，能够完成打印信息的功能</span></div><div class="line">   <span class="function"><span class="keyword">def</span> <span class="title">printInfo</span><span class="params">()</span>:</span></div><div class="line">       <span class="keyword">print</span> <span class="string">'------------------------------------'</span></div><div class="line">       <span class="keyword">print</span> <span class="string">'         人生苦短，我用Python'</span></div><div class="line">       <span class="keyword">print</span> <span class="string">'------------------------------------'</span></div></pre></td></tr></table></figure></p>
+        
+      
+    
+      <p class="content-link">
+        <a href="/2017/11/14/Python3-note3/#more">
+          <span>Read More...</span>
+        </a>
+      </p>
+    
+    </div>
+    
+  </article>
+  
+   
+    
+  
+
+  
+</section>
+  
+  <nav class="pagination">
+      <a class="extend prev" rel="prev" href="/">< Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next ></a>
+  </nav>
+
+
+        </div>
+      </main>
+
+      <footer class="footer syuanpi fadeIn" id="footer">
+  <hr>
+  <div class="footer-wrapper">
+    <div class="left">
+      <div class="contact-icon">
+    
+    
+    
+    
+    
+    
+    
+    
+        
+        
+        
+        
+        
+            <a href="https://www.facebook.com/1" class="iconfont icon-facebook" title="facebook"></a>
+        
+        
+        
+    
+        
+        
+        
+            <a href="https://twitter.com/2" class="iconfont icon-twitter" title="twitter"></a>
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+        
+        
+            <a href="https://www.instagram.com/3" class="iconfont icon-ins" title="instagram"></a>
+        
+    
+        
+        
+            <a href="https://weibo.com/4" class="iconfont icon-weibo" title="weibo"></a>
+        
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+            <a href="https://www.zhihu.com/people/5" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+        
+        
+        
+    
+        
+            <a href="https://github.com/6" class="iconfont icon-github" title="github"></a>
+        
+        
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+        
+            <a href="https://www.linkedin.com/in/7" class="iconfont icon-linkedin" title="linkedin"></a>
+        
+        
+    
+</div>
+    </div>
+    <div class="right">
+      <div class="copyright">
+    <div class="info">
+        <span>&copy;</span>
+        <span>2016 ~ 2018</span>
+        <span>❤</span>
+        <span>Kyrene Wang</span>
+    </div>
+    <div class="theme">
+        <span>
+            Powered by
+            <a href="http://hexo.io/" target="_blank">Hexo </a>
+        </span>
+        <span>
+            Theme
+            <a href="https://github.com/ColMugX/hexo-theme-Nlvi"> Nlvi </a>
+        </span>
+    </div>
+    
+</div>
+    </div>
+  </div>
+</footer>
+    </div>
+  </div>
+  <script src="/script/lib/jquery/jquery-3.2.1.min.js"></script>
+
+
+    <script src="/script/lib/lightbox/js/lightbox.min.js"></script>
+
+
+
+
+
+    
+        <script src="/h.js"></script>
+    
+        <script src="/e.js"></script>
+    
+        <script src="/x.js"></script>
+    
+        <script src="/o.js"></script>
+    
+        <script src="/-.js"></script>
+    
+        <script src="/g.js"></script>
+    
+        <script src="/e.js"></script>
+    
+        <script src="/n.js"></script>
+    
+        <script src="/e.js"></script>
+    
+        <script src="/r.js"></script>
+    
+        <script src="/a.js"></script>
+    
+        <script src="/t.js"></script>
+    
+        <script src="/e.js"></script>
+    
+        <script src="/-.js"></script>
+    
+        <script src="/f.js"></script>
+    
+        <script src="/e.js"></script>
+    
+        <script src="/e.js"></script>
+    
+        <script src="/d.js"></script>
+    
+
+
+<script src="/script/src/nlvi.js"></script>
+<script src="/script/src/utils.js"></script>
+<script src="/script/scheme/balance.js"></script>
+<script src="/script/src/plugins.js"></script>
+<script src="/script/bootstarp.js"></script>
+
+
+<div class="backtop syuanpi dead toTop" id="backtop">
+    <i class="iconfont icon-up"></i>
+    <span style="text-align:center;font-family:Georgia;"><span style="font-family:Georgia;" id="scrollpercent">1</span>%</span>
+</div>
+
+
+  <div class="search" id="search">
+    <div class="mask" id="mask"></div>
+    <div class="search-wrapper syuanpi">
+      <h2 id="search-header" class="syuanpi">搜索一下？</h2>
+      <div class="input">
+        <input type="text" id="local-search-input" results="0" name="">
+      </div>
+      <div id="local-search-result"></div>
+    </div>
+  </div>
+  <script>
+  if (NlviConfig.theme === 'banderole') {
+    var GREETING = {
+      morning: "我的博客里可没有早饭！",
+      noon: "记得午休吃饭，不着急看我的博客~",
+      after: "下午好，感谢查阅我的博客",
+      night: "您来我的博客看笑话当做休息嘛",
+      midnight: "我觉得大半夜就不要看啦"
+    }
+  }
+  </script>
+
+</body>
+</html>

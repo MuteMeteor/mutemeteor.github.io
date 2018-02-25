@@ -1,34 +1,667 @@
-extends partial/layout
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <link rel="stylesheet" href="/style/style.css">
+<script>
+    var NlviConfig = {
+        title: "Mute Meteor",
+        author: "Kyrene Wang",
+        theme: "banderole",
+        lightbox: true,
+        animate: true,
+        baseUrl: "/",
+        search: true
+    }
+</script>
 
-include mixins
 
-block site_title
-    != page.title + " · " + config.title
 
-block description
-    - var desc = page.desc || strip_html(page.content).replace(/^\s*/, '').replace(/\s*$/, '').substring(0, 150);
-    meta(name="description", content=desc)
+    <link rel="stylesheet" href="/script/lib/lightbox/css/lightbox.min.css">
 
-block content
-  .autopagerize_page_element: .content: .post-page
-    include mixins
-    +make_post(page, true)
-    .share
-      .evernote
-        a.fa.fa-bookmark(href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title);}})();", ref="nofollow", target="_blank")
-      .weibo
-        a.fa.fa-weibo(href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&title=',e(d.title),'&appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));")
-      .twitter
-        a.fa.fa-twitter(href=url_for("http://twitter.com/home?status="+","+config.url+"/"+page.path+","+config.title+","+page.title+",;"))
-    - var prev = page.prev ? page.prev.path : false;
-    - var next = page.next ? page.next.path : false;
-    .pagination
-      ul.clearfix
-        if prev
-          li.pre.pagbuttons
-            a.btn(role="navigation",href=url_for(prev), title=page.prev.title)!= __('prev_post')
-        if next
-          li.next.pagbuttons
-            a.btn(role="navigation",href=url_for(next), title=page.next.title)!= __('next_post')
-    if page.comments
-        include partial/comments
+
+
+
+    <link rel="stylesheet" href="/syuanpi/syuanpi.min.css">
+
+
+
+
+
+
+
+
+
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="browsermode" content="application">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Mute Meteor">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="msapplication-navbutton-color" content="#666666">
+<meta name= "format-detection" content="telephone=no" />
+<meta name="keywords" content="nlvi, Nlvi" />
+
+
+
+  <meta name="description" content="the coutrage to speak softly">
+
+
+
+  <meta name="keywords" content="Notes, MySQL, Nlvi" />
+
+  <title> MySQL 学习笔记之基础篇 · Mute Meteor </title>
+</head>
+<body>
+  <div class="progress">
+  <div class="progress-inner"></div>
+</div>
+  
+  
+    <div class="tagcloud-mask"></div>  
+<div class="tagcloud" id="tagcloud">
+  <div class="tagcloud-inner">
+    <a href="/tags/Algorithm/" style="font-size: 14px;">Algorithm</a> <a href="/tags/DataStructure/" style="font-size: 14px;">DataStructure</a> <a href="/tags/HTTP/" style="font-size: 14px;">HTTP</a> <a href="/tags/Hexo/" style="font-size: 14px;">Hexo</a> <a href="/tags/Java/" style="font-size: 14px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 14px;">JavaScript</a> <a href="/tags/LinkedList/" style="font-size: 14px;">LinkedList</a> <a href="/tags/Linux/" style="font-size: 14px;">Linux</a> <a href="/tags/Mind-Map/" style="font-size: 14px;">Mind Map</a> <a href="/tags/MongoDB/" style="font-size: 14px;">MongoDB</a> <a href="/tags/MySQL/" style="font-size: 14px;">MySQL</a> <a href="/tags/NoSQL/" style="font-size: 14px;">NoSQL</a> <a href="/tags/Node-js/" style="font-size: 14px;">Node.js</a> <a href="/tags/Notes/" style="font-size: 14px;">Notes</a> <a href="/tags/Python/" style="font-size: 14px;">Python</a> <a href="/tags/Redis/" style="font-size: 14px;">Redis</a> <a href="/tags/Sort/" style="font-size: 14px;">Sort</a> <a href="/tags/Story/" style="font-size: 14px;">Story</a> <a href="/tags/String/" style="font-size: 14px;">String</a> <a href="/tags/Vim/" style="font-size: 14px;">Vim</a> <a href="/tags/Windows/" style="font-size: 14px;">Windows</a> <a href="/tags/binarytree/" style="font-size: 14px;">binarytree</a> <a href="/tags/network/" style="font-size: 14px;">network</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/selenium/" style="font-size: 14px;">selenium</a> <a href="/tags/server/" style="font-size: 14px;">server</a> <a href="/tags/tcp/" style="font-size: 14px;">tcp</a> <a href="/tags/udp/" style="font-size: 14px;">udp</a> <a href="/tags/web/" style="font-size: 14px;">web</a> <a href="/tags/书信/" style="font-size: 14px;">书信</a> <a href="/tags/写作/" style="font-size: 14px;">写作</a> <a href="/tags/天文/" style="font-size: 14px;">天文</a> <a href="/tags/思考/" style="font-size: 14px;">思考</a> <a href="/tags/旅行/" style="font-size: 14px;">旅行</a> <a href="/tags/爬虫/" style="font-size: 14px;">爬虫</a> <a href="/tags/科普/" style="font-size: 14px;">科普</a> <a href="/tags/诗/" style="font-size: 14px;">诗</a> <a href="/tags/软件工程/" style="font-size: 14px;">软件工程</a> <a href="/tags/随笔/" style="font-size: 14px;">随笔</a>
+  </div>
+</div>  
+  
+
+  <div class="container">
+
+    <header class="header" id="header">
+  <div class="header-wrapper">
+    <div class="logo">
+  <div class="logo-inner syuanpi tvIn">
+    <span><a href="/">Mute Meteor</a></span>
+    
+  </div>
+</div>
+    <nav class="main-nav">
+        
+  <ul class="main-nav-list syuanpi tvIn">
+  
+    <li class="menu-item">
+      <a href="javascript:;" id="search">
+        <span>Search</span>
+        
+          <span class="menu-item-label">search</span>
+        
+      </a>
+    </li>
+  
+  
+    
+      
+    
+    <li class="menu-item">
+      <a href="/" id="article">
+        <span class="base-name">Article</span>
+        
+          <span class="menu-item-label">article</span>
+        
+      </a>
+    </li>  
+  
+    
+      
+    
+    <li class="menu-item">
+      <a href="/archives" id="archives">
+        <span class="base-name">Archives</span>
+        
+          <span class="menu-item-label">archives</span>
+        
+      </a>
+    </li>  
+  
+    
+      
+    
+    <li class="menu-item">
+      <a href="javascript:;" id="tags">
+        <span class="base-name">Tags</span>
+        
+          <span class="menu-item-label">tags</span>
+        
+      </a>
+    </li>  
+  
+    
+      
+    
+    <li class="menu-item">
+      <a href="/about" id="about">
+        <span class="base-name">About</span>
+        
+          <span class="menu-item-label">about</span>
+        
+      </a>
+    </li>  
+  
+  </ul>
+  
+</nav>
+    
+    
+  </div>
+</header>
+<div class="mobile-header">
+  <div class="mobile-header-body">
+    <div class="mobile-header-list">
+      
+        
+            <div class="mobile-nav-item">
+                <a href="/">
+                    <span>Article</span>
+                    
+                        <span class="menu-item-label">article</span>
+                    
+                </a>
+            </div>
+        
+      
+        
+            <div class="mobile-nav-item">
+                <a href="/archives">
+                    <span>Archives</span>
+                    
+                        <span class="menu-item-label">archives</span>
+                    
+                </a>
+            </div>
+        
+      
+        
+          <div class="mobile-nav-item inner-cloud">
+            <div class="mobile-nav-tag">
+              <a href="javascript:;" id="mobile-tags">
+                <span>Tags</span>
+                
+                    <span class="menu-item-label">tags</span>
+                
+              </a>
+            </div>
+            <div class="mobile-nav-tagcloud">
+              <div class="mobile-tagcloud-inner">
+                <a href="/tags/Algorithm/" style="font-size: 14px;">Algorithm</a> <a href="/tags/DataStructure/" style="font-size: 14px;">DataStructure</a> <a href="/tags/HTTP/" style="font-size: 14px;">HTTP</a> <a href="/tags/Hexo/" style="font-size: 14px;">Hexo</a> <a href="/tags/Java/" style="font-size: 14px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 14px;">JavaScript</a> <a href="/tags/LinkedList/" style="font-size: 14px;">LinkedList</a> <a href="/tags/Linux/" style="font-size: 14px;">Linux</a> <a href="/tags/Mind-Map/" style="font-size: 14px;">Mind Map</a> <a href="/tags/MongoDB/" style="font-size: 14px;">MongoDB</a> <a href="/tags/MySQL/" style="font-size: 14px;">MySQL</a> <a href="/tags/NoSQL/" style="font-size: 14px;">NoSQL</a> <a href="/tags/Node-js/" style="font-size: 14px;">Node.js</a> <a href="/tags/Notes/" style="font-size: 14px;">Notes</a> <a href="/tags/Python/" style="font-size: 14px;">Python</a> <a href="/tags/Redis/" style="font-size: 14px;">Redis</a> <a href="/tags/Sort/" style="font-size: 14px;">Sort</a> <a href="/tags/Story/" style="font-size: 14px;">Story</a> <a href="/tags/String/" style="font-size: 14px;">String</a> <a href="/tags/Vim/" style="font-size: 14px;">Vim</a> <a href="/tags/Windows/" style="font-size: 14px;">Windows</a> <a href="/tags/binarytree/" style="font-size: 14px;">binarytree</a> <a href="/tags/network/" style="font-size: 14px;">network</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/selenium/" style="font-size: 14px;">selenium</a> <a href="/tags/server/" style="font-size: 14px;">server</a> <a href="/tags/tcp/" style="font-size: 14px;">tcp</a> <a href="/tags/udp/" style="font-size: 14px;">udp</a> <a href="/tags/web/" style="font-size: 14px;">web</a> <a href="/tags/书信/" style="font-size: 14px;">书信</a> <a href="/tags/写作/" style="font-size: 14px;">写作</a> <a href="/tags/天文/" style="font-size: 14px;">天文</a> <a href="/tags/思考/" style="font-size: 14px;">思考</a> <a href="/tags/旅行/" style="font-size: 14px;">旅行</a> <a href="/tags/爬虫/" style="font-size: 14px;">爬虫</a> <a href="/tags/科普/" style="font-size: 14px;">科普</a> <a href="/tags/诗/" style="font-size: 14px;">诗</a> <a href="/tags/软件工程/" style="font-size: 14px;">软件工程</a> <a href="/tags/随笔/" style="font-size: 14px;">随笔</a>
+              </div>
+            </div>
+          </div>
+        
+      
+        
+            <div class="mobile-nav-item">
+                <a href="/about">
+                    <span>About</span>
+                    
+                        <span class="menu-item-label">about</span>
+                    
+                </a>
+            </div>
+        
+      
+    </div>
+  </div>
+  <div class="mobile-header-nav">
+    <div class="mobile-header-item" id="mobile-left">
+      <div class="header-menu-item">
+        <span class="header-menu-line"></span>
+      </div>
+    </div>
+    <h1 class="mobile-header-title">
+      <a href="/">Mute Meteor</a>
+    </h1>
+    <div class="mobile-header-item"></div>
+  </div>
+</div>
+    <div class="container-inner">
+      <main class="main" id="main">
+        <div class="main-wrapper">
+          
+    
+  <article class="
+  post
+   is_post 
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi riseIn-light back-1">
+        <div class="post-time-wrapper">
+          <span>2017-03-31</span>
+          
+            
+              <span class="post-category"><a href="/categories/Tech/">Tech</a></span>
+            
+          
+          
+            
+              <aside class="post-tags syuanpi riseIn-light back-3">
+              
+                <a href="/tags/Notes/">Notes</a>
+              
+                <a href="/tags/MySQL/">MySQL</a>
+              
+              </aside>
+            
+          
+        </div>
+      </div>
+      <h1 class="post-title syuanpi riseIn-light back-2">
+        
+          MySQL 学习笔记之基础篇
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi riseIn-light back-3">
+      
+        <h1 id="基础篇-SQL-介绍"><a href="#基础篇-SQL-介绍" class="headerlink" title="基础篇 - SQL 介绍"></a>基础篇 - SQL 介绍</h1><h2 id="数据库和-SQL-概念"><a href="#数据库和-SQL-概念" class="headerlink" title="数据库和 SQL 概念"></a>数据库和 SQL 概念</h2><p>数据库（Database）是按照数据结构来组织、存储和管理数据的仓库，它的产生距今已有六十多年。</p>
+<p>结构化查询语言(Structured Query Language)简称 SQL，是上世纪 70 年代由 IBM 公司开发，用于对数据库进行操作的语言。SQL 是一种数据库查询和程序设计语言，用于存取数据以及查询、更新和管理关系数据库系统，同时也是数据库脚本文件的扩展名。</p>
+<h2 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h2><p>MySQL 是一个 DBMS（数据库管理系统），由瑞典 MySQLAB 公司开发，目前属于 Oracle 公司，MySQL 是最流行的关系型数据库管理系统。MySQL 是一个 DBMS（数据库管理系统），由瑞典 MySQLAB 公司开发，目前属于 Oracle 公司，MySQL 是最流行的关系型数据库管理系统<br><a id="more"></a></p>
+<h2 id="尝试-MySQL"><a href="#尝试-MySQL" class="headerlink" title="尝试 MySQL"></a>尝试 MySQL</h2><h3 id="打开-MySQL"><a href="#打开-MySQL" class="headerlink" title="打开 MySQL"></a>打开 MySQL</h3><pre><code># 启动 MySQL 服务
+sudo service mysql start
+
+#使用 root 用户登录，密码为空
+mysql -u root
+</code></pre><h3 id="查看数据库"><a href="#查看数据库" class="headerlink" title="查看数据库"></a>查看数据库</h3><p>使用命令 <code>show databases;</code>，查看有哪些数据库。</p>
+<h3 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h3><p>选择连接其中一个数据库，语句格式为 <code>use &lt;数据库名&gt;</code>，这里可以不用加分号。</p>
+<h3 id="查看表"><a href="#查看表" class="headerlink" title="查看表"></a>查看表</h3><p>使用命令 <code>show tables;</code> 查看数据库中有哪些表（不要漏掉“;”）。</p>
+<h1 id="基础篇-创建数据库并插入数据"><a href="#基础篇-创建数据库并插入数据" class="headerlink" title="基础篇 - 创建数据库并插入数据"></a>基础篇 - 创建数据库并插入数据</h1><h2 id="新建数据库"><a href="#新建数据库" class="headerlink" title="新建数据库"></a>新建数据库</h2><p>语句格式为 <code>CREATE DATABASE &lt;数据库名字&gt;;</code>,在大多数系统中，SQL 语句都是不区分大小写的，但是出于严谨，而且便于区分保留字（保留字(reserved word)：指在高级语言中已经定义过的字，使用者不能再将这些字作为变量名或过程名使用。）和变量名，我们把保留字大写，把变量和数据小写。</p>
+<h2 id="连接数据库-1"><a href="#连接数据库-1" class="headerlink" title="连接数据库"></a>连接数据库</h2><p>首先要连接数据库，使用语句 <code>use &lt;数据库名字&gt;</code>。</p>
+<h2 id="数据表"><a href="#数据表" class="headerlink" title="数据表"></a>数据表</h2><p>数据表（table）简称表，它是数据库最重要的组成部分之一。数据库只是一个框架，表才是实质内容。<br>而一个数据库中一般会有多张表，这些各自独立的表通过建立关系被联接起来，才成为可以交叉查阅、一目了然的数据库。</p>
+<h2 id="新建数据表"><a href="#新建数据表" class="headerlink" title="新建数据表"></a>新建数据表</h2><p>在数据库中新建一张表的语句格式为：</p>
+<pre><code>CREATE TABLE 表的名字
+(
+列名a 数据类型(数据长度),
+列名b 数据类型(数据长度)，
+列名c 数据类型(数据长度)
+);
+</code></pre><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th style="text-align:center">大小(字节)</th>
+<th style="text-align:right">用途</th>
+<th style="text-align:right">格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>INT</td>
+<td style="text-align:center">4</td>
+<td style="text-align:right">整数</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td>FLOAT</td>
+<td style="text-align:center">4</td>
+<td style="text-align:right">单精度浮点数</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td>DOUBLE</td>
+<td style="text-align:center">8</td>
+<td style="text-align:right">双精度浮点数</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td>ENUM</td>
+<td style="text-align:center"></td>
+<td style="text-align:right">单选,比如性别</td>
+<td style="text-align:right">ENUM(‘a’,’b’,’c’)</td>
+</tr>
+<tr>
+<td>SET</td>
+<td style="text-align:center"></td>
+<td style="text-align:right">多选</td>
+<td style="text-align:right">SET(‘1’,’2’,’3’)</td>
+</tr>
+<tr>
+<td>DATE</td>
+<td style="text-align:center">3</td>
+<td style="text-align:right">日期</td>
+<td style="text-align:right">YYYY-MM-DD</td>
+</tr>
+<tr>
+<td>TIME</td>
+<td style="text-align:center">3</td>
+<td style="text-align:right">时间点或持续时间</td>
+<td style="text-align:right">HH:MM:SS</td>
+</tr>
+<tr>
+<td>YEAR</td>
+<td style="text-align:center">1</td>
+<td style="text-align:right">年份值</td>
+<td style="text-align:right">YYYY</td>
+</tr>
+<tr>
+<td>CHAR</td>
+<td style="text-align:center">0~255</td>
+<td style="text-align:right">定长字符串</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td>VARCHAR</td>
+<td style="text-align:center">0~255</td>
+<td style="text-align:right">变长字符串</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td>TEXT</td>
+<td style="text-align:center">0~65535</td>
+<td style="text-align:right">长文本数据</td>
+<td style="text-align:right"></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>整数除了 INT 外，还有 TINYINT、SMALLINT、MEDIUMINT、BIGINT。</li>
+<li>整数除了 INT 外，还有 TINYINT、SMALLINT、MEDIUMINT、BIGINT。<br>CHAR 和 VARCHAR 的区别: CHAR 的长度是固定的，而 VARCHAR 的长度是可以变化的，比如，存储字符串 “abc”，对于 CHAR(10)，表示存储的字符将占 10 个字节(包括 7 个空字符)，而同样的 VARCHAR(12) 则只占用4个字节的长度，增加一个额外字节来存储字符串本身的长度，12 只是最大值，当你存储的字符小于 12 时，按实际长度存储。</li>
+</ul>
+<h2 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h2><p>使用语句 <code>SELECT * FROM 表的名字;</code> 查看表中的内容，刚建的表内是空的，通过 INSERT 语句向表中插入数据，语句格式为：</p>
+<pre><code>INSERT INTO 表的名字(列名a,列名b,列名c) VALUES(值1,值2,值3);
+</code></pre><p>例如像表employee内加入内容：</p>
+<pre><code>INSERT INTO employee(id,name,phone) VALUES(01,&apos;Tom&apos;,110110110);
+INSERT INTO employee VALUES(02,&apos;Jack&apos;,119119119);
+INSERT INTO employee(id,name) VALUES(03,&apos;Rose&apos;);
+</code></pre><p>有的数据需要用单引号括起来，比如 Tom、Jack、Rose 的名字，这是由于它们的数据类型是 CHAR 型。此外 VARCHAR,TEXT,DATE,TIME,ENUM 等类型的数据也需要单引号修饰，而 INT,FLOAT,DOUBLE 等则不需要。</p>
+<h1 id="基础篇-SQL-的约束"><a href="#基础篇-SQL-的约束" class="headerlink" title="基础篇 - SQL 的约束"></a>基础篇 - SQL 的约束</h1><h2 id="约束分类"><a href="#约束分类" class="headerlink" title="约束分类"></a>约束分类</h2><p>约束是一种限制，它通过对表的行或列的数据做出限制，来确保表的数据的完整性、唯一性。在MySQL中，通常有这几种约束：</p>
+<table>
+<thead>
+<tr>
+<th>约束类型：</th>
+<th style="text-align:center">主键</th>
+<th style="text-align:right">默认值</th>
+<th style="text-align:right">唯一</th>
+<th style="text-align:right">外键</th>
+<th style="text-align:right">非空</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>关键字：</td>
+<td style="text-align:center">PRIMARY KEY</td>
+<td style="text-align:right">DEFAULT</td>
+<td style="text-align:right">UNIQUE</td>
+<td style="text-align:right">FOREIGN KEY</td>
+<td style="text-align:right">NOT NULL</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>主键 (PRIMARY KEY)是用于约束表中的一行，作为这一行的唯一标识符，在一张表中通过主键就能准确定位到一行，因此主键十分重要。主键不能有重复且不能为空。还有一种特殊的主键——复合主键。主键不仅可以是表中的一列，也可以由表中的两列或多列来共同标识。</p>
+</li>
+<li><p>默认值约束 (DEFAULT) 规定，当有 DEFAULT 约束的列，插入数据为空时，将使用默认值。DEFAULT 约束只会在使用 INSERT 语句时体现出来，INSERT语句中，如果被 DEFAULT 约束的位置没有值，那么这个位置将会被 DEFAULT 的值填充。</p>
+</li>
+</ul>
+<h1 id="基础篇-SELECT-语句详解"><a href="#基础篇-SELECT-语句详解" class="headerlink" title="基础篇 - SELECT 语句详解"></a>基础篇 - SELECT 语句详解</h1><h1 id="基础篇-数据库及表的修改和删除"><a href="#基础篇-数据库及表的修改和删除" class="headerlink" title="基础篇 - 数据库及表的修改和删除"></a>基础篇 - 数据库及表的修改和删除</h1><h1 id="基础篇-其他基本操作"><a href="#基础篇-其他基本操作" class="headerlink" title="基础篇 - 其他基本操作"></a>基础篇 - 其他基本操作</h1>
+      
+    
+    </div>
+    
+      
+      
+  <hr class="copy-line">
+  <div class="post-copyright">
+    <div class="copy-author">
+      <span>Author :</span>
+      <span>Kyrene Wang</span>
+    </div>
+    <div class="copy-url">
+      <span>Url :</span>
+      <a href="http://mutemeteor.com/2017/03/31/MySQL1/">http://mutemeteor.com/2017/03/31/MySQL1/</a>
+    </div>
+    <div class="copy-origin">
+      <span>Origin :</span>
+      <a href="http://mutemeteor.com">http://mutemeteor.com</a>
+    </div>
+    <div class="copy-license">
+      
+      著作权归作者所有，转载请联系作者获得授权。
+    </div>
+  </div>
+
+    
+  </article>
+  
+    
+  <nav class="article-page">
+    
+      <a href="/2017/07/20/MySQL2/" id="art-left" class="art-left">
+        <span class="next-title">
+          <i class="iconfont icon-left"></i>MySQL 学习笔记之进阶篇
+        </span>
+      </a>
+    
+    
+      <a href="/2017/02/03/思维导图使用手册/" id="art-right" class="art-right">
+        <span class="prev-title"> 
+          《思维导图使用手册》<i class="iconfont icon-right"></i>  
+        </span>
+      </a>
+    
+  </nav>
+
+    
+  <i id="com-switch" class="iconfont icon-more jumping-in long infinite" style="font-size:24px;display:block;text-align:center;transform:rotate(180deg);"></i>
+  <div class="post-comments" id="post-comments" style="display: block;margin: auto 16px;">
+    
+    
+    
+
+  </div>
+
+
+  
+   
+    
+  
+  <aside class="post-toc">
+    <span class="title" id="toc-switch"><span>Index</span></span>
+    <div class="toc-inner syuanpi back-1 fallIn-light">
+      <li class="title-link"><a href="javascript:;" class="toTop">MySQL 学习笔记之基础篇</a></li>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#基础篇-SQL-介绍"><span class="toc-text">基础篇 - SQL 介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库和-SQL-概念"><span class="toc-text">数据库和 SQL 概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL"><span class="toc-text">MySQL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#尝试-MySQL"><span class="toc-text">尝试 MySQL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#打开-MySQL"><span class="toc-text">打开 MySQL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看数据库"><span class="toc-text">查看数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#连接数据库"><span class="toc-text">连接数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看表"><span class="toc-text">查看表</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基础篇-创建数据库并插入数据"><span class="toc-text">基础篇 - 创建数据库并插入数据</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#新建数据库"><span class="toc-text">新建数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#连接数据库-1"><span class="toc-text">连接数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据表"><span class="toc-text">数据表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#新建数据表"><span class="toc-text">新建数据表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据类型"><span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#插入数据"><span class="toc-text">插入数据</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基础篇-SQL-的约束"><span class="toc-text">基础篇 - SQL 的约束</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#约束分类"><span class="toc-text">约束分类</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基础篇-SELECT-语句详解"><span class="toc-text">基础篇 - SELECT 语句详解</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基础篇-数据库及表的修改和删除"><span class="toc-text">基础篇 - 数据库及表的修改和删除</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基础篇-其他基本操作"><span class="toc-text">基础篇 - 其他基本操作</span></a></li></ol>
+    </div>
+  </aside>
+
+
+  
+
+
+        </div>
+      </main>
+
+      <footer class="footer syuanpi fadeIn" id="footer">
+  <hr>
+  <div class="footer-wrapper">
+    <div class="left">
+      <div class="contact-icon">
+    
+    
+    
+    
+    
+    
+    
+    
+        
+        
+        
+        
+        
+            <a href="https://www.facebook.com/1" class="iconfont icon-facebook" title="facebook"></a>
+        
+        
+        
+    
+        
+        
+        
+            <a href="https://twitter.com/2" class="iconfont icon-twitter" title="twitter"></a>
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+        
+        
+            <a href="https://www.instagram.com/3" class="iconfont icon-ins" title="instagram"></a>
+        
+    
+        
+        
+            <a href="https://weibo.com/4" class="iconfont icon-weibo" title="weibo"></a>
+        
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+            <a href="https://www.zhihu.com/people/5" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+        
+        
+        
+    
+        
+            <a href="https://github.com/6" class="iconfont icon-github" title="github"></a>
+        
+        
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+        
+            <a href="https://www.linkedin.com/in/7" class="iconfont icon-linkedin" title="linkedin"></a>
+        
+        
+    
+</div>
+    </div>
+    <div class="right">
+      <div class="copyright">
+    <div class="info">
+        <span>&copy;</span>
+        <span>2016 ~ 2018</span>
+        <span>❤</span>
+        <span>Kyrene Wang</span>
+    </div>
+    <div class="theme">
+        <span>
+            Powered by
+            <a href="http://hexo.io/" target="_blank">Hexo </a>
+        </span>
+        <span>
+            Theme
+            <a href="https://github.com/ColMugX/hexo-theme-Nlvi"> Nlvi </a>
+        </span>
+    </div>
+    
+</div>
+    </div>
+  </div>
+</footer>
+    </div>
+  </div>
+  <script src="/script/lib/jquery/jquery-3.2.1.min.js"></script>
+
+
+    <script src="/script/lib/lightbox/js/lightbox.min.js"></script>
+
+
+
+
+
+    
+        <script src="/h.js"></script>
+    
+        <script src="/e.js"></script>
+    
+        <script src="/x.js"></script>
+    
+        <script src="/o.js"></script>
+    
+        <script src="/-.js"></script>
+    
+        <script src="/g.js"></script>
+    
+        <script src="/e.js"></script>
+    
+        <script src="/n.js"></script>
+    
+        <script src="/e.js"></script>
+    
+        <script src="/r.js"></script>
+    
+        <script src="/a.js"></script>
+    
+        <script src="/t.js"></script>
+    
+        <script src="/e.js"></script>
+    
+        <script src="/-.js"></script>
+    
+        <script src="/f.js"></script>
+    
+        <script src="/e.js"></script>
+    
+        <script src="/e.js"></script>
+    
+        <script src="/d.js"></script>
+    
+
+
+<script src="/script/src/nlvi.js"></script>
+<script src="/script/src/utils.js"></script>
+<script src="/script/scheme/balance.js"></script>
+<script src="/script/src/plugins.js"></script>
+<script src="/script/bootstarp.js"></script>
+
+
+<div class="backtop syuanpi dead toTop" id="backtop">
+    <i class="iconfont icon-up"></i>
+    <span style="text-align:center;font-family:Georgia;"><span style="font-family:Georgia;" id="scrollpercent">1</span>%</span>
+</div>
+
+
+  <div class="search" id="search">
+    <div class="mask" id="mask"></div>
+    <div class="search-wrapper syuanpi">
+      <h2 id="search-header" class="syuanpi">搜索一下？</h2>
+      <div class="input">
+        <input type="text" id="local-search-input" results="0" name="">
+      </div>
+      <div id="local-search-result"></div>
+    </div>
+  </div>
+  <script>
+  if (NlviConfig.theme === 'banderole') {
+    var GREETING = {
+      morning: "我的博客里可没有早饭！",
+      noon: "记得午休吃饭，不着急看我的博客~",
+      after: "下午好，感谢查阅我的博客",
+      night: "您来我的博客看笑话当做休息嘛",
+      midnight: "我觉得大半夜就不要看啦"
+    }
+  }
+  </script>
+
+</body>
+</html>
