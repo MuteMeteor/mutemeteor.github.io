@@ -1,381 +1,987 @@
-<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
-<html>
-  <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="viewport"content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
-  
-  
-  <title>  Mute Meteor</title>
+<!DOCTYPE html>
 
- 
-  
-    <link rel="icon" href="/img/favicon.png">
+
+
   
 
 
-  <!-- css -->
-  <link rel="stylesheet" href="/css/style.css">  
-  <!-- Jquery -->
-  <script src="//cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script> 
-  <!-- Add fancyBox -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script> 
-  <script src="/js/gallery.js"></script>
-  <!-- javascript --> 
-  <script src="/js/mobile.js"></script>  
-  <script src="/js/utils.js"></script>    
-  <script src="/js/script.js"></script>  
-</head> 
-  <body> 
-    <header class="header">
-	
-  <nav class="header-nav">       
-	
-  	<span class="iconfont icon-menu mobile-toggle"></span>  
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
 
-    <a class="header-logo" href="/"><span>Mute Meteor</a>  
 
-    <div class="header-menu">          
-              
-            
 
-              <a class="header-menu-link" id="header-menu-home" href="/">首页</a>     
 
-            
-            
-            
 
-              <a class="header-menu-link" id="header-menu-archives" href="/archives">归档</a>     
 
-            
-            
-            
 
-              <a class="header-menu-link" id="header-menu-categories" href="/categories">分类</a>     
 
-            
-            
-            
 
-              <a class="header-menu-link" id="header-menu-tags" href="/tags">标签</a>     
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
-            
-            
-            
 
-              <a class="header-menu-link" id="header-menu-about" href="/about">关于</a>     
 
-            
-                
-    </div>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="the coutrage to speak softly">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mute Meteor">
+<meta property="og:url" content="http://mutemeteor.com/index.html">
+<meta property="og:site_name" content="Mute Meteor">
+<meta property="og:description" content="the coutrage to speak softly">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mute Meteor">
+<meta name="twitter:description" content="the coutrage to speak softly">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://mutemeteor.com/"/>
+
+
+
+
+
+  <title>Mute Meteor</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?063129ce0f11ae9e4a1036a9220b94be";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
     
-  </nav>
-</header>
+  
 
-     <div class="container">         
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Mute Meteor</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://mutemeteor.com/2018/02/22/R-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kyrene Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://on7kyvg9n.bkt.clouddn.com/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mute Meteor">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/22/R-note/" itemprop="url">R-note</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-22T11:48:35+08:00">
+                2018-02-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
 
       
         
-          <section id="main" class="slideDownMin" >
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
-<div class="profile">
+    
+      
 
-		<img class="avatar no-gallery" src="/img/header.jpg"  alt="Lose">
-					
-		<p class="author">Wang</p>
-			
-		<div class="social">
-   		    	
-		<a href="https://github.com/MuteMeteor" class="iconfont icon-github" target="_blank" title="github"></a>
-	        	
-		<a href="https://twitter.com/mutemeteor" class="iconfont icon-twitter" target="_blank" title="twitter"></a>
-	        	
-		<a href="https://instagram.com/mutemeteor" class="iconfont icon-instagram" target="_blank" title="instagram"></a>
-	        	
-		<a href="/" class="iconfont icon-others" target="_blank" title="others"></a>
-	    
-    	</div>		
-</div>
+  
 
-      	  	
+  
+  
+  
 
-  		
-    	<article class="article">	
-		
-	   
-	<div class="article-header">
-	    
-	     <a class="article-title"  href="/2018/02/22/R-note/">R-note</a>  
-	       
-		 
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://mutemeteor.com/2018/02/09/Django/">
 
-		 <time>2018-02-22 </time>    
-	</div>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kyrene Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://on7kyvg9n.bkt.clouddn.com/avatar.jpg">
+    </span>
 
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mute Meteor">
+    </span>
 
-    <div class="article-excerpt">	
-	
-  	
+    
+      <header class="post-header">
 
-	  
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/09/Django/" itemprop="url">Django</a></h1>
+        
 
-	  	 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-09T17:52:16+08:00">
+                2018-02-09
+              </time>
+            
 
-	    
-</div>
+            
 
-<div class="center">
-				
+            
+          </span>
 
-			
+          
 
+          
+            
+          
 
-		
+          
+          
 
-		<span class="post-words"><span class="iconfont icon-words"></span>
-		0
-		</span>		
-</div>		
+          
 
-		
-    <a class="article-readmore" href="/2018/02/22/R-note/">阅读更多</a> 
-    	
-</article>     
-     	
-      	  	
+          
 
-  		
-    	<article class="article">	
-		
-	   
-	<div class="article-header">
-	    
-	     <a class="article-title"  href="/2018/02/09/Django/">Django</a>  
-	       
-		 
+          
 
-		 <time>2018-02-09 </time>    
-	</div>
+        </div>
+      </header>
+    
 
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
-    <div class="article-excerpt">	
-	
-  	
+      
+      
 
-	  
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
 
-	  	 
+    
 
-	    
-</div>
+    
 
-<div class="center">
-				
+    
 
-			
+    <footer class="post-footer">
+      
 
+      
 
-		
+      
 
-		<span class="post-words"><span class="iconfont icon-words"></span>
-		0
-		</span>		
-</div>		
-
-		
-    <a class="article-readmore" href="/2018/02/09/Django/">阅读更多</a> 
-    	
-</article>     
-     	
-      	  	
-
-  		
-    	<article class="article">	
-		
-	   
-	<div class="article-header">
-	    
-	     <a class="article-title"  href="/2018/02/02/requests-moyanmovie/">requests-moyanmovie</a>  
-	       
-		 
-
-		 <time>2018-02-02 </time>    
-	</div>
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
-    <div class="article-excerpt">	
-	
-  	
+    
+      
 
-	  
+  
 
-	  	 
+  
+  
+  
 
-	    
-</div>
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://mutemeteor.com/2018/02/02/requests-moyanmovie/">
 
-<div class="center">
-				
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kyrene Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://on7kyvg9n.bkt.clouddn.com/avatar.jpg">
+    </span>
 
-			
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mute Meteor">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/02/requests-moyanmovie/" itemprop="url">requests-moyanmovie</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-02T21:34:45+08:00">
+                2018-02-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
-		
+    
+      
 
-		<span class="post-words"><span class="iconfont icon-words"></span>
-		0
-		</span>		
-</div>		
+  
 
-		
-    <a class="article-readmore" href="/2018/02/02/requests-moyanmovie/">阅读更多</a> 
-    	
-</article>     
-     	
-      	  	
+  
+  
+  
 
-  		
-    	<article class="article">	
-		
-	   
-	<div class="article-header">
-	    
-	     <a class="article-title"  href="/2018/01/31/07-Selenium/">Python爬虫之Selenium</a>  
-	       
-		 
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://mutemeteor.com/2018/01/31/07-Selenium/">
 
-		 <time>2018-01-31 </time>    
-	</div>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kyrene Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://on7kyvg9n.bkt.clouddn.com/avatar.jpg">
+    </span>
 
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mute Meteor">
+    </span>
 
-    <div class="article-excerpt">	
-	
-  	
+    
+      <header class="post-header">
 
-	  
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/31/07-Selenium/" itemprop="url">Python爬虫之Selenium</a></h1>
+        
 
-	  	<h1 id="什么是Selenium"><a href="#什么是Selenium" class="headerlink" title="什么是Selenium"></a>什么是Selenium</h1><p>自动化测试工具，支持多种浏览器。爬虫中主要用来解决JavaScript渲染的问题。</p>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-31T09:44:31+08:00">
+                2018-01-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/" itemprop="url" rel="index">
+                    <span itemprop="name">Tech</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="什么是Selenium"><a href="#什么是Selenium" class="headerlink" title="什么是Selenium"></a>什么是Selenium</h1><p>自动化测试工具，支持多种浏览器。爬虫中主要用来解决JavaScript渲染的问题。</p>
 <h1 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</div><div class="line"><span class="keyword">from</span> selenium.webdriver.common.by <span class="keyword">import</span> By</div><div class="line"><span class="keyword">from</span> selenium.webdriver.common.keys <span class="keyword">import</span> Keys</div><div class="line"><span class="keyword">from</span> selenium.webdriver.support <span class="keyword">import</span> expected_conditions <span class="keyword">as</span> EC</div><div class="line"><span class="keyword">from</span> selenium.webdriver.support.wait <span class="keyword">import</span> WebDriverWait</div><div class="line"></div><div class="line">browser = webdriver.Firefox()</div><div class="line"><span class="keyword">try</span>:</div><div class="line">  browser.get(<span class="string">'https://www.baidu.com'</span>)</div><div class="line">  input = browser.find_element_by_id(<span class="string">'kw'</span>)</div><div class="line">  input.send_keys(<span class="string">'Python'</span>)</div><div class="line">  input.send_keys(Keys.ENTER)</div><div class="line">  wait = WebDriverWait(browser,<span class="number">10</span>)</div><div class="line">  wait.until(EC.presence_of_element_located((By.ID,(<span class="string">'content_left'</span>)))</div><div class="line">  print(browser.current_url)</div><div class="line">  print(browser.get_cookies())</div><div class="line">  print(browser.page_source)</div><div class="line"><span class="keyword">finally</span>:</div><div class="line">  browser.close()</div></pre></td></tr></table></figure>
-<h2 id="查找元素"><a href="#查找元素" class="headerlink" title="查找元素"></a>查找元素</h2> 
+<h2 id="查找元素"><a href="#查找元素" class="headerlink" title="查找元素"></a>查找元素</h2>
+          
+        
+      
+    </div>
+    
+    
+    
 
-	    
-</div>
+    
 
-<div class="center">
-			
+    
 
-				<span class="post-meta">		
-				<span class="iconfont icon-category"></span>
-				<a class="category-link" href="/categories/Tech/">Tech</a>
-				</span>
-		
-			
+    
 
-		
-				
-				<span class="post-meta">
-				<span class="iconfont icon-tag"></span>
-				<a class="tag-link" href="/tags/Python/">Python</a> <a class="tag-link" href="/tags/爬虫/">爬虫</a>
-				</span>			
-			
+    <footer class="post-footer">
+      
 
+      
 
-		
+      
 
-		<span class="post-words"><span class="iconfont icon-words"></span>
-		672
-		</span>		
-</div>		
-
-		
-    <a class="article-readmore" href="/2018/01/31/07-Selenium/">阅读更多</a> 
-    	
-</article>     
-     	
-      	  	
-
-  		
-    	<article class="article">	
-		
-	   
-	<div class="article-header">
-	    
-	     <a class="article-title"  href="/2018/01/31/06-PyQuery/">Python爬虫之PyQuery</a>  
-	       
-		 
-
-		 <time>2018-01-31 </time>    
-	</div>
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
-    <div class="article-excerpt">	
-	
-  	
+    
+      
 
-	  
+  
 
-	  	<h1 id="PyQuery"><a href="#PyQuery" class="headerlink" title="PyQuery"></a>PyQuery</h1><p>正则太麻烦？BeautifulSoup语法太难记？<br>PyQuery 是一个好选择。</p>
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://mutemeteor.com/2018/01/31/06-PyQuery/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kyrene Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://on7kyvg9n.bkt.clouddn.com/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mute Meteor">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/31/06-PyQuery/" itemprop="url">Python爬虫之PyQuery</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-31T09:43:31+08:00">
+                2018-01-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/" itemprop="url" rel="index">
+                    <span itemprop="name">Tech</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="PyQuery"><a href="#PyQuery" class="headerlink" title="PyQuery"></a>PyQuery</h1><p>正则太麻烦？BeautifulSoup语法太难记？<br>PyQuery 是一个好选择。</p>
 <h1 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h1><h2 id="字符串初始化"><a href="#字符串初始化" class="headerlink" title="字符串初始化"></a>字符串初始化</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> pyquery <span class="keyword">import</span> PyQuery <span class="keyword">as</span> pq</div><div class="line">doc = pq(html)</div><div class="line">print(doc(<span class="string">'li'</span>))</div></pre></td></tr></table></figure>
 <h2 id="URL初始化"><a href="#URL初始化" class="headerlink" title="URL初始化"></a>URL初始化</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> pyquery <span class="keyword">import</span> PyQuery <span class="keyword">as</span> pq</div><div class="line">doc = pq(url=<span class="string">'http://baidu.com'</span>)</div><div class="line">print(doc(<span class="string">'head'</span>))</div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/31/06-PyQuery/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
 
-	     
-</div>
+    
 
-<div class="center">
-			
+    
 
-				<span class="post-meta">		
-				<span class="iconfont icon-category"></span>
-				<a class="category-link" href="/categories/Tech/">Tech</a>
-				</span>
-		
-			
+    
 
-		
-				
-				<span class="post-meta">
-				<span class="iconfont icon-tag"></span>
-				<a class="tag-link" href="/tags/Python/">Python</a> <a class="tag-link" href="/tags/爬虫/">爬虫</a>
-				</span>			
-			
+    <footer class="post-footer">
+      
 
+      
 
-		
+      
 
-		<span class="post-words"><span class="iconfont icon-words"></span>
-		530
-		</span>		
-</div>		
-
-		
-    <a class="article-readmore" href="/2018/01/31/06-PyQuery/">阅读更多</a> 
-    	
-</article>     
-     	
-      	  	
-
-  		
-    	<article class="article">	
-		
-	   
-	<div class="article-header">
-	    
-	     <a class="article-title"  href="/2018/01/30/05-BeautifulSoup/">Python爬虫之BeautifulSoup</a>  
-	       
-		 
-
-		 <time>2018-01-30 </time>    
-	</div>
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
-    <div class="article-excerpt">	
-	
-  	
+    
+      
 
-	  
+  
 
-	  	<h1 id="BeautifulSoup"><a href="#BeautifulSoup" class="headerlink" title="BeautifulSoup"></a>BeautifulSoup</h1><p>灵活方便的网页解析库，处理高校，支持多种解析器。利用它不用编写正则表达式即可方便地实现网页信息的提取。</p>
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://mutemeteor.com/2018/01/30/05-BeautifulSoup/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kyrene Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://on7kyvg9n.bkt.clouddn.com/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mute Meteor">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/30/05-BeautifulSoup/" itemprop="url">Python爬虫之BeautifulSoup</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-30T19:11:14+08:00">
+                2018-01-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/" itemprop="url" rel="index">
+                    <span itemprop="name">Tech</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="BeautifulSoup"><a href="#BeautifulSoup" class="headerlink" title="BeautifulSoup"></a>BeautifulSoup</h1><p>灵活方便的网页解析库，处理高校，支持多种解析器。利用它不用编写正则表达式即可方便地实现网页信息的提取。</p>
 <h1 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h1><h2 id="解析库"><a href="#解析库" class="headerlink" title="解析库"></a>解析库</h2><table>
 <thead>
 <tr>
@@ -403,64 +1009,153 @@
 </tbody>
 </table>
 <h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</div><div class="line">soup = BeautifulSoup(html,<span class="string">'lxml'</span>)</div><div class="line">print(soup.prettify())  <span class="comment">#自动格式化代码</span></div><div class="line">print(soup.title.string)</div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/30/05-BeautifulSoup/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
 
-	     
-</div>
+    
 
-<div class="center">
-			
+    
 
-				<span class="post-meta">		
-				<span class="iconfont icon-category"></span>
-				<a class="category-link" href="/categories/Tech/">Tech</a>
-				</span>
-		
-			
+    
 
-		
-				
-				<span class="post-meta">
-				<span class="iconfont icon-tag"></span>
-				<a class="tag-link" href="/tags/Python/">Python</a> <a class="tag-link" href="/tags/爬虫/">爬虫</a>
-				</span>			
-			
+    <footer class="post-footer">
+      
 
+      
 
-		
+      
 
-		<span class="post-words"><span class="iconfont icon-words"></span>
-		1867
-		</span>		
-</div>		
-
-		
-    <a class="article-readmore" href="/2018/01/30/05-BeautifulSoup/">阅读更多</a> 
-    	
-</article>     
-     	
-      	  	
-
-  		
-    	<article class="article">	
-		
-	   
-	<div class="article-header">
-	    
-	     <a class="article-title"  href="/2018/01/30/04-regular-expressions/">Python爬虫之正则表达式</a>  
-	       
-		 
-
-		 <time>2018-01-30 </time>    
-	</div>
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
-    <div class="article-excerpt">	
-	
-  	
+    
+      
 
-	  
+  
 
-	  	<h1 id="什么是正则表达式"><a href="#什么是正则表达式" class="headerlink" title="什么是正则表达式"></a>什么是正则表达式</h1><p>用事先定义好的一些特定字符及这些特定字符的组合，组成一个“规则字符串”，这个“规则字符串”用来表达对字符串的一种过滤逻辑。</p>
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://mutemeteor.com/2018/01/30/04-regular-expressions/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kyrene Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://on7kyvg9n.bkt.clouddn.com/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mute Meteor">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/30/04-regular-expressions/" itemprop="url">Python爬虫之正则表达式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-30T19:10:55+08:00">
+                2018-01-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/" itemprop="url" rel="index">
+                    <span itemprop="name">Tech</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="什么是正则表达式"><a href="#什么是正则表达式" class="headerlink" title="什么是正则表达式"></a>什么是正则表达式</h1><p>用事先定义好的一些特定字符及这些特定字符的组合，组成一个“规则字符串”，这个“规则字符串”用来表达对字符串的一种过滤逻辑。</p>
 <p>re模块</p>
 <h1 id="re-match"><a href="#re-match" class="headerlink" title="re.match"></a>re.match</h1><p>从第一字符匹配</p>
 <h2 id="最常规的匹配"><a href="#最常规的匹配" class="headerlink" title="最常规的匹配"></a>最常规的匹配</h2><h2 id="泛匹配"><a href="#泛匹配" class="headerlink" title="泛匹配"></a>泛匹配</h2><p>.*</p>
@@ -476,125 +1171,295 @@
 <p>代码复用。</p>
 <h1 id="实战练习"><a href="#实战练习" class="headerlink" title="实战练习"></a>实战练习</h1><p>豆瓣读书页面爬取。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requsets</div><div class="line"><span class="keyword">import</span> re</div><div class="line">content = requests.get(<span class="string">'https://book.douban.com/'</span>).text</div><div class="line">pattern - re.compile(<span class="string">'&lt;li.*?cover.*？href=“(.*?)”.*?title="(.*?)".*?more-meta.*?author"&gt;(.*?)&lt;/span&gt;.*?year"&gt;(.*?)&lt;/span&gt;.*?&lt;/li&gt;'</span>,re.S)</div><div class="line">results = re.findall(pattern,content)</div><div class="line">print(results)</div><div class="line"><span class="keyword">for</span> result <span class="keyword">in</span> results:</div><div class="line">  url,name,author,date = result</div><div class="line">  print(url,name,author,date.strip())</div><div class="line"><span class="comment"># 或用re.sub方法</span></div><div class="line"><span class="comment"># author = re.sub('\s','',author)</span></div><div class="line"><span class="comment"># data = re.sub('\s','',date)</span></div></pre></td></tr></table></figure>
- 
 
-	    
-</div>
+          
+        
+      
+    </div>
+    
+    
+    
 
-<div class="center">
-			
+    
 
-				<span class="post-meta">		
-				<span class="iconfont icon-category"></span>
-				<a class="category-link" href="/categories/Tech/">Tech</a>
-				</span>
-		
-			
+    
 
-		
-				
-				<span class="post-meta">
-				<span class="iconfont icon-tag"></span>
-				<a class="tag-link" href="/tags/Python/">Python</a> <a class="tag-link" href="/tags/爬虫/">爬虫</a>
-				</span>			
-			
+    
 
+    <footer class="post-footer">
+      
 
-		
+      
 
-		<span class="post-words"><span class="iconfont icon-words"></span>
-		772
-		</span>		
-</div>		
+      
 
-		
-    <a class="article-readmore" href="/2018/01/30/04-regular-expressions/">阅读更多</a> 
-    	
-</article>     
-     	
-      	  	
-
-  		
-    	<article class="article">	
-		
-	   
-	<div class="article-header">
-	    
-	     <a class="article-title"  href="/2018/01/30/03-requests/">Python爬虫之requests</a>  
-	       
-		 
-
-		 <time>2018-01-30 </time>    
-	</div>
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
-    <div class="article-excerpt">	
-	
-  	
+    
+      
 
-	  
+  
 
-	  	<h1 id="什么是-Requests"><a href="#什么是-Requests" class="headerlink" title="什么是 Requests"></a>什么是 Requests</h1><p>Requests 基于 urllib，采用Apache2 License 开源协议的HTTP库。</p>
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://mutemeteor.com/2018/01/30/03-requests/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kyrene Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://on7kyvg9n.bkt.clouddn.com/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mute Meteor">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/30/03-requests/" itemprop="url">Python爬虫之requests</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-30T19:10:33+08:00">
+                2018-01-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/" itemprop="url" rel="index">
+                    <span itemprop="name">Tech</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="什么是-Requests"><a href="#什么是-Requests" class="headerlink" title="什么是 Requests"></a>什么是 Requests</h1><p>Requests 基于 urllib，采用Apache2 License 开源协议的HTTP库。</p>
 <p>Python实现的简单易用的HTTP库。</p>
 <h1 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requests</div><div class="line">response = requests.get（<span class="string">'http://www.baidu.com/'</span>）</div><div class="line">print(type(response))</div><div class="line">print(response.status_code)</div><div class="line">print(type(response.text))</div><div class="line">print(response.text)</div><div class="line">print(response.cookies)</div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/30/03-requests/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
 
-	     
-</div>
+    
 
-<div class="center">
-			
+    
 
-				<span class="post-meta">		
-				<span class="iconfont icon-category"></span>
-				<a class="category-link" href="/categories/Tech/">Tech</a>
-				</span>
-		
-			
+    
 
-		
-				
-				<span class="post-meta">
-				<span class="iconfont icon-tag"></span>
-				<a class="tag-link" href="/tags/Python/">Python</a> <a class="tag-link" href="/tags/爬虫/">爬虫</a>
-				</span>			
-			
+    <footer class="post-footer">
+      
 
+      
 
-		
+      
 
-		<span class="post-words"><span class="iconfont icon-words"></span>
-		266
-		</span>		
-</div>		
-
-		
-    <a class="article-readmore" href="/2018/01/30/03-requests/">阅读更多</a> 
-    	
-</article>     
-     	
-      	  	
-
-  		
-    	<article class="article">	
-		
-	   
-	<div class="article-header">
-	    
-	     <a class="article-title"  href="/2018/01/26/02-urllib/">Python爬虫之urllib库</a>  
-	       
-		 
-
-		 <time>2018-01-26 </time>    
-	</div>
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
-    <div class="article-excerpt">	
-	
-  	
+    
+      
 
-	  
+  
 
-	  	<h1 id="什么是Urllib"><a href="#什么是Urllib" class="headerlink" title="什么是Urllib"></a>什么是Urllib</h1><p>Python内置的HTTP请求库</p>
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://mutemeteor.com/2018/01/26/02-urllib/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kyrene Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://on7kyvg9n.bkt.clouddn.com/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mute Meteor">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/26/02-urllib/" itemprop="url">Python爬虫之urllib库</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-26T16:49:03+08:00">
+                2018-01-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/" itemprop="url" rel="index">
+                    <span itemprop="name">Tech</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="什么是Urllib"><a href="#什么是Urllib" class="headerlink" title="什么是Urllib"></a>什么是Urllib</h1><p>Python内置的HTTP请求库</p>
 <ol>
 <li>urllib.request 请求模块</li>
 <li>urllib.error 异常处理模块</li>
@@ -603,64 +1468,152 @@
 </ol>
 <h1 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h1><h2 id="urlopen"><a href="#urlopen" class="headerlink" title="urlopen"></a>urlopen</h2><p>urllib.request.urlopen(url)</p>
 <p>eg.(GET)：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib.request</div><div class="line">response = urllib.request.urlopen(<span class="string">'http://www.baidu.com'</span>)</div><div class="line">print(response.read().decode(<span class="string">'utf-8'</span>))</div></pre></td></tr></table></figure></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/26/02-urllib/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
 
-	     
-</div>
+    
 
-<div class="center">
-			
+    
 
-				<span class="post-meta">		
-				<span class="iconfont icon-category"></span>
-				<a class="category-link" href="/categories/Tech/">Tech</a>
-				</span>
-		
-			
+    
 
-		
-				
-				<span class="post-meta">
-				<span class="iconfont icon-tag"></span>
-				<a class="tag-link" href="/tags/Python/">Python</a> <a class="tag-link" href="/tags/爬虫/">爬虫</a>
-				</span>			
-			
+    <footer class="post-footer">
+      
 
+      
 
-		
+      
 
-		<span class="post-words"><span class="iconfont icon-words"></span>
-		631
-		</span>		
-</div>		
-
-		
-    <a class="article-readmore" href="/2018/01/26/02-urllib/">阅读更多</a> 
-    	
-</article>     
-     	
-      	  	
-
-  		
-    	<article class="article">	
-		
-	   
-	<div class="article-header">
-	    
-	     <a class="article-title"  href="/2018/01/26/01-principalOfCrawler/">Python爬虫之爬虫基本原理</a>  
-	       
-		 
-
-		 <time>2018-01-26 </time>    
-	</div>
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
-    <div class="article-excerpt">	
-	
-  	
+    
+      
 
-	  
+  
 
-	  	<h1 id="什么是爬虫"><a href="#什么是爬虫" class="headerlink" title="什么是爬虫"></a>什么是爬虫</h1><p>请求网站并提取数据的自动化程序</p>
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://mutemeteor.com/2018/01/26/01-principalOfCrawler/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kyrene Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://on7kyvg9n.bkt.clouddn.com/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mute Meteor">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/26/01-principalOfCrawler/" itemprop="url">Python爬虫之爬虫基本原理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-26T16:48:36+08:00">
+                2018-01-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/" itemprop="url" rel="index">
+                    <span itemprop="name">Tech</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="什么是爬虫"><a href="#什么是爬虫" class="headerlink" title="什么是爬虫"></a>什么是爬虫</h1><p>请求网站并提取数据的自动化程序</p>
 <h1 id="爬虫基本流程"><a href="#爬虫基本流程" class="headerlink" title="爬虫基本流程"></a>爬虫基本流程</h1><h2 id="发起请求"><a href="#发起请求" class="headerlink" title="发起请求"></a>发起请求</h2><p>Request</p>
 <ol>
 <li>请求方式 GET POST</li>
@@ -668,158 +1621,339 @@
 <li>请求头</li>
 <li>请求体</li>
 </ol>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/26/01-principalOfCrawler/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
 
-	     
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://on7kyvg9n.bkt.clouddn.com/avatar.jpg"
+                alt="Kyrene Wang" />
+            
+              <p class="site-author-name" itemprop="name">Kyrene Wang</p>
+              <p class="site-description motion-element" itemprop="description">the coutrage to speak softly</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kyrene Wang</span>
+
+  
 </div>
 
-<div class="center">
-			
 
-				<span class="post-meta">		
-				<span class="iconfont icon-category"></span>
-				<a class="category-link" href="/categories/Tech/">Tech</a>
-				</span>
-		
-			
-
-		
-				
-				<span class="post-meta">
-				<span class="iconfont icon-tag"></span>
-				<a class="tag-link" href="/tags/Python/">Python</a> <a class="tag-link" href="/tags/爬虫/">爬虫</a>
-				</span>			
-			
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
-		
 
-		<span class="post-words"><span class="iconfont icon-words"></span>
-		335
-		</span>		
-</div>		
+  <span class="post-meta-divider">|</span>
 
-		
-    <a class="article-readmore" href="/2018/01/26/01-principalOfCrawler/">阅读更多</a> 
-    	
-</article>     
-     	
-  
 
- 
 
-  <nav class="paginator">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
-  </nav>
-  
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
 
-</section>   
+
+
+
         
-    </div>        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
 
     
-    <div class="mask"> </div>
-    <div class="back-to-top iconfont icon-backtotop fadeIn"></div> 
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
 
     
 
+  </div>
 
-     <div class="mobile-menu">      
+  
 
-      
-      <img class="mobile-menu-icon no-gallery" src= /img/favicon.png >   
-      
-
-         
-            
-
-            <a class="mobile-menu-link" href="/">首页
-            </a>
-            
-         
-            
-
-            <a class="mobile-menu-link" href="/archives">归档
-            </a>
-            
-         
-            
-
-            <a class="mobile-menu-link" href="/categories">分类
-            </a>
-            
-         
-            
-
-            <a class="mobile-menu-link" href="/tags">标签
-            </a>
-            
-         
-            
-
-            <a class="mobile-menu-link" href="/about">关于
-            </a>
-            
-         
-</div>     
-    
-
-<footer id="footer">
-	   
-   	 <div>	
-   	 
-
-     <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-   
-     <span class="iconfont icon-pv"></span>
-     <span id="busuanzi_value_site_pv"></span>
- 
-     <span class="iconfont icon-uv"></span>
-     <span id="busuanzi_value_site_uv"></span>
-	    	
-   	 </div>
-   
-   	 
-	 <div>
-	 &copy;
-	 2018
-	 Wang	 
-
-	 </div>
-
-
-
-   
-   	 <div>
-	
-	 <a href="http://hexo.io/" target="_blank">Hexo</a>
-
-	 Theme
-
-	 <a href="https://github.com/Lemonreds/hexo-theme-Nayo" target="_blank">Nayo</a> 
-
-	 </div>	
-
-
-	
-	
-</footer> 
-    
-
-<!-- Baidu Analytics -->
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?063129ce0f11ae9e4a1036a9220b94be"; 
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
 
 
 
 
- 
-  </body>   
-  <script src="/js/animation.js"></script>   
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
 </html>
