@@ -57,6 +57,12 @@
   
 
   
+    
+      
+    
+
+    
+  
 
   
     
@@ -71,7 +77,7 @@
   
     
     
-    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Amatic SC:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Monda:300,300italic,400,400italic,700,700italic|Amatic SC:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -109,7 +115,7 @@
     root: '/',
     scheme: 'Pisces',
     version: '6.0.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -259,9 +265,9 @@
         </li>
       
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
         </li>
       
         
@@ -277,9 +283,9 @@
         </li>
       
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
         </li>
       
 
@@ -1734,7 +1740,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mutemeteor.com/2017/11/14/Python3-note3/">
+    <link itemprop="mainEntityOfPage" href="http://mutemeteor.com/2017/11/14/python3-note40/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kyrene Wang">
@@ -1753,7 +1759,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/11/14/Python3-note3/" itemprop="url">Python3 学习笔记（三）</a></h2>
+                <a class="post-title-link" href="/2017/11/14/python3-note40/" itemprop="url">Python3 学习笔记（四）</a></h2>
         
 
         <div class="post-meta">
@@ -1765,7 +1771,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-14T01:17:58+08:00">2017-11-14</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-14T10:46:56+08:00">2017-11-14</time>
             
 
             
@@ -1826,14 +1832,80 @@
 </li>
 <li><p><a href="http://mutemeteor.com/2017/11/08/Python3-note2/">python3 学习笔记（二）</a></p>
 </li>
+<li><p><a href="http://mutemeteor.com/2017/11/14/Python3-note3/">python3 学习笔记（三）</a></p>
+</li>
 </ul>
 <hr>
-<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><p>如果在开发程序时，需要某块代码多次，但是为了提高编写的效率以及代码的重用，所以把具有独立功能的代码块组织为一个小模块，这就是函数。</p>
-<h2 id="定义函数"><a href="#定义函数" class="headerlink" title="定义函数"></a>定义函数</h2><p>定义函数的格式如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> 函数名<span class="params">()</span>:</span></div><div class="line">    代码</div></pre></td></tr></table></figure></p>
-<p>Demo:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 定义一个函数，能够完成打印信息的功能</span></div><div class="line">   <span class="function"><span class="keyword">def</span> <span class="title">printInfo</span><span class="params">()</span>:</span></div><div class="line">       <span class="keyword">print</span> <span class="string">'------------------------------------'</span></div><div class="line">       <span class="keyword">print</span> <span class="string">'         人生苦短，我用Python'</span></div><div class="line">       <span class="keyword">print</span> <span class="string">'------------------------------------'</span></div></pre></td></tr></table></figure></p>
+<h1 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h1><p>在操作文件的整体过程与使用word编写一份简历的过程是很相似的：</p>
+<ol>
+<li>打开文件，或者新建立一个文件</li>
+<li>读/写数据</li>
+<li>关闭文件</li>
+</ol>
+<h2 id="打开文件"><a href="#打开文件" class="headerlink" title="打开文件"></a>打开文件</h2><p>在python，使用open函数，可以打开一个已经存在的文件，或者创建一个新文件</p>
+<p>open(文件名，访问模式)</p>
+<p>示例如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">f = open(<span class="string">'test.txt'</span>, <span class="string">'w'</span>)</div></pre></td></tr></table></figure></p>
+<table>
+<thead>
+<tr>
+<th>访问模式</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>r</td>
+<td style="text-align:center">以只读方式打开文件。文件的指针将会放在文件的开头。这是默认模式。</td>
+</tr>
+<tr>
+<td>w</td>
+<td style="text-align:center">打开一个文件只用于写入。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。</td>
+</tr>
+<tr>
+<td>a</td>
+<td style="text-align:center">打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。</td>
+</tr>
+<tr>
+<td>rb</td>
+<td style="text-align:center">以二进制格式打开一个文件用于只读。文件指针将会放在文件的开头。这是默认模式。</td>
+</tr>
+<tr>
+<td>wb</td>
+<td style="text-align:center">以二进制格式打开一个文件只用于写入。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。</td>
+</tr>
+<tr>
+<td>ab</td>
+<td style="text-align:center">以二进制格式打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。</td>
+</tr>
+<tr>
+<td>r+</td>
+<td style="text-align:center">打开一个文件用于读写。文件指针将会放在文件的开头。</td>
+</tr>
+<tr>
+<td>w+</td>
+<td style="text-align:center">打开一个文件用于读写。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。</td>
+</tr>
+<tr>
+<td>a+</td>
+<td style="text-align:center">打开一个文件用于读写。如果该文件已存在，文件指针将会放在文件的结尾。文件打开时会是追加模式。如果该文件不存在，创建新文件用于读写。</td>
+</tr>
+<tr>
+<td>rb+</td>
+<td style="text-align:center">以二进制格式打开一个文件用于读写。文件指针将会放在文件的开头。</td>
+</tr>
+<tr>
+<td>wb+</td>
+<td style="text-align:center">以二进制格式打开一个文件用于读写。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。</td>
+</tr>
+<tr>
+<td>ab+</td>
+<td style="text-align:center">以二进制格式打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。如果该文件不存在，创建新文件用于读写。</td>
+</tr>
+</tbody>
+</table>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/11/14/Python3-note3/#more" rel="contents">
+            <a class="btn" href="/2017/11/14/python3-note40/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1919,15 +1991,178 @@
           </div>
 
           
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">44</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">40</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
 
           
 
           
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/mutemeteor" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:mutemeteor@163.com" target="_blank" title="E-Mail" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+            </div>
+          
 
           
           
 
           
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://yihui.name/" title="谢益辉" target="_blank">谢益辉</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.bjt.name/" title="刘思喆" target="_blank">刘思喆</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.loyhome.com/" title="落园" target="_blank">落园</a>
+                  </li>
+                
+              </ul>
+            </div>
           
 
           
@@ -1940,6 +2175,13 @@
 
       
 
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
       
 
     </div>
@@ -1968,15 +2210,9 @@
 
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
 
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://github.com/theme-next/hexo-theme-next">NexT.Pisces</a></div>
 
 
 
@@ -1994,11 +2230,6 @@
       </div>
     </footer>
 
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
     
 
     
