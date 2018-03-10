@@ -5,13 +5,17 @@
     
   <url>
     <loc>http://mutemeteor.com/2018/02/22/R-movie/</loc>
-    <lastmod>2018-03-10T13:11:47.629Z</lastmod>
+    <lastmod>2018-03-10T13:29:48.244Z</lastmod>
     <data>
         <display>
-        <title>当大家都在讨论《唐人街探案2》的时候，他们到底在说些什么</title>
+        <title>当大家都在讨论《白夜追凶》的时候，他们到底在说些什么</title>
         <pubTime>2018-02-22T03:48:35.000Z</pubTime>
         
+        <tag>爬虫</tag>
+         
         <tag>R</tag>
+         
+        <tag>数据可视化</tag>
          
          
            
@@ -24,14 +28,16 @@
 
     
   <url>
-    <loc>http://mutemeteor.com/2018/03/03/R-map/</loc>
-    <lastmod>2018-03-10T13:11:27.598Z</lastmod>
+    <loc>http://mutemeteor.com/2018/02/09/R-ggplot2/</loc>
+    <lastmod>2018-03-10T13:27:11.786Z</lastmod>
     <data>
         <display>
-        <title>多图层叠加 —— 离散颜色填充与气泡图综合运用</title>
-        <pubTime>2018-03-03T05:01:08.000Z</pubTime>
+        <title>学习 ggplot2 的二三事</title>
+        <pubTime>2018-02-09T09:52:16.000Z</pubTime>
         
         <tag>R</tag>
+         
+        <tag>Note</tag>
          
          
            
@@ -45,7 +51,7 @@
     
   <url>
     <loc>http://mutemeteor.com/2018/01/23/R-beijing-weather/</loc>
-    <lastmod>2018-03-10T13:11:24.368Z</lastmod>
+    <lastmod>2018-03-10T13:24:26.489Z</lastmod>
     <data>
         <display>
         <title>北京市2017年空气质量数据可视化</title>
@@ -66,34 +72,16 @@
 
     
   <url>
-    <loc>http://mutemeteor.com/2018/02/09/R-note2/</loc>
-    <lastmod>2018-03-10T13:07:44.341Z</lastmod>
+    <loc>http://mutemeteor.com/2018/02/02/R-note/</loc>
+    <lastmod>2018-03-10T13:22:31.159Z</lastmod>
     <data>
         <display>
-        <title>R语言学习笔记（下）</title>
-        <pubTime>2018-02-09T09:52:16.000Z</pubTime>
-        
-        <tag>R</tag>
-         
-         
-           
-             
-              <breadCrumb title="Tech" url="http://mutemeteor.com/categories/Tech/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://mutemeteor.com/2018/02/02/R-note1/</loc>
-    <lastmod>2018-03-10T13:07:41.990Z</lastmod>
-    <data>
-        <display>
-        <title>R语言学习笔记（上）</title>
+        <title>R语言学习笔记</title>
         <pubTime>2018-02-02T13:34:45.000Z</pubTime>
         
         <tag>R</tag>
+         
+        <tag>Note</tag>
          
          
            
@@ -107,11 +95,33 @@
     
   <url>
     <loc>http://mutemeteor.com/2018/02/28/R-work/</loc>
-    <lastmod>2018-03-10T13:06:53.630Z</lastmod>
+    <lastmod>2018-03-10T13:22:24.758Z</lastmod>
     <data>
         <display>
         <title>实习僧招聘网招聘信息爬虫数据可视化</title>
         <pubTime>2018-02-28T09:23:50.000Z</pubTime>
+        
+        <tag>R</tag>
+         
+        <tag>数据可视化</tag>
+         
+         
+           
+             
+              <breadCrumb title="Tech" url="http://mutemeteor.com/categories/Tech/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://mutemeteor.com/2018/03/03/R-map/</loc>
+    <lastmod>2018-03-10T13:18:26.068Z</lastmod>
+    <data>
+        <display>
+        <title>多图层叠加 —— 离散颜色填充与气泡图综合运用</title>
+        <pubTime>2018-03-03T05:01:08.000Z</pubTime>
         
         <tag>R</tag>
          

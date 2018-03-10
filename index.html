@@ -575,9 +575,16 @@
 
       
         
-          
-            
-          
+          <h1 id="数据准备："><a href="#数据准备：" class="headerlink" title="数据准备："></a>数据准备：</h1><h2 id="加载包："><a href="#加载包：" class="headerlink" title="加载包："></a>加载包：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">library(ggplot2)</div><div class="line">library(plyr)</div><div class="line">library(maptools)</div><div class="line">library(sp)</div></pre></td></tr></table></figure>
+<h2 id="导入中国省界地图："><a href="#导入中国省界地图：" class="headerlink" title="导入中国省界地图："></a>导入中国省界地图：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">china_map&lt;-readShapePoly(&quot;c:/rstudy/bou2_4p.shp&quot;)</div><div class="line">data1&lt;- china_map@data      </div><div class="line">data2&lt;- data.frame(id=row.names(data1),data1)</div></pre></td></tr></table></figure>
+<h2 id="数据格式转化及业务数据合并："><a href="#数据格式转化及业务数据合并：" class="headerlink" title="数据格式转化及业务数据合并："></a>数据格式转化及业务数据合并：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">china_map1 &lt;- fortify(china_map)</div><div class="line">china_map_data &lt;- join(china_map1,data2, type = &quot;full&quot;)</div><div class="line">mydata &lt;- read.csv(&quot;c:/rstudy/geshengzhibiao.csv&quot;)</div><div class="line">china_data &lt;- join(china_map_data, mydata, type=&quot;full&quot;)</div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/03/R-map/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -717,7 +724,14 @@
       
         
           
-            
+            <p>加载包及配置环境：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">library(rvest)</div><div class="line">library(stringr)</div><div class="line">library(plyr)</div><div class="line">library(dplyr)</div><div class="line">library(Rwebdriver)</div><div class="line">library(dplyr)</div><div class="line">library(Rwordseg)</div><div class="line">library(wordcloud2)</div><div class="line">library(treemap)</div><div class="line">library(showtext)</div><div class="line">library(Cairo)</div><div class="line">library(ggplot2)</div><div class="line">library(scales)</div><div class="line">library(grid)</div><div class="line">library(RColorBrewer)</div><div class="line">library(ggimage)</div><div class="line">library(geojsonio)</div></pre></td></tr></table></figure></p>
+<p>本文主要用的Rwebdriver包来驱动Chrome浏览器，使用该包需要提前配置好桌面环境：</p>
+<ul>
+<li>下载selenium启动服务器；</li>
+<li>下载Chrome的chromedriver插件并放入Chrome主目录（添加系统环境变量）</li>
+<li>下载Rwebdriver包</li>
+</ul>
+
           
         
       
@@ -789,7 +803,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/22/R-movie/" itemprop="url">当大家都在讨论《唐人街探案2》的时候，他们到底在说些什么</a></h2>
+                <a class="post-title-link" href="/2018/02/22/R-movie/" itemprop="url">当大家都在讨论《白夜追凶》的时候，他们到底在说些什么</a></h2>
         
 
         <div class="post-meta">
@@ -857,9 +871,16 @@
 
       
         
-          
-            
-          
+          <h1 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h1><h2 id="相关包"><a href="#相关包" class="headerlink" title="相关包"></a>相关包</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">library(XML)</div><div class="line">library(Rwordseg)</div><div class="line">library(wordcloud2)</div><div class="line">library(RCurl)</div><div class="line">library(stringr)</div><div class="line">library(plyr)</div><div class="line">library(dplyr)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">url&lt;-&quot;https://movie.douban.com/subject/25765735/reviews?rating=&amp;start=0&quot;</div><div class="line">baseurl&lt;-&quot;https://movie.douban.com/subject/25765735/reviews&quot;</div></pre></td></tr></table></figure>
+<h2 id="建立影评网址抓取函数"><a href="#建立影评网址抓取函数" class="headerlink" title="建立影评网址抓取函数"></a>建立影评网址抓取函数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"># 豆瓣影评的网址遍历过程</div><div class="line">urln&lt;-paste0(baseurl,&quot;?rating=&amp;start=&quot;,20*(seq(0:73)-1))  </div><div class="line">fun&lt;-function(urln)&#123;                 </div><div class="line">rd &lt;- getURL(urln,.encoding=&quot;UTF-8&quot;)  #获取网页</div><div class="line">rdhtml &lt;- htmlParse(rd,encoding=&quot;UTF-8&quot;)   #解析网页</div><div class="line">root &lt;- xmlRoot(rdhtml)  #获取根节点</div><div class="line">page&lt;-getNodeSet(root,&quot;//div[@class=&apos;review-short&apos;]/div[@class=&apos;short-content&apos;]/a&quot;)</div><div class="line">#目标节点获取</div><div class="line">pagevalue&lt;-unique(laply(page,xmlGetAttr,name=&apos;href&apos;))</div><div class="line"> #获取目标节点内的属性值（这里是评论网址）</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/22/R-movie/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -911,7 +932,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mutemeteor.com/2018/02/09/R-note2/">
+    <link itemprop="mainEntityOfPage" href="http://mutemeteor.com/2018/02/09/R-ggplot2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kyrene Wang">
@@ -930,7 +951,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/09/R-note2/" itemprop="url">R语言学习笔记（下）</a></h2>
+                <a class="post-title-link" href="/2018/02/09/R-ggplot2/" itemprop="url">学习 ggplot2 的二三事</a></h2>
         
 
         <div class="post-meta">
@@ -998,9 +1019,14 @@
 
       
         
-          
-            
-          
+          <p>用了几天入门 R 基础后，开始着手学习 R 的数据可视化。主要学习的入门书籍是 Winston Chang 所著《R数据可视化手册》，豆瓣 mark 这本书有一段时间了，正巧赶上淘宝打折，果断下单，又花了两天把书的基础实例部分撸完。整本书逻辑框架十分清晰，我这种菜鸟新手整个看的过程也很流畅，作为入门书籍非常棒，从实用的例子来练习熟悉，章节顺序安排合理，跟着练下来可以信心十足的明确自己会做哪些，还能做哪些。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/09/R-ggplot2/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1052,7 +1078,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mutemeteor.com/2018/02/02/R-note1/">
+    <link itemprop="mainEntityOfPage" href="http://mutemeteor.com/2018/02/02/R-note/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kyrene Wang">
@@ -1071,7 +1097,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/02/R-note1/" itemprop="url">R语言学习笔记（上）</a></h2>
+                <a class="post-title-link" href="/2018/02/02/R-note/" itemprop="url">R语言学习笔记</a></h2>
         
 
         <div class="post-meta">
@@ -1140,7 +1166,8 @@
       
         
           
-            
+            <p>R的基础语法学习主要是在code school上的try R课程。</p>
+
           
         
       
@@ -1956,7 +1983,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">36</span>
+                      
+                    
+                    <span class="site-state-item-count">37</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

@@ -1018,8 +1018,8 @@
 
       
         
-          <p>豆瓣 mark 这本书很久了，正巧赶上淘宝打折，果断下单，又花了两天把书撸完。</p>
-<p>整本书逻辑框架十分清晰，我这种菜鸟新手整个看的过程也很流畅，作为入门书籍非常棒，从实用的例子来练习熟悉，章节顺序安排合理，跟着练下来可以信心十足的明确自己会做哪些，还能做哪些。包括最开始介绍的如何排查错误，其思路也可以运用到很多事物上。</p>
+          <h1 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">library(RCurl)</div><div class="line">library(XML)</div><div class="line">library(dplyr)</div><div class="line">library(ggplot2)</div><div class="line">library(stringr)</div><div class="line">library(rvest)</div><div class="line">library(lubridate)</div><div class="line">library(&quot;DT&quot;)</div><div class="line">library(openair)</div><div class="line">library(ggplot2)</div></pre></td></tr></table></figure>
+<h1 id="数据爬取"><a href="#数据爬取" class="headerlink" title="数据爬取"></a>数据爬取</h1><h2 id="构造月度url地址（网站是按照月度数据存储的，需要按月爬取）"><a href="#构造月度url地址（网站是按照月度数据存储的，需要按月爬取）" class="headerlink" title="构造月度url地址（网站是按照月度数据存储的，需要按月爬取）"></a>构造月度url地址（网站是按照月度数据存储的，需要按月爬取）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">urlbase&lt;-&quot;https://www.aqistudy.cn/historydata/&quot;</div><div class="line">url&lt;-&quot;https://www.aqistudy.cn/historydata/monthdata.php?city=大连&quot;</div><div class="line">rd &lt;- getURL(url,.encoding=&quot;UTF-8&quot;)</div><div class="line">rdhtml &lt;- htmlParse(rd,encoding=&quot;UTF-8&quot;)</div><div class="line">otherpage&lt;-getNodeSet(rdhtml,&quot;//a&quot;)</div><div class="line">allurl&lt;-laply(otherpage,xmlGetAttr,name=&apos;href&apos;)%&gt;%grep(&quot;2016&quot;,.,value=T)%&gt;%sub(&quot;麓贸脕卢&quot;,&quot;大连&quot;,.)</div><div class="line">#以上还是编码出了问题，不知道那个乱码是什么鬼！只能强行替换了！</div><div class="line">allurl&lt;-paste0(urlbase,allurl)</div></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/01/23/R-beijing-weather/#more" rel="contents">
@@ -2037,7 +2037,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">36</span>
+                      
+                    
+                    <span class="site-state-item-count">37</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

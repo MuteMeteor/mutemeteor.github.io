@@ -14,18 +14,7 @@
   <entry>
     <title><![CDATA[多图层叠加 —— 离散颜色填充与气泡图综合运用]]></title>
     <url>%2F2018%2F03%2F03%2FR-map%2F</url>
-    <content type="text"></content>
-      <categories>
-        <category>Tech</category>
-      </categories>
-      <tags>
-        <tag>R</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[实习僧招聘网招聘信息爬虫数据可视化]]></title>
-    <url>%2F2018%2F02%2F28%2FR-work%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[数据准备：加载包：1234library(ggplot2)library(plyr)library(maptools)library(sp) 导入中国省界地图：123china_map&lt;-readShapePoly(&quot;c:/rstudy/bou2_4p.shp&quot;)data1&lt;- china_map@data data2&lt;- data.frame(id=row.names(data1),data1) 数据格式转化及业务数据合并：1234china_map1 &lt;- fortify(china_map)china_map_data &lt;- join(china_map1,data2, type = &quot;full&quot;)mydata &lt;- read.csv(&quot;c:/rstudy/geshengzhibiao.csv&quot;)china_data &lt;- join(china_map_data, mydata, type=&quot;full&quot;) 各省省会城市经纬度数据：1province_city &lt;- read.csv(&quot;c:/rstudy/chinaprovincecity.csv&quot;) 构造数据地图作图数据根据自己的数据量级和具体业务需要设置分割点：12345mydata&lt;-mydata[,-c(5,6)]mydata$zhibiao&lt;-rnorm(33,100,50)mydata$zhibiao&lt;-abs(mydata$zhibiao)mydata$zhibiao2&lt;-round(mydata$zhibiao,0)mydata$fau &lt;- cut(mydata$zhibiao, breaks = c(0,50,100,150,200,250))]]></content>
       <categories>
         <category>Tech</category>
       </categories>
@@ -35,36 +24,52 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[当大家都在讨论《唐人街探案2》的时候，他们到底在说些什么]]></title>
+    <title><![CDATA[实习僧招聘网招聘信息爬虫数据可视化]]></title>
+    <url>%2F2018%2F02%2F28%2FR-work%2F</url>
+    <content type="text"><![CDATA[加载包及配置环境：1234567891011121314151617library(rvest)library(stringr)library(plyr)library(dplyr)library(Rwebdriver)library(dplyr)library(Rwordseg)library(wordcloud2)library(treemap)library(showtext)library(Cairo)library(ggplot2)library(scales)library(grid)library(RColorBrewer)library(ggimage)library(geojsonio) 本文主要用的Rwebdriver包来驱动Chrome浏览器，使用该包需要提前配置好桌面环境： 下载selenium启动服务器； 下载Chrome的chromedriver插件并放入Chrome主目录（添加系统环境变量） 下载Rwebdriver包]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>R</tag>
+        <tag>数据可视化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[当大家都在讨论《白夜追凶》的时候，他们到底在说些什么]]></title>
     <url>%2F2018%2F02%2F22%2FR-movie%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[数据准备相关包1234567library(XML)library(Rwordseg)library(wordcloud2)library(RCurl)library(stringr)library(plyr)library(dplyr) 12url&lt;-&quot;https://movie.douban.com/subject/25765735/reviews?rating=&amp;start=0&quot;baseurl&lt;-&quot;https://movie.douban.com/subject/25765735/reviews&quot; 建立影评网址抓取函数1234567891011# 豆瓣影评的网址遍历过程urln&lt;-paste0(baseurl,&quot;?rating=&amp;start=&quot;,20*(seq(0:73)-1)) fun&lt;-function(urln)&#123; rd &lt;- getURL(urln,.encoding=&quot;UTF-8&quot;) #获取网页rdhtml &lt;- htmlParse(rd,encoding=&quot;UTF-8&quot;) #解析网页root &lt;- xmlRoot(rdhtml) #获取根节点page&lt;-getNodeSet(root,&quot;//div[@class=&apos;review-short&apos;]/div[@class=&apos;short-content&apos;]/a&quot;)#目标节点获取pagevalue&lt;-unique(laply(page,xmlGetAttr,name=&apos;href&apos;)) #获取目标节点内的属性值（这里是评论网址）&#125;]]></content>
       <categories>
         <category>Tech</category>
       </categories>
       <tags>
+        <tag>爬虫</tag>
         <tag>R</tag>
+        <tag>数据可视化</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[R语言学习笔记（下）]]></title>
-    <url>%2F2018%2F02%2F09%2FR-note2%2F</url>
-    <content type="text"></content>
+    <title><![CDATA[学习 ggplot2 的二三事]]></title>
+    <url>%2F2018%2F02%2F09%2FR-ggplot2%2F</url>
+    <content type="text"><![CDATA[用了几天入门 R 基础后，开始着手学习 R 的数据可视化。主要学习的入门书籍是 Winston Chang 所著《R数据可视化手册》，豆瓣 mark 这本书有一段时间了，正巧赶上淘宝打折，果断下单，又花了两天把书的基础实例部分撸完。整本书逻辑框架十分清晰，我这种菜鸟新手整个看的过程也很流畅，作为入门书籍非常棒，从实用的例子来练习熟悉，章节顺序安排合理，跟着练下来可以信心十足的明确自己会做哪些，还能做哪些。]]></content>
       <categories>
         <category>Tech</category>
       </categories>
       <tags>
         <tag>R</tag>
+        <tag>Note</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[R语言学习笔记（上）]]></title>
-    <url>%2F2018%2F02%2F02%2FR-note1%2F</url>
-    <content type="text"></content>
+    <title><![CDATA[R语言学习笔记]]></title>
+    <url>%2F2018%2F02%2F02%2FR-note%2F</url>
+    <content type="text"><![CDATA[R的基础语法学习主要是在code school上的try R课程。]]></content>
       <categories>
         <category>Tech</category>
       </categories>
       <tags>
         <tag>R</tag>
+        <tag>Note</tag>
       </tags>
   </entry>
   <entry>
@@ -166,7 +171,7 @@
   <entry>
     <title><![CDATA[北京市2017年空气质量数据可视化]]></title>
     <url>%2F2018%2F01%2F23%2FR-beijing-weather%2F</url>
-    <content type="text"><![CDATA[豆瓣 mark 这本书很久了，正巧赶上淘宝打折，果断下单，又花了两天把书撸完。 整本书逻辑框架十分清晰，我这种菜鸟新手整个看的过程也很流畅，作为入门书籍非常棒，从实用的例子来练习熟悉，章节顺序安排合理，跟着练下来可以信心十足的明确自己会做哪些，还能做哪些。包括最开始介绍的如何排查错误，其思路也可以运用到很多事物上。]]></content>
+    <content type="text"><![CDATA[数据准备12345678910library(RCurl)library(XML)library(dplyr)library(ggplot2)library(stringr)library(rvest)library(lubridate)library(&quot;DT&quot;)library(openair)library(ggplot2) 数据爬取构造月度url地址（网站是按照月度数据存储的，需要按月爬取）12345678urlbase&lt;-&quot;https://www.aqistudy.cn/historydata/&quot;url&lt;-&quot;https://www.aqistudy.cn/historydata/monthdata.php?city=大连&quot;rd &lt;- getURL(url,.encoding=&quot;UTF-8&quot;)rdhtml &lt;- htmlParse(rd,encoding=&quot;UTF-8&quot;)otherpage&lt;-getNodeSet(rdhtml,&quot;//a&quot;)allurl&lt;-laply(otherpage,xmlGetAttr,name=&apos;href&apos;)%&gt;%grep(&quot;2016&quot;,.,value=T)%&gt;%sub(&quot;麓贸脕卢&quot;,&quot;大连&quot;,.)#以上还是编码出了问题，不知道那个乱码是什么鬼！只能强行替换了！allurl&lt;-paste0(urlbase,allurl)]]></content>
       <categories>
         <category>Tech</category>
       </categories>
