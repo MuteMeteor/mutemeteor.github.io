@@ -12,31 +12,31 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[R-3]]></title>
-    <url>%2F2018%2F03%2F03%2FR-3%2F</url>
+    <title><![CDATA[多图层叠加 —— 离散颜色填充与气泡图综合运用]]></title>
+    <url>%2F2018%2F03%2F03%2FR-map%2F</url>
     <content type="text"></content>
-  </entry>
-  <entry>
-    <title><![CDATA[有关 ggplot2 的二三事]]></title>
-    <url>%2F2018%2F03%2F02%2FR-2%2F</url>
-    <content type="text"><![CDATA[在初步学习了 R 的基础语法后，我开始慢慢尝试 R 的数据可视化功能， 从最流行的 ggplot2 入手进行可视化的实例操作。 入门学习主要参考了一些知名 R 语言学习网站的 wiki 以及 《R数据可视化手册》。 R基础安装包install.packages(“包名”) 加载包library() 加载 CSV 文件data &lt;- read.csv(“datafile.csv”) 从 Excel 文件中加载数据library(xlsx)data &lt;- read.xlsx(“datafile.xlsx”,1) 从 SPSS 文件中加载数据library(foreign)data &lt;- read.spss(“datafile.sav”)]]></content>
       <categories>
         <category>Tech</category>
       </categories>
       <tags>
+        <tag>R</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[实习僧招聘网招聘信息爬虫数据可视化]]></title>
+    <url>%2F2018%2F02%2F28%2FR-work%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>R</tag>
         <tag>数据可视化</tag>
-        <tag>R</tag>
-        <tag>ggplot2</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[R-1]]></title>
-    <url>%2F2018%2F02%2F28%2FR-1%2F</url>
-    <content type="text"></content>
-  </entry>
-  <entry>
-    <title><![CDATA[R-note]]></title>
-    <url>%2F2018%2F02%2F22%2FR-note%2F</url>
+    <title><![CDATA[当大家都在讨论《唐人街探案2》的时候，他们到底在说些什么]]></title>
+    <url>%2F2018%2F02%2F22%2FR-movie%2F</url>
     <content type="text"></content>
       <categories>
         <category>Tech</category>
@@ -46,14 +46,26 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Django]]></title>
-    <url>%2F2018%2F02%2F09%2FR-grammar%2F</url>
+    <title><![CDATA[R语言学习笔记（下）]]></title>
+    <url>%2F2018%2F02%2F09%2FR-note2%2F</url>
     <content type="text"></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>R</tag>
+      </tags>
   </entry>
   <entry>
-    <title><![CDATA[requests-moyanmovie]]></title>
-    <url>%2F2018%2F02%2F02%2Frequests-moyanmovie%2F</url>
+    <title><![CDATA[R语言学习笔记（上）]]></title>
+    <url>%2F2018%2F02%2F02%2FR-note1%2F</url>
     <content type="text"></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>R</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Python爬虫之Selenium]]></title>
@@ -152,28 +164,15 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[《金字塔原理》]]></title>
-    <url>%2F2018%2F01%2F23%2FR-base%2F</url>
+    <title><![CDATA[北京市2017年空气质量数据可视化]]></title>
+    <url>%2F2018%2F01%2F23%2FR-beijing-weather%2F</url>
     <content type="text"><![CDATA[豆瓣 mark 这本书很久了，正巧赶上淘宝打折，果断下单，又花了两天把书撸完。 整本书逻辑框架十分清晰，我这种菜鸟新手整个看的过程也很流畅，作为入门书籍非常棒，从实用的例子来练习熟悉，章节顺序安排合理，跟着练下来可以信心十足的明确自己会做哪些，还能做哪些。包括最开始介绍的如何排查错误，其思路也可以运用到很多事物上。]]></content>
-      <categories>
-        <category>读书记</category>
-      </categories>
-      <tags>
-        <tag>写作</tag>
-        <tag>思考</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[web-server]]></title>
-    <url>%2F2018%2F01%2F23%2FR%2F</url>
-    <content type="text"><![CDATA[HTTP协议]]></content>
       <categories>
         <category>Tech</category>
       </categories>
       <tags>
-        <tag>web</tag>
-        <tag>server</tag>
-        <tag>HTTP</tag>
+        <tag>R</tag>
+        <tag>数据可视化</tag>
       </tags>
   </entry>
   <entry>
@@ -200,18 +199,6 @@
         <tag>Node.js</tag>
         <tag>JavaScript</tag>
         <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Redis 数据操作]]></title>
-    <url>%2F2018%2F01%2F14%2FRedis%2F</url>
-    <content type="text"><![CDATA[redis是key-value的数据，所以每个数据都是一个键值对 键的类型是字符串 值的类型分为五种： 字符串string 哈希hash 列表list 集合set 有序集合zset 数据操作的全部命令，可以查看中文网站]]></content>
-      <categories>
-        <category>Tech</category>
-      </categories>
-      <tags>
-        <tag>NoSQL</tag>
-        <tag>Redis</tag>
       </tags>
   </entry>
   <entry>
