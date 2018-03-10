@@ -147,7 +147,7 @@
 <meta property="og:url" content="http://mutemeteor.com/2017/09/18/algorithm-string/index.html">
 <meta property="og:site_name" content="Mute Meteor">
 <meta property="og:description" content="Python中字符串常用的方法1234567891011121314151617s1 = str()s2 = &quot;mutemeteor&quot; # &apos;mutemeteor&apos;s2len = len(s2)# last 3 charss2[-3:] # eors2[5:8] # etes3 = s2[:5] # mutems3 += &apos;eteor&apos; # return &apos;mutemeteor&apos;# list in">
-<meta property="og:updated_time" content="2018-01-16T10:19:01.996Z">
+<meta property="og:updated_time" content="2018-03-10T12:50:55.775Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【数据结构与算法】字符串专题">
 <meta name="twitter:description" content="Python中字符串常用的方法1234567891011121314151617s1 = str()s2 = &quot;mutemeteor&quot; # &apos;mutemeteor&apos;s2len = len(s2)# last 3 charss2[-3:] # eors2[5:8] # etes3 = s2[:5] # mutems3 += &apos;eteor&apos; # return &apos;mutemeteor&apos;# list in">
@@ -421,7 +421,7 @@
 <h2 id="Implement-strStr"><a href="#Implement-strStr" class="headerlink" title="Implement strStr"></a>Implement strStr</h2><p><strong>lintcode #13</strong><br>Problem Statement:<br>Implement strStr().<br>Returns the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.</p>
 <p>对于一个给定的 source 字符串和一个 target 字符串，你应该在 source 字符串中找出 target 字符串出现的第一个位置(从0开始)。如果不存在，则返回 -1。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">strStr</span><span class="params">(String haystack, String needle)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (haystack == <span class="keyword">null</span> &amp;&amp; needle == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">        <span class="keyword">if</span> (haystack == <span class="keyword">null</span>) <span class="keyword">return</span> -<span class="number">1</span>;</div><div class="line">        <span class="keyword">if</span> (needle == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line"></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; haystack.length() - needle.length() + <span class="number">1</span>; i++) &#123;</div><div class="line">            <span class="keyword">int</span> j = <span class="number">0</span>;</div><div class="line">            <span class="keyword">for</span> (; j &lt; needle.length(); j++) &#123;</div><div class="line">                <span class="keyword">if</span> (haystack.charAt(i+j) != needle.charAt(j)) <span class="keyword">break</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span> (j == needle.length()) <span class="keyword">return</span> i;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="Two-Strings-Are-Anagrams"><a href="#Two-Strings-Are-Anagrams" class="headerlink" title="Two Strings Are Anagrams"></a>Two Strings Are Anagrams</h2><h2 id="Compare-Strings"><a href="#Compare-Strings" class="headerlink" title="Compare Strings"></a>Compare Strings</h2><h2 id="Group-Anagrams"><a href="#Group-Anagrams" class="headerlink" title="Group Anagrams"></a>Group Anagrams</h2><h2 id="Longest-Common-Substring"><a href="#Longest-Common-Substring" class="headerlink" title="Longest Common Substring"></a>Longest Common Substring</h2><h2 id="Rotate-String"><a href="#Rotate-String" class="headerlink" title="Rotate String"></a>Rotate String</h2><h2 id="Reverse-Words-in-a-String"><a href="#Reverse-Words-in-a-String" class="headerlink" title="Reverse Words in a String"></a>Reverse Words in a String</h2><h2 id="Valid-Palindrome"><a href="#Valid-Palindrome" class="headerlink" title="Valid Palindrome"></a>Valid Palindrome</h2><h2 id="Longest-Palindromic-Substring"><a href="#Longest-Palindromic-Substring" class="headerlink" title="Longest Palindromic Substring"></a>Longest Palindromic Substring</h2><h2 id="Space-Replacement"><a href="#Space-Replacement" class="headerlink" title="Space Replacement"></a>Space Replacement</h2><h2 id="Wildcard-Matching"><a href="#Wildcard-Matching" class="headerlink" title="Wildcard Matching"></a>Wildcard Matching</h2><h2 id="Length-of-Last-Words"><a href="#Length-of-Last-Words" class="headerlink" title="Length of Last Words"></a>Length of Last Words</h2><h2 id="Count-and-Say"><a href="#Count-and-Say" class="headerlink" title="Count and Say"></a>Count and Say</h2>
+
       
     </div>
 
@@ -564,7 +564,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-count">46</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -680,7 +680,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">41</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">43</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -752,7 +756,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python中字符串常用的方法"><span class="nav-number">1.</span> <span class="nav-text">Python中字符串常用的方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Coding"><span class="nav-number">2.</span> <span class="nav-text">Coding</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Implement-strStr"><span class="nav-number">2.1.</span> <span class="nav-text">Implement strStr</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Two-Strings-Are-Anagrams"><span class="nav-number">2.2.</span> <span class="nav-text">Two Strings Are Anagrams</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Compare-Strings"><span class="nav-number">2.3.</span> <span class="nav-text">Compare Strings</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Group-Anagrams"><span class="nav-number">2.4.</span> <span class="nav-text">Group Anagrams</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Longest-Common-Substring"><span class="nav-number">2.5.</span> <span class="nav-text">Longest Common Substring</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Rotate-String"><span class="nav-number">2.6.</span> <span class="nav-text">Rotate String</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reverse-Words-in-a-String"><span class="nav-number">2.7.</span> <span class="nav-text">Reverse Words in a String</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Valid-Palindrome"><span class="nav-number">2.8.</span> <span class="nav-text">Valid Palindrome</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Longest-Palindromic-Substring"><span class="nav-number">2.9.</span> <span class="nav-text">Longest Palindromic Substring</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Space-Replacement"><span class="nav-number">2.10.</span> <span class="nav-text">Space Replacement</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Wildcard-Matching"><span class="nav-number">2.11.</span> <span class="nav-text">Wildcard Matching</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Length-of-Last-Words"><span class="nav-number">2.12.</span> <span class="nav-text">Length of Last Words</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Count-and-Say"><span class="nav-number">2.13.</span> <span class="nav-text">Count and Say</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python中字符串常用的方法"><span class="nav-number">1.</span> <span class="nav-text">Python中字符串常用的方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Coding"><span class="nav-number">2.</span> <span class="nav-text">Coding</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Implement-strStr"><span class="nav-number">2.1.</span> <span class="nav-text">Implement strStr</span></a></li></ol></li></ol></div>
             
 
           </div>

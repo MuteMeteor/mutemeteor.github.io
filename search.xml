@@ -17,9 +17,17 @@
     <content type="text"></content>
   </entry>
   <entry>
-    <title><![CDATA[R-2]]></title>
+    <title><![CDATA[有关 ggplot2 的二三事]]></title>
     <url>%2F2018%2F03%2F02%2FR-2%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[在初步学习了 R 的基础语法后，我开始慢慢尝试 R 的数据可视化功能， 从最流行的 ggplot2 入手进行可视化的实例操作。 入门学习主要参考了一些知名 R 语言学习网站的 wiki 以及 《R数据可视化手册》。 R基础安装包install.packages(“包名”) 加载包library() 加载 CSV 文件data &lt;- read.csv(“datafile.csv”) 从 Excel 文件中加载数据library(xlsx)data &lt;- read.xlsx(“datafile.xlsx”,1) 从 SPSS 文件中加载数据library(foreign)data &lt;- read.spss(“datafile.sav”)]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>数据可视化</tag>
+        <tag>R</tag>
+        <tag>ggplot2</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[R-1]]></title>
@@ -39,7 +47,7 @@
   </entry>
   <entry>
     <title><![CDATA[Django]]></title>
-    <url>%2F2018%2F02%2F09%2FDjango%2F</url>
+    <url>%2F2018%2F02%2F09%2FR-grammar%2F</url>
     <content type="text"></content>
   </entry>
   <entry>
@@ -50,7 +58,7 @@
   <entry>
     <title><![CDATA[Python爬虫之Selenium]]></title>
     <url>%2F2018%2F01%2F31%2F07-Selenium%2F</url>
-    <content type="text"><![CDATA[什么是Selenium自动化测试工具，支持多种浏览器。爬虫中主要用来解决JavaScript渲染的问题。 基本使用12345678910111213141516171819from selenium import webdriverfrom selenium.webdriver.common.by import Byfrom selenium.webdriver.common.keys import Keysfrom selenium.webdriver.support import expected_conditions as ECfrom selenium.webdriver.support.wait import WebDriverWaitbrowser = webdriver.Firefox()try: browser.get('https://www.baidu.com') input = browser.find_element_by_id('kw') input.send_keys('Python') input.send_keys(Keys.ENTER) wait = WebDriverWait(browser,10) wait.until(EC.presence_of_element_located((By.ID,('content_left'))) print(browser.current_url) print(browser.get_cookies()) print(browser.page_source)finally: browser.close() 查找元素]]></content>
+    <content type="text"><![CDATA[什么是Selenium自动化测试工具，支持多种浏览器。爬虫中主要用来解决JavaScript渲染的问题。 基本使用12345678910111213141516171819from selenium import webdriverfrom selenium.webdriver.common.by import Byfrom selenium.webdriver.common.keys import Keysfrom selenium.webdriver.support import expected_conditions as ECfrom selenium.webdriver.support.wait import WebDriverWaitbrowser = webdriver.Firefox()try: browser.get('https://www.baidu.com') input = browser.find_element_by_id('kw') input.send_keys('Python') input.send_keys(Keys.ENTER) wait = WebDriverWait(browser,10) wait.until(EC.presence_of_element_located((By.ID,('content_left'))) print(browser.current_url) print(browser.get_cookies()) print(browser.page_source)finally: browser.close()]]></content>
       <categories>
         <category>Tech</category>
       </categories>
@@ -145,7 +153,7 @@
   </entry>
   <entry>
     <title><![CDATA[《金字塔原理》]]></title>
-    <url>%2F2018%2F01%2F23%2F%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%2F</url>
+    <url>%2F2018%2F01%2F23%2FR-base%2F</url>
     <content type="text"><![CDATA[豆瓣 mark 这本书很久了，正巧赶上淘宝打折，果断下单，又花了两天把书撸完。 整本书逻辑框架十分清晰，我这种菜鸟新手整个看的过程也很流畅，作为入门书籍非常棒，从实用的例子来练习熟悉，章节顺序安排合理，跟着练下来可以信心十足的明确自己会做哪些，还能做哪些。包括最开始介绍的如何排查错误，其思路也可以运用到很多事物上。]]></content>
       <categories>
         <category>读书记</category>
@@ -157,7 +165,7 @@
   </entry>
   <entry>
     <title><![CDATA[web-server]]></title>
-    <url>%2F2018%2F01%2F23%2Fweb-server%2F</url>
+    <url>%2F2018%2F01%2F23%2FR%2F</url>
     <content type="text"><![CDATA[HTTP协议]]></content>
       <categories>
         <category>Tech</category>
@@ -227,18 +235,6 @@
       </categories>
       <tags>
         <tag>Windows</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Python3 学习笔记（四）]]></title>
-    <url>%2F2017%2F11%2F14%2Fpython3-note40%2F</url>
-    <content type="text"><![CDATA[python3 学习笔记（一） python3 学习笔记（二） python3 学习笔记（三） 文件在操作文件的整体过程与使用word编写一份简历的过程是很相似的： 打开文件，或者新建立一个文件 读/写数据 关闭文件 打开文件在python，使用open函数，可以打开一个已经存在的文件，或者创建一个新文件 open(文件名，访问模式) 示例如下：1f = open('test.txt', 'w') 访问模式 说明 r 以只读方式打开文件。文件的指针将会放在文件的开头。这是默认模式。 w 打开一个文件只用于写入。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。 a 打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。 rb 以二进制格式打开一个文件用于只读。文件指针将会放在文件的开头。这是默认模式。 wb 以二进制格式打开一个文件只用于写入。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。 ab 以二进制格式打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。 r+ 打开一个文件用于读写。文件指针将会放在文件的开头。 w+ 打开一个文件用于读写。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。 a+ 打开一个文件用于读写。如果该文件已存在，文件指针将会放在文件的结尾。文件打开时会是追加模式。如果该文件不存在，创建新文件用于读写。 rb+ 以二进制格式打开一个文件用于读写。文件指针将会放在文件的开头。 wb+ 以二进制格式打开一个文件用于读写。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。 ab+ 以二进制格式打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。如果该文件不存在，创建新文件用于读写。 关闭文件close( ) 示例如下： 12345# 新建一个文件，文件名为:test.txtf = open('test.txt', 'w')# 关闭这个文件f.close() 写数据(write)使用write()可以完成向文件写入数据 demo: 123f = open('test.txt', 'w')f.write('hello world, i am here!')f.close() 读数据(read)使用read(num)可以从文件中读取数据，num表示要从文件中读取的数据的长度（单位是字节），如果没有传入num，那么就表示读取文件中所有的数据 demo: 12345678910111213f = open('test.txt', 'r')content = f.read(5)print(content)print("-"*30)content = f.read()print(content)f.close() 读数据（readlines）就像read没有参数时一样，readlines可以按照行的方式把整个文件中的内容进行一次性读取，并且返回的是一个列表，其中每一行的数据为一个元素 1234567891011121314#coding=utf-8f = open('test.txt', 'r')content = f.readlines()print(type(content))i=1for temp in content: print("%d:%s"%(i, temp)) i+=1f.close() 读数据（readline）123456789101112#coding=utf-8f = open('test.txt', 'r')content = f.readline()print("1:%s"%content)content = f.readline()print("2:%s"%content)f.close() 应用1——制作文件备份123456789101112131415161718192021222324252627#coding=utf-8oldFileName = input("请输入要拷贝的文件名字:")oldFile = open(oldFileName,'r')# 如果打开文件if oldFile: # 提取文件的后缀 fileFlagNum = oldFileName.rfind('.') if fileFlagNum &gt; 0: fileFlag = oldFileName[fileFlagNum:] # 组织新的文件名字 newFileName = oldFileName[:fileFlagNum] + '[复件]' + fileFlag # 创建新文件 newFile = open(newFileName, 'w') # 把旧文件中的数据，一行一行的进行复制到新文件中 for lineContent in oldFile.readlines(): newFile.write(lineContent) # 关闭文件 oldFile.close() newFile.close()]]></content>
-      <categories>
-        <category>Tech</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>Notes</tag>
       </tags>
   </entry>
   <entry>
@@ -346,7 +342,7 @@
   <entry>
     <title><![CDATA[【数据结构与算法】字符串专题]]></title>
     <url>%2F2017%2F09%2F18%2Falgorithm-string%2F</url>
-    <content type="text"><![CDATA[Python中字符串常用的方法1234567891011121314151617s1 = str()s2 = "mutemeteor" # 'mutemeteor's2len = len(s2)# last 3 charss2[-3:] # eors2[5:8] # etes3 = s2[:5] # mutems3 += 'eteor' # return 'mutemeteor'# list in python is same as ArrayList in Cs2list = list(s3)# string at index 4s2[4] # 'm'# find index at firsts2.index('u') # return 1, if not found, throw ValueErrors2.find('u') # return 1, if not found, return -1 Coding 处理字符串操作相关问题时，常见的做法是从字符串尾部开始编辑，从后往前逆向操作。这么做的原因是因为字符串的尾部往往有足够空间，可以直接修改而不用担心覆盖字符串前面的数据。 Implement strStrlintcode #13Problem Statement:Implement strStr().Returns the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack. 对于一个给定的 source 字符串和一个 target 字符串，你应该在 source 字符串中找出 target 字符串出现的第一个位置(从0开始)。如果不存在，则返回 -1。 1234567891011121314151617public class Solution &#123; public int strStr(String haystack, String needle) &#123; if (haystack == null &amp;&amp; needle == null) return 0; if (haystack == null) return -1; if (needle == null) return 0; for (int i = 0; i &lt; haystack.length() - needle.length() + 1; i++) &#123; int j = 0; for (; j &lt; needle.length(); j++) &#123; if (haystack.charAt(i+j) != needle.charAt(j)) break; &#125; if (j == needle.length()) return i; &#125; return -1; &#125;&#125; Two Strings Are AnagramsCompare StringsGroup AnagramsLongest Common SubstringRotate StringReverse Words in a StringValid PalindromeLongest Palindromic SubstringSpace ReplacementWildcard MatchingLength of Last WordsCount and Say]]></content>
+    <content type="text"><![CDATA[Python中字符串常用的方法1234567891011121314151617s1 = str()s2 = "mutemeteor" # 'mutemeteor's2len = len(s2)# last 3 charss2[-3:] # eors2[5:8] # etes3 = s2[:5] # mutems3 += 'eteor' # return 'mutemeteor'# list in python is same as ArrayList in Cs2list = list(s3)# string at index 4s2[4] # 'm'# find index at firsts2.index('u') # return 1, if not found, throw ValueErrors2.find('u') # return 1, if not found, return -1 Coding 处理字符串操作相关问题时，常见的做法是从字符串尾部开始编辑，从后往前逆向操作。这么做的原因是因为字符串的尾部往往有足够空间，可以直接修改而不用担心覆盖字符串前面的数据。 Implement strStrlintcode #13Problem Statement:Implement strStr().Returns the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack. 对于一个给定的 source 字符串和一个 target 字符串，你应该在 source 字符串中找出 target 字符串出现的第一个位置(从0开始)。如果不存在，则返回 -1。 1234567891011121314151617public class Solution &#123; public int strStr(String haystack, String needle) &#123; if (haystack == null &amp;&amp; needle == null) return 0; if (haystack == null) return -1; if (needle == null) return 0; for (int i = 0; i &lt; haystack.length() - needle.length() + 1; i++) &#123; int j = 0; for (; j &lt; needle.length(); j++) &#123; if (haystack.charAt(i+j) != needle.charAt(j)) break; &#125; if (j == needle.length()) return i; &#125; return -1; &#125;&#125;]]></content>
       <categories>
         <category>Tech</category>
       </categories>
@@ -441,21 +437,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[MySQL 学习笔记之进阶篇]]></title>
-    <url>%2F2017%2F07%2F20%2FMySQL2%2F</url>
-    <content type="text"><![CDATA[进阶篇 - MySQL 服务安装及命令使用进阶篇 - MySQL 操作详解进阶篇 - MySQL 常用查询进阶篇 - MySQL 语言结构进阶篇 - MySQL 数据类型进阶篇 - MySQL 函数和操作符进阶篇 - SQL 语句语法详解进阶篇 - MySQL 触发器进阶篇 - MySQL 视图进阶篇 - MySQL 存储过程和函数进阶篇 - MySQL 数据库管理]]></content>
-      <categories>
-        <category>Tech</category>
-      </categories>
-      <tags>
-        <tag>Notes</tag>
-        <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[MySQL 学习笔记之基础篇]]></title>
-    <url>%2F2017%2F03%2F31%2FMySQL1%2F</url>
-    <content type="text"><![CDATA[基础篇 - SQL 介绍数据库和 SQL 概念数据库（Database）是按照数据结构来组织、存储和管理数据的仓库，它的产生距今已有六十多年。 结构化查询语言(Structured Query Language)简称 SQL，是上世纪 70 年代由 IBM 公司开发，用于对数据库进行操作的语言。SQL 是一种数据库查询和程序设计语言，用于存取数据以及查询、更新和管理关系数据库系统，同时也是数据库脚本文件的扩展名。 MySQLMySQL 是一个 DBMS（数据库管理系统），由瑞典 MySQLAB 公司开发，目前属于 Oracle 公司，MySQL 是最流行的关系型数据库管理系统。MySQL 是一个 DBMS（数据库管理系统），由瑞典 MySQLAB 公司开发，目前属于 Oracle 公司，MySQL 是最流行的关系型数据库管理系统 尝试 MySQL打开 MySQL# 启动 MySQL 服务 sudo service mysql start #使用 root 用户登录，密码为空 mysql -u root 查看数据库使用命令 show databases;，查看有哪些数据库。 连接数据库选择连接其中一个数据库，语句格式为 use &lt;数据库名&gt;，这里可以不用加分号。 查看表使用命令 show tables; 查看数据库中有哪些表（不要漏掉“;”）。 基础篇 - 创建数据库并插入数据新建数据库语句格式为 CREATE DATABASE &lt;数据库名字&gt;;,在大多数系统中，SQL 语句都是不区分大小写的，但是出于严谨，而且便于区分保留字（保留字(reserved word)：指在高级语言中已经定义过的字，使用者不能再将这些字作为变量名或过程名使用。）和变量名，我们把保留字大写，把变量和数据小写。 连接数据库首先要连接数据库，使用语句 use &lt;数据库名字&gt;。 数据表数据表（table）简称表，它是数据库最重要的组成部分之一。数据库只是一个框架，表才是实质内容。而一个数据库中一般会有多张表，这些各自独立的表通过建立关系被联接起来，才成为可以交叉查阅、一目了然的数据库。 新建数据表在数据库中新建一张表的语句格式为： CREATE TABLE 表的名字 ( 列名a 数据类型(数据长度), 列名b 数据类型(数据长度)， 列名c 数据类型(数据长度) ); 数据类型 数据类型 大小(字节) 用途 格式 INT 4 整数 FLOAT 4 单精度浮点数 DOUBLE 8 双精度浮点数 ENUM 单选,比如性别 ENUM(‘a’,’b’,’c’) SET 多选 SET(‘1’,’2’,’3’) DATE 3 日期 YYYY-MM-DD TIME 3 时间点或持续时间 HH:MM:SS YEAR 1 年份值 YYYY CHAR 0~255 定长字符串 VARCHAR 0~255 变长字符串 TEXT 0~65535 长文本数据 整数除了 INT 外，还有 TINYINT、SMALLINT、MEDIUMINT、BIGINT。 整数除了 INT 外，还有 TINYINT、SMALLINT、MEDIUMINT、BIGINT。CHAR 和 VARCHAR 的区别: CHAR 的长度是固定的，而 VARCHAR 的长度是可以变化的，比如，存储字符串 “abc”，对于 CHAR(10)，表示存储的字符将占 10 个字节(包括 7 个空字符)，而同样的 VARCHAR(12) 则只占用4个字节的长度，增加一个额外字节来存储字符串本身的长度，12 只是最大值，当你存储的字符小于 12 时，按实际长度存储。 插入数据使用语句 SELECT * FROM 表的名字; 查看表中的内容，刚建的表内是空的，通过 INSERT 语句向表中插入数据，语句格式为： INSERT INTO 表的名字(列名a,列名b,列名c) VALUES(值1,值2,值3); 例如像表employee内加入内容： INSERT INTO employee(id,name,phone) VALUES(01,&apos;Tom&apos;,110110110); INSERT INTO employee VALUES(02,&apos;Jack&apos;,119119119); INSERT INTO employee(id,name) VALUES(03,&apos;Rose&apos;); 有的数据需要用单引号括起来，比如 Tom、Jack、Rose 的名字，这是由于它们的数据类型是 CHAR 型。此外 VARCHAR,TEXT,DATE,TIME,ENUM 等类型的数据也需要单引号修饰，而 INT,FLOAT,DOUBLE 等则不需要。 基础篇 - SQL 的约束约束分类约束是一种限制，它通过对表的行或列的数据做出限制，来确保表的数据的完整性、唯一性。在MySQL中，通常有这几种约束： 约束类型： 主键 默认值 唯一 外键 非空 关键字： PRIMARY KEY DEFAULT UNIQUE FOREIGN KEY NOT NULL 主键 (PRIMARY KEY)是用于约束表中的一行，作为这一行的唯一标识符，在一张表中通过主键就能准确定位到一行，因此主键十分重要。主键不能有重复且不能为空。还有一种特殊的主键——复合主键。主键不仅可以是表中的一列，也可以由表中的两列或多列来共同标识。 默认值约束 (DEFAULT) 规定，当有 DEFAULT 约束的列，插入数据为空时，将使用默认值。DEFAULT 约束只会在使用 INSERT 语句时体现出来，INSERT语句中，如果被 DEFAULT 约束的位置没有值，那么这个位置将会被 DEFAULT 的值填充。 基础篇 - SELECT 语句详解基础篇 - 数据库及表的修改和删除基础篇 - 其他基本操作]]></content>
+    <title><![CDATA[MySQL 学习笔记]]></title>
+    <url>%2F2017%2F03%2F31%2FMySQL%2F</url>
+    <content type="text"><![CDATA[基础篇 - SQL 介绍数据库和 SQL 概念数据库（Database）是按照数据结构来组织、存储和管理数据的仓库，它的产生距今已有六十多年。 结构化查询语言(Structured Query Language)简称 SQL，是上世纪 70 年代由 IBM 公司开发，用于对数据库进行操作的语言。SQL 是一种数据库查询和程序设计语言，用于存取数据以及查询、更新和管理关系数据库系统，同时也是数据库脚本文件的扩展名。 MySQLMySQL 是一个 DBMS（数据库管理系统），由瑞典 MySQLAB 公司开发，目前属于 Oracle 公司，MySQL 是最流行的关系型数据库管理系统。MySQL 是一个 DBMS（数据库管理系统），由瑞典 MySQLAB 公司开发，目前属于 Oracle 公司，MySQL 是最流行的关系型数据库管理系统 尝试 MySQL打开 MySQL# 启动 MySQL 服务 sudo service mysql start #使用 root 用户登录，密码为空 mysql -u root 查看数据库使用命令 show databases;，查看有哪些数据库。 连接数据库选择连接其中一个数据库，语句格式为 use &lt;数据库名&gt;，这里可以不用加分号。 查看表使用命令 show tables; 查看数据库中有哪些表（不要漏掉“;”）。 基础篇 - 创建数据库并插入数据新建数据库语句格式为 CREATE DATABASE &lt;数据库名字&gt;;,在大多数系统中，SQL 语句都是不区分大小写的，但是出于严谨，而且便于区分保留字（保留字(reserved word)：指在高级语言中已经定义过的字，使用者不能再将这些字作为变量名或过程名使用。）和变量名，我们把保留字大写，把变量和数据小写。 连接数据库首先要连接数据库，使用语句 use &lt;数据库名字&gt;。 数据表数据表（table）简称表，它是数据库最重要的组成部分之一。数据库只是一个框架，表才是实质内容。而一个数据库中一般会有多张表，这些各自独立的表通过建立关系被联接起来，才成为可以交叉查阅、一目了然的数据库。 新建数据表在数据库中新建一张表的语句格式为： CREATE TABLE 表的名字 ( 列名a 数据类型(数据长度), 列名b 数据类型(数据长度)， 列名c 数据类型(数据长度) ); 数据类型 数据类型 大小(字节) 用途 格式 INT 4 整数 FLOAT 4 单精度浮点数 DOUBLE 8 双精度浮点数 ENUM 单选,比如性别 ENUM(‘a’,’b’,’c’) SET 多选 SET(‘1’,’2’,’3’) DATE 3 日期 YYYY-MM-DD TIME 3 时间点或持续时间 HH:MM:SS YEAR 1 年份值 YYYY CHAR 0~255 定长字符串 VARCHAR 0~255 变长字符串 TEXT 0~65535 长文本数据 整数除了 INT 外，还有 TINYINT、SMALLINT、MEDIUMINT、BIGINT。 整数除了 INT 外，还有 TINYINT、SMALLINT、MEDIUMINT、BIGINT。CHAR 和 VARCHAR 的区别: CHAR 的长度是固定的，而 VARCHAR 的长度是可以变化的，比如，存储字符串 “abc”，对于 CHAR(10)，表示存储的字符将占 10 个字节(包括 7 个空字符)，而同样的 VARCHAR(12) 则只占用4个字节的长度，增加一个额外字节来存储字符串本身的长度，12 只是最大值，当你存储的字符小于 12 时，按实际长度存储。 插入数据使用语句 SELECT * FROM 表的名字; 查看表中的内容，刚建的表内是空的，通过 INSERT 语句向表中插入数据，语句格式为： INSERT INTO 表的名字(列名a,列名b,列名c) VALUES(值1,值2,值3); 例如像表employee内加入内容： INSERT INTO employee(id,name,phone) VALUES(01,&apos;Tom&apos;,110110110); INSERT INTO employee VALUES(02,&apos;Jack&apos;,119119119); INSERT INTO employee(id,name) VALUES(03,&apos;Rose&apos;); 有的数据需要用单引号括起来，比如 Tom、Jack、Rose 的名字，这是由于它们的数据类型是 CHAR 型。此外 VARCHAR,TEXT,DATE,TIME,ENUM 等类型的数据也需要单引号修饰，而 INT,FLOAT,DOUBLE 等则不需要。 基础篇 - SQL 的约束约束分类约束是一种限制，它通过对表的行或列的数据做出限制，来确保表的数据的完整性、唯一性。在MySQL中，通常有这几种约束： 约束类型： 主键 默认值 唯一 外键 非空 关键字： PRIMARY KEY DEFAULT UNIQUE FOREIGN KEY NOT NULL 主键 (PRIMARY KEY)是用于约束表中的一行，作为这一行的唯一标识符，在一张表中通过主键就能准确定位到一行，因此主键十分重要。主键不能有重复且不能为空。还有一种特殊的主键——复合主键。主键不仅可以是表中的一列，也可以由表中的两列或多列来共同标识。 默认值约束 (DEFAULT) 规定，当有 DEFAULT 约束的列，插入数据为空时，将使用默认值。DEFAULT 约束只会在使用 INSERT 语句时体现出来，INSERT语句中，如果被 DEFAULT 约束的位置没有值，那么这个位置将会被 DEFAULT 的值填充。]]></content>
       <categories>
         <category>Tech</category>
       </categories>

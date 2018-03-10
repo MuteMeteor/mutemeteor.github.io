@@ -138,74 +138,29 @@
 
 
   
-  <meta name="keywords" content="Python,Notes," />
+  <meta name="keywords" content="Notes,MySQL," />
 
 
-<meta name="description" content="python3 学习笔记（一）
-
-python3 学习笔记（二）
-
-python3 学习笔记（三）
-
-
-
-文件在操作文件的整体过程与使用word编写一份简历的过程是很相似的：
-
-打开文件，或者新建立一个文件
-读/写数据
-关闭文件
-
-打开文件在python，使用open函数，可以打开一个已经存在的文件，或者创建一个新文件
-open(文件名，访问模式)
-示例如下：1f = open(&apos;test.tx">
+<meta name="description" content="基础篇 - SQL 介绍数据库和 SQL 概念数据库（Database）是按照数据结构来组织、存储和管理数据的仓库，它的产生距今已有六十多年。
+结构化查询语言(Structured Query Language)简称 SQL，是上世纪 70 年代由 IBM 公司开发，用于对数据库进行操作的语言。SQL 是一种数据库查询和程序设计语言，用于存取数据以及查询、更新和管理关系数据库系统，同时也是数据库脚">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python3 学习笔记（四）">
-<meta property="og:url" content="http://mutemeteor.com/2017/11/14/python3-note40/index.html">
+<meta property="og:title" content="MySQL 学习笔记">
+<meta property="og:url" content="http://mutemeteor.com/2017/03/31/MySQL/index.html">
 <meta property="og:site_name" content="Mute Meteor">
-<meta property="og:description" content="python3 学习笔记（一）
-
-python3 学习笔记（二）
-
-python3 学习笔记（三）
-
-
-
-文件在操作文件的整体过程与使用word编写一份简历的过程是很相似的：
-
-打开文件，或者新建立一个文件
-读/写数据
-关闭文件
-
-打开文件在python，使用open函数，可以打开一个已经存在的文件，或者创建一个新文件
-open(文件名，访问模式)
-示例如下：1f = open(&apos;test.tx">
-<meta property="og:updated_time" content="2018-02-28T04:00:53.025Z">
+<meta property="og:description" content="基础篇 - SQL 介绍数据库和 SQL 概念数据库（Database）是按照数据结构来组织、存储和管理数据的仓库，它的产生距今已有六十多年。
+结构化查询语言(Structured Query Language)简称 SQL，是上世纪 70 年代由 IBM 公司开发，用于对数据库进行操作的语言。SQL 是一种数据库查询和程序设计语言，用于存取数据以及查询、更新和管理关系数据库系统，同时也是数据库脚">
+<meta property="og:updated_time" content="2018-03-10T12:52:31.835Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python3 学习笔记（四）">
-<meta name="twitter:description" content="python3 学习笔记（一）
-
-python3 学习笔记（二）
-
-python3 学习笔记（三）
-
-
-
-文件在操作文件的整体过程与使用word编写一份简历的过程是很相似的：
-
-打开文件，或者新建立一个文件
-读/写数据
-关闭文件
-
-打开文件在python，使用open函数，可以打开一个已经存在的文件，或者创建一个新文件
-open(文件名，访问模式)
-示例如下：1f = open(&apos;test.tx">
+<meta name="twitter:title" content="MySQL 学习笔记">
+<meta name="twitter:description" content="基础篇 - SQL 介绍数据库和 SQL 概念数据库（Database）是按照数据结构来组织、存储和管理数据的仓库，它的产生距今已有六十多年。
+结构化查询语言(Structured Query Language)简称 SQL，是上世纪 70 年代由 IBM 公司开发，用于对数据库进行操作的语言。SQL 是一种数据库查询和程序设计语言，用于存取数据以及查询、更新和管理关系数据库系统，同时也是数据库脚">
 
 
 
 
 
 
-  <link rel="canonical" href="http://mutemeteor.com/2017/11/14/python3-note40/"/>
+  <link rel="canonical" href="http://mutemeteor.com/2017/03/31/MySQL/"/>
 
 
 
@@ -214,7 +169,7 @@ open(文件名，访问模式)
     sidebar: "",
   };
 </script>
-  <title>Python3 学习笔记（四） | Mute Meteor</title>
+  <title>MySQL 学习笔记 | Mute Meteor</title>
   
 
 
@@ -377,7 +332,7 @@ open(文件名，访问模式)
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mutemeteor.com/2017/11/14/python3-note40/">
+    <link itemprop="mainEntityOfPage" href="http://mutemeteor.com/2017/03/31/MySQL/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kyrene Wang">
@@ -394,7 +349,7 @@ open(文件名，访问模式)
 
         
         
-          <h2 class="post-title" itemprop="name headline">Python3 学习笔记（四）</h2>
+          <h2 class="post-title" itemprop="name headline">MySQL 学习笔记</h2>
         
 
         <div class="post-meta">
@@ -406,7 +361,7 @@ open(文件名，访问模式)
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-14T10:46:56+08:00">2017-11-14</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-31T19:32:24+08:00">2017-03-31</time>
             
 
             
@@ -461,96 +416,145 @@ open(文件名，访问模式)
       
 
       
-        <ul>
-<li><p><a href="http://mutemeteor.com/2017/10/28/Python3-note/">python3 学习笔记（一）</a></p>
-</li>
-<li><p><a href="http://mutemeteor.com/2017/11/08/Python3-note2/">python3 学习笔记（二）</a></p>
-</li>
-<li><p><a href="http://mutemeteor.com/2017/11/14/Python3-note3/">python3 学习笔记（三）</a></p>
-</li>
-</ul>
-<hr>
-<h1 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h1><p>在操作文件的整体过程与使用word编写一份简历的过程是很相似的：</p>
-<ol>
-<li>打开文件，或者新建立一个文件</li>
-<li>读/写数据</li>
-<li>关闭文件</li>
-</ol>
-<h2 id="打开文件"><a href="#打开文件" class="headerlink" title="打开文件"></a>打开文件</h2><p>在python，使用open函数，可以打开一个已经存在的文件，或者创建一个新文件</p>
-<p>open(文件名，访问模式)</p>
-<p>示例如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">f = open(<span class="string">'test.txt'</span>, <span class="string">'w'</span>)</div></pre></td></tr></table></figure></p>
-<table>
+        <h1 id="基础篇-SQL-介绍"><a href="#基础篇-SQL-介绍" class="headerlink" title="基础篇 - SQL 介绍"></a>基础篇 - SQL 介绍</h1><h2 id="数据库和-SQL-概念"><a href="#数据库和-SQL-概念" class="headerlink" title="数据库和 SQL 概念"></a>数据库和 SQL 概念</h2><p>数据库（Database）是按照数据结构来组织、存储和管理数据的仓库，它的产生距今已有六十多年。</p>
+<p>结构化查询语言(Structured Query Language)简称 SQL，是上世纪 70 年代由 IBM 公司开发，用于对数据库进行操作的语言。SQL 是一种数据库查询和程序设计语言，用于存取数据以及查询、更新和管理关系数据库系统，同时也是数据库脚本文件的扩展名。</p>
+<h2 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h2><p>MySQL 是一个 DBMS（数据库管理系统），由瑞典 MySQLAB 公司开发，目前属于 Oracle 公司，MySQL 是最流行的关系型数据库管理系统。MySQL 是一个 DBMS（数据库管理系统），由瑞典 MySQLAB 公司开发，目前属于 Oracle 公司，MySQL 是最流行的关系型数据库管理系统<br><a id="more"></a></p>
+<h2 id="尝试-MySQL"><a href="#尝试-MySQL" class="headerlink" title="尝试 MySQL"></a>尝试 MySQL</h2><h3 id="打开-MySQL"><a href="#打开-MySQL" class="headerlink" title="打开 MySQL"></a>打开 MySQL</h3><pre><code># 启动 MySQL 服务
+sudo service mysql start
+
+#使用 root 用户登录，密码为空
+mysql -u root
+</code></pre><h3 id="查看数据库"><a href="#查看数据库" class="headerlink" title="查看数据库"></a>查看数据库</h3><p>使用命令 <code>show databases;</code>，查看有哪些数据库。</p>
+<h3 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h3><p>选择连接其中一个数据库，语句格式为 <code>use &lt;数据库名&gt;</code>，这里可以不用加分号。</p>
+<h3 id="查看表"><a href="#查看表" class="headerlink" title="查看表"></a>查看表</h3><p>使用命令 <code>show tables;</code> 查看数据库中有哪些表（不要漏掉“;”）。</p>
+<h1 id="基础篇-创建数据库并插入数据"><a href="#基础篇-创建数据库并插入数据" class="headerlink" title="基础篇 - 创建数据库并插入数据"></a>基础篇 - 创建数据库并插入数据</h1><h2 id="新建数据库"><a href="#新建数据库" class="headerlink" title="新建数据库"></a>新建数据库</h2><p>语句格式为 <code>CREATE DATABASE &lt;数据库名字&gt;;</code>,在大多数系统中，SQL 语句都是不区分大小写的，但是出于严谨，而且便于区分保留字（保留字(reserved word)：指在高级语言中已经定义过的字，使用者不能再将这些字作为变量名或过程名使用。）和变量名，我们把保留字大写，把变量和数据小写。</p>
+<h2 id="连接数据库-1"><a href="#连接数据库-1" class="headerlink" title="连接数据库"></a>连接数据库</h2><p>首先要连接数据库，使用语句 <code>use &lt;数据库名字&gt;</code>。</p>
+<h2 id="数据表"><a href="#数据表" class="headerlink" title="数据表"></a>数据表</h2><p>数据表（table）简称表，它是数据库最重要的组成部分之一。数据库只是一个框架，表才是实质内容。<br>而一个数据库中一般会有多张表，这些各自独立的表通过建立关系被联接起来，才成为可以交叉查阅、一目了然的数据库。</p>
+<h2 id="新建数据表"><a href="#新建数据表" class="headerlink" title="新建数据表"></a>新建数据表</h2><p>在数据库中新建一张表的语句格式为：</p>
+<pre><code>CREATE TABLE 表的名字
+(
+列名a 数据类型(数据长度),
+列名b 数据类型(数据长度)，
+列名c 数据类型(数据长度)
+);
+</code></pre><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><table>
 <thead>
 <tr>
-<th>访问模式</th>
-<th style="text-align:center">说明</th>
+<th>数据类型</th>
+<th style="text-align:center">大小(字节)</th>
+<th style="text-align:right">用途</th>
+<th style="text-align:right">格式</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>r</td>
-<td style="text-align:center">以只读方式打开文件。文件的指针将会放在文件的开头。这是默认模式。</td>
+<td>INT</td>
+<td style="text-align:center">4</td>
+<td style="text-align:right">整数</td>
+<td style="text-align:right"></td>
 </tr>
 <tr>
-<td>w</td>
-<td style="text-align:center">打开一个文件只用于写入。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。</td>
+<td>FLOAT</td>
+<td style="text-align:center">4</td>
+<td style="text-align:right">单精度浮点数</td>
+<td style="text-align:right"></td>
 </tr>
 <tr>
-<td>a</td>
-<td style="text-align:center">打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。</td>
+<td>DOUBLE</td>
+<td style="text-align:center">8</td>
+<td style="text-align:right">双精度浮点数</td>
+<td style="text-align:right"></td>
 </tr>
 <tr>
-<td>rb</td>
-<td style="text-align:center">以二进制格式打开一个文件用于只读。文件指针将会放在文件的开头。这是默认模式。</td>
+<td>ENUM</td>
+<td style="text-align:center"></td>
+<td style="text-align:right">单选,比如性别</td>
+<td style="text-align:right">ENUM(‘a’,’b’,’c’)</td>
 </tr>
 <tr>
-<td>wb</td>
-<td style="text-align:center">以二进制格式打开一个文件只用于写入。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。</td>
+<td>SET</td>
+<td style="text-align:center"></td>
+<td style="text-align:right">多选</td>
+<td style="text-align:right">SET(‘1’,’2’,’3’)</td>
 </tr>
 <tr>
-<td>ab</td>
-<td style="text-align:center">以二进制格式打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。</td>
+<td>DATE</td>
+<td style="text-align:center">3</td>
+<td style="text-align:right">日期</td>
+<td style="text-align:right">YYYY-MM-DD</td>
 </tr>
 <tr>
-<td>r+</td>
-<td style="text-align:center">打开一个文件用于读写。文件指针将会放在文件的开头。</td>
+<td>TIME</td>
+<td style="text-align:center">3</td>
+<td style="text-align:right">时间点或持续时间</td>
+<td style="text-align:right">HH:MM:SS</td>
 </tr>
 <tr>
-<td>w+</td>
-<td style="text-align:center">打开一个文件用于读写。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。</td>
+<td>YEAR</td>
+<td style="text-align:center">1</td>
+<td style="text-align:right">年份值</td>
+<td style="text-align:right">YYYY</td>
 </tr>
 <tr>
-<td>a+</td>
-<td style="text-align:center">打开一个文件用于读写。如果该文件已存在，文件指针将会放在文件的结尾。文件打开时会是追加模式。如果该文件不存在，创建新文件用于读写。</td>
+<td>CHAR</td>
+<td style="text-align:center">0~255</td>
+<td style="text-align:right">定长字符串</td>
+<td style="text-align:right"></td>
 </tr>
 <tr>
-<td>rb+</td>
-<td style="text-align:center">以二进制格式打开一个文件用于读写。文件指针将会放在文件的开头。</td>
+<td>VARCHAR</td>
+<td style="text-align:center">0~255</td>
+<td style="text-align:right">变长字符串</td>
+<td style="text-align:right"></td>
 </tr>
 <tr>
-<td>wb+</td>
-<td style="text-align:center">以二进制格式打开一个文件用于读写。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。</td>
-</tr>
-<tr>
-<td>ab+</td>
-<td style="text-align:center">以二进制格式打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。如果该文件不存在，创建新文件用于读写。</td>
+<td>TEXT</td>
+<td style="text-align:center">0~65535</td>
+<td style="text-align:right">长文本数据</td>
+<td style="text-align:right"></td>
 </tr>
 </tbody>
 </table>
-<a id="more"></a>
-<h2 id="关闭文件"><a href="#关闭文件" class="headerlink" title="关闭文件"></a>关闭文件</h2><p>close( )</p>
-<p>示例如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 新建一个文件，文件名为:test.txt</span></div><div class="line">f = open(<span class="string">'test.txt'</span>, <span class="string">'w'</span>)</div><div class="line"></div><div class="line"><span class="comment"># 关闭这个文件</span></div><div class="line">f.close()</div></pre></td></tr></table></figure>
-<h2 id="写数据-write"><a href="#写数据-write" class="headerlink" title="写数据(write)"></a>写数据(write)</h2><p>使用write()可以完成向文件写入数据</p>
-<p>demo:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">f = open(<span class="string">'test.txt'</span>, <span class="string">'w'</span>)</div><div class="line">f.write(<span class="string">'hello world, i am here!'</span>)</div><div class="line">f.close()</div></pre></td></tr></table></figure>
-<h2 id="读数据-read"><a href="#读数据-read" class="headerlink" title="读数据(read)"></a>读数据(read)</h2><p>使用read(num)可以从文件中读取数据，num表示要从文件中读取的数据的长度（单位是字节），如果没有传入num，那么就表示读取文件中所有的数据</p>
-<p>demo:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">f = open(<span class="string">'test.txt'</span>, <span class="string">'r'</span>)</div><div class="line"></div><div class="line">content = f.read(<span class="number">5</span>)</div><div class="line"></div><div class="line">print(content)</div><div class="line"></div><div class="line">print(<span class="string">"-"</span>*<span class="number">30</span>)</div><div class="line"></div><div class="line">content = f.read()</div><div class="line"></div><div class="line">print(content)</div><div class="line"></div><div class="line">f.close()</div></pre></td></tr></table></figure>
-<h2 id="读数据（readlines）"><a href="#读数据（readlines）" class="headerlink" title="读数据（readlines）"></a>读数据（readlines）</h2><p>就像read没有参数时一样，readlines可以按照行的方式把整个文件中的内容进行一次性读取，并且返回的是一个列表，其中每一行的数据为一个元素</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#coding=utf-8</span></div><div class="line"></div><div class="line">f = open(<span class="string">'test.txt'</span>, <span class="string">'r'</span>)</div><div class="line"></div><div class="line">content = f.readlines()</div><div class="line"></div><div class="line">print(type(content))</div><div class="line"></div><div class="line">i=<span class="number">1</span></div><div class="line"><span class="keyword">for</span> temp <span class="keyword">in</span> content:</div><div class="line">    print(<span class="string">"%d:%s"</span>%(i, temp))</div><div class="line">    i+=<span class="number">1</span></div><div class="line"></div><div class="line">f.close()</div></pre></td></tr></table></figure>
-<h2 id="读数据（readline）"><a href="#读数据（readline）" class="headerlink" title="读数据（readline）"></a>读数据（readline）</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#coding=utf-8</span></div><div class="line"></div><div class="line">f = open(<span class="string">'test.txt'</span>, <span class="string">'r'</span>)</div><div class="line"></div><div class="line">content = f.readline()</div><div class="line">print(<span class="string">"1:%s"</span>%content)</div><div class="line"></div><div class="line">content = f.readline()</div><div class="line">print(<span class="string">"2:%s"</span>%content)</div><div class="line"></div><div class="line"></div><div class="line">f.close()</div></pre></td></tr></table></figure>
-<h2 id="应用1——制作文件备份"><a href="#应用1——制作文件备份" class="headerlink" title="应用1——制作文件备份"></a>应用1——制作文件备份</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#coding=utf-8</span></div><div class="line"></div><div class="line">oldFileName = input(<span class="string">"请输入要拷贝的文件名字:"</span>)</div><div class="line"></div><div class="line">oldFile = open(oldFileName,<span class="string">'r'</span>)</div><div class="line"></div><div class="line"><span class="comment"># 如果打开文件</span></div><div class="line"><span class="keyword">if</span> oldFile:</div><div class="line"></div><div class="line">    <span class="comment"># 提取文件的后缀</span></div><div class="line">    fileFlagNum = oldFileName.rfind(<span class="string">'.'</span>)</div><div class="line">    <span class="keyword">if</span> fileFlagNum &gt; <span class="number">0</span>:</div><div class="line">        fileFlag = oldFileName[fileFlagNum:]</div><div class="line"></div><div class="line">    <span class="comment"># 组织新的文件名字</span></div><div class="line">    newFileName = oldFileName[:fileFlagNum] + <span class="string">'[复件]'</span> + fileFlag</div><div class="line"></div><div class="line">    <span class="comment"># 创建新文件</span></div><div class="line">    newFile = open(newFileName, <span class="string">'w'</span>)</div><div class="line"></div><div class="line">    <span class="comment"># 把旧文件中的数据，一行一行的进行复制到新文件中</span></div><div class="line">    <span class="keyword">for</span> lineContent <span class="keyword">in</span> oldFile.readlines():</div><div class="line">        newFile.write(lineContent)</div><div class="line"></div><div class="line">    <span class="comment"># 关闭文件</span></div><div class="line">    oldFile.close()</div><div class="line">    newFile.close()</div></pre></td></tr></table></figure>
+<ul>
+<li>整数除了 INT 外，还有 TINYINT、SMALLINT、MEDIUMINT、BIGINT。</li>
+<li>整数除了 INT 外，还有 TINYINT、SMALLINT、MEDIUMINT、BIGINT。<br>CHAR 和 VARCHAR 的区别: CHAR 的长度是固定的，而 VARCHAR 的长度是可以变化的，比如，存储字符串 “abc”，对于 CHAR(10)，表示存储的字符将占 10 个字节(包括 7 个空字符)，而同样的 VARCHAR(12) 则只占用4个字节的长度，增加一个额外字节来存储字符串本身的长度，12 只是最大值，当你存储的字符小于 12 时，按实际长度存储。</li>
+</ul>
+<h2 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h2><p>使用语句 <code>SELECT * FROM 表的名字;</code> 查看表中的内容，刚建的表内是空的，通过 INSERT 语句向表中插入数据，语句格式为：</p>
+<pre><code>INSERT INTO 表的名字(列名a,列名b,列名c) VALUES(值1,值2,值3);
+</code></pre><p>例如像表employee内加入内容：</p>
+<pre><code>INSERT INTO employee(id,name,phone) VALUES(01,&apos;Tom&apos;,110110110);
+INSERT INTO employee VALUES(02,&apos;Jack&apos;,119119119);
+INSERT INTO employee(id,name) VALUES(03,&apos;Rose&apos;);
+</code></pre><p>有的数据需要用单引号括起来，比如 Tom、Jack、Rose 的名字，这是由于它们的数据类型是 CHAR 型。此外 VARCHAR,TEXT,DATE,TIME,ENUM 等类型的数据也需要单引号修饰，而 INT,FLOAT,DOUBLE 等则不需要。</p>
+<h1 id="基础篇-SQL-的约束"><a href="#基础篇-SQL-的约束" class="headerlink" title="基础篇 - SQL 的约束"></a>基础篇 - SQL 的约束</h1><h2 id="约束分类"><a href="#约束分类" class="headerlink" title="约束分类"></a>约束分类</h2><p>约束是一种限制，它通过对表的行或列的数据做出限制，来确保表的数据的完整性、唯一性。在MySQL中，通常有这几种约束：</p>
+<table>
+<thead>
+<tr>
+<th>约束类型：</th>
+<th style="text-align:center">主键</th>
+<th style="text-align:right">默认值</th>
+<th style="text-align:right">唯一</th>
+<th style="text-align:right">外键</th>
+<th style="text-align:right">非空</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>关键字：</td>
+<td style="text-align:center">PRIMARY KEY</td>
+<td style="text-align:right">DEFAULT</td>
+<td style="text-align:right">UNIQUE</td>
+<td style="text-align:right">FOREIGN KEY</td>
+<td style="text-align:right">NOT NULL</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>主键 (PRIMARY KEY)是用于约束表中的一行，作为这一行的唯一标识符，在一张表中通过主键就能准确定位到一行，因此主键十分重要。主键不能有重复且不能为空。还有一种特殊的主键——复合主键。主键不仅可以是表中的一列，也可以由表中的两列或多列来共同标识。</p>
+</li>
+<li><p>默认值约束 (DEFAULT) 规定，当有 DEFAULT 约束的列，插入数据为空时，将使用默认值。DEFAULT 约束只会在使用 INSERT 语句时体现出来，INSERT语句中，如果被 DEFAULT 约束的位置没有值，那么这个位置将会被 DEFAULT 的值填充。</p>
+</li>
+</ul>
 
       
     </div>
@@ -572,7 +576,7 @@ open(文件名，访问模式)
     <strong>本文作者： </strong>Kyrene Wang</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://mutemeteor.com/2017/11/14/python3-note40/" title="Python3 学习笔记（四）">http://mutemeteor.com/2017/11/14/python3-note40/</a>
+    <a href="http://mutemeteor.com/2017/03/31/MySQL/" title="MySQL 学习笔记">http://mutemeteor.com/2017/03/31/MySQL/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -585,9 +589,9 @@ open(文件名，访问模式)
       
         <div class="post-tags">
           
-            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
-          
             <a href="/tags/Notes/" rel="tag"><i class="fa fa-tag"></i> Notes</a>
+          
+            <a href="/tags/MySQL/" rel="tag"><i class="fa fa-tag"></i> MySQL</a>
           
         </div>
       
@@ -600,8 +604,8 @@ open(文件名，访问模式)
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/14/python3-note4/" rel="next" title="Python3 学习笔记（四）">
-                <i class="fa fa-chevron-left"></i> Python3 学习笔记（四）
+              <a href="/2017/02/03/思维导图使用手册/" rel="next" title="《思维导图使用手册》">
+                <i class="fa fa-chevron-left"></i> 《思维导图使用手册》
               </a>
             
           </div>
@@ -610,8 +614,8 @@ open(文件名，访问模式)
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/01/02/node-js-reinstall/" rel="prev" title="Win10 安装msi提示错误代码2503、2502">
-                Win10 安装msi提示错误代码2503、2502 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/07/23/vim/" rel="prev" title="Vim 学习笔记">
+                Vim 学习笔记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -690,7 +694,7 @@ open(文件名，访问模式)
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-count">46</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -806,7 +810,11 @@ open(文件名，访问模式)
                     
                       
                     
-                    <span class="site-state-item-count">41</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">43</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -878,7 +886,7 @@ open(文件名，访问模式)
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#文件"><span class="nav-number">1.</span> <span class="nav-text">文件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#打开文件"><span class="nav-number">1.1.</span> <span class="nav-text">打开文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关闭文件"><span class="nav-number">1.2.</span> <span class="nav-text">关闭文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写数据-write"><span class="nav-number">1.3.</span> <span class="nav-text">写数据(write)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#读数据-read"><span class="nav-number">1.4.</span> <span class="nav-text">读数据(read)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#读数据（readlines）"><span class="nav-number">1.5.</span> <span class="nav-text">读数据（readlines）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#读数据（readline）"><span class="nav-number">1.6.</span> <span class="nav-text">读数据（readline）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用1——制作文件备份"><span class="nav-number">1.7.</span> <span class="nav-text">应用1——制作文件备份</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基础篇-SQL-介绍"><span class="nav-number">1.</span> <span class="nav-text">基础篇 - SQL 介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库和-SQL-概念"><span class="nav-number">1.1.</span> <span class="nav-text">数据库和 SQL 概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL"><span class="nav-number">1.2.</span> <span class="nav-text">MySQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#尝试-MySQL"><span class="nav-number">1.3.</span> <span class="nav-text">尝试 MySQL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#打开-MySQL"><span class="nav-number">1.3.1.</span> <span class="nav-text">打开 MySQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看数据库"><span class="nav-number">1.3.2.</span> <span class="nav-text">查看数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#连接数据库"><span class="nav-number">1.3.3.</span> <span class="nav-text">连接数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看表"><span class="nav-number">1.3.4.</span> <span class="nav-text">查看表</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基础篇-创建数据库并插入数据"><span class="nav-number">2.</span> <span class="nav-text">基础篇 - 创建数据库并插入数据</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#新建数据库"><span class="nav-number">2.1.</span> <span class="nav-text">新建数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连接数据库-1"><span class="nav-number">2.2.</span> <span class="nav-text">连接数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据表"><span class="nav-number">2.3.</span> <span class="nav-text">数据表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新建数据表"><span class="nav-number">2.4.</span> <span class="nav-text">新建数据表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">2.5.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入数据"><span class="nav-number">2.6.</span> <span class="nav-text">插入数据</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基础篇-SQL-的约束"><span class="nav-number">3.</span> <span class="nav-text">基础篇 - SQL 的约束</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#约束分类"><span class="nav-number">3.1.</span> <span class="nav-text">约束分类</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -138,19 +138,34 @@
 
 
   
-  <meta name="keywords" content="R, Pyhton" />
+  <meta name="keywords" content="数据可视化,R,ggplot2," />
 
 
-<meta name="description" content="the coutrage to speak softly">
+<meta name="description" content="在初步学习了 R 的基础语法后，我开始慢慢尝试 R 的数据可视化功能， 从最流行的 ggplot2 入手进行可视化的实例操作。
+入门学习主要参考了一些知名 R 语言学习网站的 wiki 以及 《R数据可视化手册》。
+R基础安装包install.packages(“包名”)
+加载包library()
+加载 CSV 文件data &amp;lt;- read.csv(“datafile.csv”)
+从 Exc">
 <meta property="og:type" content="article">
-<meta property="og:title" content="R-2">
+<meta property="og:title" content="有关 ggplot2 的二三事">
 <meta property="og:url" content="http://mutemeteor.com/2018/03/02/R-2/index.html">
 <meta property="og:site_name" content="Mute Meteor">
-<meta property="og:description" content="the coutrage to speak softly">
-<meta property="og:updated_time" content="2018-03-02T11:57:55.371Z">
+<meta property="og:description" content="在初步学习了 R 的基础语法后，我开始慢慢尝试 R 的数据可视化功能， 从最流行的 ggplot2 入手进行可视化的实例操作。
+入门学习主要参考了一些知名 R 语言学习网站的 wiki 以及 《R数据可视化手册》。
+R基础安装包install.packages(“包名”)
+加载包library()
+加载 CSV 文件data &amp;lt;- read.csv(“datafile.csv”)
+从 Exc">
+<meta property="og:updated_time" content="2018-03-10T12:23:24.002Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="R-2">
-<meta name="twitter:description" content="the coutrage to speak softly">
+<meta name="twitter:title" content="有关 ggplot2 的二三事">
+<meta name="twitter:description" content="在初步学习了 R 的基础语法后，我开始慢慢尝试 R 的数据可视化功能， 从最流行的 ggplot2 入手进行可视化的实例操作。
+入门学习主要参考了一些知名 R 语言学习网站的 wiki 以及 《R数据可视化手册》。
+R基础安装包install.packages(“包名”)
+加载包library()
+加载 CSV 文件data &amp;lt;- read.csv(“datafile.csv”)
+从 Exc">
 
 
 
@@ -166,7 +181,7 @@
     sidebar: "",
   };
 </script>
-  <title>R-2 | Mute Meteor</title>
+  <title>有关 ggplot2 的二三事 | Mute Meteor</title>
   
 
 
@@ -346,7 +361,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">R-2</h2>
+          <h2 class="post-title" itemprop="name headline">有关 ggplot2 的二三事</h2>
         
 
         <div class="post-meta">
@@ -367,6 +382,24 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -395,7 +428,14 @@
       
 
       
-        
+        <p>在初步学习了 <code>R</code> 的基础语法后，我开始慢慢尝试 <code>R</code> 的数据可视化功能， 从最流行的 <code>ggplot2</code> 入手进行可视化的实例操作。</p>
+<p>入门学习主要参考了一些知名 <code>R</code> 语言学习网站的 <code>wiki</code> 以及 《R数据可视化手册》。</p>
+<h1 id="R基础"><a href="#R基础" class="headerlink" title="R基础"></a>R基础</h1><h2 id="安装包"><a href="#安装包" class="headerlink" title="安装包"></a>安装包</h2><p>install.packages(“包名”)</p>
+<h2 id="加载包"><a href="#加载包" class="headerlink" title="加载包"></a>加载包</h2><p>library()</p>
+<h2 id="加载-CSV-文件"><a href="#加载-CSV-文件" class="headerlink" title="加载 CSV 文件"></a>加载 CSV 文件</h2><p>data &lt;- read.csv(“datafile.csv”)</p>
+<h2 id="从-Excel-文件中加载数据"><a href="#从-Excel-文件中加载数据" class="headerlink" title="从 Excel 文件中加载数据"></a>从 Excel 文件中加载数据</h2><p>library(xlsx)<br>data &lt;- read.xlsx(“datafile.xlsx”,1)</p>
+<h2 id="从-SPSS-文件中加载数据"><a href="#从-SPSS-文件中加载数据" class="headerlink" title="从 SPSS 文件中加载数据"></a>从 SPSS 文件中加载数据</h2><p>library(foreign)<br>data &lt;- read.spss(“datafile.sav”)<br><a id="more"></a></p>
+
       
     </div>
 
@@ -416,7 +456,7 @@
     <strong>本文作者： </strong>Kyrene Wang</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://mutemeteor.com/2018/03/02/R-2/" title="R-2">http://mutemeteor.com/2018/03/02/R-2/</a>
+    <a href="http://mutemeteor.com/2018/03/02/R-2/" title="有关 ggplot2 的二三事">http://mutemeteor.com/2018/03/02/R-2/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -426,6 +466,16 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数据可视化/" rel="tag"><i class="fa fa-tag"></i> 数据可视化</a>
+          
+            <a href="/tags/R/" rel="tag"><i class="fa fa-tag"></i> R</a>
+          
+            <a href="/tags/ggplot2/" rel="tag"><i class="fa fa-tag"></i> ggplot2</a>
+          
+        </div>
       
 
       
@@ -497,8 +547,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -517,7 +576,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-count">46</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -633,7 +692,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">41</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">43</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -695,6 +758,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#R基础"><span class="nav-number">1.</span> <span class="nav-text">R基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装包"><span class="nav-number">1.1.</span> <span class="nav-text">安装包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#加载包"><span class="nav-number">1.2.</span> <span class="nav-text">加载包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#加载-CSV-文件"><span class="nav-number">1.3.</span> <span class="nav-text">加载 CSV 文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从-Excel-文件中加载数据"><span class="nav-number">1.4.</span> <span class="nav-text">从 Excel 文件中加载数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从-SPSS-文件中加载数据"><span class="nav-number">1.5.</span> <span class="nav-text">从 SPSS 文件中加载数据</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

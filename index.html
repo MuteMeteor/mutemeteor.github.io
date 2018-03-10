@@ -630,7 +630,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/03/02/R-2/" itemprop="url">R-2</a></h2>
+                <a class="post-title-link" href="/2018/03/02/R-2/" itemprop="url">有关 ggplot2 的二三事</a></h2>
         
 
         <div class="post-meta">
@@ -651,6 +651,24 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -680,9 +698,20 @@
 
       
         
-          
-            
-          
+          <p>在初步学习了 <code>R</code> 的基础语法后，我开始慢慢尝试 <code>R</code> 的数据可视化功能， 从最流行的 <code>ggplot2</code> 入手进行可视化的实例操作。</p>
+<p>入门学习主要参考了一些知名 <code>R</code> 语言学习网站的 <code>wiki</code> 以及 《R数据可视化手册》。</p>
+<h1 id="R基础"><a href="#R基础" class="headerlink" title="R基础"></a>R基础</h1><h2 id="安装包"><a href="#安装包" class="headerlink" title="安装包"></a>安装包</h2><p>install.packages(“包名”)</p>
+<h2 id="加载包"><a href="#加载包" class="headerlink" title="加载包"></a>加载包</h2><p>library()</p>
+<h2 id="加载-CSV-文件"><a href="#加载-CSV-文件" class="headerlink" title="加载 CSV 文件"></a>加载 CSV 文件</h2><p>data &lt;- read.csv(“datafile.csv”)</p>
+<h2 id="从-Excel-文件中加载数据"><a href="#从-Excel-文件中加载数据" class="headerlink" title="从 Excel 文件中加载数据"></a>从 Excel 文件中加载数据</h2><p>library(xlsx)<br>data &lt;- read.xlsx(“datafile.xlsx”,1)</p>
+<h2 id="从-SPSS-文件中加载数据"><a href="#从-SPSS-文件中加载数据" class="headerlink" title="从 SPSS 文件中加载数据"></a>从 SPSS 文件中加载数据</h2><p>library(foreign)<br>data &lt;- read.spss(“datafile.sav”)<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/02/R-2/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -998,7 +1027,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mutemeteor.com/2018/02/09/Django/">
+    <link itemprop="mainEntityOfPage" href="http://mutemeteor.com/2018/02/09/R-grammar/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kyrene Wang">
@@ -1017,7 +1046,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/09/Django/" itemprop="url">Django</a></h2>
+                <a class="post-title-link" href="/2018/02/09/R-grammar/" itemprop="url">Django</a></h2>
         
 
         <div class="post-meta">
@@ -1334,7 +1363,7 @@
           
             <h1 id="什么是Selenium"><a href="#什么是Selenium" class="headerlink" title="什么是Selenium"></a>什么是Selenium</h1><p>自动化测试工具，支持多种浏览器。爬虫中主要用来解决JavaScript渲染的问题。</p>
 <h1 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</div><div class="line"><span class="keyword">from</span> selenium.webdriver.common.by <span class="keyword">import</span> By</div><div class="line"><span class="keyword">from</span> selenium.webdriver.common.keys <span class="keyword">import</span> Keys</div><div class="line"><span class="keyword">from</span> selenium.webdriver.support <span class="keyword">import</span> expected_conditions <span class="keyword">as</span> EC</div><div class="line"><span class="keyword">from</span> selenium.webdriver.support.wait <span class="keyword">import</span> WebDriverWait</div><div class="line"></div><div class="line">browser = webdriver.Firefox()</div><div class="line"><span class="keyword">try</span>:</div><div class="line">  browser.get(<span class="string">'https://www.baidu.com'</span>)</div><div class="line">  input = browser.find_element_by_id(<span class="string">'kw'</span>)</div><div class="line">  input.send_keys(<span class="string">'Python'</span>)</div><div class="line">  input.send_keys(Keys.ENTER)</div><div class="line">  wait = WebDriverWait(browser,<span class="number">10</span>)</div><div class="line">  wait.until(EC.presence_of_element_located((By.ID,(<span class="string">'content_left'</span>)))</div><div class="line">  print(browser.current_url)</div><div class="line">  print(browser.get_cookies())</div><div class="line">  print(browser.page_source)</div><div class="line"><span class="keyword">finally</span>:</div><div class="line">  browser.close()</div></pre></td></tr></table></figure>
-<h2 id="查找元素"><a href="#查找元素" class="headerlink" title="查找元素"></a>查找元素</h2>
+
           
         
       
@@ -1744,7 +1773,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-count">46</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1860,7 +1889,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">41</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">43</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
