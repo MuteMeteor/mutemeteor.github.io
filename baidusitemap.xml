@@ -4,16 +4,16 @@
 
     
   <url>
-    <loc>http://mutemeteor.com/2018/03/11/R-beijing-2017weather/</loc>
-    <lastmod>2018-03-11T03:54:05.148Z</lastmod>
+    <loc>http://mutemeteor.com/2018/01/30/04-regular-expressions/</loc>
+    <lastmod>2018-03-11T04:03:12.108Z</lastmod>
     <data>
         <display>
-        <title>北京市2017年空气质量数据可视化</title>
-        <pubTime>2018-03-11T03:53:21.000Z</pubTime>
+        <title>Python爬虫之正则表达式</title>
+        <pubTime>2018-01-30T11:10:55.000Z</pubTime>
         
-        <tag>R</tag>
+        <tag>Python</tag>
          
-        <tag>数据可视化</tag>
+        <tag>爬虫</tag>
          
          
            
@@ -27,7 +27,7 @@
     
   <url>
     <loc>http://mutemeteor.com/2018/03/06/Technical-Writing-Practice/</loc>
-    <lastmod>2018-03-11T03:47:30.687Z</lastmod>
+    <lastmod>2018-03-11T04:02:15.584Z</lastmod>
     <data>
         <display>
         <title>《科技文档写作实务》</title>
@@ -35,12 +35,54 @@
         
         <tag>technical writing</tag>
          
-        <tag>文档写作要义</tag>
+        <tag>mind map</tag>
          
          
            
              
               <breadCrumb title="读书记" url="http://mutemeteor.com/categories/%E8%AF%BB%E4%B9%A6%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://mutemeteor.com/2017/02/03/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/</loc>
+    <lastmod>2018-03-11T04:01:06.209Z</lastmod>
+    <data>
+        <display>
+        <title>《思维导图使用手册》</title>
+        <pubTime>2017-02-03T12:42:08.000Z</pubTime>
+        
+        <tag>mind map</tag>
+         
+         
+           
+             
+              <breadCrumb title="读书记" url="http://mutemeteor.com/categories/%E8%AF%BB%E4%B9%A6%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://mutemeteor.com/2018/03/11/R-beijing-2017weather/</loc>
+    <lastmod>2018-03-11T03:54:32.703Z</lastmod>
+    <data>
+        <display>
+        <title>北京市2017年空气质量数据可视化</title>
+        <pubTime>2018-03-11T03:53:21.000Z</pubTime>
+        
+        <tag>R</tag>
+         
+        <tag>数据可视化</tag>
+         
+         
+           
+             
+              <breadCrumb title="Tech" url="http://mutemeteor.com/categories/Tech/"/>
           
         </display>
     </data>
@@ -270,28 +312,6 @@
            
              
               <breadCrumb title="读书记" url="http://mutemeteor.com/categories/%E8%AF%BB%E4%B9%A6%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://mutemeteor.com/2018/01/30/04-regular-expressions/</loc>
-    <lastmod>2018-02-03T12:19:46.837Z</lastmod>
-    <data>
-        <display>
-        <title>Python爬虫之正则表达式</title>
-        <pubTime>2018-01-30T11:10:55.000Z</pubTime>
-        
-        <tag>Python</tag>
-         
-        <tag>爬虫</tag>
-         
-         
-           
-             
-              <breadCrumb title="Tech" url="http://mutemeteor.com/categories/Tech/"/>
           
         </display>
     </data>
@@ -831,26 +851,6 @@
            
              
               <breadCrumb title="Tech" url="http://mutemeteor.com/categories/Tech/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://mutemeteor.com/2017/02/03/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/</loc>
-    <lastmod>2017-08-09T10:53:00.013Z</lastmod>
-    <data>
-        <display>
-        <title>《思维导图使用手册》</title>
-        <pubTime>2017-02-03T12:42:08.000Z</pubTime>
-        
-        <tag>Mind Map</tag>
-         
-         
-           
-             
-              <breadCrumb title="读书记" url="http://mutemeteor.com/categories/%E8%AF%BB%E4%B9%A6%E8%AE%B0/"/>
           
         </display>
     </data>
