@@ -138,19 +138,22 @@
 
 
   
-  <meta name="keywords" content="R, Pyhton" />
+  <meta name="keywords" content="R,数据可视化," />
 
 
-<meta name="description" content="the coutrage to speak softly">
+<meta name="description" content="数据准备12345678910library(RCurl)library(XML)library(dplyr)library(ggplot2)library(stringr)library(rvest)library(lubridate)library(&amp;quot;DT&amp;quot;)library(openair)library(ggplot2)
+数据爬取构造月度url地址（网站是按照月度数据存储">
 <meta property="og:type" content="article">
-<meta property="og:title" content="R-beijing-2017weather">
+<meta property="og:title" content="北京市2017年空气质量数据可视化">
 <meta property="og:url" content="http://mutemeteor.com/2018/03/11/R-beijing-2017weather/index.html">
 <meta property="og:site_name" content="Mute Meteor">
-<meta property="og:description" content="the coutrage to speak softly">
-<meta property="og:updated_time" content="2018-03-11T03:53:21.396Z">
+<meta property="og:description" content="数据准备12345678910library(RCurl)library(XML)library(dplyr)library(ggplot2)library(stringr)library(rvest)library(lubridate)library(&amp;quot;DT&amp;quot;)library(openair)library(ggplot2)
+数据爬取构造月度url地址（网站是按照月度数据存储">
+<meta property="og:updated_time" content="2018-03-11T03:54:05.148Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="R-beijing-2017weather">
-<meta name="twitter:description" content="the coutrage to speak softly">
+<meta name="twitter:title" content="北京市2017年空气质量数据可视化">
+<meta name="twitter:description" content="数据准备12345678910library(RCurl)library(XML)library(dplyr)library(ggplot2)library(stringr)library(rvest)library(lubridate)library(&amp;quot;DT&amp;quot;)library(openair)library(ggplot2)
+数据爬取构造月度url地址（网站是按照月度数据存储">
 
 
 
@@ -166,7 +169,7 @@
     sidebar: "",
   };
 </script>
-  <title>R-beijing-2017weather | Mute Meteor</title>
+  <title>北京市2017年空气质量数据可视化 | Mute Meteor</title>
   
 
 
@@ -346,7 +349,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">R-beijing-2017weather</h2>
+          <h2 class="post-title" itemprop="name headline">北京市2017年空气质量数据可视化</h2>
         
 
         <div class="post-meta">
@@ -367,6 +370,24 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -395,7 +416,11 @@
       
 
       
-        
+        <h1 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">library(RCurl)</div><div class="line">library(XML)</div><div class="line">library(dplyr)</div><div class="line">library(ggplot2)</div><div class="line">library(stringr)</div><div class="line">library(rvest)</div><div class="line">library(lubridate)</div><div class="line">library(&quot;DT&quot;)</div><div class="line">library(openair)</div><div class="line">library(ggplot2)</div></pre></td></tr></table></figure>
+<h1 id="数据爬取"><a href="#数据爬取" class="headerlink" title="数据爬取"></a>数据爬取</h1><h2 id="构造月度url地址（网站是按照月度数据存储的，需要按月爬取）"><a href="#构造月度url地址（网站是按照月度数据存储的，需要按月爬取）" class="headerlink" title="构造月度url地址（网站是按照月度数据存储的，需要按月爬取）"></a>构造月度url地址（网站是按照月度数据存储的，需要按月爬取）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">urlbase&lt;-&quot;https://www.aqistudy.cn/historydata/&quot;</div><div class="line">url&lt;-&quot;https://www.aqistudy.cn/historydata/monthdata.php?city=大连&quot;</div><div class="line">rd &lt;- getURL(url,.encoding=&quot;UTF-8&quot;)</div><div class="line">rdhtml &lt;- htmlParse(rd,encoding=&quot;UTF-8&quot;)</div><div class="line">otherpage&lt;-getNodeSet(rdhtml,&quot;//a&quot;)</div><div class="line">allurl&lt;-laply(otherpage,xmlGetAttr,name=&apos;href&apos;)%&gt;%grep(&quot;2016&quot;,.,value=T)%&gt;%sub(&quot;麓贸脕卢&quot;,&quot;大连&quot;,.)</div><div class="line">#以上还是编码出了问题，不知道那个乱码是什么鬼！只能强行替换了！</div><div class="line">allurl&lt;-paste0(urlbase,allurl)</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<hr>
+
       
     </div>
 
@@ -416,7 +441,7 @@
     <strong>本文作者： </strong>Kyrene Wang</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://mutemeteor.com/2018/03/11/R-beijing-2017weather/" title="R-beijing-2017weather">http://mutemeteor.com/2018/03/11/R-beijing-2017weather/</a>
+    <a href="http://mutemeteor.com/2018/03/11/R-beijing-2017weather/" title="北京市2017年空气质量数据可视化">http://mutemeteor.com/2018/03/11/R-beijing-2017weather/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -426,6 +451,14 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/R/" rel="tag"><i class="fa fa-tag"></i> R</a>
+          
+            <a href="/tags/数据可视化/" rel="tag"><i class="fa fa-tag"></i> 数据可视化</a>
+          
+        </div>
       
 
       
@@ -493,8 +526,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -513,7 +555,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">45</span>
+                    <span class="site-state-item-count">44</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -689,6 +731,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据准备"><span class="nav-number">1.</span> <span class="nav-text">数据准备</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据爬取"><span class="nav-number">2.</span> <span class="nav-text">数据爬取</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#构造月度url地址（网站是按照月度数据存储的，需要按月爬取）"><span class="nav-number">2.1.</span> <span class="nav-text">构造月度url地址（网站是按照月度数据存储的，需要按月爬取）</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

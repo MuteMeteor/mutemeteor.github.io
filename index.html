@@ -348,7 +348,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/03/11/R-beijing-2017weather/" itemprop="url">R-beijing-2017weather</a></h2>
+                <a class="post-title-link" href="/2018/03/11/R-beijing-2017weather/" itemprop="url">北京市2017年空气质量数据可视化</a></h2>
         
 
         <div class="post-meta">
@@ -369,6 +369,24 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -398,9 +416,15 @@
 
       
         
-          
-            
-          
+          <h1 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">library(RCurl)</div><div class="line">library(XML)</div><div class="line">library(dplyr)</div><div class="line">library(ggplot2)</div><div class="line">library(stringr)</div><div class="line">library(rvest)</div><div class="line">library(lubridate)</div><div class="line">library(&quot;DT&quot;)</div><div class="line">library(openair)</div><div class="line">library(ggplot2)</div></pre></td></tr></table></figure>
+<h1 id="数据爬取"><a href="#数据爬取" class="headerlink" title="数据爬取"></a>数据爬取</h1><h2 id="构造月度url地址（网站是按照月度数据存储的，需要按月爬取）"><a href="#构造月度url地址（网站是按照月度数据存储的，需要按月爬取）" class="headerlink" title="构造月度url地址（网站是按照月度数据存储的，需要按月爬取）"></a>构造月度url地址（网站是按照月度数据存储的，需要按月爬取）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">urlbase&lt;-&quot;https://www.aqistudy.cn/historydata/&quot;</div><div class="line">url&lt;-&quot;https://www.aqistudy.cn/historydata/monthdata.php?city=大连&quot;</div><div class="line">rd &lt;- getURL(url,.encoding=&quot;UTF-8&quot;)</div><div class="line">rdhtml &lt;- htmlParse(rd,encoding=&quot;UTF-8&quot;)</div><div class="line">otherpage&lt;-getNodeSet(rdhtml,&quot;//a&quot;)</div><div class="line">allurl&lt;-laply(otherpage,xmlGetAttr,name=&apos;href&apos;)%&gt;%grep(&quot;2016&quot;,.,value=T)%&gt;%sub(&quot;麓贸脕卢&quot;,&quot;大连&quot;,.)</div><div class="line">#以上还是编码出了问题，不知道那个乱码是什么鬼！只能强行替换了！</div><div class="line">allurl&lt;-paste0(urlbase,allurl)</div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/11/R-beijing-2017weather/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1817,7 +1841,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">45</span>
+                    <span class="site-state-item-count">44</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

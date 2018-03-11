@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[R-beijing-2017weather]]></title>
+    <title><![CDATA[北京市2017年空气质量数据可视化]]></title>
     <url>%2F2018%2F03%2F11%2FR-beijing-2017weather%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[数据准备12345678910library(RCurl)library(XML)library(dplyr)library(ggplot2)library(stringr)library(rvest)library(lubridate)library(&quot;DT&quot;)library(openair)library(ggplot2) 数据爬取构造月度url地址（网站是按照月度数据存储的，需要按月爬取）12345678urlbase&lt;-&quot;https://www.aqistudy.cn/historydata/&quot;url&lt;-&quot;https://www.aqistudy.cn/historydata/monthdata.php?city=大连&quot;rd &lt;- getURL(url,.encoding=&quot;UTF-8&quot;)rdhtml &lt;- htmlParse(rd,encoding=&quot;UTF-8&quot;)otherpage&lt;-getNodeSet(rdhtml,&quot;//a&quot;)allurl&lt;-laply(otherpage,xmlGetAttr,name=&apos;href&apos;)%&gt;%grep(&quot;2016&quot;,.,value=T)%&gt;%sub(&quot;麓贸脕卢&quot;,&quot;大连&quot;,.)#以上还是编码出了问题，不知道那个乱码是什么鬼！只能强行替换了！allurl&lt;-paste0(urlbase,allurl)]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>R</tag>
+        <tag>数据可视化</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Grav 文档目录翻译]]></title>
@@ -184,18 +191,6 @@
       <tags>
         <tag>python</tag>
         <tag>selenium</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[北京市2017年空气质量数据可视化]]></title>
-    <url>%2F2018%2F01%2F23%2FR-beijing-weather%2F</url>
-    <content type="text"><![CDATA[数据准备12345678910library(RCurl)library(XML)library(dplyr)library(ggplot2)library(stringr)library(rvest)library(lubridate)library(&quot;DT&quot;)library(openair)library(ggplot2) 数据爬取构造月度url地址（网站是按照月度数据存储的，需要按月爬取）12345678urlbase&lt;-&quot;https://www.aqistudy.cn/historydata/&quot;url&lt;-&quot;https://www.aqistudy.cn/historydata/monthdata.php?city=大连&quot;rd &lt;- getURL(url,.encoding=&quot;UTF-8&quot;)rdhtml &lt;- htmlParse(rd,encoding=&quot;UTF-8&quot;)otherpage&lt;-getNodeSet(rdhtml,&quot;//a&quot;)allurl&lt;-laply(otherpage,xmlGetAttr,name=&apos;href&apos;)%&gt;%grep(&quot;2016&quot;,.,value=T)%&gt;%sub(&quot;麓贸脕卢&quot;,&quot;大连&quot;,.)#以上还是编码出了问题，不知道那个乱码是什么鬼！只能强行替换了！allurl&lt;-paste0(urlbase,allurl)]]></content>
-      <categories>
-        <category>Tech</category>
-      </categories>
-      <tags>
-        <tag>R</tag>
-        <tag>数据可视化</tag>
       </tags>
   </entry>
   <entry>

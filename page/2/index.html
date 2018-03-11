@@ -1261,153 +1261,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mutemeteor.com/2018/01/23/R-beijing-weather/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Kyrene Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://on7kyvg9n.bkt.clouddn.com/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mute Meteor">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/23/R-beijing-weather/" itemprop="url">北京市2017年空气质量数据可视化</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-23T16:52:33+08:00">2018-01-23</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">library(RCurl)</div><div class="line">library(XML)</div><div class="line">library(dplyr)</div><div class="line">library(ggplot2)</div><div class="line">library(stringr)</div><div class="line">library(rvest)</div><div class="line">library(lubridate)</div><div class="line">library(&quot;DT&quot;)</div><div class="line">library(openair)</div><div class="line">library(ggplot2)</div></pre></td></tr></table></figure>
-<h1 id="数据爬取"><a href="#数据爬取" class="headerlink" title="数据爬取"></a>数据爬取</h1><h2 id="构造月度url地址（网站是按照月度数据存储的，需要按月爬取）"><a href="#构造月度url地址（网站是按照月度数据存储的，需要按月爬取）" class="headerlink" title="构造月度url地址（网站是按照月度数据存储的，需要按月爬取）"></a>构造月度url地址（网站是按照月度数据存储的，需要按月爬取）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">urlbase&lt;-&quot;https://www.aqistudy.cn/historydata/&quot;</div><div class="line">url&lt;-&quot;https://www.aqistudy.cn/historydata/monthdata.php?city=大连&quot;</div><div class="line">rd &lt;- getURL(url,.encoding=&quot;UTF-8&quot;)</div><div class="line">rdhtml &lt;- htmlParse(rd,encoding=&quot;UTF-8&quot;)</div><div class="line">otherpage&lt;-getNodeSet(rdhtml,&quot;//a&quot;)</div><div class="line">allurl&lt;-laply(otherpage,xmlGetAttr,name=&apos;href&apos;)%&gt;%grep(&quot;2016&quot;,.,value=T)%&gt;%sub(&quot;麓贸脕卢&quot;,&quot;大连&quot;,.)</div><div class="line">#以上还是编码出了问题，不知道那个乱码是什么鬼！只能强行替换了！</div><div class="line">allurl&lt;-paste0(urlbase,allurl)</div></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/01/23/R-beijing-weather/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://mutemeteor.com/2018/01/22/network-tcpip/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1841,6 +1694,154 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://mutemeteor.com/2018/01/02/node-js-reinstall/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kyrene Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://on7kyvg9n.bkt.clouddn.com/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mute Meteor">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/02/node-js-reinstall/" itemprop="url">Win10 安装msi提示错误代码2503、2502</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-02T09:32:05+08:00">2018-01-02</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>之前尝试在win 10系统上搭建 <code>Hugo</code> 时，不小心把电脑上的所有环境变量 <code>Path</code> 都删掉了，重新添加找目录又费劲，所以直接重新下载了 <code>node.js</code> 和 <code>Python</code>，安装时又发现不断出现弹窗，显示:</p>
+<p>“The installer has encountered an unexpected error installing this package.this may indicate a problem with package.the error code is 2502.<br>The installer has encountered an unexpected error installing this package.this may indicate a problem with package.the error code is 2503.”</p>
+<p>应该是权限问题，Google找解决办法，都没解决，后来综合了两个解决方法，成功安装。</p>
+<p>具体步骤：</p>
+<h1 id="永久提权"><a href="#永久提权" class="headerlink" title="永久提权"></a>永久提权</h1><p>1、按WIN+R，在运行框中输入“gpedit.msc” 确认；<br>2、打开本地策略组编辑器后依次展开 ：“计算机配置”-》“管理模板”-》“windows组件”-》“windows installer”，并找到“始终以提升的权限进行安装”；<br>3、双击该选项，设置为“已启用”，并应用；<br>4、最后还要在【用户配置】中进行同样的操作；</p>
+<h1 id="临时安装"><a href="#临时安装" class="headerlink" title="临时安装"></a>临时安装</h1><p>1、鼠标移到桌面左下角-&gt;右键（或者直接： WIN+X键），命令提示符（管理员）；<br>2、输入：msiexec /package +‘msi文件路径’（输入的时候注意半角字符且路径不能为中文名）<br>例如：<br>C:\Windows\system32&gt;msiexec /package G:\tool\node-v8.9.3-x64.msi<br>C:\Windows\system32&gt;msiexec /package G:\software\python\python-3.4.3.msi<br>C:\Windows\system32&gt;msiexec /package G:\software\python\python-2.7.10.msi</p>
+<p>大功告成。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -1892,7 +1893,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">45</span>
+                    <span class="site-state-item-count">44</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
