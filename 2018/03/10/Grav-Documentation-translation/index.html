@@ -147,7 +147,7 @@
 <meta property="og:url" content="http://mutemeteor.com/2018/03/10/Grav-Documentation-translation/index.html">
 <meta property="og:site_name" content="Mute Meteor">
 <meta property="og:description" content="对于技术文档工程师来说，中英互译能力必不可缺，一个文档工程师一定也是优秀工程师文化的传播者。技术文档的类型多为说明文，要求语言翻译精炼、准确、不拖泥带水，讲究用最少的话讲最明白的道理。所谓实践出真知，为了能更深入的体验技术文档的翻译过程，我尝试寻找优秀的技术文档去实践翻译，在GitHub上fork了Beautiful Docs并从中挑选了一篇文档——Grav Documentation。由于时间有">
-<meta property="og:updated_time" content="2018-03-12T02:37:01.280Z">
+<meta property="og:updated_time" content="2018-03-12T11:04:35.212Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Grav 文档目录翻译">
 <meta name="twitter:description" content="对于技术文档工程师来说，中英互译能力必不可缺，一个文档工程师一定也是优秀工程师文化的传播者。技术文档的类型多为说明文，要求语言翻译精炼、准确、不拖泥带水，讲究用最少的话讲最明白的道理。所谓实践出真知，为了能更深入的体验技术文档的翻译过程，我尝试寻找优秀的技术文档去实践翻译，在GitHub上fork了Beautiful Docs并从中挑选了一篇文档——Grav Documentation。由于时间有">
@@ -418,57 +418,127 @@
 <hr>
 <p><a href="https://github.com/PharkMillups/beautiful-docs" target="_blank" rel="external">Grav</a>是一个开源的文本文件内容管理系统。Grav 和 Github 充分结合，使用 Markdown 解析文章，具有快速检索和高亮的功能。</p>
 <ul>
-<li><a href="#1">1. 快速入门</a><ul>
+<li><p><a href="#1">1. 快速入门</a></p>
+<ul>
 <li><a href="#1.1">1.1 什么是Grav？</a></li>
 <li><a href="#1.2">1.2 安装环境要求</a><ul>
 <li><a href="#1.2.1">1.2.1 服务器</a></li>
-<li><a href="#1.2.2">1.2.2 Mac</a></li>
+<li><a href="#1.2.2">1.2.2 Mac 用户</a></li>
+<li><a href="#1.2.3">1.2.3 Windows 用户</a></li>
+<li><a href="#1.2.3">1.2.4 Linux 用户</a></li>
 </ul>
 </li>
-<li><a href="#1.3">1.3 安装</a></li>
+<li><a href="#1.3">1.3 安装</a><ul>
+<li><a href="#1.2.1">1.3.1 查看 PHP 版本</a></li>
+<li><a href="#1.2.2">1.3.2 选择1. 通过 ZIP 安装包安装</a></li>
+<li><a href="#1.2.3">1.3.3 选择2. 通过 composer 安装</a></li>
+<li><a href="#1.2.3">1.3.4 选择3. 从 Github 安装</a></li>
+<li><a href="#1.2.3">1.3.5 安装中可能出现的问题</a></li>
+<li><a href="#1.2.3">1.3.6 更新</a></li>
 </ul>
 </li>
-<li><a href="#2">2. 内容</a><ul>
-<li><a href="#2.1">2.1 Liunx系统编程进阶</a></li>
-<li><a href="#2.2">2.2 Python核心编程</a></li>
-<li><a href="#2.3">2.3 网络编程</a></li>
-<li><a href="#2.4">2.4 Web服务器案例</a></li>
-<li><a href="#2.5">2.5 正则表达式</a></li>
+<li><a href="#1.3">1.4 基础使用手册</a><ul>
+<li><a href="#1.2.1">1.4.1 关于内容</a></li>
+<li><a href="#1.2.2">1.4.2 主页配置</a></li>
+<li><a href="#1.2.3">1.4.3 页面编辑</a></li>
+<li><a href="#1.2.3">1.4.4 添加一个新页面</a></li>
 </ul>
 </li>
-<li><a href="#3">3. 主题</a><ul>
-<li><a href="#3.1">3.1 数据结构和算法基础</a></li>
-<li><a href="#3.2">3.2 顺序表</a></li>
-<li><a href="#3.3">3.3 栈与队列</a></li>
-<li><a href="#3.4">3.4 链表</a></li>
-<li><a href="#3.5">3.5 排序与搜索</a></li>
-<li><a href="#3.6">3.6 树</a></li>
+<li><a href="#1.3">1.5 设置菜单</a><ul>
+<li><a href="#1.2.1">1.5.1 主题配置</a></li>
+<li><a href="#1.2.2">1.5.2 站点配置</a></li>
+<li><a href="#1.2.3">1.5.3 插件配置</a></li>
 </ul>
 </li>
-<li><a href="#4">4. 插件</a><ul>
-<li><a href="#4.1">4.1 MySQL</a></li>
-<li><a href="#4.2">4.2 MongoDB</a></li>
-<li><a href="#4.3">4.3 Redis</a></li>
+<li><a href="#1.3">1.6 文件结构</a></li>
+<li><a href="#1.3">1.7 如何获取帮助</a></li>
 </ul>
 </li>
-<li><a href="#5">5. 前端</a><ul>
-<li><a href="#5.1">5.1 HTML</a></li>
+<li><p><a href="#2">2. 内容</a></p>
+<ul>
+<li><a href="#2.1">2.1 网页类型</a></li>
+<li><a href="#2.2">2.2 前页</a></li>
+<li><a href="#2.3">2.3 网页集合</a></li>
+<li><a href="#2.4">2.4 Markdown</a></li>
+<li><a href="#2.5">2.5 网页链接</a></li>
+<li><a href="#2.4">2.4 图片链接</a></li>
+<li><a href="#2.5">2.5 媒体文件</a></li>
+<li><a href="#2.1">2.6 系统分类</a></li>
+<li><a href="#2.2">2.7 网页模块化</a></li>
+<li><a href="#2.3">2.8 路径</a></li>
+<li><a href="#2.4">2.9 多语言</a></li>
+<li><a href="#2.5">2.10 内容类型</a></li>
+</ul>
+</li>
+<li><p><a href="#3">3. 主题</a></p>
+<ul>
+<li><a href="#3.1">3.1 主题入门</a></li>
+<li><a href="#3.2">3.2 主题使用手册</a></li>
+<li><a href="#3.3">3.3 TWIG 初级</a></li>
+<li><a href="#3.4">3.4 TWIG 功能</a></li>
+<li><a href="#3.5">3.5 主题配置</a></li>
+<li><a href="#3.6">3.6 主题样式</a></li>
+<li><a href="#3.5">3.7 静态资源管理</a></li>
+<li><a href="#3.6">3.8 用户化定制</a></li>
+</ul>
+</li>
+<li><p><a href="#4">4. 插件</a></p>
+<ul>
+<li><a href="#4.1">4.1 插件入门</a></li>
+<li><a href="#4.2">4.2 插件使用手册</a></li>
+<li><a href="#4.3">4.3 GRAV 生命周期</a></li>
+</ul>
+</li>
+<li><p><a href="#5">5. 管理面板</a></p>
+<ul>
+<li><a href="#5.1">5.1 简介</a></li>
 <li><a href="#5.2">5.2 CSS</a></li>
 <li><a href="#5.3">5.3 JavaScript</a></li>
 <li><a href="#5.4">5.4 JQuery</a></li>
 <li><a href="#5.5">5.5 Bootstrap</a></li>
 </ul>
 </li>
-<li><a href="#6">6. Django</a><ul>
+<li><p><a href="#6">6. Django</a></p>
+<ul>
 <li><a href="#6.1">6.1 框架</a></li>
 <li><a href="#6.2">6.2 MongoDB</a></li>
 <li><a href="#6.3">6.3 Redis</a></li>
 </ul>
 </li>
-<li><a href="#7">7. 爬虫</a>  </li>
-<li><a href="#8">8. Tornado</a></li>
-<li><a href="#9">9. shell和自动化运维</a></li>
-<li><a href="#10">10. 大数据</a><ul>
+<li><p><a href="#7">7. CLI 控制台</a>  </p>
+<ul>
+<li><a href="#10.1">7.1 Hadoop</a></li>
+<li><a href="#10.2">7.2 Hive</a></li>
+<li><a href="#10.3">7.3 HBase</a></li>
+<li><a href="#10.4">7.4 Spark</a></li>
+<li><a href="#10.5">7.5 Docker</a></li>
+<li><a href="#10.6">7.6 Kafka</a></li>
+</ul>
+</li>
+<li><p><a href="#8">8. Tornado</a></p>
+<ul>
+<li><a href="#10.1">8.1 Hadoop</a></li>
+<li><a href="#10.2">8.2 Hive</a></li>
+<li><a href="#10.3">8.3 HBase</a></li>
+<li><a href="#10.4">8.4 Spark</a></li>
+<li><a href="#10.5">8.5 Docker</a></li>
+<li><a href="#10.6">8.6 Kafka</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><a href="#9">9. shell和自动化运维</a></p>
+<ul>
+<li><a href="#10.1">9.1 Hadoop</a></li>
+<li><a href="#10.2">9.2 Hive</a></li>
+<li><a href="#10.3">9.3 HBase</a></li>
+<li><a href="#10.4">9.4 Spark</a></li>
+<li><a href="#10.5">9.5 Docker</a></li>
+<li><a href="#10.6">9.6 Kafka</a></li>
+</ul>
+</li>
+<li><p><a href="#10">10. 大数据</a></p>
+<ul>
 <li><a href="#10.1">10.1 Hadoop</a></li>
 <li><a href="#10.2">10.2 Hive</a></li>
 <li><a href="#10.3">10.3 HBase</a></li>
@@ -477,9 +547,38 @@
 <li><a href="#10.6">10.6 Kafka</a></li>
 </ul>
 </li>
-<li><a href="#10">11. 大数据</a></li>
-<li><a href="#10">12. 大数据</a></li>
-<li><a href="#10">13. 大数据</a></li>
+<li><p><a href="#10">11. 大数据</a></p>
+<ul>
+<li><a href="#10.1">11.1 Hadoop</a></li>
+<li><a href="#10.2">11.2 Hive</a></li>
+<li><a href="#10.3">11.3 HBase</a></li>
+<li><a href="#10.4">11.4 Spark</a></li>
+<li><a href="#10.5">11.5 Docker</a></li>
+<li><a href="#10.6">11.6 Kafka</a></li>
+</ul>
+</li>
+<li><p><a href="#10">12. 大数据</a></p>
+<ul>
+<li><a href="#10.1">12.1 Hadoop</a></li>
+<li><a href="#10.2">12.2 Hive</a></li>
+<li><a href="#10.3">12.3 HBase</a></li>
+<li><a href="#10.4">12.4 Spark</a></li>
+<li><a href="#10.5">12.5 Docker</a></li>
+<li><a href="#10.6">12.6 Kafka</a></li>
+</ul>
+</li>
+<li><p><a href="#10">13. 大数据</a></p>
+<ul>
+<li><a href="#10.1">13.1 Hadoop</a></li>
+<li><a href="#10.2">13.2 Hive</a></li>
+<li><a href="#10.3">13.3 HBase</a></li>
+<li><a href="#10.4">13.4 Spark</a></li>
+<li><a href="#10.5">13.5 Docker</a></li>
+<li><a href="#10.6">13.6 Kafka</a></li>
+</ul>
+</li>
+<li><p><a href="#10">14. Grav 系统接口</a></p>
+</li>
 </ul>
 <hr>
 
