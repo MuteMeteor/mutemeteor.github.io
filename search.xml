@@ -15,7 +15,7 @@
   <entry>
     <title><![CDATA[Grav 文档目录翻译]]></title>
     <url>%2F2018%2F03%2F10%2FGrav-Documentation-translation%2F</url>
-    <content type="text"><![CDATA[对于技术文档工程师来说，中英互译能力必不可缺，一个优秀的文档工程师一定也是工程师文化的传播者。 Grav Documentation - Documentation for Grav, a modern open source flat-file CMS. Tightly integrated with GitHub in markdown format, with quick search and highlight. 1. 入门了解 1.1 什么是Grav？ 1.2 需求 1.3 安装 2. 内容 2.1 Liunx系统编程进阶 2.2 Python核心编程 2.3 网络编程 2.4 Web服务器案例 2.5 正则表达式 3. 主题 3.1 数据结构和算法基础 3.2 顺序表 3.3 栈与队列 3.4 链表 3.5 排序与搜索 3.6 树 4. 插件 4.1 MySQL 4.2 MongoDB 4.3 Redis 5. 前端 5.1 HTML 5.2 CSS 5.3 JavaScript 5.4 JQuery 5.5 Bootstrap 6. Django 6.1 框架 6.2 MongoDB 6.3 Redis 7. 爬虫 8. Tornado 9. shell和自动化运维 10. 大数据 10.1 Hadoop 10.2 Hive 10.3 HBase 10.4 Spark 10.5 Docker 10.6 Kafka 11. 大数据 12. 大数据 13. 大数据]]></content>
+    <content type="text"><![CDATA[对于技术文档工程师来说，中英互译能力必不可缺，一个文档工程师一定也是优秀工程师文化的传播者。技术文档的类型多为说明文，要求语言翻译精炼、准确、不拖泥带水，讲究用最少的话讲最明白的道理。所谓实践出真知，为了能更深入的体验技术文档的翻译过程，我尝试寻找优秀的技术文档去实践翻译，在GitHub上fork了Beautiful Docs并挑选了一篇Grav Documentation，由于时间有限只对文档目录进行了翻译，希望有机会能完成整篇文档的翻译。 Grav 是一个开源的文本文件内容管理系统。Grav 和 Github充分结合，使用 Markdown 解析文章，具有快速检索和高亮的功能。 1. 快速入门 1.1 什么是Grav？ 1.2 需求 1.3 安装 2. 内容 2.1 Liunx系统编程进阶 2.2 Python核心编程 2.3 网络编程 2.4 Web服务器案例 2.5 正则表达式 3. 主题 3.1 数据结构和算法基础 3.2 顺序表 3.3 栈与队列 3.4 链表 3.5 排序与搜索 3.6 树 4. 插件 4.1 MySQL 4.2 MongoDB 4.3 Redis 5. 前端 5.1 HTML 5.2 CSS 5.3 JavaScript 5.4 JQuery 5.5 Bootstrap 6. Django 6.1 框架 6.2 MongoDB 6.3 Redis 7. 爬虫 8. Tornado 9. shell和自动化运维 10. 大数据 10.1 Hadoop 10.2 Hive 10.3 HBase 10.4 Spark 10.5 Docker 10.6 Kafka 11. 大数据 12. 大数据 13. 大数据]]></content>
       <categories>
         <category>Tech</category>
       </categories>
