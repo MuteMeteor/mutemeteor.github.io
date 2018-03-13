@@ -25,55 +25,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[多图层叠加 —— 离散颜色填充与气泡图综合运用]]></title>
-    <url>%2F2018%2F03%2F03%2FR-map%2F</url>
-    <content type="text"><![CDATA[数据准备：加载包：1234library(ggplot2)library(plyr)library(maptools)library(sp) 导入中国省界地图：123china_map&lt;-readShapePoly(&quot;c:/rstudy/bou2_4p.shp&quot;)data1&lt;- china_map@data data2&lt;- data.frame(id=row.names(data1),data1) 数据格式转化及业务数据合并：1234china_map1 &lt;- fortify(china_map)china_map_data &lt;- join(china_map1,data2, type = &quot;full&quot;)mydata &lt;- read.csv(&quot;c:/rstudy/geshengzhibiao.csv&quot;)china_data &lt;- join(china_map_data, mydata, type=&quot;full&quot;) 各省省会城市经纬度数据：1province_city &lt;- read.csv(&quot;c:/rstudy/chinaprovincecity.csv&quot;) 构造数据地图作图数据根据自己的数据量级和具体业务需要设置分割点：12345mydata&lt;-mydata[,-c(5,6)]mydata$zhibiao&lt;-rnorm(33,100,50)mydata$zhibiao&lt;-abs(mydata$zhibiao)mydata$zhibiao2&lt;-round(mydata$zhibiao,0)mydata$fau &lt;- cut(mydata$zhibiao, breaks = c(0,50,100,150,200,250))]]></content>
-      <categories>
-        <category>Tech</category>
-      </categories>
-      <tags>
-        <tag>R</tag>
-        <tag>数据可视化</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[当大家都在讨论《和平饭店》的时候，他们到底在说些什么]]></title>
-    <url>%2F2018%2F02%2F22%2FR-movie%2F</url>
-    <content type="text"><![CDATA[数据准备相关包1234567library(XML)library(Rwordseg)library(wordcloud2)library(RCurl)library(stringr)library(plyr)library(dplyr) 12url&lt;-&quot;https://movie.douban.com/subject/25765735/reviews?rating=&amp;start=0&quot;baseurl&lt;-&quot;https://movie.douban.com/subject/25765735/reviews&quot; 建立影评网址抓取函数1234567891011# 豆瓣影评的网址遍历过程urln&lt;-paste0(baseurl,&quot;?rating=&amp;start=&quot;,20*(seq(0:73)-1)) fun&lt;-function(urln)&#123; rd &lt;- getURL(urln,.encoding=&quot;UTF-8&quot;) #获取网页rdhtml &lt;- htmlParse(rd,encoding=&quot;UTF-8&quot;) #解析网页root &lt;- xmlRoot(rdhtml) #获取根节点page&lt;-getNodeSet(root,&quot;//div[@class=&apos;review-short&apos;]/div[@class=&apos;short-content&apos;]/a&quot;)#目标节点获取pagevalue&lt;-unique(laply(page,xmlGetAttr,name=&apos;href&apos;)) #获取目标节点内的属性值（这里是评论网址）&#125;]]></content>
-      <categories>
-        <category>Tech</category>
-      </categories>
-      <tags>
-        <tag>爬虫</tag>
-        <tag>R</tag>
-        <tag>数据可视化</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[学习 ggplot2 的二三事]]></title>
-    <url>%2F2018%2F02%2F09%2FR-ggplot2%2F</url>
-    <content type="text"><![CDATA[用了几天入门 R 基础后，开始着手学习 R 的数据可视化。主要学习的入门书籍是 Winston Chang 所著《R数据可视化手册》，豆瓣 mark 这本书有一段时间了，正巧赶上淘宝打折，果断下单，又花了两天把书的基础实例部分撸完。整本书逻辑框架十分清晰，我这种菜鸟新手整个看的过程也很流畅，作为入门书籍非常棒，从实用的例子来练习熟悉，章节顺序安排合理，跟着练下来可以信心十足的明确自己会做哪些，还能做哪些。]]></content>
-      <categories>
-        <category>Tech</category>
-      </categories>
-      <tags>
-        <tag>R</tag>
-        <tag>Note</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[R语言学习笔记]]></title>
-    <url>%2F2018%2F02%2F02%2FR-note%2F</url>
-    <content type="text"><![CDATA[R的基础语法学习主要是在code school上的try R课程。]]></content>
-      <categories>
-        <category>Tech</category>
-      </categories>
-      <tags>
-        <tag>R</tag>
-        <tag>Note</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Python爬虫之Selenium]]></title>
     <url>%2F2018%2F01%2F31%2F07-Selenium%2F</url>
     <content type="text"><![CDATA[什么是Selenium自动化测试工具，支持多种浏览器。爬虫中主要用来解决JavaScript渲染的问题。 基本使用12345678910111213141516171819from selenium import webdriverfrom selenium.webdriver.common.by import Byfrom selenium.webdriver.common.keys import Keysfrom selenium.webdriver.support import expected_conditions as ECfrom selenium.webdriver.support.wait import WebDriverWaitbrowser = webdriver.Firefox()try: browser.get('https://www.baidu.com') input = browser.find_element_by_id('kw') input.send_keys('Python') input.send_keys(Keys.ENTER) wait = WebDriverWait(browser,10) wait.until(EC.presence_of_element_located((By.ID,('content_left'))) print(browser.current_url) print(browser.get_cookies()) print(browser.page_source)finally: browser.close()]]></content>
